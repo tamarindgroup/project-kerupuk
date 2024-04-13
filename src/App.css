@@ -1,3 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dhurjati&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Modak&family=Monoton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sofadi+One&family=Teko:wght@300..700&family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dhurjati&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Modak&family=Monoton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&family=Teko:wght@300..700&family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Darker+Grotesque:wght@300..900&family=Dhurjati&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Modak&family=Monoton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&family=Teko:wght@300..700&family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Darker+Grotesque:wght@300..900&family=Dhurjati&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Modak&family=Monoton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reem+Kufi+Fun:wght@400..700&family=Sofadi+One&family=Teko:wght@300..700&family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+
+.welcome {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.pusat_kerupuk {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+#deskripsi_service {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+#check-1 {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#check-2 {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#deskripsi_kerupuk {
+  font-family: "Darker Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
 .App {
   text-align: center;
 }
@@ -36,3 +76,79 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  border-top-color: #ff9c00;
+  /* box-sizing: border-box; */
+  position: relative;
+  background-color: #fff;
+  border-top: solid 2px #ff9c00;
+}
+
+
+
+
+.header-bottom {
+  transform: skew(-35deg);
+  font-family: 'Assistant', sans-serif;
+}
+
+.fast-delivery {
+  background-color: #e32222;
+  color: white;
+}
+
+.secured {
+  background-color: #ff9c00;
+  color: white;
+}
+
+.Affordable {
+  background-color: #e32222;
+  color: white;
+}
+
+.button-view:hover {
+  background-color: #e32222;
+  color: white;
+  cursor: pointer;
+}
+
+
+.lingkaran-container {
+  position: relative;
+}
+
+.lingkaran {
+  transition: transform 0.5s; /* Menerapkan transisi pada transformasi */
+}
+
+.lingkaran:hover {
+  transform: rotate(5deg); /* Rotasi sedikit saat dihover */
+}
+
+.optimasi {
+  position: absolute;
+  top: 37%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.barang {
+  position: relative;
+}
+
+.barang::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.5); /* Warna merah dengan opacity 0.5 */
+  z-index: 1; /* Pastikan lapisan ini berada di depan gambar */
+}
+
+/* #img-kerupuk2 {
+  filter: blur(1px);
+} */
