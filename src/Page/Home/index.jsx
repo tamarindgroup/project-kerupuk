@@ -339,7 +339,7 @@ export function Home () {
             </div>
                :  
                <>
-                    <AppBar style={{ marginTop: '200px', backgroundColor: '#ff9c00' }} position="relative" open={open}>
+                    <AppBar style={{ marginTop: '200px', backgroundColor: '#ff9c00', width: '100%' }} position="relative" open={open}>
                         <Toolbar>
                         <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
                             Menu
