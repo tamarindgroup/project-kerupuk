@@ -68,6 +68,10 @@ import { HiOutlineClipboardList } from "react-icons/hi";
 import { FcAbout } from "react-icons/fc";
 import { LuContact } from "react-icons/lu";
 
+import { CiDeliveryTruck } from "react-icons/ci";
+import { AiOutlineAudit } from "react-icons/ai";
+import { FaPeopleLine } from "react-icons/fa6";
+
 export function Home () {
     const theme = useTheme();
 
@@ -403,7 +407,7 @@ export function Home () {
           </div>
 
 
-          <div style={{ position: 'relative' }}>
+          <div >
             <img src={Kerupuk1} 
                 style={{
                     height: isDesktop ? '900px' : '200px',
@@ -414,7 +418,7 @@ export function Home () {
             />
             <div style={{ 
                 position: 'absolute', 
-                top: isDesktop ? '-140px' : '280px', 
+                top: isDesktop ? '520px' : '490px', 
                 left: '10%', 
                 transform: 'translateY(-50%)',
                 }}>
@@ -691,7 +695,7 @@ export function Home () {
                 </div>
                 </> }
           </div>
-          <Container style={{ display: isDesktop ? 'flex' : 'block', maxWidth: '100%' }}>
+          <div style={{ display: isDesktop ? 'flex' : 'block', width: '100%' }}>
           <Container style={{
             position: 'relative',
             top: isDesktop ? '200px' : '140px',
@@ -819,7 +823,7 @@ export function Home () {
             </Button>
             </div>
           </Container>
-          </Container>
+          </div>
           <div style={{
             marginTop: '380px',
             display: isDesktop ? 'flex' : 'block'
@@ -851,7 +855,7 @@ export function Home () {
                         </Grid>
                         <Grid item xs={ !isDesktop ? 12 : 0} ml={isDesktop ? 10 : 0}>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <img src={Audit} style={{ width: '50px', height: '50px', color: '#e32222' }} />
+                                <AiOutlineAudit style={{ width: '55px', height: '55px', color: '#e32222' }} />
                                 <div style={{ paddingLeft: '20px' }}>
                                     <h3>Product Audit</h3>
                                     <p id="deskripsi_kerupuk">Pemeriksaan rutin produk agar terjaga standar mutu</p>
@@ -860,7 +864,7 @@ export function Home () {
                         </Grid>
                         <Grid item xs={ !isDesktop ? 12 : 0 }>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <img src={Relationship} style={{ width: '50px', height: '50px', color: '#e32222' }} />
+                                <FaPeopleLine style={{ width: '55px', height: '55px', color: '#e32222' }} />
                                 <div style={{ paddingLeft: '20px' }}>
                                     <h3>Relationships with customers</h3>
                                     <p id="deskripsi_kerupuk">Menjangkau pengiriman produk di seluruh Indonesia</p>
@@ -869,7 +873,7 @@ export function Home () {
                         </Grid>
                         <Grid item xs={ !isDesktop ? 12 : 0 } ml={isDesktop ? 10 : 0}>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <img src={Pengiriman} style={{ width: '50px', height: '50px', color: '#e32222' }} />
+                                <CiDeliveryTruck style={{ width: '100px', height: '100px', color: '#e32222' }} />
                                 <div style={{ paddingLeft: '20px' }}>
                                     <h3>Guaranteed delivery</h3>
                                     <p id="deskripsi_kerupuk">Kami menjamin pengiriman kerupuk dari Pusat Kerupuk Indonesia yang terpercaya.</p>
@@ -1005,7 +1009,7 @@ export function Home () {
                                     width: '100px',
                                     height: '30px',
                                 }}>
-                                View Details
+                                 View Details
                                 </Button>
                             </div>
                         </Grid>
