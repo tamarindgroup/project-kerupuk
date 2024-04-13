@@ -358,6 +358,7 @@ export function Home () {
 
                     <Drawer
                         sx={{
+                        marginLeft: '-200px',
                         width: '200px',
                         flexShrink: 0,
                         '& .MuiDrawer-paper': {
