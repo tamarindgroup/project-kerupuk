@@ -902,7 +902,7 @@ export function Home () {
 
 
 
-          <div style={{ marginTop: '300px', position: 'relative', marginLeft: '10px'}}>
+          <div style={{ marginTop: '300px', position: 'relative', marginLeft: '1px'}}>
                 <img src={Process} style={{ width: '100%', height: isDesktop ? '800px' : '1500px', zIndex: -2 }} />
                 <div style={{ width: '100%', height: !isDesktop ? '1500px' : '800px', backgroundColor: 'rgba(59, 77, 54, 0.5)', display: isDesktop ? 'flex' : 'block' , justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '0', left: '0' }}>
                     <div style={{ margin: 0, padding: 0, display: 'block', justifyContent: 'center', position: 'relative', color: 'white' }}>
