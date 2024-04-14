@@ -165,54 +165,44 @@ export function Home () {
         defaultMatches: true,
       });
     return (
-        <div style={{ width: "100%" }}>
-          <div className="header" style={{
+        <>
+        <div className="header" style={{
             borderBottom: isDesktop ? 'solid 2px #e32222' : 0,
             borderBottomColor: isDesktop ? '#e32222' : 0,
-            height: isDesktop ? '800px' : '175px',
+            height: isDesktop ? '217px' : '175px',
             width: '100%'
             // boxSizing: 'border-box'
           }}>
-          <div style={{ 
-            display: 'block',
-            position: isDesktop ? 'relative' : 'relative',
-            top: isDesktop ? '50px' : '90px',
-            left: isDesktop ?  '270px' : '35px',
-            width: '400px'
-            }}>
-           <img src={LogoPusatKerupuk} height={ isDesktop ? 90 : 50} width={ isDesktop ? 100 : 50} />
-           <label style={{ top: isDesktop ? '-30px' : '-20px', paddingLeft: '30px', position: 'relative', fontSize: isDesktop ? '22px' : '20px' }}>Pusat Kerupuk Indonesia</label>
-           </div>
             <div className="header-top" style={{
-                top: isDesktop ? '-100px' : 0,
+                marginTop: isDesktop ? '-7px' : '-1px',
                 color: '#fff',
-                width: isDesktop ? '38%' : '100%',
+                width: isDesktop ? '38%' : 'auto',
                 height: isDesktop ? '40px' : '80px',
-                left: isDesktop ? '0' : 0,
+                paddingLeft: isDesktop ? '0' : 60,
                 float: isDesktop ?  'right' : 0,
                 padding: isDesktop ? '0 0 0 350px' : 0,
                 lineHeight: '40px',
-                position: !isDesktop ? 'absolute' : 'relative',
+                position: !isDesktop ? 0 : 'relative',
                 backgroundColor: '#ff9c00',
                 display: isDesktop ? 'flex' : 'block',
                 transform: isDesktop ? "skew(35deg)" : 0
             }}>
              <div className="left" style={{ 
                 display: 'flex',
-                position: 'relative', 
+                // position: 'relative', 
                 top: '-4px', 
                 transform: isDesktop ? "skew(-35deg)" : 0,
-                left: !isDesktop ? '40px' : 0,
+                paddingLeft: isDesktop ? 0 : '60px'
                 }}>
              <AccessTimeIcon style={{ height: '20px', paddingRight: '8px', paddingTop: '10px' }} />
              <label style={{ 
                 paddingTop: isDesktop ? '-20px' : 0, 
                 position: isDesktop ? 'relative' : 0, 
-                top: isDesktop ? 0 : 0 
+                top: isDesktop ? 0 : 0,
                 }}>We are Open: Sen - Sab 7:00 - 18:00</label> 
              </div>
              <div className="right" style={{ 
-                paddingLeft: isDesktop ? '100px' : '330px',
+                paddingLeft: isDesktop ? '100px' : '340px',
                 textAlign: isDesktop ? 'right' : 'center',
                 paddingTop: '0',
                 display: isDesktop ? 'flex' : 'flex',
@@ -236,62 +226,69 @@ export function Home () {
               </Grid>
              </div>
             </div>
-             <div className="hub"
-               style={{ 
-                position: isDesktop ? 'relative' : 'relative',
-                // display: 'flex',
-                float: isDesktop ? 'right' : 0, 
-                left: isDesktop ? '-500px' : '-30px',
-                top: isDesktop ? '-410px' : '120px'
-               }}
-             >
-                <Grid container spacing={2}>
-                 <Grid item display={'flex'}>
-                   <img src={CallIcon} 
-                   height={ isDesktop ? 40 : 30} 
-                   width={ isDesktop ? 50 : 30} 
-                   style={{
-                    paddingLeft: isDesktop ? '' : 60
-                   }}
-                   />
-                   <div style={{ display: 'block', marginTop: isDesktop ? 0 : '1px' }}>
-                   <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Call Us</Typography>
-                   <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>082131131108</Typography>
-                   </div>
-                 </Grid>
-                 <Grid item display={'flex'} style={{ position: 'relative', left: isDesktop ? '-120px' : '-160px' }}>
-                   <img src={EmailIcon} 
-                   height={ isDesktop ? 40 : 30} 
-                   width={ isDesktop ? 50 : 30} 
-                     style={{
-                        position: 'relative',
-                        left: isDesktop ? '200px' : '200px',
-                        top: isDesktop ? 0 : '-1px'
-                     }}
-                    />
-                    <div style={{ display: 'block', position: 'relative', left: isDesktop ? '210px' : '200px', top: isDesktop ? '-2px' : '-1px' }}>
-                   <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Send us Email</Typography>
-                   <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>pusatkerupukindonesia@gmail.com</Typography>
-                   </div>
-                 </Grid>
-                 <Button style={{ 
-                    position: 'relative',
-                    left: '180px',
-                    backgroundColor: '#ff9c00',
-                    height: '40px',
-                    width: '100px',
-                    color: 'white',
-                    top: isDesktop ? '10px' : '40px'
-                 }}>
-                    Contact
-                 </Button>
+            <div style={{
+                display: 'flex',
+                alignItems: 'center', // Meratakan elemen secara vertikal
+                paddingTop: isDesktop ? '50px' : '20px',
+                marginLeft: isDesktop ? '270px' : '60px',
+            }}>
+                <img src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
+                <label style={{ fontSize: isDesktop ? '22px' : '20px' }}>Pusat Kerupuk Indonesia</label>
+            </div>
+            <div className="hub"
+                style={{ 
+                    position: isDesktop ? 'relative' : 0,
+                    float: isDesktop ? 'right' : 0, 
+                    left: isDesktop ? '-500px' : '-30px',
+                    marginTop: isDesktop ? '-410px' : '30px',
+                }}
+            >
+                <Grid container spacing={6} justifyContent="center"> {/* Mengatur grid container menjadi center */}
+                    <Grid item display={'flex'}>
+                        <img src={CallIcon} 
+                        height={ isDesktop ? 40 : 30} 
+                        width={ isDesktop ? 50 : 30} 
+                        style={{
+                            paddingLeft: isDesktop ? '' : 40
+                        }}
+                        />
+                        <div style={{ display: 'block', marginTop: isDesktop ? 0 : '1px' }}>
+                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Call Us</Typography>
+                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>082131131108</Typography>
+                        </div>
+                    </Grid>
+                    <Grid item display={'flex'} style={{left: isDesktop ? '-120px' : '-160px' }}>
+                        <img src={EmailIcon} 
+                        height={ isDesktop ? 40 : 30} 
+                        width={ isDesktop ? 50 : 30} 
+                            style={{
+                                left: isDesktop ? '200px' : '200px',
+                                top: isDesktop ? 0 : '-1px'
+                            }}
+                        />
+                        <div style={{ display: 'block', left: isDesktop ? '210px' : '200px', top: isDesktop ? '-2px' : '-1px' }}>
+                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Send us Email</Typography>
+                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>pusatkerupukindonesia@gmail.com</Typography>
+                        </div>
+                    </Grid>
+                    <Grid item> {/* Menggunakan Grid item untuk tombol Contact */}
+                        <Button style={{ 
+                            backgroundColor: '#ff9c00',
+                            height: '40px',
+                            width: '100px',
+                            color: 'white',
+                            marginTop: isDesktop ? '10px' : '-10px', // Atur margin atas sesuai kebutuhan
+                        }}>
+                            Contact
+                        </Button>
+                    </Grid>
                 </Grid>
-             </div>
+            </div>
              {isDesktop ? 
             <div className="header-bottom" style={{
                 color: 'white',
                 display: 'flex',
-                top: '20px',
+                marginTop: '28px',
                 width: isDesktop ? '55%' : '100%',
                 left: '10px',
                 height: '50px',
@@ -299,12 +296,12 @@ export function Home () {
                 float: 'right',
                 backgroundColor: '#e32222',
                 marginBottom: '-10px',
-                position: 'relative',
+                // position: 'relative',
                 zIndex: '99999',
             }}>
                 <Grid container spacing={8} style={{
                     transform: 'skew(35deg)',
-                    position: 'relative',
+                    // position: 'relative',
                     left: '20px',
                     top: '6px',
                 }}>
@@ -321,7 +318,7 @@ export function Home () {
                         <Button style={{ color: 'white' }} href="/contact">Contact</Button>
                     </Grid>
                     <Grid item style={{
-                        position: 'relative',
+                        // position: 'relative',
                         top: '-7px',
                         left: '200px'
                     }}>
@@ -338,8 +335,8 @@ export function Home () {
                 </Grid>
             </div>
                :  
-               <>
-                    <AppBar style={{ marginTop: '200px', backgroundColor: '#ff9c00', width: '100%' }} position="relative" open={open}>
+               <> 
+                    <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute" open={open}>
                         <Toolbar>
                         <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
                             Menu
@@ -349,7 +346,7 @@ export function Home () {
                             aria-label="open drawer"
                             edge="end"
                             onClick={handleDrawerOpen}
-                            sx={{ ...(open && { display: 'none' }) }}
+                            sx={{ ...(open && { display: 'none' }) }} 
                         >
                             <MenuIcon />
                         </IconButton>
@@ -358,7 +355,6 @@ export function Home () {
 
                     <Drawer
                         sx={{
-                        marginLeft: '-200px',
                         width: '200px',
                         flexShrink: 0,
                         '& .MuiDrawer-paper': {
@@ -696,19 +692,24 @@ export function Home () {
                 </div>
                 </> }
           </div>
-          <div style={{ display: isDesktop ? 'flex' : 'block', width: '100%' }}>
-          <Container style={{
-            position: 'relative',
-            top: isDesktop ? '200px' : '140px',
-            paddingRight: '200px',
-          }}>
+
+
+         
+
+
+
+          <div style={{ display: isDesktop ? 'flex' : 'block', width: '100%', marginTop: '200px'}}>
+            
+
+            <div style={{ width: isDesktop ? 0 : '100%', marginLeft: isDesktop ? 0 : '10px' }}>
+    
             <Typography className="welcome" style={{
                 fontSize: isDesktop ? '24px' : '18px'
             }}>Welcome to</Typography>
             <Typography className="pusat_kerupuk" style={{
                 fontSize: isDesktop ? '33px' : '22px',
                 fontWeight: 'bold',
-                width: '500px'
+                width: '280px'
             }}>Pusat Kerupuk Indonesia</Typography>
             {isDesktop ?
             <p id="deskripsi_kerupuk" style={{
@@ -727,8 +728,8 @@ export function Home () {
             : 
             <>
             <p id="deskripsi_kerupuk" style={{
-                width: isDesktop ? '106%' : '300px',
-                paddingTop: '20px'
+                width: isDesktop ? '100%' : '300px',
+                paddingTop: '20px',
             }}>
            Selamat datang di Pusat Kerupuk Indonesia, tujuan utama Anda untuk menemukan kelezatan kerupuk terbaik dari berbagai penjuru Nusantara! Kami adalah destinasi terpercaya bagi para pecinta makanan yang mencari aneka ragam kerupuk tradisional Indonesia yang autentik dan lezat.
 
@@ -741,7 +742,12 @@ export function Home () {
           </p>
             </>
             }
-            <div id="check-2" style={{ display: 'flex', marginTop: '13px', alignItems: 'center', marginTop: '50px', width: isDesktop ? '300px' : '500px' }}>
+        </div>
+
+
+
+
+            <div id="check-2" style={{ display: 'block', alignItems: 'center', marginTop: '50px', width: isDesktop ? '300px' : '200px', marginLeft: isDesktop ? 0 : '10px' }}>
                 <CheckCircleIcon style={{
                     width: '18px',
                     height: '18px',
@@ -750,7 +756,7 @@ export function Home () {
                 <label style={{ paddingLeft: '15px', margin: 0 }}>Produk Berkualitas</label>
             </div>
 
-            <div id="check-2" style={{ display: 'flex', marginTop: '13px', alignItems: 'center', width: isDesktop ? '300px' : '500px' }}>
+            <div id="check-2" style={{ display: 'block', marginTop: '13px', alignItems: 'center', width: isDesktop ? '300px' : '300px', marginLeft: isDesktop ? 0 : '10px' }}>
                 <CheckCircleIcon style={{
                     width: '18px',
                     height: '18px',
@@ -758,11 +764,15 @@ export function Home () {
                 }} />
                 <label style={{ paddingLeft: '15px', margin: 0 }}>Penyedia Aneka Kerupuk</label>
             </div>
-          </Container>
-          <Container style={{
-            position: 'relative',
-            top: isDesktop ? '200px' : '240px', 
-            marginBottom: isDesktop ? 0 : '200px'
+          </div>
+
+        
+          <div style={{
+            // position: 'relative',
+            // top: isDesktop ? '200px' : '240px', 
+            marginLeft: isDesktop ? 0 : '60px',
+            marginBottom: isDesktop ? 0 : '200px',
+            marginTop: isDesktop ? 0 : '200px'
           }}>
             <div style={{ width: '300px' }}>
                 <img src={Layanan24} style={{
@@ -791,10 +801,11 @@ export function Home () {
               View Details
             </Button>
             </div>
-          </Container>
-          <Container style={{
-            position: 'relative',
-            top: isDesktop ? '200px' : '140px'
+          </div>
+          <div style={{
+            // position: 'relative',
+            top: isDesktop ? '200px' : '140px',
+            marginLeft: isDesktop ? 0 : '60px',
           }}>
             <div style={{ width: '300px' }}>
                 <img src={Produksi} style={{
@@ -823,15 +834,19 @@ export function Home () {
               View Details
             </Button>
             </div>
-          </Container>
           </div>
+
+
+
           <div style={{
             marginTop: '380px',
             display: isDesktop ? 'flex' : 'block'
           }}>
                 <img id="img-kerupuk2" src={ImgKerupuk} style={{
-                    width: isDesktop ? '40%' : '100%',
-                    height: isDesktop ? '500px' : '200px'
+                    width: isDesktop ? '40%' : '90%',
+                    height: isDesktop ? '500px' : '200px',
+                    marginLeft: isDesktop ? 0 : '25px'
+                    
                 }}/>
                 <Grid container style={{ marginLeft: isDesktop ? '50px' : 12, marginTop: '50px', width: isDesktop ? '100%' : '360px' }}>
                     <Typography style={{
@@ -884,7 +899,10 @@ export function Home () {
                     </Grid>
                 </Grid>
           </div>
-          <div style={{ marginTop: '300px', position: 'relative'}}>
+
+
+
+          <div style={{ marginTop: '300px', position: 'relative', marginLeft: '10px'}}>
                 <img src={Process} style={{ width: '100%', height: isDesktop ? '800px' : '1500px', zIndex: -2 }} />
                 <div style={{ width: '100%', height: !isDesktop ? '1500px' : '800px', backgroundColor: 'rgba(59, 77, 54, 0.5)', display: isDesktop ? 'flex' : 'block' , justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '0', left: '0' }}>
                     <div style={{ margin: 0, padding: 0, display: 'block', justifyContent: 'center', position: 'relative', color: 'white' }}>
@@ -925,8 +943,12 @@ export function Home () {
                     </div>
                 </div>
             </div>
-            
-            <div style={{
+
+             
+          
+          
+        
+          <div style={{
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -1048,111 +1070,113 @@ export function Home () {
                     </Grid>
                 </div>
                     : 
-                    <div style={{ marginTop: '600px' }}>
-                    <h3 style={{ 
-                        margin: 0, 
-                        color: 'black', 
-                        zIndex: 2, 
-                        fontSize: '29px', 
-                        position: 'relative',
-                        top: '600px',
-                        textAlign: 'center' 
-                        }}>Other Products</h3> {/* Margin 0 untuk menghapus margin bawaan */}
-                       <Grid container spacing={2} zIndex={2} justifyContent={'center'} mt={80}>
-                        <Grid item>
-                            <div style={{ position: 'relative', marginBottom: '20px', marginLeft: isDesktop ? '10px' : 0, marginRight: isDesktop ? '10px' : 0 }}>
-                                <img src={Asam} style={{ width: '300px', height: '230px' }} />
-                                <div style={{ 
-                                    position: 'absolute', 
-                                    top: 0, 
-                                    right: 0, 
-                                    backgroundColor: '#FF5733', 
-                                    padding: '5px 10px', 
-                                    color: 'white', 
-                                    fontWeight: 'bold' 
-                                    }}>Asam Jawa</div>
-                                <p id="deskripsi_kerupuk" style={{ width: '300px' }}>Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, 
-                                    tetapi juga menyediakan produk lain seperti Asam Jawa. Dengan fokus pada standar 
-                                    produksi yang terjaga, Asam Jawa dari Pusat Kerupuk Indonesia memberikan rasa autentik 
-                                    yang memikat, menjadikannya pilihan yang sempurna sebagai camilan yang lezat dan menyegarkan.
-                                </p>
-                                <Button href="https://www.asamjawagunung.com" target="_blank" id="button-view" style={{
-                                    backgroundColor: '#ff9c00',
-                                    color: 'white',
-                                    borderRadius: '20px',
-                                    fontSize: '9px',
-                                    width: '100px',
-                                    height: '30px',
-                                }}>
-                                View Details
-                                </Button>
-                            </div>
-                        </Grid>
-                        <Grid item>
-                            <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '120px', marginRight: '120px' }}>
-                                <img src={Sohun} style={{ width: '300px', height: '230px' }} />
-                                <div style={{ 
-                                    position: 'absolute', 
-                                    top: 0, 
-                                    right: 0, 
-                                    backgroundColor: '#FF5733', 
-                                    padding: '5px 10px', 
-                                    color: 'white', 
-                                    fontWeight: 'bold' 
-                                    }}>Sohun</div>
-                                    <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                        Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, 
-                                        tetapi juga produk lain seperti Asam Jawa dan Sohun. Dengan fokus pada standar 
-                                        produksi yang terjaga, Sohun dari Pusat Kerupuk Indonesia memberikan pilihan camilan 
-                                        yang lezat dan menyegarkan, dengan cita rasa autentik yang memikat.
-                                </p>
-                                <Button href="http://tamarindindonesia.com" target="_blank" className="view" style={{
-                                    backgroundColor: '#ff9c00',
-                                    color: 'white',
-                                    borderRadius: '20px',
-                                    fontSize: '9px',
-                                    width: '100px',
-                                    height: '30px',
-                                }}>
-                                View Details
-                                </Button>
-                            </div>
-                        </Grid>
-                        <Grid item>
-                            <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '10px', marginRight: '10px' }}>
-                                <img src={KembangTahu} style={{ width: '300px', height: '230px' }} />
-                                <div style={{ 
-                                    position: 'absolute', 
-                                    top: 0, 
-                                    right: 0, 
-                                    backgroundColor: '#FF5733', 
-                                    padding: '5px 10px', 
-                                    color: 'white', 
-                                    fontWeight: 'bold' 
-                                    }}>Kembang Tahu</div>
-                                    <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                        Pusat Kerupuk Indonesia tidak hanya menghadirkan berbagai jenis kerupuk berkualitas tinggi, 
-                                        tetapi juga menawarkan produk lain seperti Kulit Kembang Tahu. Dengan komitmen pada standar 
-                                        produksi yang ketat, Kulit Kembang Tahu dari Pusat Kerupuk Indonesia menghadirkan pilihan 
-                                        camilan yang gurih dan lezat, memenuhi keinginan para pecinta makanan ringan dengan rasa yang 
-                                        autentik dan kualitas yang terjamin.
-                                </p>
-                                <Button href="http://tamarindindonesia.com" target="_blank" id="button-view" style={{
-                                    backgroundColor: '#ff9c00',
-                                    color: 'white',
-                                    borderRadius: '20px',
-                                    fontSize: '9px',
-                                    width: '100px',
-                                    height: '30px',
-                                }}>
-                                View Details
-                                </Button>
-                            </div>
-                        </Grid>
-                    </Grid>
+                    <div style={{ marginTop: '600px', width: '435px' }}>
+                        <h3 style={{ 
+                            color: 'black', 
+                            zIndex: 2, 
+                            fontSize: '29px', 
+                            marginTop: '800px',
+                            textAlign: 'center' 
+                            }}>Other Products</h3> {/* Margin 0 untuk menghapus margin bawaan */}
+                            <Grid container spacing={2} justifyContent="center"> {/* Mengatur grid container menjadi center */}
+                                <Grid item>
+                                    <div style={{ position: 'relative', marginBottom: '20px' }}>
+                                        <img src={Asam} style={{ width: '300px', height: '230px' }} />
+                                        <div style={{ 
+                                            position: 'absolute', 
+                                            top: 0, 
+                                            right: 0, 
+                                            backgroundColor: '#FF5733', 
+                                            padding: '5px 10px', 
+                                            color: 'white', 
+                                            fontWeight: 'bold' 
+                                            }}>Asam Jawa</div>
+                                        <p id="deskripsi_kerupuk" style={{ width: '300px' }}>Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, 
+                                            tetapi juga menyediakan produk lain seperti Asam Jawa. Dengan fokus pada standar 
+                                            produksi yang terjaga, Asam Jawa dari Pusat Kerupuk Indonesia memberikan rasa autentik 
+                                            yang memikat, menjadikannya pilihan yang sempurna sebagai camilan yang lezat dan menyegarkan.
+                                        </p>
+                                        <Button href="https://www.asamjawagunung.com" target="_blank" id="button-view" style={{
+                                            backgroundColor: '#ff9c00',
+                                            color: 'white',
+                                            borderRadius: '20px',
+                                            fontSize: '9px',
+                                            width: '100px',
+                                            height: '30px',
+                                        }}>
+                                        View Details
+                                        </Button>
+                                    </div>
+                                </Grid>
+                                <Grid item>
+                                    <div style={{ position: 'relative', marginBottom: '20px' }}>
+                                        <img src={Sohun} style={{ width: '300px', height: '230px' }} />
+                                        <div style={{ 
+                                            position: 'absolute', 
+                                            top: 0, 
+                                            right: 0, 
+                                            backgroundColor: '#FF5733', 
+                                            padding: '5px 10px', 
+                                            color: 'white', 
+                                            fontWeight: 'bold' 
+                                            }}>Sohun</div>
+                                            <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
+                                                Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, 
+                                                tetapi juga produk lain seperti Asam Jawa dan Sohun. Dengan fokus pada standar 
+                                                produksi yang terjaga, Sohun dari Pusat Kerupuk Indonesia memberikan pilihan camilan 
+                                                yang lezat dan menyegarkan, dengan cita rasa autentik yang memikat.
+                                        </p>
+                                        <Button href="http://tamarindindonesia.com" target="_blank" className="view" style={{
+                                            backgroundColor: '#ff9c00',
+                                            color: 'white',
+                                            borderRadius: '20px',
+                                            fontSize: '9px',
+                                            width: '100px',
+                                            height: '30px',
+                                        }}>
+                                        View Details
+                                        </Button>
+                                    </div>
+                                </Grid>
+                                <Grid item>
+                                    <div style={{ position: 'relative', marginBottom: '20px' }}>
+                                        <img src={KembangTahu} style={{ width: '300px', height: '230px' }} />
+                                        <div style={{ 
+                                            position: 'absolute', 
+                                            top: 0, 
+                                            right: 0, 
+                                            backgroundColor: '#FF5733', 
+                                            padding: '5px 10px', 
+                                            color: 'white', 
+                                            fontWeight: 'bold' 
+                                            }}>Kembang Tahu</div>
+                                            <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
+                                                Pusat Kerupuk Indonesia tidak hanya menghadirkan berbagai jenis kerupuk berkualitas tinggi, 
+                                                tetapi juga menawarkan produk lain seperti Kulit Kembang Tahu. Dengan komitmen pada standar 
+                                                produksi yang ketat, Kulit Kembang Tahu dari Pusat Kerupuk Indonesia menghadirkan pilihan 
+                                                camilan yang gurih dan lezat, memenuhi keinginan para pecinta makanan ringan dengan rasa yang 
+                                                autentik dan kualitas yang terjamin.
+                                        </p>
+                                        <Button href="http://tamarindindonesia.com" target="_blank" id="button-view" style={{
+                                            backgroundColor: '#ff9c00',
+                                            color: 'white',
+                                            borderRadius: '20px',
+                                            fontSize: '9px',
+                                            width: '100px',
+                                            height: '30px',
+                                        }}>
+                                        View Details
+                                        </Button>
+                                    </div>
+                                </Grid>
+                            </Grid>
                     </div>
                     }
             </div>
+            
+           
+
+
 
             <ReactWhatsapp id="icon-whatsapp" style={{ 
                 width: 0,
@@ -1269,6 +1293,6 @@ export function Home () {
             <div style={{ width: '100%', backgroundColor: '#1f1e21', height: isDesktop ? '90px' : '100px', marginTop:  isDesktop ? '-10px' : 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <span style={{ color: 'white' }}><label style={{ color:  "#ff9c00"}}>@2024</label> Pusat Kerupuk Indonesia</span>
             </div>
-        </div>
+        </>
     )
 }

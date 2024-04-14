@@ -27,14 +27,18 @@
 
 #check-2 {
   font-family: "Reem Kufi Fun", sans-serif;
-  font-optical-sizing: auto;
+  /* font-optical-sizing: auto; */
   font-style: normal;
 }
 
 #deskripsi_kerupuk {
   font-family: "Darker Grotesque", sans-serif;
-  font-optical-sizing: auto;
+  /* font-optical-sizing: auto; */
   font-style: normal;
+}
+
+.lingkaran-container {
+  position: relative;
 }
 
 
@@ -80,7 +84,7 @@
 .header {
   border-top-color: #ff9c00;
   /* box-sizing: border-box; */
-  position: relative;
+  /* position: relative; */
   background-color: #fff;
   border-top: solid 2px #ff9c00;
 }
@@ -115,9 +119,6 @@
 }
 
 
-.lingkaran-container {
-  position: relative;
-}
 
 .lingkaran {
   transition: transform 0.5s; /* Menerapkan transisi pada transformasi */
@@ -134,9 +135,6 @@
   transform: translate(-50%, -50%);
 }
 
-.barang {
-  position: relative;
-}
 
 .barang::before {
   content: "";

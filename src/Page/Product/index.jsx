@@ -135,46 +135,36 @@ export function Product() {
             width: '100%'
             // boxSizing: 'border-box'
           }}>
-          <div style={{ 
-            display: 'block',
-            position: isDesktop ? 'relative' : 'relative',
-            top: isDesktop ? '50px' : '90px',
-            left: isDesktop ?  '270px' : '35px',
-            width: '400px'
-            }}>
-           <img src={LogoPusatKerupuk} height={ isDesktop ? 90 : 50} width={ isDesktop ? 100 : 50} />
-           <label style={{ top: isDesktop ? '-30px' : '-20px', paddingLeft: '30px', position: 'relative', fontSize: isDesktop ? '22px' : '20px' }}>Pusat Kerupuk Indonesia</label>
-           </div>
             <div className="header-top" style={{
-                top: isDesktop ? '-100px' : 0,
+                marginTop: isDesktop ? '-7px' : '-1px',
                 color: '#fff',
-                width: isDesktop ? '38%' : '100%',
+                width: isDesktop ? '38%' : 'auto',
                 height: isDesktop ? '40px' : '80px',
-                left: isDesktop ? '0' : 0,
+                paddingLeft: isDesktop ? '0' : 60,
                 float: isDesktop ?  'right' : 0,
                 padding: isDesktop ? '0 0 0 350px' : 0,
                 lineHeight: '40px',
-                position: !isDesktop ? 'absolute' : 'relative',
+                position: !isDesktop ? 0 : 'relative',
                 backgroundColor: '#ff9c00',
                 display: isDesktop ? 'flex' : 'block',
                 transform: isDesktop ? "skew(35deg)" : 0
             }}>
              <div className="left" style={{ 
                 display: 'flex',
-                position: 'relative', 
+                // position: 'relative', 
                 top: '-4px', 
                 transform: isDesktop ? "skew(-35deg)" : 0,
-                left: !isDesktop ? '40px' : 0,
+                paddingLeft: isDesktop ? 0 : '60px'
                 }}>
              <AccessTimeIcon style={{ height: '20px', paddingRight: '8px', paddingTop: '10px' }} />
              <label style={{ 
                 paddingTop: isDesktop ? '-20px' : 0, 
                 position: isDesktop ? 'relative' : 0, 
-                top: isDesktop ? 0 : 0 
+                top: isDesktop ? 0 : 0,
                 }}>We are Open: Sen - Sab 7:00 - 18:00</label> 
              </div>
              <div className="right" style={{ 
-                paddingLeft: isDesktop ? '100px' : '330px',
+                paddingLeft: isDesktop ? '100px' : '340px',
                 textAlign: isDesktop ? 'right' : 'center',
                 paddingTop: '0',
                 display: isDesktop ? 'flex' : 'flex',
@@ -198,62 +188,69 @@ export function Product() {
               </Grid>
              </div>
             </div>
-             <div className="hub"
-               style={{ 
-                position: isDesktop ? 'relative' : 'relative',
-                // display: 'flex',
-                float: isDesktop ? 'right' : 0, 
-                left: isDesktop ? '-500px' : '-30px',
-                top: isDesktop ? '-410px' : '120px'
-               }}
-             >
-                <Grid container spacing={2}>
-                 <Grid item display={'flex'}>
-                   <img src={CallIcon} 
-                   height={ isDesktop ? 40 : 30} 
-                   width={ isDesktop ? 50 : 30} 
-                   style={{
-                    paddingLeft: isDesktop ? '' : 60
-                   }}
-                   />
-                   <div style={{ display: 'block', marginTop: isDesktop ? 0 : '1px' }}>
-                   <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Call Us</Typography>
-                   <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>082131131108</Typography>
-                   </div>
-                 </Grid>
-                 <Grid item display={'flex'} style={{ position: 'relative', left: isDesktop ? '-120px' : '-160px' }}>
-                   <img src={EmailIcon} 
-                   height={ isDesktop ? 40 : 30} 
-                   width={ isDesktop ? 50 : 30} 
-                     style={{
-                        position: 'relative',
-                        left: isDesktop ? '200px' : '200px',
-                        top: isDesktop ? 0 : '-1px'
-                     }}
-                    />
-                    <div style={{ display: 'block', position: 'relative', left: isDesktop ? '210px' : '200px', top: isDesktop ? '-2px' : '-1px' }}>
-                   <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Send us Email</Typography>
-                   <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>pusatkerupukindonesia@gmail.com</Typography>
-                   </div>
-                 </Grid>
-                 <Button style={{ 
-                    position: 'relative',
-                    left: '180px',
-                    backgroundColor: '#ff9c00',
-                    height: '40px',
-                    width: '100px',
-                    color: 'white',
-                    top: isDesktop ? '10px' : '40px'
-                 }}>
-                    Contact
-                 </Button>
+            <div style={{
+                display: 'flex',
+                alignItems: 'center', // Meratakan elemen secara vertikal
+                paddingTop: isDesktop ? '50px' : '20px',
+                marginLeft: isDesktop ? '270px' : '60px',
+            }}>
+                <img src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
+                <label style={{ fontSize: isDesktop ? '22px' : '20px' }}>Pusat Kerupuk Indonesia</label>
+            </div>
+            <div className="hub"
+                style={{ 
+                    position: isDesktop ? 'relative' : 0,
+                    float: isDesktop ? 'right' : 0, 
+                    left: isDesktop ? '-500px' : '-30px',
+                    marginTop: isDesktop ? '-410px' : '30px',
+                }}
+            >
+                <Grid container spacing={6} justifyContent="center"> {/* Mengatur grid container menjadi center */}
+                    <Grid item display={'flex'}>
+                        <img src={CallIcon} 
+                        height={ isDesktop ? 40 : 30} 
+                        width={ isDesktop ? 50 : 30} 
+                        style={{
+                            paddingLeft: isDesktop ? '' : 40
+                        }}
+                        />
+                        <div style={{ display: 'block', marginTop: isDesktop ? 0 : '1px' }}>
+                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Call Us</Typography>
+                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>082131131108</Typography>
+                        </div>
+                    </Grid>
+                    <Grid item display={'flex'} style={{left: isDesktop ? '-120px' : '-160px' }}>
+                        <img src={EmailIcon} 
+                        height={ isDesktop ? 40 : 30} 
+                        width={ isDesktop ? 50 : 30} 
+                            style={{
+                                left: isDesktop ? '200px' : '200px',
+                                top: isDesktop ? 0 : '-1px'
+                            }}
+                        />
+                        <div style={{ display: 'block', left: isDesktop ? '210px' : '200px', top: isDesktop ? '-2px' : '-1px' }}>
+                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Send us Email</Typography>
+                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>pusatkerupukindonesia@gmail.com</Typography>
+                        </div>
+                    </Grid>
+                    <Grid item> {/* Menggunakan Grid item untuk tombol Contact */}
+                        <Button style={{ 
+                            backgroundColor: '#ff9c00',
+                            height: '40px',
+                            width: '100px',
+                            color: 'white',
+                            marginTop: isDesktop ? '10px' : '-10px', // Atur margin atas sesuai kebutuhan
+                        }}>
+                            Contact
+                        </Button>
+                    </Grid>
                 </Grid>
-             </div>
+            </div>
              {isDesktop ? 
             <div className="header-bottom" style={{
                 color: 'white',
                 display: 'flex',
-                top: '20px',
+                marginTop: '28px',
                 width: isDesktop ? '55%' : '100%',
                 left: '10px',
                 height: '50px',
@@ -261,12 +258,12 @@ export function Product() {
                 float: 'right',
                 backgroundColor: '#e32222',
                 marginBottom: '-10px',
-                position: 'relative',
+                // position: 'relative',
                 zIndex: '99999',
             }}>
                 <Grid container spacing={8} style={{
                     transform: 'skew(35deg)',
-                    position: 'relative',
+                    // position: 'relative',
                     left: '20px',
                     top: '6px',
                 }}>
@@ -283,7 +280,7 @@ export function Product() {
                         <Button style={{ color: 'white' }} href="/contact">Contact</Button>
                     </Grid>
                     <Grid item style={{
-                        position: 'relative',
+                        // position: 'relative',
                         top: '-7px',
                         left: '200px'
                     }}>
@@ -300,8 +297,8 @@ export function Product() {
                 </Grid>
             </div>
                :  
-               <>
-                    <AppBar style={{ marginTop: '200px', backgroundColor: '#ff9c00' }} position="relative" open={open}>
+               <> 
+                    <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute" open={open}>
                         <Toolbar>
                         <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
                             Menu
@@ -311,7 +308,7 @@ export function Product() {
                             aria-label="open drawer"
                             edge="end"
                             onClick={handleDrawerOpen}
-                            sx={{ ...(open && { display: 'none' }) }}
+                            sx={{ ...(open && { display: 'none' }) }} 
                         >
                             <MenuIcon />
                         </IconButton>
@@ -388,10 +385,9 @@ export function Product() {
             />
         </ReactWhatsapp>
 
-
           <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? '300px' : '1250px' }}>
-                <Grid container style={{display: 'flex', justifyContent: 'center', position: 'relative', top: isDesktop ? '80px' : '50px', left: isDesktop ? 0 : 12 }}>
-                <Grid item xs={12} sm={2}>
+                <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
+                <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
                         <img src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
