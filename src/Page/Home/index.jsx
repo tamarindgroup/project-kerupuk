@@ -701,20 +701,22 @@ export function Home () {
           <div style={{ display: isDesktop ? 'flex' : 'block', width: '100%', marginTop: '200px'}}>
             
 
-            <div style={{ width: isDesktop ? 0 : '100%', marginLeft: isDesktop ? 0 : '10px' }}>
+            <div style={{ width: isDesktop ? 0 : '100%'}}>
     
             <Typography className="welcome" style={{
-                fontSize: isDesktop ? '24px' : '18px'
+                fontSize: isDesktop ? '24px' : '18px',
+                paddingLeft: isDesktop ? 0 : '20px'
             }}>Welcome to</Typography>
             <Typography className="pusat_kerupuk" style={{
                 fontSize: isDesktop ? '33px' : '22px',
                 fontWeight: 'bold',
-                width: '280px'
+                width: '280px',
+                paddingLeft: isDesktop ? 0 : '20px'
             }}>Pusat Kerupuk Indonesia</Typography>
             {isDesktop ?
             <p id="deskripsi_kerupuk" style={{
                 width: isDesktop ? '106%' : '300px',
-                paddingTop: '20px'
+                paddingTop: '20px',
             }}>
            Selamat datang di Pusat Kerupuk Indonesia, tujuan utama Anda untuk menemukan kelezatan kerupuk terbaik dari berbagai penjuru Nusantara! Kami adalah destinasi terpercaya bagi para pecinta makanan yang mencari aneka ragam kerupuk tradisional Indonesia yang autentik dan lezat.
 
@@ -730,6 +732,7 @@ export function Home () {
             <p id="deskripsi_kerupuk" style={{
                 width: isDesktop ? '100%' : '300px',
                 paddingTop: '20px',
+                paddingLeft: '20px'
             }}>
            Selamat datang di Pusat Kerupuk Indonesia, tujuan utama Anda untuk menemukan kelezatan kerupuk terbaik dari berbagai penjuru Nusantara! Kami adalah destinasi terpercaya bagi para pecinta makanan yang mencari aneka ragam kerupuk tradisional Indonesia yang autentik dan lezat.
 
@@ -747,7 +750,7 @@ export function Home () {
 
 
 
-            <div id="check-2" style={{ display: 'block', alignItems: 'center', marginTop: '50px', width: isDesktop ? '300px' : '200px', marginLeft: isDesktop ? 0 : '10px' }}>
+            <div id="check-2" style={{ display: 'block', alignItems: 'center', marginTop: '50px', width: isDesktop ? '300px' : '200px', marginLeft: isDesktop ? 0 : '20px' }}>
                 <CheckCircleIcon style={{
                     width: '18px',
                     height: '18px',
@@ -756,7 +759,7 @@ export function Home () {
                 <label style={{ paddingLeft: '15px', margin: 0 }}>Produk Berkualitas</label>
             </div>
 
-            <div id="check-2" style={{ display: 'block', marginTop: '13px', alignItems: 'center', width: isDesktop ? '300px' : '300px', marginLeft: isDesktop ? 0 : '10px' }}>
+            <div id="check-2" style={{ display: 'block', marginTop: '13px', alignItems: 'center', width: isDesktop ? '300px' : '300px', marginLeft: isDesktop ? 0 : '20px' }}>
                 <CheckCircleIcon style={{
                     width: '18px',
                     height: '18px',
@@ -770,7 +773,7 @@ export function Home () {
           <div style={{
             // position: 'relative',
             // top: isDesktop ? '200px' : '240px', 
-            marginLeft: isDesktop ? 0 : '60px',
+            marginLeft: isDesktop ? 0 : '55px',
             marginBottom: isDesktop ? 0 : '200px',
             marginTop: isDesktop ? 0 : '200px'
           }}>
@@ -805,7 +808,7 @@ export function Home () {
           <div style={{
             // position: 'relative',
             top: isDesktop ? '200px' : '140px',
-            marginLeft: isDesktop ? 0 : '60px',
+            marginLeft: isDesktop ? 0 : '55px',
           }}>
             <div style={{ width: '300px' }}>
                 <img src={Produksi} style={{
@@ -845,7 +848,7 @@ export function Home () {
                 <img id="img-kerupuk2" src={ImgKerupuk} style={{
                     width: isDesktop ? '40%' : '90%',
                     height: isDesktop ? '500px' : '200px',
-                    marginLeft: isDesktop ? 0 : '25px'
+                    marginLeft: isDesktop ? 0 : '20px'
                     
                 }}/>
                 <Grid container style={{ marginLeft: isDesktop ? '50px' : 12, marginTop: '50px', width: isDesktop ? '100%' : '360px' }}>
