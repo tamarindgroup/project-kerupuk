@@ -192,7 +192,7 @@ export function Home () {
                 // position: 'relative', 
                 top: '-4px', 
                 transform: isDesktop ? "skew(-35deg)" : 0,
-                paddingLeft: isDesktop ? 0 : '60px'
+                paddingLeft: isDesktop ? 0 : '50px'
                 }}>
              <AccessTimeIcon style={{ height: '20px', paddingRight: '8px', paddingTop: '10px' }} />
              <label style={{ 
@@ -230,7 +230,7 @@ export function Home () {
                 display: 'flex',
                 alignItems: 'center', // Meratakan elemen secara vertikal
                 paddingTop: isDesktop ? '50px' : '20px',
-                marginLeft: isDesktop ? '270px' : '60px',
+                marginLeft: isDesktop ? '270px' : '50px',
             }}>
                 <img src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
                 <label style={{ fontSize: isDesktop ? '22px' : '20px' }}>Pusat Kerupuk Indonesia</label>
@@ -241,6 +241,7 @@ export function Home () {
                     float: isDesktop ? 'right' : 0, 
                     left: isDesktop ? '-500px' : '-30px',
                     marginTop: isDesktop ? '-410px' : '30px',
+                    marginLeft: isDesktop ? 0 : '-20px'
                 }}
             >
                 <Grid container spacing={6} justifyContent="center"> {/* Mengatur grid container menjadi center */}
@@ -773,7 +774,7 @@ export function Home () {
           <div style={{
             // position: 'relative',
             // top: isDesktop ? '200px' : '240px', 
-            marginLeft: isDesktop ? 0 : '55px',
+            marginLeft: isDesktop ? 0 : '50px',
             marginBottom: isDesktop ? 0 : '200px',
             marginTop: isDesktop ? 0 : '200px'
           }}>
@@ -808,7 +809,7 @@ export function Home () {
           <div style={{
             // position: 'relative',
             top: isDesktop ? '200px' : '140px',
-            marginLeft: isDesktop ? 0 : '55px',
+            marginLeft: isDesktop ? 0 : '50px',
           }}>
             <div style={{ width: '300px' }}>
                 <img src={Produksi} style={{
