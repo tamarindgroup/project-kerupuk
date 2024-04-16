@@ -443,11 +443,11 @@ export function Contact() {
                         </div>
                     </Grid>
                     <Grid item>
-                        <div style={{ marginTop: isDesktop ? 0 : 60 }}>
+                    <div style={{ marginTop: isDesktop ? 0 : 60 }}>
                             <label style={{ color: 'white', fontSize: '20px' }}> Service Hours </label>
                             <br />
                             <br />
-                            <div style={{ width: isDesktop ?  '100%' : 245 }}>
+                            <div style={{ width: isDesktop ?  '100%' : 270 }}>
                             <label style={{ color: 'white' }}>Senin</label>
                             <label style={{ color: 'white', paddingLeft: '105px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
