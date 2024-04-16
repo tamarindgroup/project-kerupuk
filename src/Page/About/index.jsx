@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState, useRef} from "react";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
@@ -23,6 +23,8 @@ import { SiGooglemybusiness } from "react-icons/si";
 import Location from '../../Image/location.png';
 import ReactWhatsapp from 'react-whatsapp';
 import IconWhatsapp from '../../Image/icon-whatsapp.png'
+import Kerupuk1 from '../../Image/kerupuk_1.png';
+import Card from '@mui/material/Card';
 
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -39,6 +41,9 @@ import { VscHome } from "react-icons/vsc";
 import { HiOutlineClipboardList } from "react-icons/hi";
 import { FcAbout } from "react-icons/fc";
 import { LuContact } from "react-icons/lu";
+import { TbArrowBadgeRightFilled } from "react-icons/tb";
+import { LineWeight } from "@mui/icons-material";
+
 
 export function About() {
 
@@ -126,6 +131,67 @@ export function About() {
         },
       }));
 
+
+    const [isVisible, setIsVisible] = useState(false);
+    const [count, setCount] = useState(0);
+    const [count1000, setCount1000] = useState(0);
+
+    const counterRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                // Ketika elemen masuk ke dalam viewport
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(entry.target); // Berhenti mengamati setelah elemen terlihat
+                }
+            },
+            { threshold: 0.5 } // Ambil tindakan ketika elemen terlihat 50% di dalam viewport
+        );
+
+        // Mulai mengamati elemen ketika komponen dimuat
+        if (counterRef.current) {
+            observer.observe(counterRef.current);
+        }
+
+        return () => {
+            if (counterRef.current) {
+                observer.unobserve(counterRef.current); // Berhenti mengamati saat komponen dibongkar
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (isVisible) {
+            let currentCount = 0;
+            const interval = setInterval(() => {
+                if (currentCount < 500) {
+                    currentCount += 1;
+                    setCount(currentCount);
+                } else {
+                    clearInterval(interval);
+                }
+            }, 10); // interval 10ms untuk memberikan efek animasi
+
+            let currentCount1000 = 0;
+            const interval1000 = setInterval(() => {
+                if (currentCount1000 < 1000) {
+                    currentCount1000 += 1;
+                    setCount1000(currentCount1000);
+                } else {
+                    clearInterval(interval1000);
+                }
+            }, 5); // interval 5ms untuk memberikan efek animasi
+
+            return () => {
+                clearInterval(interval);
+                clearInterval(interval1000);
+            };
+        }
+    }, [isVisible]);
+
+
     return (
         <>
          <div className="header" style={{
@@ -166,7 +232,7 @@ export function About() {
              <div className="right" style={{ 
                 paddingLeft: isDesktop ? '100px' : '340px',
                 textAlign: isDesktop ? 'right' : 'center',
-                paddingTop: '0',
+                paddingTop: !isDesktop ? '0' : '7px',
                 display: isDesktop ? 'flex' : 'flex',
                 float: isDesktop ? 'right' : 'left',
                 marginLeft: !isDesktop ? '-210px' : 0,
@@ -201,8 +267,8 @@ export function About() {
                 style={{ 
                     position: isDesktop ? 'relative' : 0,
                     float: isDesktop ? 'right' : 0, 
-                    left: isDesktop ? '-500px' : '-30px',
-                    marginTop: isDesktop ? '-410px' : '30px',
+                    left: isDesktop ? '-250px' : '-30px',
+                    marginTop: isDesktop ? '-50px' : '30px',
                 }}
             >
                 <Grid container spacing={6} justifyContent="center"> {/* Mengatur grid container menjadi center */}
@@ -247,25 +313,25 @@ export function About() {
                 </Grid>
             </div>
              {isDesktop ? 
+            <div style={{ width: '100%' }}>
             <div className="header-bottom" style={{
                 color: 'white',
                 display: 'flex',
                 marginTop: '28px',
-                width: isDesktop ? '55%' : '100%',
-                left: '10px',
+                width: isDesktop ? '38%' : '100%',
                 height: '50px',
-                padding: '0 0 0 25px',
+                padding: '0 0 0 350px',
                 float: 'right',
                 backgroundColor: '#e32222',
                 marginBottom: '-10px',
-                // position: 'relative',
+                position: 'relative',
                 zIndex: '99999',
+                marginLeft: '300px'
             }}>
-                <Grid container spacing={8} style={{
+                <Grid container spacing={6} style={{
                     transform: 'skew(35deg)',
-                    // position: 'relative',
-                    left: '20px',
-                    top: '6px',
+                    paddingTop: '5px',
+                    marginLeft: '-350px'
                 }}>
                     <Grid item>
                         <Button style={{ color: 'white' }} href="/">Home</Button>
@@ -295,6 +361,7 @@ export function About() {
                         </Search>
                     </Grid>
                 </Grid>
+            </div>
             </div>
                :  
                <> 
@@ -365,6 +432,238 @@ export function About() {
             }
           </div>
 
+
+          <div style={{ 
+            width: isDesktop ? '100%' : '100%',
+            marginTop: isDesktop ? '100px' : '200px',
+            display: isDesktop ? 'flex' : 'block',
+            justifyContent: 'center'
+            }}>
+             
+             <div style={{ position: isDesktop ? 'relative' : 'relative', width: isDesktop ? '40%' : '100%', height: isDesktop ? '440px' : '400px' }}>
+                <div
+                    style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(227, 34, 34, 0.5)', // Warna #e32222 dengan tingkat transparansi 0.5
+                    }}
+                ></div>
+                <img
+                    src={Kerupuk1}
+                    style={{
+                    width: '100%',
+                    height: '100%',
+                    zIndex: 1, // Menempatkan gambar di atas lapisan
+                    }}
+                />
+                 <div style={{ 
+                    position: 'absolute', 
+                    top: isDesktop ? '50%' : '48%', 
+                    left: isDesktop ? '60%' : '43%', 
+                    transform: 'translate(-50%, -50%)', 
+                    textAlign: 'left', 
+                    width: isDesktop ? '100%' : '80%',
+                    color: 'white', 
+                    }}>
+                    <h4 style={{ margin: 0 }}>Great Movement</h4>
+                    <h1 style={{ margin: 0 }}>Products</h1>
+                    <p style={{ paddingTop: isDesktop ? '5px' : 0, width: isDesktop ? '300px' : '250px' }}>Jika Anda mempunyai kebutuhan Pindah, cukup hubungi 24 jam kami</p>
+                    <h2>Hubungi Kami</h2>
+                    <h1>082131131108</h1>
+                    <label style={{ paddingLeft: isDesktop ? '80px' : '90px' }}>OR</label>
+                    <br />
+                    <Button id="button_contact" style={{ 
+                        backgroundColor: '#ff9c00', 
+                        color: 'white', 
+                        margin: isDesktop ? '-11px' : '-3px',
+                        width: '220px',
+                        height: '50px',
+                        borderRadius: '20px',
+                        marginTop: isDesktop ? '30px' : '20px' 
+                        }}>Contact Us</Button>
+                </div>
+                </div>
+
+                <div style={{ 
+                    height: '440px', // Tetapkan tinggi yang sesuai
+                    width: '100px',
+                    backgroundColor: '#e8041f',
+                    opacity: 0.7, // Mengatur opasitas latar belakang
+                    zIndex: 0, // Menempatkan di bawah gambar
+                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, -1120% 1280%, 0% 100%)',
+                }}>
+                    {/* Garis atau tulisan di sini */}
+                </div>
+          
+                <div style={{ 
+                    display: 'block', 
+                    width: isDesktop ? '60%' : '89%', 
+                    marginLeft: isDesktop ? '-97px' : 0, 
+                    backgroundColor: '#ff9c00', 
+                    color: 'white',
+                    height: isDesktop ? '400px' : '450px',
+                    textAlign: 'center', // Mengatur konten secara horizontal di tengah
+                    padding: '20px', // Memberikan ruang di sekitar konten
+                    fontSize: '18px',
+                    zIndex: -2
+                }}>
+                <div style={{ paddingLeft: isDesktop ?  '100px' : 0 }}>
+                <h2 style={{ textAlign: 'left' }}> About Products </h2>
+                <p id="deskripsi_kerupuk" style={{ textAlign: 'left' }}> Pusat Kerupuk Indonesia adalah tempat terbaik untuk menemukan kerupuk berkualitas tinggi dari seluruh Indonesia. Kami menyajikan beragam varian kerupuk autentik dengan rasa dan tekstur yang lezat. Dapatkan koleksi lengkap kerupuk dari berbagai daerah dengan kualitas terbaik hanya di Pusat Kerupuk Indonesia. </p>
+        
+                    <div style={{ display: 'flex' }}>
+                        <div className="about-1" style={{ fontSize: isDesktop ? '19px' : '13px', width: isDesktop ? '200px' : '138px' }}>
+                            <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
+                            <div style={{ marginRight: '10px' }}>
+                                <TbArrowBadgeRightFilled height={100} width={100} />
+                            </div>
+                            <div>
+                                <label>Koleksi lengkap</label>
+                            </div>
+                        </div>
+                        <div>
+                        <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
+                            <div style={{ marginRight: '10px' }}>
+                                <TbArrowBadgeRightFilled height={100} width={100} />
+                            </div>
+                            <div>
+                                <label>Kualitas terbaik</label>
+                            </div>
+                        </div>
+                        <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
+                            <div style={{ marginRight: '10px' }}>
+                                <TbArrowBadgeRightFilled height={100} width={100} />
+                            </div>
+                            <div>
+                                <label>Rasa autentik</label>
+                            </div>
+                        </div>
+                        <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
+                            <div style={{ marginRight: '10px' }}>
+                                <TbArrowBadgeRightFilled height={100} width={100} />
+                            </div>
+                            <div>
+                                <label>Tekstur Renyah</label>
+                            </div>
+                        </div>
+                        </div>
+                    </div> 
+
+                    <div className="about-2" style={{ marginLeft: isDesktop ? '100px' : '15px', fontSize: isDesktop ? '19px' : '13px' }}>
+                        <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
+                            <div style={{ marginRight: '10px' }}>
+                                <TbArrowBadgeRightFilled height={100} width={100} />
+                            </div>
+                            <div>
+                                <label>Standar produksi tinggi</label>
+                            </div>
+                        </div>
+                        <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
+                            <div style={{ marginRight: '10px' }}>
+                                <TbArrowBadgeRightFilled height={100} width={100} />
+                            </div>
+                            <div>
+                                <label>Pilihan camilan sehat</label>
+                            </div>
+                        </div>
+                        <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
+                            <div style={{ marginRight: '10px' }}>
+                                <TbArrowBadgeRightFilled height={100} width={100} />
+                            </div>
+                            <div>
+                                <label>Pengiriman nasional</label>
+                            </div>
+                        </div>
+                        <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
+                            <div style={{ marginRight: isDesktop ? '10px' : '10px' }}>
+                                <TbArrowBadgeRightFilled height={100} width={100} />
+                            </div>
+                            <div>
+                                <label>Layanan pelanggan ramah</label>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+        <div style={{
+            position: 'relative',
+            height: '100vh',
+            display: isDesktop ? 'flex' : 'block',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: isDesktop ? 0 : '100px'
+        }}>
+            <Card style={{  
+                height: '500px',
+                width: '400px',
+                borderRadius: '20px',
+                margin: isDesktop ? '50px' : '-20px',
+                position: 'relative',
+                overflow: 'hidden', // Untuk memastikan bayangan tetap di dalam kartu
+                boxShadow: '0px 0px 20px rgba(128, 128, 128, 0.2), 0px 10px 20px rgba(128, 128, 128, 0.2), 10px 0px 20px rgba(128, 128, 128, 0.2), 10px 10px 20px rgba(128, 128, 128, 0.2)' // Bayangan dari berbagai arah
+            }}>
+                <div style={{ 
+                    display: 'flex', 
+                    justifyContent: 'center', // Menengahkan secara horizontal
+                    alignItems: 'center', // Menengahkan secara vertikal
+                }}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '40px', marginTop: '40px' }}>
+                            <img style={{ width: '100px' }} decoding="async" src="https://gracethemesdemo.com/shifters/wp-content/themes/shifters-pro/images/counter-icon-1.png" />
+                            <div style={{ marginLeft: '40px' }} ref={counterRef}>
+                                <label style={{ fontSize: '58px', fontWeight: 800, LineWeight: '100%' }}>{count}+</label>
+                                <br />
+                                <label style={{ marginTop: '5px', color: '#3d3d3d', fontWeight: 600, fontSize: '17px' }}>Happy Customer</label>
+                            </div>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}>
+                             <img style={{ width: '100px', marginBottom: '10px' }} decoding="async" src="https://gracethemesdemo.com/shifters/wp-content/themes/shifters-pro/images/counter-icon-2.png" />
+                             <div style={{ marginLeft: '40px' }}>
+                             <label style={{ fontSize: '58px', fontWeight: 800, LineWeight: '100%' }}>{count1000}+</label>
+                                <br />
+                                <label style={{ marginTop: '5px', color: '#3d3d3d', fontWeight: 600, fontSize: '17px' }}>Running Products</label>
+                            </div>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                             <img style={{ width: '100px' }} decoding="async" src="https://gracethemesdemo.com/shifters/wp-content/themes/shifters-pro/images/counter-icon-3.png" />
+                             <div style={{ marginLeft: '40px' }}>
+                                <label style={{ fontSize: '58px', fontWeight: 800, LineWeight: '100%' }}>35+</label>
+                                <br />
+                                <label style={{ marginTop: '5px', color: '#3d3d3d', fontWeight: 600, fontSize: '17px' }}>Years of Serving</label>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </Card>
+
+            <div style={{ width: isDesktop ? '600px' : '300px', marginLeft: isDesktop ? 0 : '20px', marginTop: isDesktop ? 0 : '50px' }}>
+                <label style={{ textAlign: 'left', fontWeight: 800, color: '#353535', width: '180px', fontSize: '34px' }}>Starting from Planning to Distribution</label>
+                <p id="deskripsi_kerupuk">
+                Pusat Kerupuk Indonesia mengutamakan kualitas dari awal perencanaan hingga distribusi. 
+                Setiap langkah produksi dirancang secara cermat oleh tim ahli kami, mulai dari pemilihan 
+                bahan baku berkualitas hingga proses pembuatan yang menggabungkan teknologi modern dengan metode tradisional. 
+                Kami memastikan bahwa setiap kerupuk yang dihasilkan memiliki rasa autentik dan tekstur yang renyah, sehingga 
+                memuaskan setiap lidah yang mencicipinya.
+                <br />
+                <br />
+                Setelah melewati serangkaian uji kualitas yang ketat, produk kerupuk kami siap untuk didistribusikan ke seluruh 
+                penjuru Indonesia. Melalui jaringan distribusi yang luas dan efisien, kami menjamin bahwa setiap pelanggan kami 
+                dapat menikmati kerupuk berkualitas tinggi dengan cepat dan tepat waktu. Dengan pendekatan yang terintegrasi dalam 
+                proses Starting from Planning to Distribution, Pusat Kerupuk Indonesia menjaga standar mutu dan kepuasan pelanggan 
+                sebagai fokus utama dalam setiap langkahnya.
+                </p>
+                <Button style={{ backgroundColor: '#ff9c00', color: 'white', borderRadius: '20px', width: '170px', marginTop: '20px' }}>Get Started</Button>
+            </div>
+        </div>
+
+
+
           <ReactWhatsapp id="icon-whatsapp" style={{ 
                 width: 0,
                 height: 0,
@@ -385,7 +684,7 @@ export function About() {
             />
         </ReactWhatsapp>
 
-          <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? '300px' : '1250px' }}>
+          <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? '100px' : '550px' }}>
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>

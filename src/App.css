@@ -118,6 +118,10 @@
   cursor: pointer;
 }
 
+#button_contact:hover {
+  background-color: #282c34;
+}
+
 
 
 .lingkaran {
@@ -150,3 +154,29 @@
 /* #img-kerupuk2 {
   filter: blur(1px);
 } */
+
+@keyframes countUp {
+  from {
+    content: "1";
+  }
+  to {
+    content: "500+";
+  }
+}
+
+@keyframes countUp1000 {
+  from {
+    content: "1";
+  }
+  to {
+    content: "1000+";
+  }
+}
+
+.count-up {
+  animation: countUp 5s steps(499, end) forwards;
+}
+
+.count-up-1000 {
+  animation: countUp1000 5s steps(999, end) forwards;
+}

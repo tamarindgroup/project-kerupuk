@@ -177,12 +177,12 @@ export function Home () {
                 marginTop: isDesktop ? '-7px' : '-1px',
                 color: '#fff',
                 width: isDesktop ? '38%' : 'auto',
-                height: isDesktop ? '40px' : '80px',
+                height: isDesktop ? '53px' : '80px',
                 paddingLeft: isDesktop ? '0' : 60,
                 float: isDesktop ?  'right' : 0,
                 padding: isDesktop ? '0 0 0 350px' : 0,
                 lineHeight: '40px',
-                position: !isDesktop ? 0 : 'relative',
+                position: !isDesktop ? 0 : 0,
                 backgroundColor: '#ff9c00',
                 display: isDesktop ? 'flex' : 'block',
                 transform: isDesktop ? "skew(35deg)" : 0
@@ -190,7 +190,7 @@ export function Home () {
              <div className="left" style={{ 
                 display: 'flex',
                 // position: 'relative', 
-                top: '-4px', 
+                marginTop: !isDesktop ? '-4px' : '5px', 
                 transform: isDesktop ? "skew(-35deg)" : 0,
                 paddingLeft: isDesktop ? 0 : '50px'
                 }}>
@@ -204,7 +204,7 @@ export function Home () {
              <div className="right" style={{ 
                 paddingLeft: isDesktop ? '100px' : '340px',
                 textAlign: isDesktop ? 'right' : 'center',
-                paddingTop: '0',
+                paddingTop: !isDesktop ? '0' : '10px',
                 display: isDesktop ? 'flex' : 'flex',
                 float: isDesktop ? 'right' : 'left',
                 marginLeft: !isDesktop ? '-210px' : 0,
@@ -212,7 +212,7 @@ export function Home () {
                 }}>
               <Grid container spacing={2}>
                 <Grid item>
-                <FacebookIcon style={{ height: '20px' }} />
+                <FaFacebookF style={{ height: '18px' }} />
                 </Grid>
                 <Grid item>
                 <XIcon style={{ height: '20px' }} />
@@ -221,16 +221,17 @@ export function Home () {
                 <InstagramIcon style={{ height: '20px' }} />
                 </Grid>
                 <Grid item>
-                <GoogleIcon style={{ height: '20px' }} />
+                <SiGooglemybusiness style={{ height: '25px', width: '18px', paddingTop: '4px' }} />
                 </Grid>
               </Grid>
              </div>
             </div>
             <div style={{
                 display: 'flex',
-                alignItems: 'center', // Meratakan elemen secara vertikal
-                paddingTop: isDesktop ? '50px' : '20px',
-                marginLeft: isDesktop ? '270px' : '50px',
+                alignItems: 'center', // Mengatur elemen berada di tengah secara vertikal
+                paddingTop: isDesktop ? '57px' : '-10px',
+                justifyContent: 'center', 
+                margin: !isDesktop ? 10 : 0
             }}>
                 <img src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
                 <label style={{ fontSize: isDesktop ? '22px' : '20px' }}>Pusat Kerupuk Indonesia</label>
@@ -239,8 +240,8 @@ export function Home () {
                 style={{ 
                     position: isDesktop ? 'relative' : 0,
                     float: isDesktop ? 'right' : 0, 
-                    left: isDesktop ? '-500px' : '-30px',
-                    marginTop: isDesktop ? '-410px' : '30px',
+                    left: isDesktop ? '-200px' : '-30px',
+                    marginTop: isDesktop ? '-60px' : '30px',
                     marginLeft: isDesktop ? 0 : '-20px'
                 }}
             >
@@ -289,22 +290,22 @@ export function Home () {
             <div className="header-bottom" style={{
                 color: 'white',
                 display: 'flex',
-                marginTop: '28px',
-                width: isDesktop ? '55%' : '100%',
-                left: '10px',
+                marginTop: '30px',
+                width: '55%',
+                // paddingLeft: isDesktop ? '-1900px' : 0,
                 height: '50px',
                 padding: '0 0 0 25px',
                 float: 'right',
                 backgroundColor: '#e32222',
                 marginBottom: '-10px',
                 // position: 'relative',
-                zIndex: '99999',
+                zIndex: '-3',
             }}>
                 <Grid container spacing={8} style={{
                     transform: 'skew(35deg)',
                     // position: 'relative',
-                    left: '20px',
-                    top: '6px',
+                    paddingLeft: '-40px',
+                    paddingTop: '6px',
                 }}>
                     <Grid item>
                         <Button style={{ color: 'white' }} href="/">Home</Button>
@@ -405,13 +406,14 @@ export function Home () {
           </div>
 
 
-          <div >
+          <div>
             <img src={Kerupuk1} 
                 style={{
-                    height: isDesktop ? '900px' : '200px',
+                    height: isDesktop ? '1400px' : '200px',
                     width: isDesktop ? '100%' : '100%',
                     position: 'relative',
-                    top: isDesktop ? '-598px' : '205px'
+                    top: isDesktop ? '-598px' : '205px',
+                    zIndex: -2
                 }}
             />
             <div style={{ 
@@ -699,24 +701,25 @@ export function Home () {
 
 
 
-          <div style={{ display: isDesktop ? 'flex' : 'block', width: '100%', marginTop: '200px'}}>
+          <div style={{ display: isDesktop ? 'flex' : 'block', width: !isDesktop ? '100%' : '100%', marginTop: '200px', marginLeft: isDesktop ? '100px' : 0}}>
             
 
             <div style={{ width: isDesktop ? 0 : '100%'}}>
     
             <Typography className="welcome" style={{
                 fontSize: isDesktop ? '24px' : '18px',
-                paddingLeft: isDesktop ? 0 : '20px'
+                paddingLeft: isDesktop ? 0 : '20px',
+                width: isDesktop ? '300px' : 100
             }}>Welcome to</Typography>
             <Typography className="pusat_kerupuk" style={{
                 fontSize: isDesktop ? '33px' : '22px',
                 fontWeight: 'bold',
-                width: '280px',
+                width: !isDesktop ? '280px' : '500px',
                 paddingLeft: isDesktop ? 0 : '20px'
             }}>Pusat Kerupuk Indonesia</Typography>
             {isDesktop ?
             <p id="deskripsi_kerupuk" style={{
-                width: isDesktop ? '106%' : '300px',
+                width: isDesktop ? '600px' : '300px',
                 paddingTop: '20px',
             }}>
            Selamat datang di Pusat Kerupuk Indonesia, tujuan utama Anda untuk menemukan kelezatan kerupuk terbaik dari berbagai penjuru Nusantara! Kami adalah destinasi terpercaya bagi para pecinta makanan yang mencari aneka ragam kerupuk tradisional Indonesia yang autentik dan lezat.
@@ -750,8 +753,8 @@ export function Home () {
 
 
 
-
-            <div id="check-2" style={{ display: 'block', alignItems: 'center', marginTop: '50px', width: isDesktop ? '300px' : '200px', marginLeft: isDesktop ? 0 : '20px' }}>
+        <div style={{ marginTop: isDesktop ? '450px' : 0 }}>
+            <div id="check-2" style={{ display: !isDesktop ? 'block' : 'flex', alignItems: 'center', marginTop: '50px', width: isDesktop ? '300px' : '200px', marginLeft: isDesktop ? 0 : '20px' }}>
                 <CheckCircleIcon style={{
                     width: '18px',
                     height: '18px',
@@ -760,7 +763,7 @@ export function Home () {
                 <label style={{ paddingLeft: '15px', margin: 0 }}>Produk Berkualitas</label>
             </div>
 
-            <div id="check-2" style={{ display: 'block', marginTop: '13px', alignItems: 'center', width: isDesktop ? '300px' : '300px', marginLeft: isDesktop ? 0 : '20px' }}>
+            <div id="check-2" style={{ display: !isDesktop ? 'block' : 'flex', marginTop: '13px', alignItems: 'center', width: isDesktop ? '300px' : '300px', marginLeft: isDesktop ? 0 : '20px' }}>
                 <CheckCircleIcon style={{
                     width: '18px',
                     height: '18px',
@@ -769,12 +772,13 @@ export function Home () {
                 <label style={{ paddingLeft: '15px', margin: 0 }}>Penyedia Aneka Kerupuk</label>
             </div>
           </div>
+         
 
         
           <div style={{
             // position: 'relative',
             // top: isDesktop ? '200px' : '240px', 
-            marginLeft: isDesktop ? 0 : '50px',
+            marginLeft: isDesktop ? 400 : '50px',
             marginBottom: isDesktop ? 0 : '200px',
             marginTop: isDesktop ? 0 : '200px'
           }}>
@@ -806,10 +810,11 @@ export function Home () {
             </Button>
             </div>
           </div>
+
           <div style={{
             // position: 'relative',
             top: isDesktop ? '200px' : '140px',
-            marginLeft: isDesktop ? 0 : '50px',
+            marginLeft: isDesktop ? 100 : '50px',
           }}>
             <div style={{ width: '300px' }}>
                 <img src={Produksi} style={{
@@ -839,7 +844,7 @@ export function Home () {
             </Button>
             </div>
           </div>
-
+          </div>
 
 
           <div style={{
