@@ -154,7 +154,7 @@ export function Contact() {
                 // position: 'relative', 
                 top: '-4px', 
                 transform: isDesktop ? "skew(-35deg)" : 0,
-                paddingLeft: isDesktop ? 0 : '60px'
+                paddingLeft: isDesktop ? 0 : '40px'
                 }}>
              <AccessTimeIcon style={{ height: '20px', paddingRight: '8px', paddingTop: '10px' }} />
              <label style={{ 
@@ -211,7 +211,7 @@ export function Contact() {
                         height={ isDesktop ? 40 : 30} 
                         width={ isDesktop ? 50 : 30} 
                         style={{
-                            paddingLeft: isDesktop ? '' : 40
+                            paddingLeft: isDesktop ? '' : 10
                         }}
                         />
                         <div style={{ display: 'block', marginTop: isDesktop ? 0 : '1px' }}>
