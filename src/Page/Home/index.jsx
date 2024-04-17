@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { useTheme } from '@mui/material/styles';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -71,9 +71,18 @@ import { LuContact } from "react-icons/lu";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { AiOutlineAudit } from "react-icons/ai";
 import { FaPeopleLine } from "react-icons/fa6";
+import Shopping from '../../Image/shopping.gif';
 
 export function Home () {
     const theme = useTheme();
+    const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(true);
+        }, 3000);
+        return () => clearTimeout(timer);
+    }, []);
 
     const DrawerHeader = styled('div')(({ theme }) => ({
         display: 'flex',
@@ -166,6 +175,13 @@ export function Home () {
       });
     return (
         <>
+        {!isLoading && (
+            <div className="centered">
+                <img src={Shopping} alt="Shopping" />
+            </div>
+        )}
+        {isLoading && (
+            <>
         <div className="header" style={{
             borderBottom: isDesktop ? 'solid 2px #e32222' : 0,
             borderBottomColor: isDesktop ? '#e32222' : 0,
@@ -1302,6 +1318,8 @@ export function Home () {
             <div style={{ width: '100%', backgroundColor: '#1f1e21', height: isDesktop ? '90px' : '100px', marginTop:  isDesktop ? '-10px' : 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <span style={{ color: 'white' }}><label style={{ color:  "#ff9c00"}}>@2024</label> Pusat Kerupuk Indonesia</span>
             </div>
+            </>
+            )}
         </>
     )
 }
