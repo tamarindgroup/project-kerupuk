@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
@@ -40,9 +40,21 @@ import { HiOutlineClipboardList } from "react-icons/hi";
 import { FcAbout } from "react-icons/fc";
 import { LuContact } from "react-icons/lu";
 
+import { FcGlobe } from "react-icons/fc";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
 export function Product() {
 
     const theme = useTheme();
+    const [language, setLanguage] = useState('');
+    const [labelText, setLabelText] = useState('Translate');
+
+    const handleChange = (event) => {
+        setLanguage(event.target.value);
+    };
 
     const DrawerHeader = styled('div')(({ theme }) => ({
         display: 'flex',
@@ -298,31 +310,22 @@ export function Product() {
             </div>
                :  
                <> 
-                    <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute" open={open}>
+                    <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute">
                         <Toolbar>
-                        <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
-                            Menu
-                        </Typography>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            edge="end"
-                            onClick={handleDrawerOpen}
-                            sx={{ ...(open && { display: 'none' }) }} 
-                        >
-                            <MenuIcon />
-                        </IconButton>
+                            <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
+                                Menu
+                            </Typography>
+                            <IconButton
+                                color="inherit"
+                                aria-label="open drawer"
+                                edge="end"
+                                onClick={open ? handleDrawerClose : handleDrawerOpen}
+                            >
+                                {open ? <ChevronLeftIcon /> : <MenuIcon />}
+                            </IconButton>
                         </Toolbar>
                     </AppBar>
-
                     <Drawer
-                        sx={{
-                        width: '200px',
-                        flexShrink: 0,
-                        '& .MuiDrawer-paper': {
-                            width: '150px',
-                        },
-                        }}
                         variant="persistent"
                         anchor="right"
                         open={open}
@@ -334,30 +337,48 @@ export function Product() {
                         </DrawerHeader>
                         <Divider />
                         <List>
-                        <ListItem>
-                            <VscHome style={{ paddingRight: '10px' }} />
-                        <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Home
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <HiOutlineClipboardList style={{ paddingRight: '10px' }} />
-                        <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Product
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <FcAbout style={{ paddingRight: '10px' }} />
-                        <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            About
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <LuContact style={{ paddingRight: '10px' }} />
-                        <a href="/contact" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Contact
-                        </a>
-                        </ListItem>
+                            <ListItem>
+                                <VscHome style={{ paddingRight: '30px' }} />
+                                <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Home
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <HiOutlineClipboardList style={{ paddingRight: '30px' }} />
+                                <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Product
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <FcAbout style={{ paddingRight: '30px' }} />
+                                <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    About
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <LuContact style={{ paddingRight: '30px' }} />
+                                <a href="/artikel" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Artikel
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <FcGlobe />
+                                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                                <InputLabel id="demo-simple-select-autowidth-label">Translate</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-autowidth-label"
+                                    id="demo-simple-select-autowidth"
+                                    value={language}
+                                    onChange={handleChange}
+                                    autoWidth
+                                    label={labelText}
+                                >
+                                    <MenuItem value={10}>Indonesia</MenuItem>
+                                    <MenuItem value={20}>English</MenuItem>
+                                    <MenuItem value={30}>Chinese</MenuItem>
+                                </Select>
+                            </FormControl>
+                            </ListItem>
                         </List>
                         <Divider />
                     </Drawer>

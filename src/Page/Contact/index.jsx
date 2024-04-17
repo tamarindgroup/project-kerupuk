@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
@@ -41,9 +41,23 @@ import { FcAbout } from "react-icons/fc";
 import { LuContact } from "react-icons/lu";
 import { BeatLoader } from 'react-spinners';
 
+import { dataArtikel } from "../../data/artikel";
+import { FcGlobe } from "react-icons/fc";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
 export function Contact() {
 
     const theme = useTheme();
+    const [artikel, setArtikel] = useState(dataArtikel);
+    const [language, setLanguage] = useState('');
+    const [labelText, setLabelText] = useState('Translate');
+
+    const handleChange = (event) => {
+        setLanguage(event.target.value);
+    };
 
     const DrawerHeader = styled('div')(({ theme }) => ({
         display: 'flex',
@@ -278,7 +292,7 @@ export function Contact() {
                         <Button style={{ color: 'white' }} href="/about">About</Button>
                     </Grid>
                     <Grid item>
-                        <Button style={{ color: 'white' }} href="/contact">Contact</Button>
+                        <Button style={{ color: 'white' }} href="/contact">Artikel</Button>
                     </Grid>
                     <Grid item style={{
                         // position: 'relative',
@@ -299,31 +313,22 @@ export function Contact() {
             </div>
                :  
                <> 
-                    <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute" open={open}>
+                    <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute">
                         <Toolbar>
-                        <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
-                            Menu
-                        </Typography>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            edge="end"
-                            onClick={handleDrawerOpen}
-                            sx={{ ...(open && { display: 'none' }) }} 
-                        >
-                            <MenuIcon />
-                        </IconButton>
+                            <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
+                                Menu
+                            </Typography>
+                            <IconButton
+                                color="inherit"
+                                aria-label="open drawer"
+                                edge="end"
+                                onClick={open ? handleDrawerClose : handleDrawerOpen}
+                            >
+                                {open ? <ChevronLeftIcon /> : <MenuIcon />}
+                            </IconButton>
                         </Toolbar>
                     </AppBar>
-
                     <Drawer
-                        sx={{
-                        width: '200px',
-                        flexShrink: 0,
-                        '& .MuiDrawer-paper': {
-                            width: '150px',
-                        },
-                        }}
                         variant="persistent"
                         anchor="right"
                         open={open}
@@ -335,36 +340,105 @@ export function Contact() {
                         </DrawerHeader>
                         <Divider />
                         <List>
-                        <ListItem>
-                            <VscHome style={{ paddingRight: '10px' }} />
-                        <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Home
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <HiOutlineClipboardList style={{ paddingRight: '10px' }} />
-                        <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Product
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <FcAbout style={{ paddingRight: '10px' }} />
-                        <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            About
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <LuContact style={{ paddingRight: '10px' }} />
-                        <a href="/contact" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Contact
-                        </a>
-                        </ListItem>
+                            <ListItem>
+                                <VscHome style={{ paddingRight: '30px' }} />
+                                <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Home
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <HiOutlineClipboardList style={{ paddingRight: '30px' }} />
+                                <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Product
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <FcAbout style={{ paddingRight: '30px' }} />
+                                <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    About
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <LuContact style={{ paddingRight: '30px' }} />
+                                <a href="/artikel" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Artikel
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <FcGlobe />
+                                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                                <InputLabel id="demo-simple-select-autowidth-label">Translate</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-autowidth-label"
+                                    id="demo-simple-select-autowidth"
+                                    value={language}
+                                    onChange={handleChange}
+                                    autoWidth
+                                    label={labelText}
+                                >
+                                    <MenuItem value={10}>Indonesia</MenuItem>
+                                    <MenuItem value={20}>English</MenuItem>
+                                    <MenuItem value={30}>Chinese</MenuItem>
+                                </Select>
+                            </FormControl>
+                            </ListItem>
                         </List>
                         <Divider />
                     </Drawer>
                </>  
             }
           </div>
+
+          {/* <Grid container spacing={1} justifyContent="center" style={{ marginTop: !isDesktop ? '10px' : 0 }}>
+                {artikel.map((data) => (
+                    <Grid item key={data.id} xs={12} sm={6} md={4}>
+                      <div style={{ paddingLeft: !isDesktop ? '10px' : '80px', paddingRight: '8px' }}>
+                        <Card
+                          style={{
+                            width: isDesktop ? '80%' : '93%',
+                            margin: '16px',
+                            boxShadow: '0px 8px 16px rgba(255, 165, 0, 0.6)',
+                          }}
+                        >
+                          <div style={{ padding: '16px', width: '100%' }}>
+                            <img alt={data.nama} src={data[activeLanguage].image} style={{ height: '200px', width: '100%' }} />
+                            <Typography>{data[activeLanguage].post}</Typography>
+                            <Typography.Title id='description-artikel' level={4}>{data[activeLanguage].nama}</Typography.Title>
+                            <Link
+                              to={{
+                                pathname: `/detail-artikel/${data.id}`,
+                              }}
+                              state={{ artikelData: data[activeLanguage] }}
+                              style={{ textDecoration: 'none' }}
+                            >
+                              <Button
+                                type="primary"
+                                style={{
+                                  marginTop: '20px',
+                                  background: 'linear-gradient(90deg, #FFD700 0%, #FFA500 100%)',
+                                  border: 'none',
+                                  color: 'white',
+                                  fontWeight: 'bold',
+                                  textTransform: 'none',
+                                  boxShadow: '0px 10px 20px rgba(255, 165, 0, 0.4)',
+                                  transition: 'box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out',
+                                  "&:hover": {
+                                    boxShadow: '0px 14px 28px rgba(255, 165, 0, 0.6)',
+                                    transform: 'translateY(-3px)',
+                                  },
+                                }}
+                                onClick={handleDetailClick}
+                              >
+                                {t("button-header.text")}
+                              </Button>
+                            </Link>
+                          </div>
+                        </Card>
+                      </div>
+                    </Grid>
+                  ))}
+              </Grid> */}
+
 
           <ReactWhatsapp id="icon-whatsapp" style={{ 
                 width: 0,

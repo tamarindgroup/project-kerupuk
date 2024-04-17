@@ -44,10 +44,22 @@ import { LuContact } from "react-icons/lu";
 import { TbArrowBadgeRightFilled } from "react-icons/tb";
 import { LineWeight } from "@mui/icons-material";
 
+import { FcGlobe } from "react-icons/fc";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
 
 export function About() {
 
     const theme = useTheme();
+    const [language, setLanguage] = useState('');
+    const [labelText, setLabelText] = useState('Translate');
+
+    const handleChange = (event) => {
+        setLanguage(event.target.value);
+    };
 
     const DrawerHeader = styled('div')(({ theme }) => ({
         display: 'flex',
@@ -394,28 +406,46 @@ export function About() {
                         <Divider />
                         <List>
                             <ListItem>
-                                <VscHome style={{ paddingRight: '10px' }} />
+                                <VscHome style={{ paddingRight: '30px' }} />
                                 <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
                                     Home
                                 </a>
                             </ListItem>
                             <ListItem>
-                                <HiOutlineClipboardList style={{ paddingRight: '10px' }} />
+                                <HiOutlineClipboardList style={{ paddingRight: '30px' }} />
                                 <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
                                     Product
                                 </a>
                             </ListItem>
                             <ListItem>
-                                <FcAbout style={{ paddingRight: '10px' }} />
+                                <FcAbout style={{ paddingRight: '30px' }} />
                                 <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
                                     About
                                 </a>
                             </ListItem>
                             <ListItem>
-                                <LuContact style={{ paddingRight: '10px' }} />
+                                <LuContact style={{ paddingRight: '30px' }} />
                                 <a href="/artikel" style={{ color: '#ff9c00', textDecoration: 'none' }}>
                                     Artikel
                                 </a>
+                            </ListItem>
+                            <ListItem>
+                                <FcGlobe />
+                                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                                <InputLabel id="demo-simple-select-autowidth-label">Translate</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-autowidth-label"
+                                    id="demo-simple-select-autowidth"
+                                    value={language}
+                                    onChange={handleChange}
+                                    autoWidth
+                                    label={labelText}
+                                >
+                                    <MenuItem value={10}>Indonesia</MenuItem>
+                                    <MenuItem value={20}>English</MenuItem>
+                                    <MenuItem value={30}>Chinese</MenuItem>
+                                </Select>
+                            </FormControl>
                             </ListItem>
                         </List>
                         <Divider />
