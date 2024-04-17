@@ -232,7 +232,7 @@ export function About() {
              <div className="right" style={{ 
                 paddingLeft: isDesktop ? '100px' : '340px',
                 textAlign: isDesktop ? 'right' : 'center',
-                paddingTop: !isDesktop ? '0' : '7px',
+                paddingTop: !isDesktop ? '0' : '10px',
                 display: isDesktop ? 'flex' : 'flex',
                 float: isDesktop ? 'right' : 'left',
                 marginLeft: !isDesktop ? '-210px' : 0,
@@ -240,7 +240,7 @@ export function About() {
                 }}>
               <Grid container spacing={2}>
                 <Grid item>
-                <FacebookIcon style={{ height: '20px' }} />
+                <FaFacebookF style={{ height: '18px' }} />
                 </Grid>
                 <Grid item>
                 <XIcon style={{ height: '20px' }} />
@@ -249,16 +249,17 @@ export function About() {
                 <InstagramIcon style={{ height: '20px' }} />
                 </Grid>
                 <Grid item>
-                <GoogleIcon style={{ height: '20px' }} />
+                <SiGooglemybusiness style={{ height: '25px', width: '18px', paddingTop: '4px' }} />
                 </Grid>
               </Grid>
              </div>
             </div>
             <div style={{
                 display: 'flex',
-                alignItems: 'center', // Meratakan elemen secara vertikal
-                paddingTop: isDesktop ? '50px' : '20px',
-                marginLeft: isDesktop ? '270px' : '50px',
+                alignItems: 'center', // Mengatur elemen berada di tengah secara vertikal
+                paddingTop: isDesktop ? '57px' : '-10px',
+                justifyContent: 'center', 
+                margin: !isDesktop ? 10 : 0
             }}>
                 <img src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
                 <label style={{ fontSize: isDesktop ? '22px' : '20px' }}>Pusat Kerupuk Indonesia</label>
@@ -365,31 +366,22 @@ export function About() {
             </div>
                :  
                <> 
-                    <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute" open={open}>
+                    <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute">
                         <Toolbar>
-                        <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
-                            Menu
-                        </Typography>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            edge="end"
-                            onClick={handleDrawerOpen}
-                            sx={{ ...(open && { display: 'none' }) }} 
-                        >
-                            <MenuIcon />
-                        </IconButton>
+                            <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
+                                Menu
+                            </Typography>
+                            <IconButton
+                                color="inherit"
+                                aria-label="open drawer"
+                                edge="end"
+                                onClick={open ? handleDrawerClose : handleDrawerOpen}
+                            >
+                                {open ? <ChevronLeftIcon /> : <MenuIcon />}
+                            </IconButton>
                         </Toolbar>
                     </AppBar>
-
                     <Drawer
-                        sx={{
-                        width: '200px',
-                        flexShrink: 0,
-                        '& .MuiDrawer-paper': {
-                            width: '150px',
-                        },
-                        }}
                         variant="persistent"
                         anchor="right"
                         open={open}
@@ -401,30 +393,30 @@ export function About() {
                         </DrawerHeader>
                         <Divider />
                         <List>
-                        <ListItem>
-                            <VscHome style={{ paddingRight: '10px' }} />
-                        <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Home
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <HiOutlineClipboardList style={{ paddingRight: '10px' }} />
-                        <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Product
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <FcAbout style={{ paddingRight: '10px' }} />
-                        <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            About
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <LuContact style={{ paddingRight: '10px' }} />
-                        <a href="/contact" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Contact
-                        </a>
-                        </ListItem>
+                            <ListItem>
+                                <VscHome style={{ paddingRight: '10px' }} />
+                                <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Home
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <HiOutlineClipboardList style={{ paddingRight: '10px' }} />
+                                <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Product
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <FcAbout style={{ paddingRight: '10px' }} />
+                                <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    About
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <LuContact style={{ paddingRight: '10px' }} />
+                                <a href="/artikel" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Artikel
+                                </a>
+                            </ListItem>
                         </List>
                         <Divider />
                     </Drawer>

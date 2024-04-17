@@ -333,7 +333,7 @@ export function Home () {
                         <Button style={{ color: 'white' }} href="/about">About</Button>
                     </Grid>
                     <Grid item>
-                        <Button style={{ color: 'white' }} href="/contact">Contact</Button>
+                        <Button style={{ color: 'white' }} href="/artikel">Contact</Button>
                     </Grid>
                     <Grid item style={{
                         // position: 'relative',
@@ -354,31 +354,22 @@ export function Home () {
             </div>
                :  
                <> 
-                    <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute" open={open}>
+                   <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute">
                         <Toolbar>
-                        <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
-                            Menu
-                        </Typography>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            edge="end"
-                            onClick={handleDrawerOpen}
-                            sx={{ ...(open && { display: 'none' }) }} 
-                        >
-                            <MenuIcon />
-                        </IconButton>
+                            <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
+                                Menu
+                            </Typography>
+                            <IconButton
+                                color="inherit"
+                                aria-label="open drawer"
+                                edge="end"
+                                onClick={open ? handleDrawerClose : handleDrawerOpen}
+                            >
+                                {open ? <ChevronLeftIcon /> : <MenuIcon />}
+                            </IconButton>
                         </Toolbar>
                     </AppBar>
-
                     <Drawer
-                        sx={{
-                        width: '200px',
-                        flexShrink: 0,
-                        '& .MuiDrawer-paper': {
-                            width: '150px',
-                        },
-                        }}
                         variant="persistent"
                         anchor="right"
                         open={open}
@@ -390,30 +381,30 @@ export function Home () {
                         </DrawerHeader>
                         <Divider />
                         <List>
-                        <ListItem>
-                            <VscHome style={{ paddingRight: '10px' }} />
-                        <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Home
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <HiOutlineClipboardList style={{ paddingRight: '10px' }} />
-                        <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Product
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <FcAbout style={{ paddingRight: '10px' }} />
-                        <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            About
-                        </a>
-                        </ListItem>
-                        <ListItem>
-                            <LuContact style={{ paddingRight: '10px' }} />
-                        <a href="/contact" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                            Contact
-                        </a>
-                        </ListItem>
+                            <ListItem>
+                                <VscHome style={{ paddingRight: '10px' }} />
+                                <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Home
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <HiOutlineClipboardList style={{ paddingRight: '10px' }} />
+                                <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Product
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <FcAbout style={{ paddingRight: '10px' }} />
+                                <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    About
+                                </a>
+                            </ListItem>
+                            <ListItem>
+                                <LuContact style={{ paddingRight: '10px' }} />
+                                <a href="/artikel" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                    Artikel
+                                </a>
+                            </ListItem>
                         </List>
                         <Divider />
                     </Drawer>
@@ -428,7 +419,7 @@ export function Home () {
                     height: isDesktop ? '1400px' : '200px',
                     width: isDesktop ? '100%' : '100%',
                     position: 'relative',
-                    top: isDesktop ? '-598px' : '205px',
+                    top: isDesktop ? '-598px' : '198px',
                     zIndex: -2
                 }}
             />
@@ -796,7 +787,7 @@ export function Home () {
             // top: isDesktop ? '200px' : '240px', 
             marginLeft: isDesktop ? 400 : '50px',
             marginBottom: isDesktop ? 0 : '200px',
-            marginTop: isDesktop ? 0 : '200px'
+            marginTop: isDesktop ? 0 : '100px'
           }}>
             <div style={{ width: '300px' }}>
                 <img src={Layanan24} style={{
@@ -829,7 +820,7 @@ export function Home () {
 
           <div style={{
             // position: 'relative',
-            top: isDesktop ? '200px' : '140px',
+            marginTop: isDesktop ? '-10px' : '-100px',
             marginLeft: isDesktop ? 100 : '50px',
           }}>
             <div style={{ width: '300px' }}>
@@ -864,7 +855,7 @@ export function Home () {
 
 
           <div style={{
-            marginTop: '380px',
+            marginTop: '100px',
             display: isDesktop ? 'flex' : 'block'
           }}>
                 <img id="img-kerupuk2" src={ImgKerupuk} style={{
@@ -927,7 +918,7 @@ export function Home () {
 
 
 
-          <div style={{ marginTop: '300px', position: 'relative', marginLeft: '1px'}}>
+          <div style={{ marginTop: '100px', position: 'relative', marginLeft: '1px'}}>
                 <img src={Process} style={{ width: '100%', height: isDesktop ? '800px' : '1500px', zIndex: -2 }} />
                 <div style={{ width: '100%', height: !isDesktop ? '1500px' : '800px', backgroundColor: 'rgba(59, 77, 54, 0.5)', display: isDesktop ? 'flex' : 'block' , justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '0', left: '0' }}>
                     <div style={{ margin: 0, padding: 0, display: 'block', justifyContent: 'center', position: 'relative', color: 'white' }}>
@@ -995,11 +986,11 @@ export function Home () {
                 }}>
                     <h3 style={{ 
                         margin: 0, 
-                        color: 'white', 
-                        zIndex: 2, 
+                        color: 'Gray', 
+                        zIndex: 1, 
                         fontSize: '39px', 
                         position: 'relative',
-                        top: '400px' 
+                        top: !isDesktop ? '120px' : '250px' 
                         }}>Other Products</h3> {/* Margin 0 untuk menghapus margin bawaan */}
                        <Grid container spacing={2} zIndex={2} justifyContent={'center'} mt={80}>
                         <Grid item>
@@ -1095,12 +1086,13 @@ export function Home () {
                     </Grid>
                 </div>
                     : 
-                    <div style={{ marginTop: '600px', width: '435px' }}>
+                    <div style={{ marginTop: '1000px', width: '435px' }}>
                         <h3 style={{ 
-                            color: 'black', 
+                            color: 'gray', 
                             zIndex: 2, 
                             fontSize: '29px', 
-                            marginTop: '800px',
+                            // marginTop: '800px',
+                            paddingBottom: "30px",
                             textAlign: 'center' 
                             }}>Other Products</h3> {/* Margin 0 untuk menghapus margin bawaan */}
                             <Grid container spacing={2} justifyContent="center"> {/* Mengatur grid container menjadi center */}
@@ -1224,7 +1216,7 @@ export function Home () {
         </ReactWhatsapp>
 
 
-            <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? '300px' : '1250px' }}>
+            <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? '300px' : '1050px' }}>
                 <Grid container style={{display: 'flex', justifyContent: 'center', position: 'relative', top: isDesktop ? '80px' : '50px', left: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2}>
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>

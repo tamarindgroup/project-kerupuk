@@ -39,6 +39,7 @@ import { VscHome } from "react-icons/vsc";
 import { HiOutlineClipboardList } from "react-icons/hi";
 import { FcAbout } from "react-icons/fc";
 import { LuContact } from "react-icons/lu";
+import { BeatLoader } from 'react-spinners';
 
 export function Contact() {
 
