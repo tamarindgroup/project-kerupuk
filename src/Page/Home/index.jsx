@@ -80,7 +80,7 @@ export function Home () {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(true);
-        }, 3000);
+        }, 5000);
         return () => clearTimeout(timer);
     }, []);
 
