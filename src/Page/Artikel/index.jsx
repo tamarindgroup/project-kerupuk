@@ -4,7 +4,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GoogleIcon from '@mui/icons-material/Google';
-import { Grid, Typography, Button } from "@mui/material";
+import { Grid, Button, Typography } from "@mui/material";
+// import { Card, Typography } from "antd";
 import CallIcon from '../../Image/calling.png';
 import EmailIcon from '../../Image/mail.png';
 import SearchIcon from '@mui/icons-material/Search';
@@ -40,24 +41,33 @@ import { HiOutlineClipboardList } from "react-icons/hi";
 import { FcAbout } from "react-icons/fc";
 import { LuContact } from "react-icons/lu";
 import { BeatLoader } from 'react-spinners';
-
-import { dataArtikel } from "../../data/artikel";
+import { useTranslation } from "react-i18next";
+import dataArtikel from "../../data/artikel";
 import { FcGlobe } from "react-icons/fc";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { Link } from "react-router-dom";
 
-export function Contact() {
+
+export const Artikel =  () => {
 
     const theme = useTheme();
-    const [artikel, setArtikel] = useState(dataArtikel);
+    const { t, i18n } = useTranslation("global");
+    const [Artikel, setArtikel] = useState(dataArtikel);
+    // console.log(artikel, 'dataArtikel');
     const [language, setLanguage] = useState('');
     const [labelText, setLabelText] = useState('Translate');
+    const activeLanguage = i18n.language;
 
     const handleChange = (event) => {
         setLanguage(event.target.value);
     };
+
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang)
+      }
 
     const DrawerHeader = styled('div')(({ theme }) => ({
         display: 'flex',
@@ -169,7 +179,7 @@ export function Contact() {
                 // position: 'relative', 
                 top: '-4px', 
                 transform: isDesktop ? "skew(-35deg)" : 0,
-                paddingLeft: isDesktop ? 0 : '40px'
+                paddingLeft: isDesktop ? 0 : '50px'
                 }}>
              <AccessTimeIcon style={{ height: '20px', paddingRight: '8px', paddingTop: '10px' }} />
              <label style={{ 
@@ -181,7 +191,7 @@ export function Contact() {
              <div className="right" style={{ 
                 paddingLeft: isDesktop ? '100px' : '340px',
                 textAlign: isDesktop ? 'right' : 'center',
-                paddingTop: '0',
+                paddingTop: !isDesktop ? '0' : '10px',
                 display: isDesktop ? 'flex' : 'flex',
                 float: isDesktop ? 'right' : 'left',
                 marginLeft: !isDesktop ? '-210px' : 0,
@@ -189,7 +199,7 @@ export function Contact() {
                 }}>
               <Grid container spacing={2}>
                 <Grid item>
-                <FacebookIcon style={{ height: '20px' }} />
+                <FaFacebookF style={{ height: '18px' }} />
                 </Grid>
                 <Grid item>
                 <XIcon style={{ height: '20px' }} />
@@ -198,16 +208,17 @@ export function Contact() {
                 <InstagramIcon style={{ height: '20px' }} />
                 </Grid>
                 <Grid item>
-                <GoogleIcon style={{ height: '20px' }} />
+                <SiGooglemybusiness style={{ height: '25px', width: '18px', paddingTop: '4px' }} />
                 </Grid>
               </Grid>
              </div>
             </div>
             <div style={{
                 display: 'flex',
-                alignItems: 'center', // Meratakan elemen secara vertikal
-                paddingTop: isDesktop ? '50px' : '20px',
-                marginLeft: isDesktop ? '270px' : '60px',
+                alignItems: 'center', // Mengatur elemen berada di tengah secara vertikal
+                paddingTop: isDesktop ? '57px' : '-10px',
+                justifyContent: 'center', 
+                margin: !isDesktop ? 10 : 0
             }}>
                 <img src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
                 <label style={{ fontSize: isDesktop ? '22px' : '20px' }}>Pusat Kerupuk Indonesia</label>
@@ -292,7 +303,7 @@ export function Contact() {
                         <Button style={{ color: 'white' }} href="/about">About</Button>
                     </Grid>
                     <Grid item>
-                        <Button style={{ color: 'white' }} href="/contact">Artikel</Button>
+                        <Button style={{ color: 'white' }} href="/artikel">Artikel</Button>
                     </Grid>
                     <Grid item style={{
                         // position: 'relative',
@@ -376,9 +387,10 @@ export function Contact() {
                                     autoWidth
                                     label={labelText}
                                 >
-                                    <MenuItem value={10}>Indonesia</MenuItem>
-                                    <MenuItem value={20}>English</MenuItem>
-                                    <MenuItem value={30}>Chinese</MenuItem>
+                                    <MenuItem onClick={() => changeLanguage('id')} value={10}>Indonesia</MenuItem>
+                                    <MenuItem onClick={() => changeLanguage('en')} value={20}>English</MenuItem>
+                                    <MenuItem onClick={() => changeLanguage('zh')} value={30}>Chinese</MenuItem>
+                                    <MenuItem onClick={() => changeLanguage('ar')} value={30}>Arabic</MenuItem>
                                 </Select>
                             </FormControl>
                             </ListItem>
@@ -389,55 +401,34 @@ export function Contact() {
             }
           </div>
 
-          {/* <Grid container spacing={1} justifyContent="center" style={{ marginTop: !isDesktop ? '10px' : 0 }}>
-                {artikel.map((data) => (
-                    <Grid item key={data.id} xs={12} sm={6} md={4}>
-                      <div style={{ paddingLeft: !isDesktop ? '10px' : '80px', paddingRight: '8px' }}>
-                        <Card
-                          style={{
-                            width: isDesktop ? '80%' : '93%',
-                            margin: '16px',
-                            boxShadow: '0px 8px 16px rgba(255, 165, 0, 0.6)',
-                          }}
-                        >
-                          <div style={{ padding: '16px', width: '100%' }}>
-                            <img alt={data.nama} src={data[activeLanguage].image} style={{ height: '200px', width: '100%' }} />
-                            <Typography>{data[activeLanguage].post}</Typography>
-                            <Typography.Title id='description-artikel' level={4}>{data[activeLanguage].nama}</Typography.Title>
-                            <Link
-                              to={{
-                                pathname: `/detail-artikel/${data.id}`,
-                              }}
-                              state={{ artikelData: data[activeLanguage] }}
-                              style={{ textDecoration: 'none' }}
-                            >
-                              <Button
-                                type="primary"
-                                style={{
-                                  marginTop: '20px',
-                                  background: 'linear-gradient(90deg, #FFD700 0%, #FFA500 100%)',
-                                  border: 'none',
-                                  color: 'white',
-                                  fontWeight: 'bold',
-                                  textTransform: 'none',
-                                  boxShadow: '0px 10px 20px rgba(255, 165, 0, 0.4)',
-                                  transition: 'box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out',
-                                  "&:hover": {
-                                    boxShadow: '0px 14px 28px rgba(255, 165, 0, 0.6)',
-                                    transform: 'translateY(-3px)',
-                                  },
-                                }}
-                                onClick={handleDetailClick}
-                              >
-                                {t("button-header.text")}
-                              </Button>
-                            </Link>
-                          </div>
-                        </Card>
+          <Grid container display={ !isDesktop ? 'block' : 'flex'} spacing={1} justifyContent="center" style={{ marginTop: !isDesktop ? '200px' : '10px' }}>
+               <Grid item xs={ !isDesktop ? 10 : 12}>
+                <div style={{ paddingLeft: !isDesktop ? '25px' : '22px' }}>
+                <h1 id="title-top-artikel" style={{ textAlign: 'left', color: 'gray' }}>Seputar Kerupuk</h1>
+                <p id="deskripsi_kerupuk" style={{ width: isDesktop ? '100%' : '80%', fontSize: isDesktop ? '23px' : '16px' }}>
+                informasi terbaru seputar berbagai jenis kerupuk, proses pembuatan, variasi rasa, serta tips dan trik untuk menikmati kerupuk dengan lebih nikmat. 
+                </p>
+                </div>
+                </Grid>
+                {Artikel.map(data => (
+                    <Grid item key={data.id} xs={10} sm={6} md={4} mt={isDesktop ? '60px' : '60px'}>
+                      <div style={{ paddingLeft: !isDesktop ? '3px' : 0 }}>
+                        <a target="_blank" style={{ textDecoration: 'none', color: 'black' }} href={data[activeLanguage].link}>
+                            <div style={{ padding: '16px', width: '100%' }}>
+                                <img src={data[activeLanguage].image} 
+                                style={{ 
+                                    height: isDesktop ? '300px' : '190px', 
+                                    width: isDesktop ? '100%' : '100%',
+                                    borderRadius: '20px' 
+                                    }} />
+                                <h2 id="title-artikel" style={{ width: isDesktop ? '100%' : '90%' }}>{data[activeLanguage].nama}</h2>
+                                <label id='sub-artikel' level={4}>{data[activeLanguage].sub_nama}</label>
+                            </div>
+                          </a>
                       </div>
                     </Grid>
                   ))}
-              </Grid> */}
+              </Grid>
 
 
           <ReactWhatsapp id="icon-whatsapp" style={{ 
@@ -460,7 +451,7 @@ export function Contact() {
             />
         </ReactWhatsapp>
 
-          <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? '300px' : '1250px' }}>
+          <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? '300px' : '150px' }}>
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
@@ -557,3 +548,5 @@ export function Contact() {
         </>
     )
 }
+
+export default Artikel;

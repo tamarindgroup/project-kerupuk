@@ -40,4 +40,19 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    import i18n from '../src/i18n.js';
+    window.onload = function () {
+      i18n.changeLanguage(navigator.language);
+      i18n.on('languageChanged', function (lng) {
+        document.documentElement.lang = lng;
+      });
+      i18n.init(function (err, t) {
+        // Initialize i18next and load translations
+        // You can also load translations dynamically here
+        // For this example, translations are loaded via JSON files
+        document.getElementById('root').classList.add('loaded');
+      });
+    };
+  </script>
 </html>

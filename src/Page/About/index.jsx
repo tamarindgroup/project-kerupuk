@@ -49,6 +49,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { useTranslation } from 'react-i18next';
 
 
 export function About() {
@@ -56,10 +57,16 @@ export function About() {
     const theme = useTheme();
     const [language, setLanguage] = useState('');
     const [labelText, setLabelText] = useState('Translate');
+    const { t, i18n } = useTranslation("global");
 
     const handleChange = (event) => {
         setLanguage(event.target.value);
     };
+
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang)
+        // setLanguageDropdownOpen(false)
+      }
 
     const DrawerHeader = styled('div')(({ theme }) => ({
         display: 'flex',
@@ -232,7 +239,7 @@ export function About() {
                 // position: 'relative', 
                 top: '-4px', 
                 transform: isDesktop ? "skew(-35deg)" : 0,
-                paddingLeft: isDesktop ? 0 : '40px'
+                paddingLeft: isDesktop ? 0 : '50px'
                 }}>
              <AccessTimeIcon style={{ height: '20px', paddingRight: '8px', paddingTop: '10px' }} />
              <label style={{ 
@@ -356,7 +363,7 @@ export function About() {
                         <Button style={{ color: 'white' }} href="/about">About</Button>
                     </Grid>
                     <Grid item>
-                        <Button style={{ color: 'white' }} href="/contact">Contact</Button>
+                        <Button style={{ color: 'white' }} href="/artikel">Artikel</Button>
                     </Grid>
                     <Grid item style={{
                         // position: 'relative',
@@ -441,9 +448,9 @@ export function About() {
                                     autoWidth
                                     label={labelText}
                                 >
-                                    <MenuItem value={10}>Indonesia</MenuItem>
-                                    <MenuItem value={20}>English</MenuItem>
-                                    <MenuItem value={30}>Chinese</MenuItem>
+                                    <MenuItem onClick={() => changeLanguage('id')} value={10}>Indonesia</MenuItem>
+                                    <MenuItem onClick={() => changeLanguage('en')} value={20}>English</MenuItem>
+                                    <MenuItem onClick={() => changeLanguage('zh')} value={30}>Chinese</MenuItem>
                                 </Select>
                             </FormControl>
                             </ListItem>

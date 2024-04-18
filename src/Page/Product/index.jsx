@@ -289,7 +289,7 @@ export function Product() {
                         <Button style={{ color: 'white' }} href="/about">About</Button>
                     </Grid>
                     <Grid item>
-                        <Button style={{ color: 'white' }} href="/contact">Contact</Button>
+                        <Button style={{ color: 'white' }} href="/artikel">Artikel</Button>
                     </Grid>
                     <Grid item style={{
                         // position: 'relative',
