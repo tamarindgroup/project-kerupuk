@@ -231,3 +231,20 @@
     "wdth" 100;
 
 }
+
+.product-card {
+  /* Gaya kartu yang tidak berputar */
+  /* ... Penyesuaian lainnya */
+
+  transition: transform 0.5s ease-in-out;
+}
+
+.flipped-card {
+  transform: rotateY(180deg);
+}
+
+#review {
+  margin-top: 30px;
+  width: 100px;
+  text-align: center;
+}

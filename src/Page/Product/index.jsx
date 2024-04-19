@@ -5,6 +5,9 @@ import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Grid, Typography, Button } from "@mui/material";
+import Container from '@mui/material/Container';
+import Card from '@mui/material/Card';
+import { Image } from "@mui/icons-material";
 import CallIcon from '../../Image/calling.png';
 import EmailIcon from '../../Image/mail.png';
 import SearchIcon from '@mui/icons-material/Search';
@@ -39,18 +42,27 @@ import { VscHome } from "react-icons/vsc";
 import { HiOutlineClipboardList } from "react-icons/hi";
 import { FcAbout } from "react-icons/fc";
 import { LuContact } from "react-icons/lu";
-
+import { useTranslation } from "react-i18next";
 import { FcGlobe } from "react-icons/fc";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import dataProduk from "../../data/produk";
+import Header from "../Header";
 
 export function Product() {
 
     const theme = useTheme();
+    const { Meta } = Card;
+    const { t, i18n } = useTranslation("global");
+    const [Produk, setProduk] = useState(dataProduk);
     const [language, setLanguage] = useState('');
     const [labelText, setLabelText] = useState('Translate');
+    const activeLanguage = i18n.language;
+    const [isCardFlipped, setIsCardFlipped] = useState(
+        Produk.map(() => false)
+      );
 
     const handleChange = (event) => {
         setLanguage(event.target.value);
@@ -138,253 +150,212 @@ export function Product() {
         },
       }));
 
+
+      const toggleCardFlip = (index) => {
+        const updatedIsCardFlipped = [...isCardFlipped];
+        updatedIsCardFlipped[index] = !updatedIsCardFlipped[index];
+        setIsCardFlipped(updatedIsCardFlipped);
+      };
+
+      
+
     return (
         <>
-         <div className="header" style={{
-            borderBottom: isDesktop ? 'solid 2px #e32222' : 0,
-            borderBottomColor: isDesktop ? '#e32222' : 0,
-            height: isDesktop ? '217px' : '175px',
-            width: '100%'
-            // boxSizing: 'border-box'
-          }}>
-            <div className="header-top" style={{
-                marginTop: isDesktop ? '-7px' : '-1px',
-                color: '#fff',
-                width: isDesktop ? '38%' : 'auto',
-                height: isDesktop ? '40px' : '80px',
-                paddingLeft: isDesktop ? '0' : 60,
-                float: isDesktop ?  'right' : 0,
-                padding: isDesktop ? '0 0 0 350px' : 0,
-                lineHeight: '40px',
-                position: !isDesktop ? 0 : 'relative',
-                backgroundColor: '#ff9c00',
-                display: isDesktop ? 'flex' : 'block',
-                transform: isDesktop ? "skew(35deg)" : 0
-            }}>
-             <div className="left" style={{ 
-                display: 'flex',
-                // position: 'relative', 
-                top: '-4px', 
-                transform: isDesktop ? "skew(-35deg)" : 0,
-                paddingLeft: isDesktop ? 0 : '40px'
-                }}>
-             <AccessTimeIcon style={{ height: '20px', paddingRight: '8px', paddingTop: '10px' }} />
-             <label style={{ 
-                paddingTop: isDesktop ? '-20px' : 0, 
-                position: isDesktop ? 'relative' : 0, 
-                top: isDesktop ? 0 : 0,
-                }}>We are Open: Sen - Sab 7:00 - 18:00</label> 
-             </div>
-             <div className="right" style={{ 
-                paddingLeft: isDesktop ? '100px' : '340px',
-                textAlign: isDesktop ? 'right' : 'center',
-                paddingTop: '0',
-                display: isDesktop ? 'flex' : 'flex',
-                float: isDesktop ? 'right' : 'left',
-                marginLeft: !isDesktop ? '-210px' : 0,
-                transform: isDesktop ? "skew(-35deg)" : 0,
-                }}>
-              <Grid container spacing={2}>
-                <Grid item>
-                <FacebookIcon style={{ height: '20px' }} />
-                </Grid>
-                <Grid item>
-                <XIcon style={{ height: '20px' }} />
-                </Grid>
-                <Grid item>
-                <InstagramIcon style={{ height: '20px' }} />
-                </Grid>
-                <Grid item>
-                <GoogleIcon style={{ height: '20px' }} />
-                </Grid>
-              </Grid>
-             </div>
-            </div>
-            <div style={{
-                display: 'flex',
-                alignItems: 'center', // Meratakan elemen secara vertikal
-                paddingTop: isDesktop ? '50px' : '20px',
-                marginLeft: isDesktop ? '270px' : '60px',
-            }}>
-                <img src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
-                <label style={{ fontSize: isDesktop ? '22px' : '20px' }}>Pusat Kerupuk Indonesia</label>
-            </div>
-            <div className="hub"
-                style={{ 
-                    position: isDesktop ? 'relative' : 0,
-                    float: isDesktop ? 'right' : 0, 
-                    left: isDesktop ? '-500px' : '-30px',
-                    marginTop: isDesktop ? '-410px' : '30px',
-                }}
+          <Header />
+
+          
+          <Container
+              sx={{ 
+                mt: isDesktop ? 20 : 40, 
+                display: "flex", 
+                marginLeft: isDesktop ? 10 : -2,
+                width: "100%", 
+                mb: 50 
+            }}
             >
-                <Grid container spacing={6} justifyContent="center"> {/* Mengatur grid container menjadi center */}
-                    <Grid item display={'flex'}>
-                        <img src={CallIcon} 
-                        height={ isDesktop ? 40 : 30} 
-                        width={ isDesktop ? 50 : 30} 
-                        style={{
-                            paddingLeft: isDesktop ? '' : 10
-                        }}
-                        />
-                        <div style={{ display: 'block', marginTop: isDesktop ? 0 : '1px' }}>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Call Us</Typography>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>082131131108</Typography>
-                        </div>
-                    </Grid>
-                    <Grid item display={'flex'} style={{left: isDesktop ? '-120px' : '-160px' }}>
-                        <img src={EmailIcon} 
-                        height={ isDesktop ? 40 : 30} 
-                        width={ isDesktop ? 50 : 30} 
+              <Grid spacing={ isDesktop ? 12 : 10}>
+                {Produk.map((e, index) => (
+                    <Grid item key={e._id} xs={12} sm={4} md={4} lg={4} mb={isDesktop ? 20 : 20}>
+                      {isCardFlipped[index] ? (
+                        <div
+                          className={`product-card flipped-card`}
+                          style={{
+                            width: isDesktop ? "350px" : "340px",
+                            height: isDesktop ? "600px" : '550px',
+                            backgroundColor: "#f8f8f8",
+                            borderRadius: "8px",
+                            boxShadow:
+                              "0px 8px 16px rgba(255, 165, 0, 0.6)",
+                            transform: isCardFlipped[index]
+                              ? "rotateY(180deg)"
+                              : "rotateY(0deg)",
+                            transformStyle: "preserve-3d",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            padding: "20px",
+                          }}
+                        >
+                          <div
                             style={{
-                                left: isDesktop ? '200px' : '200px',
-                                top: isDesktop ? 0 : '-1px'
+                              width: "100%",
+                              height: "100px",
+                              backgroundColor: "#e6bf0d",
+                              position: "relative",
+                              borderRadius: "10px",
+                              zIndex: "1",
                             }}
-                        />
-                        <div style={{ display: 'block', left: isDesktop ? '210px' : '200px', top: isDesktop ? '-2px' : '-1px' }}>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Send us Email</Typography>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>pusatkerupukindonesia@gmail.com</Typography>
-                        </div>
-                    </Grid>
-                    <Grid item> {/* Menggunakan Grid item untuk tombol Contact */}
-                        <Button style={{ 
-                            backgroundColor: '#ff9c00',
-                            height: '40px',
-                            width: '100px',
-                            color: 'white',
-                            marginTop: isDesktop ? '10px' : '-10px', // Atur margin atas sesuai kebutuhan
-                        }}>
-                            Contact
-                        </Button>
-                    </Grid>
-                </Grid>
-            </div>
-             {isDesktop ? 
-            <div className="header-bottom" style={{
-                color: 'white',
-                display: 'flex',
-                marginTop: '28px',
-                width: isDesktop ? '55%' : '100%',
-                left: '10px',
-                height: '50px',
-                padding: '0 0 0 25px',
-                float: 'right',
-                backgroundColor: '#e32222',
-                marginBottom: '-10px',
-                // position: 'relative',
-                zIndex: '99999',
-            }}>
-                <Grid container spacing={8} style={{
-                    transform: 'skew(35deg)',
-                    // position: 'relative',
-                    left: '20px',
-                    top: '6px',
-                }}>
-                    <Grid item>
-                        <Button style={{ color: 'white' }} href="/">Home</Button>
-                    </Grid>
-                    <Grid item>
-                        <Button style={{ color: 'white' }} href="/produk">Product</Button>
-                    </Grid>
-                    <Grid item>
-                        <Button style={{ color: 'white' }} href="/about">About</Button>
-                    </Grid>
-                    <Grid item>
-                        <Button style={{ color: 'white' }} href="/artikel">Artikel</Button>
-                    </Grid>
-                    <Grid item style={{
-                        // position: 'relative',
-                        top: '-7px',
-                        left: '200px'
-                    }}>
-                        <Search>
-                            <SearchIconWrapper>
-                            <SearchIcon />
-                            </SearchIconWrapper>
-                            <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                            />
-                        </Search>
-                    </Grid>
-                </Grid>
-            </div>
-               :  
-               <> 
-                    <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute">
-                        <Toolbar>
-                            <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
-                                Menu
-                            </Typography>
-                            <IconButton
-                                color="inherit"
-                                aria-label="open drawer"
-                                edge="end"
-                                onClick={open ? handleDrawerClose : handleDrawerOpen}
+                          >
+                            <Typography
+                              id="title-produk"
+                              style={{
+                                textAlign: "center",
+                                // fontFamily: "'Brush Script MT', cursive",
+                                margin: 22,
+                                color: "white",
+                                fontSize: 35,
+                                transform: isCardFlipped[index]
+                                  ? "rotateY(180deg)"
+                                  : "none",
+                                transformStyle: "preserve-3d",
+                              }}
                             >
-                                {open ? <ChevronLeftIcon /> : <MenuIcon />}
-                            </IconButton>
-                        </Toolbar>
-                    </AppBar>
-                    <Drawer
-                        variant="persistent"
-                        anchor="right"
-                        open={open}
-                    >
-                        <DrawerHeader>
-                        <IconButton onClick={handleDrawerClose}>
-                            {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                        </IconButton>
-                        </DrawerHeader>
-                        <Divider />
-                        <List>
-                            <ListItem>
-                                <VscHome style={{ paddingRight: '30px' }} />
-                                <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                                    Home
-                                </a>
-                            </ListItem>
-                            <ListItem>
-                                <HiOutlineClipboardList style={{ paddingRight: '30px' }} />
-                                <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                                    Product
-                                </a>
-                            </ListItem>
-                            <ListItem>
-                                <FcAbout style={{ paddingRight: '30px' }} />
-                                <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                                    About
-                                </a>
-                            </ListItem>
-                            <ListItem>
-                                <LuContact style={{ paddingRight: '30px' }} />
-                                <a href="/artikel" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                                    Artikel
-                                </a>
-                            </ListItem>
-                            <ListItem>
-                                <FcGlobe />
-                                <FormControl sx={{ m: 1, minWidth: 120 }}>
-                                <InputLabel id="demo-simple-select-autowidth-label">Translate</InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-autowidth-label"
-                                    id="demo-simple-select-autowidth"
-                                    value={language}
-                                    onChange={handleChange}
-                                    autoWidth
-                                    label={labelText}
-                                >
-                                    <MenuItem value={10}>Indonesia</MenuItem>
-                                    <MenuItem value={20}>English</MenuItem>
-                                    <MenuItem value={30}>Chinese</MenuItem>
-                                </Select>
-                            </FormControl>
-                            </ListItem>
-                        </List>
-                        <Divider />
-                    </Drawer>
-               </>  
-            }
-          </div>
+                              {t("title-kerupuk.text")}
+                            </Typography>
+                          </div>
+                          <p
+                            type="secondary"
+                            style={{
+                              width: "100%",
+                              textAlign: "justify",
+                              paddingTop: "30px",
+                              fontSize: !isDesktop ? "10px" : "10px",
+                              transform: isCardFlipped[index]
+                                ? "rotateY(180deg)"
+                                : "none",
+                              transformStyle: "preserve-3d",
+                              whiteSpace: 'pre-line'
+                            }}
+                          >
+                            {e[activeLanguage].deskripsi.split('\n').map((paragraph, index) => (
+                              <p key={index}>{paragraph}</p>
+                            ))}
+                          </p>
+                          <br />
+                          <Button
+                            id="kembali"
+                            style={{
+                              marginTop: "10px",
+                              transform: isCardFlipped[index]
+                                ? "rotateY(180deg)"
+                                : "none",
+                            }}
+                            onClick={() => toggleCardFlip(index)}
+                          >
+                            {t("kembali.text")}
+                          </Button>
+                        </div>
+                      ) : (
+                        <div
+                          className={`product-card`}
+                          style={{
+                            width: isDesktop ? "100%" : "340px",
+                            height: isDesktop ? "600px" : '550px',
+                            backgroundColor: "#f8f8f8",
+                            borderRadius: "8px",
+                            boxShadow:
+                              "0px 8px 16px rgba(255, 165, 0, 0.6)",
+                            transform: isCardFlipped[index]
+                              ? "rotateY(180deg)"
+                              : "rotateY(0deg)",
+                            transformStyle: "preserve-3d",
+                            backfaceVisibility: "hidden",
+                            display: "flex",
+                            margin: isDesktop ? "20px" : "6.5px",
+                            flexDirection: "column",
+                            padding: "20px",
+                          }}
+                        >
+                          {/* {e[activeLanguage].versi && e[activeLanguage].versi === "baru" && (
+                            <div
+                             className="waving-flag"
+                              style={{
+                                zIndex: 3,
+                                position: 'absolute',
+                                top: '10px',
+                                left: '10px',
+                                backgroundColor: 'green',
+                                color: 'white',
+                                padding: '5px',
+                                borderRadius: '5px',
+                                animation: 'wavingFlagAnimation 1s infinite'
+                              }}
+                            >
+                              New
+                            </div>
+                          )}
+                           {e[activeLanguage].versi && e[activeLanguage].versi === "favorite" && (
+                            <div class="favorite-container">
+                            <div class="favorite-flag">
+                              Favorite
+                            </div>
+                            <div class="stars"></div>
+                          </div>
+                          )} */}
+                          <div
+                            style={{
+                              width: "100%",
+                              height: "100px",
+                              backgroundColor: "#e6bf0d",
+                              position: "relative",
+                              borderRadius: "10px",
+                              top: "-20px",
+                              zIndex: "1",
+                            }}
+                          >
+                            <Typography
+                              id="title-produk"
+                              style={{
+                                textAlign: "center",
+                                // fontFamily: "'Brush Script MT', cursive",
+                                margin: 22,
+                                color: "white",
+                                fontSize: 35,
+                              }}
+                            >
+                              {t("title-kerupuk.text")}
+                            </Typography>
+                          </div>
+                          <img src={e[activeLanguage].image} style={{ height: "300px" }} />
+                          <h2
+                            // title={
+                            //   e[activeLanguage].kategori === "bahan-baku" ? "" : e[activeLanguage].nama
+                            // }
+                            style={{
+                              marginTop: "30px",
+                              marginBottom: "5px",
+                              fontFamily: "'PT Serif', serif",
+                              textAlign: "center",
+                            }}
+                          > { e[activeLanguage].nama } </h2>
+                          <Button
+                            id="review"
+                            style={{
+                              alignSelf: "center",
+                            }}
+                            onClick={() => toggleCardFlip(index)}
+                          >
+                            {t("review.text")}
+                          </Button>
+                        </div>
+                      )}
+                    </Grid>
+                  ))}
+              </Grid>
+            </Container>
+
+
+
 
           <ReactWhatsapp id="icon-whatsapp" style={{ 
                 width: 0,
@@ -406,7 +377,7 @@ export function Product() {
             />
         </ReactWhatsapp>
 
-          <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? '300px' : '1250px' }}>
+          <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 0 : '-300px' }}>
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>

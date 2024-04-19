@@ -1,25 +1,12 @@
 import React, {useEffect, useState} from "react";
 import { useTheme } from '@mui/material/styles';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import XIcon from '@mui/icons-material/X';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GoogleIcon from '@mui/icons-material/Google';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Grid, Typography, Button } from "@mui/material";
-import LogoKerupuk from '../../Image/Pusat Kerupuk Indonesia Logo.png';
-import CallIcon from '../../Image/calling.png';
-import EmailIcon from '../../Image/mail.png';
-import SearchIcon from '@mui/icons-material/Search';
-import { styled, alpha } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
 import Kerupuk1 from '../../Image/kerupuk_1.png';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import GppGoodIcon from '@mui/icons-material/GppGood';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import Container from "@mui/material/Container";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Layanan24 from '../../Image/2633.png_860.png';
 import Produksi from '../../Image/training-dan-sertifikasi-operator-forklift-pelatihan-operator-forklift-training-operator-forklift.jpg';
@@ -27,10 +14,6 @@ import ImgKerupuk from '../../Image/istockphoto-874515358-612x612.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PublicIcon from '@mui/icons-material/Public';
-import Jangkauan from '../../Image/global-network.png';
-import Pengiriman from '../../Image/delivery-man.png';
-import Audit from '../../Image/audit.png';
-import Relationship from '../../Image/relationship.png';
 import Call from '../../Image/phone-call.png';
 import Location from '../../Image/location.png';
 import Email from '../../Image/message.png';
@@ -51,44 +34,29 @@ import { BsInstagram } from "react-icons/bs";
 import { SiGooglemybusiness } from "react-icons/si";
 import ReactWhatsapp from 'react-whatsapp';
 import IconWhatsapp from '../../Image/icon-whatsapp.png'
-
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import CssBaseline from '@mui/material/CssBaseline';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import { VscHome } from "react-icons/vsc";
-import { HiOutlineClipboardList } from "react-icons/hi";
-import { FcAbout } from "react-icons/fc";
-import { LuContact } from "react-icons/lu";
-
 import { CiDeliveryTruck } from "react-icons/ci";
 import { AiOutlineAudit } from "react-icons/ai";
 import { FaPeopleLine } from "react-icons/fa6";
 import Shopping from '../../Image/shopping.gif';
-
-import { FcGlobe } from "react-icons/fc";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { useTranslation } from "react-i18next";
+import Header from "../Header";
 
 export function Home () {
     const theme = useTheme();
+    const { t, i18n } = useTranslation("global");
     const [isLoading, setIsLoading] = useState(false);
     const [age, setAge] = React.useState('');
     const [language, setLanguage] = useState('');
     const [labelText, setLabelText] = useState('Translate');
+    const activeLanguage = i18n.language;
 
     const handleChange = (event) => {
         setLanguage(event.target.value);
     };
+
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang)
+      }
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -97,95 +65,17 @@ export function Home () {
         return () => clearTimeout(timer);
     }, []);
 
-    const DrawerHeader = styled('div')(({ theme }) => ({
-        display: 'flex',
-        alignItems: 'center',
-        padding: theme.spacing(0, 1),
-        // necessary for content to be below app bar
-        ...theme.mixins.toolbar,
-        justifyContent: 'flex-start',
-      }));
-
-      const AppBar = styled(MuiAppBar, {
-        shouldForwardProp: (prop) => prop !== 'open',
-      })(({ theme, open }) => ({
-        transition: theme.transitions.create(['margin', 'width'], {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen,
-        }),
-        ...(open && {
-          width: `800px`,
-          transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-          }),
-          marginRight: '800px',
-        }),
-      }));
-
       const [open, setOpen] = React.useState(false);
-
-        const handleDrawerOpen = () => {
-            setOpen(true);
-        };
-
-        const handleDrawerClose = () => {
-            setOpen(false);
-        };
 
     useEffect(() => {
         AOS.init({ duration: 3000 })
       }, []);
 
-    const skewStyle = {
-        transform: 'skew(-35deg)'
-      };
-
-    const Search = styled('div')(({ theme }) => ({
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
-        '&:hover': {
-          backgroundColor: alpha(theme.palette.common.white, 0.25),
-        },
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-          marginLeft: theme.spacing(1),
-          width: 'auto',
-        },
-      }));
-      
-      const SearchIconWrapper = styled('div')(({ theme }) => ({
-        padding: theme.spacing(0, 2),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }));
-
-      const StyledInputBase = styled(InputBase)(({ theme }) => ({
-        color: 'inherit',
-        width: '100%',
-        '& .MuiInputBase-input': {
-          padding: theme.spacing(1, 1, 1, 0),
-          // vertical padding + font size from searchIcon
-          paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-          transition: theme.transitions.create('width'),
-          [theme.breakpoints.up('sm')]: {
-            width: '12ch',
-            '&:focus': {
-              width: '20ch',
-            },
-          },
-        },
-      }));
 
     const isDesktop = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true,
       });
+
     return (
         <>
         {!isLoading && (
@@ -195,255 +85,7 @@ export function Home () {
         )}
         {isLoading && (
             <>
-        <div className="header" style={{
-            borderBottom: isDesktop ? 'solid 2px #e32222' : 0,
-            borderBottomColor: isDesktop ? '#e32222' : 0,
-            height: isDesktop ? '217px' : '175px',
-            width: '100%'
-            // boxSizing: 'border-box'
-          }}>
-            <div className="header-top" style={{
-                marginTop: isDesktop ? '-7px' : '-1px',
-                color: '#fff',
-                width: isDesktop ? '38%' : 'auto',
-                height: isDesktop ? '53px' : '80px',
-                paddingLeft: isDesktop ? '0' : 60,
-                float: isDesktop ?  'right' : 0,
-                padding: isDesktop ? '0 0 0 350px' : 0,
-                lineHeight: '40px',
-                position: !isDesktop ? 0 : 0,
-                backgroundColor: '#ff9c00',
-                display: isDesktop ? 'flex' : 'block',
-                transform: isDesktop ? "skew(35deg)" : 0
-            }}>
-             <div className="left" style={{ 
-                display: 'flex',
-                // position: 'relative', 
-                marginTop: !isDesktop ? '-4px' : '5px', 
-                transform: isDesktop ? "skew(-35deg)" : 0,
-                paddingLeft: isDesktop ? 0 : '50px'
-                }}>
-             <AccessTimeIcon style={{ height: '20px', paddingRight: '8px', paddingTop: '10px' }} />
-             <label style={{ 
-                paddingTop: isDesktop ? '-20px' : 0, 
-                position: isDesktop ? 'relative' : 0, 
-                top: isDesktop ? 0 : 0,
-                }}>We are Open: Sen - Sab 7:00 - 18:00</label> 
-             </div>
-             <div className="right" style={{ 
-                paddingLeft: isDesktop ? '100px' : '340px',
-                textAlign: isDesktop ? 'right' : 'center',
-                paddingTop: !isDesktop ? '0' : '10px',
-                display: isDesktop ? 'flex' : 'flex',
-                float: isDesktop ? 'right' : 'left',
-                marginLeft: !isDesktop ? '-210px' : 0,
-                transform: isDesktop ? "skew(-35deg)" : 0,
-                }}>
-              <Grid container spacing={2}>
-                <Grid item>
-                <FaFacebookF style={{ height: '18px' }} />
-                </Grid>
-                <Grid item>
-                <XIcon style={{ height: '20px' }} />
-                </Grid>
-                <Grid item>
-                <InstagramIcon style={{ height: '20px' }} />
-                </Grid>
-                <Grid item>
-                <SiGooglemybusiness style={{ height: '25px', width: '18px', paddingTop: '4px' }} />
-                </Grid>
-              </Grid>
-             </div>
-            </div>
-            <div style={{
-                display: 'flex',
-                alignItems: 'center', // Mengatur elemen berada di tengah secara vertikal
-                paddingTop: isDesktop ? '57px' : '-10px',
-                justifyContent: 'center', 
-                margin: !isDesktop ? 10 : 0
-            }}>
-                <img src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
-                <label style={{ fontSize: isDesktop ? '22px' : '20px' }}>Pusat Kerupuk Indonesia</label>
-            </div>
-            <div className="hub"
-                style={{ 
-                    position: isDesktop ? 'relative' : 0,
-                    float: isDesktop ? 'right' : 0, 
-                    left: isDesktop ? '-200px' : '-30px',
-                    marginTop: isDesktop ? '-60px' : '30px',
-                    marginLeft: isDesktop ? 0 : '-20px'
-                }}
-            >
-                <Grid container spacing={6} justifyContent="center"> {/* Mengatur grid container menjadi center */}
-                    <Grid item display={'flex'}>
-                        <img src={CallIcon} 
-                        height={ isDesktop ? 40 : 30} 
-                        width={ isDesktop ? 50 : 30} 
-                        style={{
-                            paddingLeft: isDesktop ? '' : 40
-                        }}
-                        />
-                        <div style={{ display: 'block', marginTop: isDesktop ? 0 : '1px' }}>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Call Us</Typography>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>082131131108</Typography>
-                        </div>
-                    </Grid>
-                    <Grid item display={'flex'} style={{left: isDesktop ? '-120px' : '-160px' }}>
-                        <img src={EmailIcon} 
-                        height={ isDesktop ? 40 : 30} 
-                        width={ isDesktop ? 50 : 30} 
-                            style={{
-                                left: isDesktop ? '200px' : '200px',
-                                top: isDesktop ? 0 : '-1px'
-                            }}
-                        />
-                        <div style={{ display: 'block', left: isDesktop ? '210px' : '200px', top: isDesktop ? '-2px' : '-1px' }}>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>Send us Email</Typography>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>pusatkerupukindonesia@gmail.com</Typography>
-                        </div>
-                    </Grid>
-                    <Grid item> {/* Menggunakan Grid item untuk tombol Contact */}
-                        <Button style={{ 
-                            backgroundColor: '#ff9c00',
-                            height: '40px',
-                            width: '100px',
-                            color: 'white',
-                            marginTop: isDesktop ? '10px' : '-10px', // Atur margin atas sesuai kebutuhan
-                        }}>
-                            Contact
-                        </Button>
-                    </Grid>
-                </Grid>
-            </div>
-             {isDesktop ? 
-            <div className="header-bottom" style={{
-                color: 'white',
-                display: 'flex',
-                marginTop: '30px',
-                width: '55%',
-                // paddingLeft: isDesktop ? '-1900px' : 0,
-                height: '50px',
-                padding: '0 0 0 25px',
-                float: 'right',
-                backgroundColor: '#e32222',
-                marginBottom: '-10px',
-                // position: 'relative',
-                zIndex: '-3',
-            }}>
-                <Grid container spacing={8} style={{
-                    transform: 'skew(35deg)',
-                    // position: 'relative',
-                    paddingLeft: '-40px',
-                    paddingTop: '6px',
-                }}>
-                    <Grid item>
-                        <Button style={{ color: 'white' }} href="/">Home</Button>
-                    </Grid>
-                    <Grid item>
-                        <Button style={{ color: 'white' }} href="/produk">Product</Button>
-                    </Grid>
-                    <Grid item>
-                        <Button style={{ color: 'white' }} href="/about">About</Button>
-                    </Grid>
-                    <Grid item>
-                        <Button style={{ color: 'white' }} href="/artikel">Artikel</Button>
-                    </Grid>
-                    <Grid item style={{
-                        // position: 'relative',
-                        top: '-7px',
-                        left: '200px'
-                    }}>
-                        <Search>
-                            <SearchIconWrapper>
-                            <SearchIcon />
-                            </SearchIconWrapper>
-                            <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                            />
-                        </Search>
-                    </Grid>
-                </Grid>
-            </div>
-               :  
-               <> 
-                   <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute">
-                        <Toolbar>
-                            <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
-                                Menu
-                            </Typography>
-                            <IconButton
-                                color="inherit"
-                                aria-label="open drawer"
-                                edge="end"
-                                onClick={open ? handleDrawerClose : handleDrawerOpen}
-                            >
-                                {open ? <ChevronLeftIcon /> : <MenuIcon />}
-                            </IconButton>
-                        </Toolbar>
-                    </AppBar>
-                    <Drawer
-                        variant="persistent"
-                        anchor="right"
-                        open={open}
-                    >
-                        <DrawerHeader>
-                        <IconButton onClick={handleDrawerClose}>
-                            {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                        </IconButton>
-                        </DrawerHeader>
-                        <Divider />
-                        <List>
-                            <ListItem>
-                                <VscHome style={{ paddingRight: '30px' }} />
-                                <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                                    Home
-                                </a>
-                            </ListItem>
-                            <ListItem>
-                                <HiOutlineClipboardList style={{ paddingRight: '30px' }} />
-                                <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                                    Product
-                                </a>
-                            </ListItem>
-                            <ListItem>
-                                <FcAbout style={{ paddingRight: '30px' }} />
-                                <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                                    About
-                                </a>
-                            </ListItem>
-                            <ListItem>
-                                <LuContact style={{ paddingRight: '30px' }} />
-                                <a href="/artikel" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                                    Artikel
-                                </a>
-                            </ListItem>
-                            <ListItem>
-                                <FcGlobe />
-                                <FormControl sx={{ m: 1, minWidth: 120 }}>
-                                <InputLabel id="demo-simple-select-autowidth-label">Translate</InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-autowidth-label"
-                                    id="demo-simple-select-autowidth"
-                                    value={language}
-                                    onChange={handleChange}
-                                    autoWidth
-                                    label={labelText}
-                                >
-                                    <MenuItem value={10}>Indonesia</MenuItem>
-                                    <MenuItem value={20}>English</MenuItem>
-                                    <MenuItem value={30}>Chinese</MenuItem>
-                                </Select>
-                            </FormControl>
-                            </ListItem>
-                        </List>
-                        <Divider />
-                    </Drawer>
-               </>  
-            }
-          </div>
-
-
+          <Header />
           <div>
             <img src={Kerupuk1} 
                 style={{
