@@ -939,34 +939,70 @@ export function Home () {
                         </div>
                     </Grid>
                     <Grid item>
-                    <div style={{ marginTop: isDesktop ? 0 : 60 }}>
+                    <div style={{ marginTop: isDesktop ? 0 : 60}}>
                             <label style={{ color: 'white', fontSize: '20px' }}>{t("jam-layanan.text")}</label>
                             <br />
                             <br />
-                            <div style={{ width: isDesktop ?  '100%' : 270 }}>
-                            <label style={{ color: 'white' }}>{t("senin1.text")}</label>
-                            <label style={{ color: 'white', paddingLeft: '105px' }}>07.00 - 18.00</label>
-                            <hr style={{ borderBottom: '1px solid white' }} />
-                            <br />
-                            <label style={{ color: 'white' }}>{t("Selasa.text")}</label>
-                            <label style={{ color: 'white', paddingLeft: '100px' }}>07.00 - 18.00</label>
-                            <hr style={{ borderBottom: '1px solid white' }} />
-                            <br />
-                            <label style={{ color: 'white' }}>{t("Rabu.text")}</label>
-                            <label style={{ color: 'white', paddingLeft: '107px' }}>07.00 - 18.00</label>
-                            <hr style={{ borderBottom: '1px solid white' }} />
-                            <br />
-                            <label style={{ color: 'white' }}>{t("Kamis.text")}</label>
-                            <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
-                            <hr style={{ borderBottom: '1px solid white' }} />
-                            <br />
-                            <label style={{ color: 'white' }}>{t("Jumat.text")}</label>
-                            <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
-                            <hr style={{ borderBottom: '1px solid white' }} />
-                            <br />
-                            <label style={{ color: 'white' }}>{t("sabtu1.text")}</label>
-                            <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
-                            <hr style={{ borderBottom: '1px solid white' }} />
+                            <div style={{ width: isDesktop ? '100%' : 270 }}>
+                                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                    <div style={{ flex: 1 }}>
+                                        <label style={{ color: 'white' }}>{t("senin1.text")}</label>
+                                    </div>
+                                    <div>
+                                        <label style={{ color: 'white' }}>07.00 - 18.00</label>
+                                    </div>
+                                </div>
+                                <hr style={{ borderBottom: '1px solid white' }} />
+                                <br />
+                                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                    <div style={{ flex: 1 }}>
+                                        <label style={{ color: 'white' }}>{t("Selasa.text")}</label>
+                                    </div>
+                                    <div>
+                                        <label style={{ color: 'white' }}>07.00 - 18.00</label>
+                                    </div>
+                                </div>
+                                <hr style={{ borderBottom: '1px solid white' }} />
+                                <br />
+                                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                    <div style={{ flex: 1 }}>
+                                        <label style={{ color: 'white' }}>{t("Rabu.text")}</label>
+                                    </div>
+                                    <div>
+                                        <label style={{ color: 'white' }}>07.00 - 18.00</label>
+                                    </div>
+                                </div>
+                                <hr style={{ borderBottom: '1px solid white' }} />
+                                <br />
+                                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                    <div style={{ flex: 1 }}>
+                                        <label style={{ color: 'white' }}>{t("Kamis.text")}</label>
+                                    </div>
+                                    <div>
+                                        <label style={{ color: 'white' }}>07.00 - 18.00</label>
+                                    </div>
+                                </div>
+                                <hr style={{ borderBottom: '1px solid white' }} />
+                                <br />
+                                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                    <div style={{ flex: 1 }}>
+                                        <label style={{ color: 'white' }}>{t("Jumat.text")}</label>
+                                    </div>
+                                    <div>
+                                        <label style={{ color: 'white' }}>07.00 - 18.00</label>
+                                    </div>
+                                </div>
+                                <hr style={{ borderBottom: '1px solid white' }} />
+                                <br />
+                                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                    <div style={{ flex: 1 }}>
+                                        <label style={{ color: 'white' }}>{t("sabtu1.text")}</label>
+                                    </div>
+                                    <div>
+                                        <label style={{ color: 'white' }}>07.00 - 18.00</label>
+                                    </div>
+                                </div>
+                                <hr style={{ borderBottom: '1px solid white' }} />
                             </div>
                         </div>
                     </Grid>
