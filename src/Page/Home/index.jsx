@@ -40,6 +40,8 @@ import { FaPeopleLine } from "react-icons/fa6";
 import Shopping from '../../Image/shopping.gif';
 import { useTranslation } from "react-i18next";
 import Header from "../Header";
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export function Home () {
     const theme = useTheme();
@@ -49,6 +51,20 @@ export function Home () {
     const [language, setLanguage] = useState('');
     const [labelText, setLabelText] = useState('Translate');
     const activeLanguage = i18n.language;
+    const control = useAnimation();
+    const [ ref, inView ] = useInView();
+
+    const boxVariant = {
+        visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.5 } },
+        hidden: { opacity: 0, scale: 0, x: 200 }
+    }
+ 
+
+    useEffect(() => {
+        if (inView) {
+            control.start("visible");
+        }
+    }, [control, inView])
 
     const handleChange = (event) => {
         setLanguage(event.target.value);
@@ -86,7 +102,7 @@ export function Home () {
         {isLoading && (
             <>
           <Header />
-          <div>
+          <div id="top-title">
             <img src={Kerupuk1} 
                 style={{
                     height: isDesktop ? '1400px' : '200px',
@@ -102,8 +118,8 @@ export function Home () {
                 left: '10%', 
                 transform: 'translateY(-50%)',
                 }}>
-                <Typography variant="h4" style={{ color: 'white', fontSize: isDesktop ? 27 : 12  }}>Aneka Kerupuk Nusantara</Typography>
-                <Typography variant="subtitle1" style={{ color: 'white', fontSize: isDesktop ? 17 : 10 }}>Original Product</Typography>
+                <Typography variant="h4" style={{ color: 'white', fontSize: isDesktop ? 27 : 12  }}>{t("aneka-kerupuk.text")}</Typography>
+                <Typography variant="subtitle1" style={{ color: 'white', fontSize: isDesktop ? 17 : 10 }}>{t("produk-original.text")}</Typography>
                 <span style={{
                     display: 'block',
                     width: isDesktop ? '100px' : '50px',
@@ -113,14 +129,17 @@ export function Home () {
                 }}></span>
                 {isDesktop ? 
                 <>
-                  <button className="button-header" style={{
+                <a href="#selamat-datang">
+                  <Button  className="button-header" style={{
                     backgroundColor: 'orange',
                     color: 'white',
                     marginTop: '20px',
                     borderRadius: '19px',
                     width: '150px',
-                    height: '40px'
-                  }}>Read More</button>
+                    height: '40px',
+                    fontSize: "11px"
+                  }}>{t("baca.text")}</Button>
+                  </a>
                 </> : null}
             </div>
         </div>
@@ -152,7 +171,7 @@ export function Home () {
                     display: 'block',
                     margin: '0 auto'
                 }} />
-                <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>Fast Delivery</Typography>
+                <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>{t("pengiriman.text")}</Typography>
                 <Typography style={{ 
                     textAlign: 'center', 
                     fontSize: '12px',
@@ -162,8 +181,7 @@ export function Home () {
                     width: '160px',
                     paddingBottom: '20px'
                     }}>
-                    Paket Anda akan dikirimkan dengan cepat ke tujuan, 
-                    memastikan barang Anda tiba tepat waktu
+                    {t("deskripsi-pengiriman.text")}
                 </Typography>
             </div>
             </div>
@@ -182,7 +200,7 @@ export function Home () {
                     display: 'block',
                     margin: '0 auto'
                 }}/>
-                <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>Secured Service</Typography>
+                <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>{t("layanan.text")}</Typography>
                 <Typography style={{ 
                     textAlign: 'center', 
                     fontSize: '12px',
@@ -192,8 +210,7 @@ export function Home () {
                     width: '160px',
                     paddingBottom: '20px'
                     }}>
-                    Setiap langkah pengiriman diawasi dengan ketat untuk 
-                    memastikan bahwa paket Anda tiba dengan aman dan tepat waktu
+                    {t("deskripsi-layanan.text")}
                 </Typography>
             </div>
             </div>
@@ -212,7 +229,7 @@ export function Home () {
                     display: 'block',
                     margin: '0 auto'
                 }}/>
-                <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>Affordable price</Typography>
+                <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>{t("harga.text")}</Typography>
                 <Typography style={{ 
                     textAlign: 'center', 
                     fontSize: '12px',
@@ -222,8 +239,7 @@ export function Home () {
                     width: '160px',
                     paddingBottom: '20px'
                     }}>
-                    Anda dapat mengirimkan paket Anda dengan biaya yang lebih 
-                    rendah tanpa mengorbankan kualitas layanan
+                    {t("deskripsi-harga.text")}
                 </Typography>
             </div>
             </div>
@@ -242,7 +258,7 @@ export function Home () {
                     display: 'block',
                     margin: '0 auto'
                 }}/>
-                <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>24/7 Support</Typography>
+                <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>{t("dukungan.text")}</Typography>
                 <Typography style={{ 
                     textAlign: 'center', 
                     fontSize: '12px',
@@ -252,8 +268,7 @@ export function Home () {
                     width: '160px',
                     paddingBottom: '20px'
                     }}>
-                    Tim dukungan pelanggan siap membantu Anda dengan pertanyaan, 
-                    masalah, atau kebutuhan bantuan lainnya
+                    {t("deskripsi-dukungan.text")}
                 </Typography>
             </div>
             </div>
@@ -275,7 +290,7 @@ export function Home () {
                         display: 'block',
                         margin: '0 auto'
                     }} />
-                    <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>Fast Delivery</Typography>
+                    <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>{t("pengiriman.text")}</Typography>
                     <Typography style={{ 
                         textAlign: 'center', 
                         fontSize: '12px',
@@ -285,8 +300,7 @@ export function Home () {
                         width: '160px',
                         paddingBottom: '20px'
                         }}>
-                        Paket Anda akan dikirimkan dengan cepat ke tujuan, 
-                        memastikan barang Anda tiba tepat waktu
+                        {t("deskripsi-pengiriman.text")}
                     </Typography>
                 </div>
                 <div className="secured" style={{ 
@@ -303,7 +317,7 @@ export function Home () {
                         display: 'block',
                         margin: '0 auto'
                     }}/>
-                    <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>Secured Service</Typography>
+                    <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>{t("layanan.text")}</Typography>
                     <Typography style={{ 
                         textAlign: 'center', 
                         fontSize: '12px',
@@ -313,8 +327,7 @@ export function Home () {
                         width: '160px',
                         paddingBottom: '20px'
                         }}>
-                        Setiap langkah pengiriman diawasi dengan ketat untuk 
-                        memastikan bahwa paket Anda tiba dengan aman dan tepat waktu
+                        {t("deskripsi-layanan.text")}
                     </Typography>
                 </div>
                 <div className="Affordable" style={{ 
@@ -331,7 +344,7 @@ export function Home () {
                         display: 'block',
                         margin: '0 auto'
                     }}/>
-                    <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>Affordable price</Typography>
+                    <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>{t("harga.text")}</Typography>
                     <Typography style={{ 
                         textAlign: 'center', 
                         fontSize: '12px',
@@ -341,8 +354,7 @@ export function Home () {
                         width: '160px',
                         paddingBottom: '20px'
                         }}>
-                        Anda dapat mengirimkan paket Anda dengan biaya yang lebih 
-                        rendah tanpa mengorbankan kualitas layanan
+                        {t("deskripsi-harga.text")}
                     </Typography>
                 </div>
                 <div className="secured" style={{ 
@@ -359,7 +371,7 @@ export function Home () {
                         display: 'block',
                         margin: '0 auto'
                     }}/>
-                    <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>24/7 Support</Typography>
+                    <Typography style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '10px' }}>{t("dukungan.text")}</Typography>
                     <Typography style={{ 
                         textAlign: 'center', 
                         fontSize: '12px',
@@ -369,8 +381,7 @@ export function Home () {
                         width: '160px',
                         paddingBottom: '20px'
                         }}>
-                        Tim dukungan pelanggan siap membantu Anda dengan pertanyaan, 
-                        masalah, atau kebutuhan bantuan lainnya
+                        {t("deskripsi-dukungan.text")}
                     </Typography>
                 </div>
                 </> }
@@ -384,32 +395,28 @@ export function Home () {
           <div style={{ display: isDesktop ? 'flex' : 'block', width: !isDesktop ? '100%' : '100%', marginTop: '200px', marginLeft: isDesktop ? '100px' : 0}}>
             
 
-            <div style={{ width: isDesktop ? 0 : '100%'}}>
+            <div id="selamat-datang" style={{ width: isDesktop ? 0 : '100%'}}>
     
             <Typography className="welcome" style={{
                 fontSize: isDesktop ? '24px' : '18px',
                 paddingLeft: isDesktop ? 0 : '20px',
                 width: isDesktop ? '300px' : 100
-            }}>Welcome to</Typography>
+            }}>{t("selamat-datang.text")}</Typography>
             <Typography className="pusat_kerupuk" style={{
                 fontSize: isDesktop ? '33px' : '22px',
                 fontWeight: 'bold',
                 width: !isDesktop ? '280px' : '500px',
                 paddingLeft: isDesktop ? 0 : '20px'
-            }}>Pusat Kerupuk Indonesia</Typography>
+            }}>{t("pusat-kerupuk-indonesia.text")}</Typography>
             {isDesktop ?
             <p id="deskripsi_kerupuk" style={{
                 width: isDesktop ? '600px' : '300px',
                 paddingTop: '20px',
             }}>
-           Selamat datang di Pusat Kerupuk Indonesia, tujuan utama Anda untuk menemukan kelezatan kerupuk terbaik dari berbagai penjuru Nusantara! Kami adalah destinasi terpercaya bagi para pecinta makanan yang mencari aneka ragam kerupuk tradisional Indonesia yang autentik dan lezat.
-
-           Di Pusat Kerupuk Indonesia, kami memahami kekayaan budaya Indonesia yang tercermin dalam beragam rasa, tekstur, dan bahan-bahan berkualitas yang digunakan dalam pembuatan kerupuk. Kami bangga menyajikan kepada Anda koleksi lengkap kerupuk dari berbagai daerah di Indonesia, mulai dari kerupuk udang, kerupuk singkong, kerupuk ikan, hingga kerupuk rempeyek dan masih banyak lagi.
+            {t("deskripsi-pusat-kerupuk-1.text")}
            <br />
            <br />
-           Setiap produk kerupuk yang kami tawarkan dipilih dengan cermat untuk memastikan kualitas terbaik. Kami bekerja sama dengan produsen kerupuk terkemuka yang menggunakan resep turun-temurun dan teknik pembuatan tradisional untuk menghasilkan kerupuk yang berkualitas tinggi dan lezat.
-
-           Dengan berbelanja di Pusat Kerupuk Indonesia, Anda tidak hanya menikmati kelezatan makanan yang autentik, tetapi juga mendukung industri kecil dan menengah di berbagai daerah di Indonesia. Kami komitmen untuk mempromosikan dan memperkenalkan kekayaan kuliner Indonesia kepada dunia.
+           {t("deskripsi-pusat-kerupuk-2.text")}
           </p>
             : 
             <>
@@ -418,14 +425,10 @@ export function Home () {
                 paddingTop: '20px',
                 paddingLeft: '20px'
             }}>
-           Selamat datang di Pusat Kerupuk Indonesia, tujuan utama Anda untuk menemukan kelezatan kerupuk terbaik dari berbagai penjuru Nusantara! Kami adalah destinasi terpercaya bagi para pecinta makanan yang mencari aneka ragam kerupuk tradisional Indonesia yang autentik dan lezat.
-
-           Di Pusat Kerupuk Indonesia, kami memahami kekayaan budaya Indonesia yang tercermin dalam beragam rasa, tekstur, dan bahan-bahan berkualitas yang digunakan dalam pembuatan kerupuk. Kami bangga menyajikan kepada Anda koleksi lengkap kerupuk dari berbagai daerah di Indonesia, mulai dari kerupuk udang, kerupuk singkong, kerupuk ikan, hingga kerupuk rempeyek dan masih banyak lagi.
+            {t("deskripsi-pusat-kerupuk-1.text")}
            <br />
            <br />
-           Setiap produk kerupuk yang kami tawarkan dipilih dengan cermat untuk memastikan kualitas terbaik. Kami bekerja sama dengan produsen kerupuk terkemuka yang menggunakan resep turun-temurun dan teknik pembuatan tradisional untuk menghasilkan kerupuk yang berkualitas tinggi dan lezat.
-
-           Dengan berbelanja di Pusat Kerupuk Indonesia, Anda tidak hanya menikmati kelezatan makanan yang autentik, tetapi juga mendukung industri kecil dan menengah di berbagai daerah di Indonesia. Kami komitmen untuk mempromosikan dan memperkenalkan kekayaan kuliner Indonesia kepada dunia.
+           {t("deskripsi-pusat-kerupuk-2.text")}
           </p>
             </>
             }
@@ -440,7 +443,7 @@ export function Home () {
                     height: '18px',
                     color: 'red'
                 }} />
-                <label style={{ paddingLeft: '15px', margin: 0 }}>Produk Berkualitas</label>
+                <label style={{ paddingLeft: '15px', margin: 0 }}>{t("produk-berkualitas.text")}</label>
             </div>
 
             <div id="check-2" style={{ display: !isDesktop ? 'block' : 'flex', marginTop: '13px', alignItems: 'center', width: isDesktop ? '300px' : '300px', marginLeft: isDesktop ? 0 : '20px' }}>
@@ -449,12 +452,18 @@ export function Home () {
                     height: '18px',
                     color: 'red'
                 }} />
-                <label style={{ paddingLeft: '15px', margin: 0 }}>Penyedia Aneka Kerupuk</label>
+                <label style={{ paddingLeft: '15px', margin: 0 }}>{t("penyedia-kerupuk.text")}</label>
             </div>
           </div>
          
 
-        
+        <motion.div
+        className="box"
+        ref={ref}
+        variants={boxVariant}
+        initial={ isDesktop ? "hidden" : 0}
+        animate={control}
+        >
           <div style={{
             // position: 'relative',
             // top: isDesktop ? '200px' : '240px', 
@@ -471,13 +480,11 @@ export function Home () {
                     display: 'flex',
                     paddingBottom: '40px'
                 }} />
-            <label id="deskripsi_service" style={{ fontSize: '20px', fontWeight: 'bold' }}>24/7 Our Service</label>
+            <label id="deskripsi_service" style={{ fontSize: '20px', fontWeight: 'bold' }}>{t("pelayanan-kami.text")}</label>
             <p id="deskripsi_kerupuk" style={{ width: '300px'}}> 
-            Nikmati layanan penjualan produk kerupuk 24/7 dari Pusat Kerupuk Indonesia! 
-            Kami siap melayani Anda kapan saja, di mana saja, dengan beragam pilihan kerupuk 
-            Nusantara yang autentik dan berkualitas. Segera temukan kelezatan kerupuk favorit Anda tanpa batasan waktu, 
-            hanya di Pusat Kerupuk Indonesia.
+             {t("deskripsi-pelayanan-kami.text")}
             </p>
+            <a href="#top-title">
             <Button id="button-view" style={{
                 backgroundColor: '#ff9c00',
                 color: 'white',
@@ -486,11 +493,20 @@ export function Home () {
                 width: '100px',
                 height: '30px',
             }}>
-              View Details
+              {t("lihat-detail.text")}
             </Button>
+            </a>
             </div>
           </div>
+          </motion.div>
 
+          <motion.div
+            className="box"
+            ref={ref}
+            variants={boxVariant}
+            initial={ isDesktop ? "hidden" : 0}
+            animate={control}
+            >
           <div style={{
             // position: 'relative',
             marginTop: isDesktop ? '-10px' : '-100px',
@@ -505,13 +521,11 @@ export function Home () {
                     display: 'flex', 
                     paddingBottom: '30px'
                 }} />
-            <label id="deskripsi_service" style={{ fontSize: '20px', fontWeight: 'bold' }}>Standardization of Our Products</label>
+            <label id="deskripsi_service" style={{ fontSize: '20px', fontWeight: 'bold' }}>{t("standarisasi-produk.text")}</label>
             <p id="deskripsi_kerupuk" style={{ width: '300px'}}> 
-            Standarisasi produk kami di Pusat Kerupuk Indonesia adalah yang tertinggi |
-            dalam kualitas, keaslian, dan keberagaman. Setiap kerupuk diproduksi sesuai 
-            standar kualitas ketat, menjaga cita rasa tradisional dan inovasi. 
-            Dengan pemilihan bahan baku yang cermat dan proses produksi yang teliti.
+             {t("deskripsi-standarisasi.text")}
             </p>
+            <a href="#top-title">
             <Button id="button-view" style={{
                 backgroundColor: '#ff9c00',
                 color: 'white',
@@ -520,10 +534,12 @@ export function Home () {
                 width: '100px',
                 height: '30px',
             }}>
-              View Details
+              {t("lihat-detail.text")}
             </Button>
+            </a>
             </div>
           </div>
+          </motion.div>
           </div>
 
 
@@ -541,20 +557,17 @@ export function Home () {
                     <Typography style={{
                         fontSize: isDesktop ? '30px' : "22px",
                         fontWeight: 800,
-                    }}>Why People Choose Us</Typography>
+                    }}>{t("mengapa-memilih-kami.text")}</Typography>
                     <p id="deskripsi_kerupuk">
-                    Pusat Kerupuk Indonesia menawarkan kerupuk berkualitas tinggi 
-                    dengan rasa autentik dan tekstur renyah. Dengan beragam varian rasa 
-                    dan layanan pelanggan yang ramah, kami menjadi destinasi terbaik untuk 
-                    menemukan kerupuk yang nikmat.
+                    {t("deskripsi-memilih.text")}
                     </p>
                     <Grid container spacing={2} style={{ display: isDesktop ? 'flex' : 'block' }}>
                         <Grid item xs={ !isDesktop ? 12 : 0}>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <PublicIcon style={{ width: '50px', height: '50px', color: '#e32222' }} />
                                 <div style={{ paddingLeft: '20px' }}>
-                                    <h3>Product Range</h3>
-                                    <p id="deskripsi_kerupuk">Menjangkau pengiriman produk di seluruh Indonesia</p>
+                                    <h3>{t("jangkauan-produk.text")}</h3>
+                                    <p id="deskripsi_kerupuk">{t("deskripsi-jangkauan.text")}</p>
                                 </div>
                             </div>
                         </Grid>
@@ -562,8 +575,8 @@ export function Home () {
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <AiOutlineAudit style={{ width: '55px', height: '55px', color: '#e32222' }} />
                                 <div style={{ paddingLeft: '20px' }}>
-                                    <h3>Product Audit</h3>
-                                    <p id="deskripsi_kerupuk">Pemeriksaan rutin produk agar terjaga standar mutu</p>
+                                    <h3>{t("audit-produk.text")}</h3>
+                                    <p id="deskripsi_kerupuk">{t("deskripsi-audit.text")}</p>
                                 </div>
                             </div>
                         </Grid>
@@ -571,8 +584,8 @@ export function Home () {
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <FaPeopleLine style={{ width: '55px', height: '55px', color: '#e32222' }} />
                                 <div style={{ paddingLeft: '20px' }}>
-                                    <h3>Relationships with customers</h3>
-                                    <p id="deskripsi_kerupuk">Menjangkau pengiriman produk di seluruh Indonesia</p>
+                                    <h3>{t("hubungan-pelanggan.text")}</h3>
+                                    <p id="deskripsi_kerupuk">{t("deskripsi-hubungan.text")}</p>
                                 </div>
                             </div>
                         </Grid>
@@ -580,8 +593,8 @@ export function Home () {
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <CiDeliveryTruck style={{ width: '100px', height: '100px', color: '#e32222' }} />
                                 <div style={{ paddingLeft: '20px' }}>
-                                    <h3>Guaranteed delivery</h3>
-                                    <p id="deskripsi_kerupuk">Kami menjamin pengiriman kerupuk dari Pusat Kerupuk Indonesia yang terpercaya.</p>
+                                    <h3>{t("pengiriman-terjamin.text")}</h3>
+                                    <p id="deskripsi_kerupuk">{t("deskripsi-terjamin.text")}</p>
                                 </div>
                             </div>
                         </Grid>
@@ -595,9 +608,9 @@ export function Home () {
                 <img src={Process} style={{ width: '100%', height: isDesktop ? '800px' : '1500px', zIndex: -2 }} />
                 <div style={{ width: '100%', height: !isDesktop ? '1500px' : '800px', backgroundColor: 'rgba(59, 77, 54, 0.5)', display: isDesktop ? 'flex' : 'block' , justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '0', left: '0' }}>
                     <div style={{ margin: 0, padding: 0, display: 'block', justifyContent: 'center', position: 'relative', color: 'white' }}>
-                        <h3 style={{ textAlign: 'center', fontSize: '39px' }}>Our Process</h3>
+                        <h3 style={{ textAlign: 'center', fontSize: '39px' }}>{t("proses-kami.text")}</h3>
                         <p id="deskripsi_kerupuk" style={{ textAlign: 'center', width: isDesktop ? '600px' : '360px', margin: '0 auto' }}>
-                            Kami adalah pemasok kerupuk terkemuka di Indonesia, memilih bahan baku terbaik dan menjalani proses produksi dengan standar tertinggi untuk memberikan produk berkualitas tinggi kepada pelanggan kami.
+                            {t("deskripsi-proses.text")}
                         </p>
                         <Grid container spacing={8} justifyContent="center" mt={10}>
                             <Grid item>
@@ -605,28 +618,28 @@ export function Home () {
                                     <img src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
                                     <img src={Optimasi} width={90} height={90} className="optimasi" />
                                 </div>
-                                <Typography variant="subtitle1" align="center">Optimasi Produksi</Typography>
+                                <Typography variant="subtitle1" align="center">{t("proses-1.text")}</Typography>
                             </Grid>
                             <Grid item>
                                 <div className="lingkaran-container">
                                     <img src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
                                     <img src={Inovasi} width={140} height={90} className="optimasi" />
                                 </div>
-                                <Typography variant="subtitle1" align="center">Inovasi Keunggulan</Typography>
+                                <Typography variant="subtitle1" align="center">{t("proses-2.text")}</Typography>
                             </Grid>
                             <Grid item>
                                 <div className="lingkaran-container">
                                     <img src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
                                     <img src={Pengemasan} width={120} height={120} className="optimasi" />
                                 </div>
-                                <Typography variant="subtitle1" align="center">Pengemasan Aman</Typography>
+                                <Typography variant="subtitle1" align="center">{t("proses-3.text")}</Typography>
                             </Grid>
                             <Grid item>
                                 <div className="lingkaran-container">
                                     <img src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
                                     <img src={Penyimpanan} width={90} height={90} className="optimasi" />
                                 </div>
-                                <Typography variant="subtitle1" align="center">Penyimpanan Kesegaran</Typography>
+                                <Typography variant="subtitle1" align="center">{t("proses-4.text")}</Typography>
                             </Grid>
                         </Grid>
                     </div>
@@ -664,7 +677,7 @@ export function Home () {
                         fontSize: '39px', 
                         position: 'relative',
                         top: !isDesktop ? '120px' : '250px' 
-                        }}>Other Products</h3> {/* Margin 0 untuk menghapus margin bawaan */}
+                        }}>{t("produk-lainnya.text")}</h3> {/* Margin 0 untuk menghapus margin bawaan */}
                        <Grid container spacing={2} zIndex={2} justifyContent={'center'} mt={80}>
                         <Grid item>
                             <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '10px', marginRight: '10px' }}>
@@ -677,13 +690,11 @@ export function Home () {
                                     padding: '5px 10px', 
                                     color: 'white', 
                                     fontWeight: 'bold' 
-                                    }}>Asam Jawa</div>
-                                <p id="deskripsi_kerupuk" style={{ width: '300px' }}>Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, 
-                                    tetapi juga menyediakan produk lain seperti Asam Jawa. Dengan fokus pada standar 
-                                    produksi yang terjaga, Asam Jawa dari Pusat Kerupuk Indonesia memberikan rasa autentik 
-                                    yang memikat, menjadikannya pilihan yang sempurna sebagai camilan yang lezat dan menyegarkan.
+                                    }}>{t("asam-jawa.text")}</div>
+                                <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
+                                    {t("deskripsi-asam.text")}
                                 </p>
-                                <Button href="https://www.asamjawagunung.com" target="_blank" id="button-view" style={{
+                                <Button href="https://asamjawagunung.com/" target="_blank" id="button-view" style={{
                                     backgroundColor: '#ff9c00',
                                     color: 'white',
                                     borderRadius: '20px',
@@ -691,7 +702,7 @@ export function Home () {
                                     width: '100px',
                                     height: '30px',
                                 }}>
-                                View Details
+                                {t("lihat-detail.text")}
                                 </Button>
                             </div>
                         </Grid>
@@ -706,12 +717,9 @@ export function Home () {
                                     padding: '5px 10px', 
                                     color: 'white', 
                                     fontWeight: 'bold' 
-                                    }}>Sohun</div>
+                                    }}>{t("sohun.text")}</div>
                                     <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                        Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, 
-                                        tetapi juga produk lain seperti Asam Jawa dan Sohun. Dengan fokus pada standar 
-                                        produksi yang terjaga, Sohun dari Pusat Kerupuk Indonesia memberikan pilihan camilan 
-                                        yang lezat dan menyegarkan, dengan cita rasa autentik yang memikat.
+                                       {t("deskripsi-sohun.texxt")}
                                 </p>
                                 <Button href="http://tamarindindonesia.com" target="_blank" className="view" style={{
                                     backgroundColor: '#ff9c00',
@@ -721,7 +729,7 @@ export function Home () {
                                     width: '100px',
                                     height: '30px',
                                 }}>
-                                 View Details
+                                 {t("lihat-detail.text")}
                                 </Button>
                             </div>
                         </Grid>
@@ -736,13 +744,9 @@ export function Home () {
                                     padding: '5px 10px', 
                                     color: 'white', 
                                     fontWeight: 'bold' 
-                                    }}>Kembang Tahu</div>
+                                    }}>{t("kembang-tahu.text")}</div>
                                     <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                        Pusat Kerupuk Indonesia tidak hanya menghadirkan berbagai jenis kerupuk berkualitas tinggi, 
-                                        tetapi juga menawarkan produk lain seperti Kulit Kembang Tahu. Dengan komitmen pada standar 
-                                        produksi yang ketat, Kulit Kembang Tahu dari Pusat Kerupuk Indonesia menghadirkan pilihan 
-                                        camilan yang gurih dan lezat, memenuhi keinginan para pecinta makanan ringan dengan rasa yang 
-                                        autentik dan kualitas yang terjamin.
+                                        {t("deskripsi-kembang.text")}
                                 </p>
                                 <Button href="http://tamarindindonesia.com" target="_blank" id="button-view" style={{
                                     backgroundColor: '#ff9c00',
@@ -752,7 +756,7 @@ export function Home () {
                                     width: '100px',
                                     height: '30px',
                                 }}>
-                                View Details
+                                {t("lihat-detail.text")}
                                 </Button>
                             </div>
                         </Grid>
@@ -767,7 +771,7 @@ export function Home () {
                             // marginTop: '800px',
                             paddingBottom: "30px",
                             textAlign: 'center' 
-                            }}>Other Products</h3> {/* Margin 0 untuk menghapus margin bawaan */}
+                            }}>{t("produk-lainnya.text")}</h3> {/* Margin 0 untuk menghapus margin bawaan */}
                             <Grid container spacing={2} justifyContent="center"> {/* Mengatur grid container menjadi center */}
                                 <Grid item>
                                     <div style={{ position: 'relative', marginBottom: '20px' }}>
@@ -780,13 +784,11 @@ export function Home () {
                                             padding: '5px 10px', 
                                             color: 'white', 
                                             fontWeight: 'bold' 
-                                            }}>Asam Jawa</div>
-                                        <p id="deskripsi_kerupuk" style={{ width: '300px' }}>Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, 
-                                            tetapi juga menyediakan produk lain seperti Asam Jawa. Dengan fokus pada standar 
-                                            produksi yang terjaga, Asam Jawa dari Pusat Kerupuk Indonesia memberikan rasa autentik 
-                                            yang memikat, menjadikannya pilihan yang sempurna sebagai camilan yang lezat dan menyegarkan.
+                                            }}>{t("asam-jawa.text")}</div>
+                                        <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
+                                            {t("deskripsi-asam.text")}
                                         </p>
-                                        <Button href="https://www.asamjawagunung.com" target="_blank" id="button-view" style={{
+                                        <Button href="https://asamjawagunung.com/" target="_blank" id="button-view" style={{
                                             backgroundColor: '#ff9c00',
                                             color: 'white',
                                             borderRadius: '20px',
@@ -794,7 +796,7 @@ export function Home () {
                                             width: '100px',
                                             height: '30px',
                                         }}>
-                                        View Details
+                                        {t("lihat-detail.text")}
                                         </Button>
                                     </div>
                                 </Grid>
@@ -809,12 +811,9 @@ export function Home () {
                                             padding: '5px 10px', 
                                             color: 'white', 
                                             fontWeight: 'bold' 
-                                            }}>Sohun</div>
+                                            }}>{t("sohun.text")}</div>
                                             <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                                Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, 
-                                                tetapi juga produk lain seperti Asam Jawa dan Sohun. Dengan fokus pada standar 
-                                                produksi yang terjaga, Sohun dari Pusat Kerupuk Indonesia memberikan pilihan camilan 
-                                                yang lezat dan menyegarkan, dengan cita rasa autentik yang memikat.
+                                                {t("deskripsi-sohun.texxt")}
                                         </p>
                                         <Button href="http://tamarindindonesia.com" target="_blank" className="view" style={{
                                             backgroundColor: '#ff9c00',
@@ -824,7 +823,7 @@ export function Home () {
                                             width: '100px',
                                             height: '30px',
                                         }}>
-                                        View Details
+                                        {t("lihat-detail.text")}
                                         </Button>
                                     </div>
                                 </Grid>
@@ -839,13 +838,9 @@ export function Home () {
                                             padding: '5px 10px', 
                                             color: 'white', 
                                             fontWeight: 'bold' 
-                                            }}>Kembang Tahu</div>
+                                            }}>{t("kembang-tahu.text")}</div>
                                             <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                                Pusat Kerupuk Indonesia tidak hanya menghadirkan berbagai jenis kerupuk berkualitas tinggi, 
-                                                tetapi juga menawarkan produk lain seperti Kulit Kembang Tahu. Dengan komitmen pada standar 
-                                                produksi yang ketat, Kulit Kembang Tahu dari Pusat Kerupuk Indonesia menghadirkan pilihan 
-                                                camilan yang gurih dan lezat, memenuhi keinginan para pecinta makanan ringan dengan rasa yang 
-                                                autentik dan kualitas yang terjamin.
+                                                {t("deskripsi-kembang.text")}
                                         </p>
                                         <Button href="http://tamarindindonesia.com" target="_blank" id="button-view" style={{
                                             backgroundColor: '#ff9c00',
@@ -855,7 +850,7 @@ export function Home () {
                                             width: '100px',
                                             height: '30px',
                                         }}>
-                                        View Details
+                                        {t("lihat-detail.text")}
                                         </Button>
                                     </div>
                                 </Grid>
@@ -889,13 +884,13 @@ export function Home () {
         </ReactWhatsapp>
 
 
-            <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? '300px' : '1050px' }}>
-                <Grid container style={{display: 'flex', justifyContent: 'center', position: 'relative', top: isDesktop ? '80px' : '50px', left: isDesktop ? 0 : 12 }}>
-                <Grid item xs={12} sm={2}>
+        <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 200 : '1200px' }}>
+                <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
+                <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
                         <img src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
-                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>Phone :</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}>082131131108</span>
                         </div>
                     </div>
@@ -904,7 +899,7 @@ export function Home () {
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
                         <img src={Location} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
-                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>Address :</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("alamat.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>Jalan Veteran no 4A Medan Pusat Pasar, Medan, Sumatera Utara 20231</span>
                         </div>
                     </div>
@@ -913,7 +908,7 @@ export function Home () {
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
                         <img src={Email} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
-                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>Email :</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("email.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>pusatkerupukindonesia@gmail.com</span>
                         </div>
                     </div>
@@ -926,10 +921,7 @@ export function Home () {
                     <Grid item xs={4}>
                         <img src={LogoPusatKerupuk} width={100} height={100} />
                         <p id="deskripsi_kerupuk" style={{ width: '280px', color: 'white', marginTop: '40px' }}>
-                            Temukan beragam kerupuk renyah dalam koleksi kami. Dari kerupuk kentang hingga kerupuk udang, 
-                            setiap gigitan menjanjikan cita rasa autentik dan kualitas premium yang tak tertandingi. 
-                            Dibuat dengan bahan-bahan berkualitas terbaik dan proses produksi yang terjamin kebersihannya, 
-                            kami menawarkan pilihan camilan yang sempurna untuk setiap kesempatan. 
+                            {t("deskripsi-footer.text")}
                         </p>
                         <div style={{ display: 'flex', gap: '10px', marginTop: '40px' }}>
                             <div style={{ backgroundColor: '#38363e', padding: '5px', borderRadius: '20%' }}>
@@ -947,32 +939,32 @@ export function Home () {
                         </div>
                     </Grid>
                     <Grid item>
-                        <div style={{ marginTop: isDesktop ? 0 : 60 }}>
-                            <label style={{ color: 'white', fontSize: '20px' }}> Service Hours </label>
+                    <div style={{ marginTop: isDesktop ? 0 : 60 }}>
+                            <label style={{ color: 'white', fontSize: '20px' }}>{t("jam-layanan.text")}</label>
                             <br />
                             <br />
                             <div style={{ width: isDesktop ?  '100%' : 270 }}>
-                            <label style={{ color: 'white' }}>Senin</label>
+                            <label style={{ color: 'white' }}>{t("senin1.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '105px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Selasa</label>
+                            <label style={{ color: 'white' }}>{t("Selasa.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '100px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Rabu</label>
+                            <label style={{ color: 'white' }}>{t("Rabu.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '107px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Kamis</label>
+                            <label style={{ color: 'white' }}>{t("Kamis.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Jumat</label>
+                            <label style={{ color: 'white' }}>{t("Jumat.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Sabtu</label>
+                            <label style={{ color: 'white' }}>{t("sabtu1.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             </div>
@@ -980,8 +972,8 @@ export function Home () {
                     </Grid>
                 </Grid>
             </div>
-            <div style={{ width: '100%', backgroundColor: '#1f1e21', height: isDesktop ? '90px' : '100px', marginTop:  isDesktop ? '-10px' : 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <span style={{ color: 'white' }}><label style={{ color:  "#ff9c00"}}>@2024</label> Pusat Kerupuk Indonesia</span>
+            <div style={{ width: '100%', backgroundColor: '#1f1e21', height: isDesktop ? '90px' : '200px', marginTop:  isDesktop ? '-10px' : 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <span style={{ color: 'white' }}><label style={{ color:  "#ff9c00"}}>@2024</label>{t("pusat-kerupuk-indonesia.text")}</span>
             </div>
             </>
             )}

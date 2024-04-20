@@ -2,6 +2,12 @@
      "kami-buka": {
           "text": "We are Open"
          },
+         "senin1": {
+          "text": "Monday"
+         },
+         "sabtu1": {
+          "text": "Saturday"
+         },
          "Senin": {
           "text": "Mon"
          },
@@ -46,5 +52,240 @@
          },
          "pusat-kerupuk": {
           "text": "Indonesian Cracker Center"
-         }  
+         },
+         "title-kerupuk": {
+          "text": "Crackers"
+      },
+      "kembali": {
+          "text": "Back"
+      },
+      "review": {
+          "text": "Review"
+      },
+      "aneka-kerupuk": {
+          "text": "Various Indonesian Crackers"
+      },
+      "produk-original": {
+          "text": "Original Products"
+      },
+      "baca": {
+          "text": "Read More"
+      },
+      "pengiriman": {
+          "text": "Fast Shipping"
+      },
+      "deskripsi-pengiriman": {
+          "text": "Your package will be swiftly delivered to its destination, ensuring your items arrive on time."
+      },
+      "layanan": {
+          "text": "Guaranteed Service"
+      },
+      "deskripsi-layanan": {
+          "text": "Every step of the shipping process is closely monitored to ensure your package arrives safely and on time."
+      },
+      "harga": {
+          "text": "Affordable Price"
+      },
+      "deskripsi-harga": {
+          "text": "You can send your package at a lower cost without sacrificing service quality."
+      },
+      "dukungan": {
+          "text": "24/7 Support"
+      },
+      "deskripsi-dukungan": {
+          "text": "Our customer support team is ready to assist you with any questions, issues, or other assistance needs."
+      },
+      "selamat-datang": {
+          "text": "Welcome To"
+      },
+      "pusat-kerupuk-indonesia": {
+          "text": "Indonesian Crackers Center"
+      },
+      "deskripsi-pusat-kerupuk-1": {
+          "text": "Welcome to the Indonesian Crackers Center, your ultimate destination to discover the best flavors of crackers from various regions of the archipelago! We are a trusted destination for food enthusiasts seeking authentic and delicious traditional Indonesian crackers. At the Indonesian Crackers Center, we understand the cultural richness of Indonesia reflected in the diverse flavors, textures, and high-quality ingredients used in cracker making. We take pride in presenting to you a complete collection of crackers from various regions of Indonesia, ranging from shrimp crackers, cassava crackers, fish crackers, to peanut crackers, and many more."
+      },
+      "deskripsi-pusat-kerupuk-2": {
+          "text": "Every cracker product we offer is carefully selected to ensure the best quality. We collaborate with leading cracker manufacturers who use generations-old recipes and traditional techniques to produce high-quality and delicious crackers. By shopping at the Indonesian Crackers Center, you not only enjoy authentic food delights but also support small and medium-sized industries in various regions of Indonesia. We are committed to promoting and introducing the culinary richness of Indonesia to the world."
+      },
+      "produk-berkualitas": {
+          "text": "Quality Products"
+      },
+      "penyedia-kerupuk": {
+          "text": "Various Crackers Provider"
+      },
+      "pelayanan-kami": {
+          "text": "Our 24/7 Service"
+      },
+      "deskripsi-pelayanan-kami": {
+          "text": "Enjoy 24/7 cracker product sales services from the Indonesian Crackers Center! We are ready to serve you anytime, anywhere, with a variety of authentic and high-quality Indonesian crackers. Quickly find your favorite cracker delights without time constraints, only at the Indonesian Crackers Center."
+      },
+      "standarisasi-produk": {
+          "text": "Our Product Standardization"
+      },
+      "deskripsi-standarisasi": {
+          "text": "Our product standardization at the Indonesian Crackers Center is the highest in quality, authenticity, and diversity. Every cracker is produced according to strict quality standards, maintaining traditional taste and innovation. With careful selection of raw materials and meticulous production processes."
+      },
+      "lihat-detail": {
+          "text": "See Details"
+      },
+      "mengapa-memilih-kami": {
+          "text": "Why Choose Us"
+      },
+      "deskripsi-memilih": {
+          "text": "The Indonesian Crackers Center offers high-quality crackers with authentic flavors and crispy textures. With a variety of flavor variants and friendly customer service, we become the best destination to find delicious crackers."
+      },
+      "jangkauan-produk": {
+          "text": "Product Range"
+      },
+      "deskripsi-jangkauan": {
+          "text": "Reaching product delivery across Indonesia"
+      },
+      "audit-produk": {
+          "text": "Product Audit"
+      },
+      "deskripsi-audit": {
+          "text": "Routine product inspections to maintain quality standards"
+      },
+      "hubungan-pelanggan": {
+          "text": "Customer Relationship"
+      },
+      "deskripsi-hubungan": {
+          "text": "Reaching product delivery across Indonesia"
+      },
+      "pengiriman-terjamin": {
+          "text": "Guaranteed Shipping"
+      },
+      "deskripsi-terjamin": {
+          "text": "We guarantee the delivery of crackers from the trusted Indonesian Crackers Center."
+      },
+      "proses-kami": {
+          "text": "Our Process"
+      },
+      "deskripsi-proses": {
+          "text": "We are a leading cracker supplier in Indonesia, selecting the best raw materials and undergoing production processes with the highest standards to provide high-quality products to our customers."
+      },
+      "proses-1": {
+          "text": "Product Optimization"
+      },
+      "proses-2": {
+          "text": "Excellence Innovation"
+      },
+      "proses-3": {
+          "text": "Safe Packaging"
+      },
+      "proses-4": {
+          "text": "Freshness Storage"
+      },
+      "produk-lainnya": {
+          "text": "Other Products"
+      },
+      "asam-jawa": {
+          "text": "Tamarind"
+      },
+      "sohun": {
+          "text": "Bean Vermicelli"
+      },
+      "kembang-tahu": {
+          "text": "Tofu Skin"
+      },
+      "deskripsi-asam": {
+          "text": "The Indonesian Crackers Center not only offers high-quality crackers but also provides other products such as Tamarind. With a focus on maintained production standards, Tamarind from the Indonesian Crackers Center delivers captivating authentic flavors, making it a perfect choice as a delicious and refreshing snack."
+      },
+      "deskripsi-sohun": {
+          "text": "The Indonesian Crackers Center not only offers high-quality crackers but also other products such as Tamarind and Bean Vermicelli. With a focus on maintained production standards, Bean Vermicelli from the Indonesian Crackers Center provides a delicious and refreshing snack option, with captivating authentic flavors."
+      },
+      "deskripsi-kembang": {
+          "text": "The Indonesian Crackers Center not only presents various types of high-quality crackers but also offers other products such as Tofu Skin. With a commitment to strict production standards, Tofu Skin from the Indonesian Crackers Center offers a savory and delicious snack option, satisfying the cravings of snack lovers with authentic flavors and guaranteed quality."
+      },
+      "telepon": {
+          "text": "Phone"
+      },
+      "alamat": {
+          "text": "Address"
+      },
+      "email": {
+          "text": "Email"
+      },
+      "jam-layanan": {
+          "text": "Service Hours"
+      },
+      "deskripsi-footer": {
+          "text": "Discover a variety of crispy crackers in our collection. From potato crackers to shrimp crackers, each bite promises authentic flavors and unbeatable premium quality. Made with the finest ingredients and guaranteed cleanliness in the production process, we offer the perfect snack options for every occasion."
+      },
+      "gerakan-hebat": {
+          "text": "Great Movement"
+      },
+      "produk": {
+          "text": "Products"
+      },
+      "deskripsi-gerakan": {
+          "text": "If you have any needs regarding cracker products, simply contact our 24-hour service."
+      },
+      "hubungi-kami": {
+          "text": "Contact Us"
+      },
+      "atau": {
+          "text": "Or"
+      },
+      "kontak-kami": {
+          "text": "Contact Us"
+      },
+      "tentang-kami": {
+          "text": "About Us"
+      },
+      "deskripsi-tentang": {
+          "text": "The Indonesian Crackers Center is the best place to find high-quality crackers from all over Indonesia. We present a variety of authentic cracker variants with delicious flavors and textures. Get a complete collection of crackers from various regions with the best quality only at the Indonesian Crackers Center."
+      },
+      "point-1": {
+          "text": "Complete Collection"
+      },
+      "point-2": {
+          "text": "Best Quality"
+      },
+      "point-3": {
+          "text": "Authentic Flavors"
+      },
+      "point-4": {
+          "text": "Crispy Texture"
+      },
+      "point-5": {
+          "text": "High Production Standards"
+      },
+      "point-6": {
+          "text": "Healthy Snack Options"
+      },
+      "point-7": {
+          "text": "National Delivery"
+      },
+      "point-8": {
+          "text": "Friendly Customer Service"
+      },
+      "prencanaan": {
+          "text": "Starting from Planning to Distribution"
+      },
+      "deskripsi-perencanaan-1": {
+          "text": "The Indonesian Crackers Center prioritizes quality from the initial planning to distribution. Every production step is carefully designed by our expert team, from selecting high-quality raw materials to the production process that combines modern technology with traditional methods. We ensure that every cracker produced has authentic taste and crispy texture, satisfying every palate that tastes it."
+      },
+      "deskripsi-perencanaan-2": {
+          "text": "After undergoing a series of strict quality tests, our cracker products are ready to be distributed across Indonesia. Through a wide and efficient distribution network, we guarantee that every customer can enjoy high-quality crackers quickly and on time. With an integrated approach in the Starting from Planning to Distribution process, the Indonesian Crackers Center maintains quality standards and customer satisfaction as its main focus in every step."
+      },
+      "memulai": {
+          "text": "Start"
+      },
+      "bahagia": {
+          "text": "Happy Customers"
+      },
+      "jalan": {
+          "text": "Product Walk"
+      },
+      "melayani": {
+          "text": "Years of Service"
+      },
+      "seputar": {
+          "text": "About Products"
+      },
+      "deskripsi-seputar": {
+          "text": "latest information about various types of crackers, manufacturing processes, flavor variations, as well as tips and tricks to enjoy crackers more deliciously."
+      }
+        
 }

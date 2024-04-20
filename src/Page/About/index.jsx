@@ -252,12 +252,12 @@ export function About() {
                     width: isDesktop ? '100%' : '80%',
                     color: 'white', 
                     }}>
-                    <h4 style={{ margin: 0 }}>Great Movement</h4>
-                    <h1 style={{ margin: 0 }}>Products</h1>
-                    <p style={{ paddingTop: isDesktop ? '5px' : 0, width: isDesktop ? '300px' : '250px' }}>Jika Anda mempunyai kebutuhan Pindah, cukup hubungi 24 jam kami</p>
-                    <h2>Hubungi Kami</h2>
+                    <h4 style={{ margin: 0 }}>{t("gerakan-hebat.text")}</h4>
+                    <h1 style={{ margin: 0 }}>{t("produk.text")}</h1>
+                    <p style={{ paddingTop: isDesktop ? '5px' : 0, width: isDesktop ? '300px' : '250px' }}>{t("deskripsi-gerakan.text")}</p>
+                    <h2>{t("hubungi-kami.text")}</h2>
                     <h1>082131131108</h1>
-                    <label style={{ paddingLeft: isDesktop ? '80px' : '90px' }}>OR</label>
+                    <label style={{ paddingLeft: isDesktop ? '80px' : '90px' }}>{t("atau.text")}</label>
                     <br />
                     <Button id="button_contact" style={{ 
                         backgroundColor: '#ff9c00', 
@@ -267,7 +267,7 @@ export function About() {
                         height: '50px',
                         borderRadius: '20px',
                         marginTop: isDesktop ? '30px' : '20px' 
-                        }}>Contact Us</Button>
+                        }}>{t("kontak-kami.text")}</Button>
                 </div>
                 </div>
 
@@ -295,8 +295,8 @@ export function About() {
                     zIndex: -2
                 }}>
                 <div style={{ paddingLeft: isDesktop ?  '100px' : 0 }}>
-                <h2 style={{ textAlign: 'left' }}> About Products </h2>
-                <p id="deskripsi_kerupuk" style={{ textAlign: 'left' }}> Pusat Kerupuk Indonesia adalah tempat terbaik untuk menemukan kerupuk berkualitas tinggi dari seluruh Indonesia. Kami menyajikan beragam varian kerupuk autentik dengan rasa dan tekstur yang lezat. Dapatkan koleksi lengkap kerupuk dari berbagai daerah dengan kualitas terbaik hanya di Pusat Kerupuk Indonesia. </p>
+                <h2 style={{ textAlign: 'left' }}>{t("tentang-kami.text")}</h2>
+                <p id="deskripsi_kerupuk" style={{ textAlign: 'left' }}> {t("deskripsi-tentang.text")} </p>
         
                     <div style={{ display: 'flex' }}>
                         <div className="about-1" style={{ fontSize: isDesktop ? '19px' : '13px', width: isDesktop ? '200px' : '138px' }}>
@@ -305,7 +305,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>Koleksi lengkap</label>
+                                <label>{t("point-1.text")}</label>
                             </div>
                         </div>
                         <div>
@@ -314,7 +314,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>Kualitas terbaik</label>
+                                <label>{t("point-2.text")}</label>
                             </div>
                         </div>
                         <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
@@ -322,7 +322,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>Rasa autentik</label>
+                                <label>{t("point-3.text")}</label>
                             </div>
                         </div>
                         <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
@@ -330,7 +330,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>Tekstur Renyah</label>
+                                <label>{t("point-4.text")}</label>
                             </div>
                         </div>
                         </div>
@@ -342,7 +342,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>Standar produksi tinggi</label>
+                                <label>{t("point-5.text")}</label>
                             </div>
                         </div>
                         <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
@@ -350,7 +350,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>Pilihan camilan sehat</label>
+                                <label>{t("point-6.text")}</label>
                             </div>
                         </div>
                         <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
@@ -358,7 +358,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>Pengiriman nasional</label>
+                                <label>{t("point-7.text")}</label>
                             </div>
                         </div>
                         <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
@@ -366,7 +366,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>Layanan pelanggan ramah</label>
+                                <label>{t("point-8.text")}</label>
                             </div>
                         </div>
                     </div>
@@ -427,22 +427,14 @@ export function About() {
             </Card>
 
             <div style={{ width: isDesktop ? '600px' : '300px', marginLeft: isDesktop ? 0 : '20px', marginTop: isDesktop ? 0 : '50px' }}>
-                <label style={{ textAlign: 'left', fontWeight: 800, color: '#353535', width: '180px', fontSize: '34px' }}>Starting from Planning to Distribution</label>
+                <label style={{ textAlign: 'left', fontWeight: 800, color: '#353535', width: '180px', fontSize: '34px' }}>{t("prencanaan.text")}</label>
                 <p id="deskripsi_kerupuk">
-                Pusat Kerupuk Indonesia mengutamakan kualitas dari awal perencanaan hingga distribusi. 
-                Setiap langkah produksi dirancang secara cermat oleh tim ahli kami, mulai dari pemilihan 
-                bahan baku berkualitas hingga proses pembuatan yang menggabungkan teknologi modern dengan metode tradisional. 
-                Kami memastikan bahwa setiap kerupuk yang dihasilkan memiliki rasa autentik dan tekstur yang renyah, sehingga 
-                memuaskan setiap lidah yang mencicipinya.
+                {t("deskripsi-perencanaan-1.text")}
                 <br />
                 <br />
-                Setelah melewati serangkaian uji kualitas yang ketat, produk kerupuk kami siap untuk didistribusikan ke seluruh 
-                penjuru Indonesia. Melalui jaringan distribusi yang luas dan efisien, kami menjamin bahwa setiap pelanggan kami 
-                dapat menikmati kerupuk berkualitas tinggi dengan cepat dan tepat waktu. Dengan pendekatan yang terintegrasi dalam 
-                proses Starting from Planning to Distribution, Pusat Kerupuk Indonesia menjaga standar mutu dan kepuasan pelanggan 
-                sebagai fokus utama dalam setiap langkahnya.
+                {t("deskripsi-perencanaan-2.text")}
                 </p>
-                <Button style={{ backgroundColor: '#ff9c00', color: 'white', borderRadius: '20px', width: '170px', marginTop: '20px' }}>Get Started</Button>
+                <Button style={{ backgroundColor: '#ff9c00', color: 'white', borderRadius: '20px', width: '170px', marginTop: '20px' }}>{t("memulai.text")}</Button>
             </div>
         </div>
 
@@ -468,13 +460,13 @@ export function About() {
             />
         </ReactWhatsapp>
 
-          <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? '100px' : '550px' }}>
+        <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 0 : '700px' }}>
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
                         <img src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
-                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>Phone :</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}>082131131108</span>
                         </div>
                     </div>
@@ -483,7 +475,7 @@ export function About() {
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
                         <img src={Location} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
-                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>Address :</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("alamat.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>Jalan Veteran no 4A Medan Pusat Pasar, Medan, Sumatera Utara 20231</span>
                         </div>
                     </div>
@@ -492,7 +484,7 @@ export function About() {
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
                         <img src={Email} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
-                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>Email :</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("email.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>pusatkerupukindonesia@gmail.com</span>
                         </div>
                     </div>
@@ -505,10 +497,7 @@ export function About() {
                     <Grid item xs={4}>
                         <img src={LogoPusatKerupuk} width={100} height={100} />
                         <p id="deskripsi_kerupuk" style={{ width: '280px', color: 'white', marginTop: '40px' }}>
-                            Temukan beragam kerupuk renyah dalam koleksi kami. Dari kerupuk kentang hingga kerupuk udang, 
-                            setiap gigitan menjanjikan cita rasa autentik dan kualitas premium yang tak tertandingi. 
-                            Dibuat dengan bahan-bahan berkualitas terbaik dan proses produksi yang terjamin kebersihannya, 
-                            kami menawarkan pilihan camilan yang sempurna untuk setiap kesempatan. 
+                            {t("deskripsi-footer.text")}
                         </p>
                         <div style={{ display: 'flex', gap: '10px', marginTop: '40px' }}>
                             <div style={{ backgroundColor: '#38363e', padding: '5px', borderRadius: '20%' }}>
@@ -527,31 +516,31 @@ export function About() {
                     </Grid>
                     <Grid item>
                     <div style={{ marginTop: isDesktop ? 0 : 60 }}>
-                            <label style={{ color: 'white', fontSize: '20px' }}> Service Hours </label>
+                            <label style={{ color: 'white', fontSize: '20px' }}>{t("jam-layanan.text")}</label>
                             <br />
                             <br />
                             <div style={{ width: isDesktop ?  '100%' : 270 }}>
-                            <label style={{ color: 'white' }}>Senin</label>
+                            <label style={{ color: 'white' }}>{t("senin1.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '105px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Selasa</label>
+                            <label style={{ color: 'white' }}>{t("Selasa.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '100px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Rabu</label>
+                            <label style={{ color: 'white' }}>{t("Rabu.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '107px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Kamis</label>
+                            <label style={{ color: 'white' }}>{t("Kamis.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Jumat</label>
+                            <label style={{ color: 'white' }}>{t("Jumat.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Sabtu</label>
+                            <label style={{ color: 'white' }}>{t("sabtu1.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             </div>
@@ -560,7 +549,7 @@ export function About() {
                 </Grid>
             </div>
             <div style={{ width: '100%', backgroundColor: '#1f1e21', height: isDesktop ? '90px' : '200px', marginTop:  isDesktop ? '-10px' : 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <span style={{ color: 'white' }}><label style={{ color:  "#ff9c00"}}>@2024</label> Pusat Kerupuk Indonesia</span>
+                <span style={{ color: 'white' }}><label style={{ color:  "#ff9c00"}}>@2024</label>{t("pusat-kerupuk-indonesia.text")}</span>
             </div>
         </>
     )

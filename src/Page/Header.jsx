@@ -44,6 +44,7 @@ const Header = () => {
     const [language, setLanguage] = useState('');
     const [labelText, setLabelText] = useState('Translate');
     const activeLanguage = i18n.language;
+    const [whatsappClicked, setWhatsappClicked] = useState(false);
 
     const handleChange = (event) => {
         setLanguage(event.target.value);
@@ -199,16 +200,22 @@ const Header = () => {
                 }}>
               <Grid container spacing={2}>
                 <Grid item>
-                <FaFacebookF style={{ height: '18px' }} />
+                <a href="https://www.facebook.com/pusatkerupukindonesia/" target="_blank">
+                <FaFacebookF style={{ height: '18px', color: 'white' }} />
+                </a>
                 </Grid>
                 <Grid item>
                 <XIcon style={{ height: '20px' }} />
                 </Grid>
                 <Grid item>
-                <InstagramIcon style={{ height: '20px' }} />
+                <a href="https://www.instagram.com/pusatkerupukindonesia?igsh=MXR0djRpMjdkeGwweQ==" target="_blank">
+                <InstagramIcon style={{ height: '20px', color: 'white' }} />
+                </a>
                 </Grid>
                 <Grid item>
-                <SiGooglemybusiness style={{ height: '25px', width: '18px', paddingTop: '4px' }} />
+                <a href="https://www.google.com/search?q=Distributor+%7C+Agen+Kerupuk+Mentah+Sumatera+%7C+Medan+%7C+Aceh&stick=H4sIAAAAAAAA_-NgU1I1qDA0MDQ0NTA0N08xNzVPMUiyMqgwS0o1NDMzNkkFchMNLZMXsVq6ZBaXFGUmlZbkFynUKDimp-YpeKcWlRaUZiv4puaVJGYoBJfmJpakFiUCpX1TUxLzQMqSUzMAGjkUfGUAAAA&hl=en&mat=CXU_1kQYn4ebElcBezTaARnAG0yBbRC9ei_Bms8qUvYIOn3k5CwGXyvg4bhFN0_BfD6ySdUW5kSFCe5FDCroWtkN4YBbGJTWOlQKvMJq2SKZtMO1KR4p9ezOF9hUO0ffAu0&authuser=0" target="_blank">
+                <SiGooglemybusiness style={{ height: '25px', width: '18px', paddingTop: '4px', color: 'white' }} />
+                </a>
                 </Grid>
               </Grid>
              </div>

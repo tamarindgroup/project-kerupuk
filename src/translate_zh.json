@@ -2,6 +2,12 @@
      "kami-buka": {
           "text": "我们是开放的"
          },
+         "senin1": {
+          "text": "周一"
+         },
+         "sabtu1": {
+          "text": "周六"
+         },
          "Senin": {
           "text": "周一"
          },
@@ -46,6 +52,239 @@
          },
          "pusat-kerupuk": {
           "text": "印尼饼干中心"
-         }  
-         
-}
+         },
+          "title-kerupuk": {
+            "text": "薯片"
+          },
+          "kembali": {
+            "text": "返回"
+          },
+          "review": {
+            "text": "评论"
+          },
+          "aneka-kerupuk": {
+            "text": "印尼薯片种类"
+          },
+          "produk-original": {
+            "text": "原始产品"
+          },
+          "baca": {
+            "text": "阅读更多"
+          },
+          "pengiriman": {
+            "text": "快速送货"
+          },
+          "deskripsi-pengiriman": {
+            "text": "您的包裹将快速送达目的地，确保您的货物准时到达"
+          },
+          "layanan": {
+            "text": "保证服务"
+          },
+          "deskripsi-layanan": {
+            "text": "每个送货步骤都严格监控，以确保您的包裹安全且准时到达"
+          },
+          "harga": {
+            "text": "价格实惠"
+          },
+          "deskripsi-harga": {
+            "text": "您可以以更低的成本寄送您的包裹，而不会牺牲服务质量"
+          },
+          "dukungan": {
+            "text": "24/7支持"
+          },
+          "deskripsi-dukungan": {
+            "text": "客户支持团队随时为您提供帮助，解答问题，处理问题或提供其他帮助"
+          },
+          "selamat-datang": {
+            "text": "欢迎来到"
+          },
+          "pusat-kerupuk-indonesia": {
+            "text": "印尼薯片中心"
+          },
+          "deskripsi-pusat-kerupuk-1": {
+            "text": "欢迎来到印尼薯片中心，您发现印尼各地最好的薯片美味的首选地！我们是寻找正宗美味的印尼传统薯片的美食爱好者的可信目的地。在印尼薯片中心，我们理解印度尼西亚文化的丰富多样性，这在制作薯片中的各种口味，质地和使用优质原料的体现。我们自豪地向您呈现来自印度尼西亚各地的各种薯片，从虾片，木薯片，鱼片到辣豆腐酥等，品种齐全。"
+          },
+          "deskripsi-pusat-kerupuk-2": {
+            "text": "我们精心挑选的每款薯片产品都是为了确保最佳质量。我们与领先的薯片生产商合作，他们使用传统配方和制作技术生产高质量美味的薯片。通过在印尼薯片中心购物，您不仅可以享受到正宗的美食，还可以支持印尼各地的中小企业。我们致力于向世界推广和介绍印度尼西亚的美食文化。"
+          },
+          "produk-berkualitas": {
+            "text": "优质产品"
+          },
+          "penyedia-kerupuk": {
+            "text": "薯片供应商"
+          },
+          "pelayanan-kami": {
+            "text": "我们的24/7服务"
+          },
+          "deskripsi-pelayanan-kami": {
+            "text": "享受来自印尼薯片中心的24/7薯片产品销售服务！我们随时为您提供服务，无论何时何地，提供正宗优质的印尼薯片选择。立即发现您最喜欢的薯片美味，无时间限制，仅在印尼薯片中心。"
+          },
+          "standarisasi-produk": {
+            "text": "我们的产品标准化"
+          },
+          "deskripsi-standarisasi": {
+            "text": "印尼薯片中心的产品标准化是最高的，包括质量，真实性和多样性。每个薯片都按照严格的质量标准生产，保持传统口味和创新。通过精心选择原材料和细致的生产过程。"
+          },
+          "lihat-detail": {
+            "text": "查看详情"
+          },
+          "mengapa-memilih-kami": {
+            "text": "为什么选择我们"
+          },
+          "deskripsi-memilih": {
+            "text": "印尼薯片中心提供正宗口感和酥脆质地的高品质薯片。凭借丰富的口味种类和友好的客户服务，我们是发现美味薯片的最佳目的地。"
+          },
+          "jangkauan-produk": {
+            "text": "产品范围"
+          },
+          "deskripsi-jangkauan": {
+            "text": "覆盖全印尼的产品发货"
+          },
+          "audit-produk": {
+            "text": "产品审核"
+          },
+          "deskripsi-audit": {
+            "text": "定期产品检查以保持质量标准"
+          },
+          "hubungan-pelanggan": {
+            "text": "与客户的关系"
+          },
+          "deskripsi-hubungan": {
+            "text": "覆盖全印尼的产品发货"
+          },
+          "pengiriman-terjamin": {
+            "text": "送货保障"
+          },
+          "deskripsi-terjamin": {
+            "text": "我们保证来自印尼薯片中心的薯片发货可靠。"
+          },
+          "proses-kami": {
+            "text": "我们的流程"
+          },
+          "deskripsi-proses": {
+            "text": "我们是印尼领先的薯片供应商，选择最佳原材料并按照最高标准进行生产，以向我们的客户提供优质产品。"
+          },
+          "proses-1": {
+            "text": "产品优化"
+          },
+          "proses-2": {
+            "text": "卓越创新"
+          },
+          "proses-3": {
+            "text": "安全包装"
+          },
+          "proses-4": {
+            "text": "保持新鲜"
+          },
+          "produk-lainnya": {
+            "text": "其他产品"
+          },
+          "asam-jawa": {
+            "text": "爪哇酸"
+          },
+          "sohun": {
+            "text": "素粉"
+          },
+          "kembang-tahu": {
+            "text": "腐皮"
+          },
+          "deskripsi-asam": {
+            "text": "印尼薯片中心不仅提供优质薯片，还提供爪哇酸等其他产品。印尼薯片中心的爪哇酸注重生产标准，提供迷人的正宗口味，是美味清爽的小吃选择。"
+          },
+          "deskripsi-sohun": {
+            "text": "印尼薯片中心不仅提供优质薯片，还提供素粉等其他产品。印尼薯片中心的素粉注重生产标准，提供迷人的正宗口味，是美味清爽的小吃选择。"
+          },
+          "deskripsi-kembang": {
+            "text": "印尼薯片中心不仅提供各种优质薯片，还提供腐皮等其他产品。印尼薯片中心的腐皮注重严格的生产标准，提供美味可口的小吃，满足美食爱好者对正宗口味和保证质量的需求。"
+          },
+          "telepon": {
+            "text": "电话"
+          },
+          "alamat": {
+            "text": "地址"
+          },
+          "email": {
+            "text": "电子邮件"
+          },
+          "jam-layanan": {
+            "text": "服务时间"
+          },
+          "deskripsi-footer": {
+            "text": "在我们的系列中发现多种薯片的脆脆口感。从马铃薯片到虾片，每一口都保证正宗的口感和无与伦比的高品质。以最优质的原材料和保证清洁的生产过程制成，我们提供了完美的小吃选择，适合各种场合。"
+          },
+          "gerakan-hebat": {
+            "text": "伟大运动"
+          },
+          "produk": {
+            "text": "产品"
+          },
+          "deskripsi-gerakan": {
+            "text": "如果您对薯片产品有任何需求，只需联系我们24小时服务"
+          },
+          "hubungi-kami": {
+            "text": "联系我们"
+          },
+          "atau": {
+            "text": "或者"
+          },
+          "kontak-kami": {
+            "text": "联系方式"
+          },
+          "tentang-kami": {
+            "text": "关于我们"
+          },
+          "deskripsi-tentang": {
+            "text": "印尼薯片中心是寻找来自印尼各地的高品质薯片的最佳去处。我们提供多种口味和质地美味的薯片。只在印尼薯片中心获取最全面的印尼各地的薯片精选。"
+          },
+          "point-1": {
+            "text": "全面的收藏"
+          },
+          "point-2": {
+            "text": "最佳质量"
+          },
+          "point-3": {
+            "text": "正宗口味"
+          },
+          "point-4": {
+            "text": "脆脆质地"
+          },
+          "point-5": {
+            "text": "高标准生产"
+          },
+          "point-6": {
+            "text": "健康小吃选择"
+          },
+          "point-7": {
+            "text": "全国送货"
+          },
+          "point-8": {
+            "text": "友好客户服务"
+          },
+          "prencanaan": {
+            "text": "从规划到分销开始"
+          },
+          "deskripsi-perencanaan-1": {
+            "text": "印尼薯片中心从规划到分销都重视质量。我们的专业团队精心设计了每个生产步骤，从精选优质原材料到结合现代技术和传统方法的制作过程。我们确保每个制作的薯片都具有正宗的味道和脆脆的质地，满足每个品尝者的口感。"
+          },
+          "deskripsi-perencanaan-2": {
+            "text": "经过一系列严格的质量检验，我们的薯片产品已准备好分销到印尼的各个角落。通过广泛高效的分销网络，我们保证每位客户都能快速准时地享受到优质薯片。从规划到分销的集成方法，印尼薯片中心将质量标准和客户满意度作为其主要关注点。"
+          },
+          "memulai": {
+            "text": "开始"
+          },
+          "bahagia": {
+            "text": "满意的客户"
+          },
+          "jalan": {
+            "text": "产品行走"
+          },
+          "melayani": {
+            "text": "服务年份"
+          },
+          "seputar": {
+            "text": "有关产品"
+          },
+          "deskripsi-seputar": {
+            "text": "有关各种薯片，制作过程，口味变化以及享用薯片的技巧和窍门的最新信息。"
+          }
+}           

@@ -2,6 +2,12 @@
     "kami-buka": {
      "text": "Kami Buka"
     },
+    "senin1": {
+     "text": "Senin"
+    },
+    "sabtu1": {
+     "text": "Sabtu"
+    },
     "Senin": {
      "text": "Sen"
     },
@@ -55,5 +61,230 @@
     },
     "review": {
      "text": "Review"
-    }  
+    },
+    "aneka-kerupuk": {
+     "text": "Aneka Kerupuk Nusantara"
+    },
+    "produk-original": {
+     "text": "Produk Original"
+    },
+    "baca": {
+     "text": "Baca Selengkapnya"
+    },
+    "pengiriman": {
+     "text": "Pengiriman Cepat"
+    },
+    "deskripsi-pengiriman": {
+     "text": "Paket Anda akan dikirimkan dengan cepat ke tujuan, memastikan barang Anda tiba tepat waktu"
+    },
+    "layanan": {
+     "text": "Layanan Terjamin"
+    },
+    "deskripsi-layanan": {
+     "text": "Setiap langkah pengiriman diawasi dengan ketat untuk memastikan bahwa paket Anda tiba dengan aman dan tepat waktu"
+    },
+    "harga": {
+     "text": "Harga terjangkau"
+    },
+    "deskripsi-harga": {
+     "text": "Anda dapat mengirimkan paket Anda dengan biaya yang lebih rendah tanpa mengorbankan kualitas layanan"
+    },
+    "dukungan": {
+     "text": "24/7 Dukungan"
+    },
+    "deskripsi-dukungan": {
+     "text": "Tim dukungan pelanggan siap membantu Anda dengan pertanyaan, masalah, atau kebutuhan bantuan lainnya"
+    },
+    "selamat-datang": {
+     "text": "Selamat Datang Ke"
+    },
+    "pusat-kerupuk-indonesia": {
+     "text": "Pusat Kerupuk Indonesia"
+    },
+    "deskripsi-pusat-kerupuk-1": {
+     "text": "Selamat datang di Pusat Kerupuk Indonesia, tujuan utama Anda untuk menemukan kelezatan kerupuk terbaik dari berbagai penjuru Nusantara! Kami adalah destinasi terpercaya bagi para pecinta makanan yang mencari aneka ragam kerupuk tradisional Indonesia yang autentik dan lezat. Di Pusat Kerupuk Indonesia, kami memahami kekayaan budaya Indonesia yang tercermin dalam beragam rasa, tekstur, dan bahan-bahan berkualitas yang digunakan dalam pembuatan kerupuk. Kami bangga menyajikan kepada Anda koleksi lengkap kerupuk dari berbagai daerah di Indonesia, mulai dari kerupuk udang, kerupuk singkong, kerupuk ikan, hingga kerupuk rempeyek dan masih banyak lagi."
+    },
+    "deskripsi-pusat-kerupuk-2": {
+     "text": "Setiap produk kerupuk yang kami tawarkan dipilih dengan cermat untuk memastikan kualitas terbaik. Kami bekerja sama dengan produsen kerupuk terkemuka yang menggunakan resep turun-temurun dan teknik pembuatan tradisional untuk menghasilkan kerupuk yang berkualitas tinggi dan lezat. Dengan berbelanja di Pusat Kerupuk Indonesia, Anda tidak hanya menikmati kelezatan makanan yang autentik, tetapi juga mendukung industri kecil dan menengah di berbagai daerah di Indonesia. Kami komitmen untuk mempromosikan dan memperkenalkan kekayaan kuliner Indonesia kepada dunia."
+    },
+    "produk-berkualitas": {
+     "text": "Produk Berkualitas"
+    },
+    "penyedia-kerupuk": {
+     "text": "Penyedia Aneka Kerupuk"
+    },
+    "pelayanan-kami": {
+     "text": "24/7 Pelayanan Kami"
+    },
+    "deskripsi-pelayanan-kami": {
+     "text": "Nikmati layanan penjualan produk kerupuk 24/7 dari Pusat Kerupuk Indonesia! Kami siap melayani Anda kapan saja, di mana saja, dengan beragam pilihan kerupuk Nusantara yang autentik dan berkualitas. Segera temukan kelezatan kerupuk favorit Anda tanpa batasan waktu, hanya di Pusat Kerupuk Indonesia."
+    },
+    "standarisasi-produk": {
+     "text": "Standarisasi Produk Kami"
+    },
+    "deskripsi-standarisasi": {
+     "text": "Standarisasi produk kami di Pusat Kerupuk Indonesia adalah yang tertinggi | dalam kualitas, keaslian, dan keberagaman. Setiap kerupuk diproduksi sesuai standar kualitas ketat, menjaga cita rasa tradisional dan inovasi. Dengan pemilihan bahan baku yang cermat dan proses produksi yang teliti."
+    },
+    "lihat-detail": {
+     "text": "Lihat Detail"
+    },
+    "mengapa-memilih-kami": {
+     "text": "Mengapa Orang Memilih Kami"
+    },
+    "deskripsi-memilih": {
+     "text": "Pusat Kerupuk Indonesia menawarkan kerupuk berkualitas tinggi dengan rasa autentik dan tekstur renyah. Dengan beragam varian rasa dan layanan pelanggan yang ramah, kami menjadi destinasi terbaik untuk menemukan kerupuk yang nikmat."
+    },
+    "jangkauan-produk": {
+     "text": "Jangkauan Produk"
+    },
+    "deskripsi-jangkauan": {
+     "text": "Menjangkau pengiriman produk di seluruh Indonesia"
+    },
+    "audit-produk": {
+     "text": "Audit Produk"
+    },
+    "deskripsi-audit": {
+     "text": "Pemeriksaan rutin produk agar terjaga standar mutu"
+    },
+    "hubungan-pelanggan": {
+     "text": "Hubungan dengan pelanggan"
+    },
+    "deskripsi-hubungan": {
+     "text": "Menjangkau pengiriman produk di seluruh Indonesia"
+    },
+    "pengiriman-terjamin": {
+     "text": "Pengiriman terjamin"
+    },
+    "deskripsi-terjamin": {
+     "text": "Kami menjamin pengiriman kerupuk dari Pusat Kerupuk Indonesia yang terpercaya."
+    },
+    "proses-kami": {
+     "text": "Proses Kami"
+    },
+    "deskripsi-proses": {
+     "text": "Kami adalah pemasok kerupuk terkemuka di Indonesia, memilih bahan baku terbaik dan menjalani proses produksi dengan standar tertinggi untuk memberikan produk berkualitas tinggi kepada pelanggan kami."
+    },
+    "proses-1": {
+     "text": "Optimasi Produk"
+    },
+    "proses-2": {
+     "text": "Inovasi Keunggulan"
+    },
+    "proses-3": {
+     "text": "Pengemasan Aman"
+    },
+    "proses-4": {
+     "text": "Penyimpanan Kesegaran"
+    },
+    "produk-lainnya": {
+     "text": "Produk Lainnya"
+    },
+    "asam-jawa": {
+     "text": "Asam Jawa"
+    },
+    "sohun": {
+     "text": "Sohun"
+    },
+    "kembang-tahu": {
+     "text": "Kembang Tahu"
+    },
+    "deskripsi-asam": {
+     "text": "Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, tetapi juga menyediakan produk lain seperti Asam Jawa. Dengan fokus pada standar produksi yang terjaga, Asam Jawa dari Pusat Kerupuk Indonesia memberikan rasa autentik yang memikat, menjadikannya pilihan yang sempurna sebagai camilan yang lezat dan menyegarkan."
+    },
+    "deskripsi-sohun": {
+     "texxt": "Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, tetapi juga produk lain seperti Asam Jawa dan Sohun. Dengan fokus pada standar produksi yang terjaga, Sohun dari Pusat Kerupuk Indonesia memberikan pilihan camilan yang lezat dan menyegarkan, dengan cita rasa autentik yang memikat."
+    },
+    "deskripsi-kembang": {
+     "text": "Pusat Kerupuk Indonesia tidak hanya menghadirkan berbagai jenis kerupuk berkualitas tinggi, tetapi juga menawarkan produk lain seperti Kulit Kembang Tahu. Dengan komitmen pada standar produksi yang ketat, Kulit Kembang Tahu dari Pusat Kerupuk Indonesia menghadirkan pilihan camilan yang gurih dan lezat, memenuhi keinginan para pecinta makanan ringan dengan rasa yang autentik dan kualitas yang terjamin."
+    },
+    "telepon": {
+     "text": "Telepon"
+    },
+    "alamat": {
+     "text": "Alamat"
+    },
+    "email": {
+     "text": "Email"
+    },
+    "jam-layanan": {
+     "text": "Jam Layanan"
+    },
+    "deskripsi-footer": {
+     "text": "Temukan beragam kerupuk renyah dalam koleksi kami. Dari kerupuk kentang hingga kerupuk udang, setiap gigitan menjanjikan cita rasa autentik dan kualitas premium yang tak tertandingi. Dibuat dengan bahan-bahan berkualitas terbaik dan proses produksi yang terjamin kebersihannya, kami menawarkan pilihan camilan yang sempurna untuk setiap kesempatan."
+    },
+    "gerakan-hebat": {
+     "text": "Gerakan Hebat"
+    },
+    "produk": {
+     "text": "Produk"
+    },
+    "deskripsi-gerakan": {
+     "text": "Jika Anda mempunyai kebutuhan mengenai produk kerupuk, cukup hubungi 24 jam kami"
+    },
+    "hubungi-kami": {
+     "text": "Hubungi Kami"
+    },
+    "atau": {
+     "text": "Atau"
+    },
+    "kontak-kami": {
+     "text": "Kontak Kami"
+    },
+    "tentang-kami": {
+     "text": "Tentang Kami"
+    },
+    "deskripsi-tentang": {
+     "text": "Pusat Kerupuk Indonesia adalah tempat terbaik untuk menemukan kerupuk berkualitas tinggi dari seluruh Indonesia. Kami menyajikan beragam varian kerupuk autentik dengan rasa dan tekstur yang lezat. Dapatkan koleksi lengkap kerupuk dari berbagai daerah dengan kualitas terbaik hanya di Pusat Kerupuk Indonesia."
+    },
+    "point-1": {
+     "text": "Koleksi lengkap"
+    },
+    "point-2": {
+     "text": "Kualitas terbaik"
+    },
+    "point-3": {
+     "text": "Rasa autentik"
+    },
+    "point-4": {
+     "text": "Tekstur Renyah"
+    },
+    "point-5": {
+     "text": "Standar produksi tinggi"
+    },
+    "point-6": {
+     "text": "Pilihan camilan sehat"
+    },
+    "point-7": {
+     "text": "Pengiriman nasional"
+    },
+    "point-8": {
+     "text": "Layanan pelanggan ramah"
+    },
+    "prencanaan": {
+     "text": "Mulai dari Perencanaan hingga Distribusi"
+    },
+    "deskripsi-perencanaan-1": {
+     "text": "Pusat Kerupuk Indonesia mengutamakan kualitas dari awal perencanaan hingga distribusi. Setiap langkah produksi dirancang secara cermat oleh tim ahli kami, mulai dari pemilihan bahan baku berkualitas hingga proses pembuatan yang menggabungkan teknologi modern dengan metode tradisional. Kami memastikan bahwa setiap kerupuk yang dihasilkan memiliki rasa autentik dan tekstur yang renyah, sehingga memuaskan setiap lidah yang mencicipinya."
+    },
+    "deskripsi-perencanaan-2": {
+     "text": "Setelah melewati serangkaian uji kualitas yang ketat, produk kerupuk kami siap untuk didistribusikan ke seluruh penjuru Indonesia. Melalui jaringan distribusi yang luas dan efisien, kami menjamin bahwa setiap pelanggan kami dapat menikmati kerupuk berkualitas tinggi dengan cepat dan tepat waktu. Dengan pendekatan yang terintegrasi dalam proses Starting from Planning to Distribution, Pusat Kerupuk Indonesia menjaga standar mutu dan kepuasan pelanggan sebagai fokus utama dalam setiap langkahnya."
+    },
+    "memulai": {
+     "text": "Memulai"
+    },
+    "bahagia": {
+     "text": "Pelanggan yang Bahagia"
+    },
+    "jalan": {
+     "text": "Produk Berjalan"
+    },
+    "melayani": {
+     "text": "Tahun Melayani"
+    },
+    "seputar": {
+     "text": "Seputar Produk"
+    },
+    "deskripsi-seputar": {
+     "text": "informasi terbaru seputar berbagai jenis kerupuk, proses pembuatan, variasi rasa, serta tips dan trik untuk menikmati kerupuk dengan lebih nikmat."
+    }
 }

@@ -5,13 +5,7 @@ import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Grid, Typography, Button } from "@mui/material";
-import Container from '@mui/material/Container';
 import Card from '@mui/material/Card';
-import { Image } from "@mui/icons-material";
-import CallIcon from '../../Image/calling.png';
-import EmailIcon from '../../Image/mail.png';
-import SearchIcon from '@mui/icons-material/Search';
-import MenuIcon from '@mui/icons-material/Menu';
 import InputBase from '@mui/material/InputBase';
 import { useTheme } from '@mui/material/styles';
 import { styled, alpha } from '@mui/material/styles';
@@ -164,23 +158,23 @@ export function Product() {
           <Header />
 
           
-          <Container
-              sx={{ 
-                mt: isDesktop ? 20 : 40, 
+          <div
+              style={{ 
+                marginTop: isDesktop ? 100 : 300, 
                 display: "flex", 
                 marginLeft: isDesktop ? 10 : -2,
-                width: "100%", 
-                mb: 50 
+                width: isDesktop ? "100%" : '100%', 
+                marginBottom: isDesktop ? 10 : 5
             }}
             >
-              <Grid spacing={ isDesktop ? 12 : 10}>
+              <Grid container spacing={ isDesktop ? 12 : 10} justifyContent="center">
                 {Produk.map((e, index) => (
                     <Grid item key={e._id} xs={12} sm={4} md={4} lg={4} mb={isDesktop ? 20 : 20}>
                       {isCardFlipped[index] ? (
                         <div
                           className={`product-card flipped-card`}
                           style={{
-                            width: isDesktop ? "350px" : "340px",
+                            width: isDesktop ? "350px" : "100%",
                             height: isDesktop ? "600px" : '550px',
                             backgroundColor: "#f8f8f8",
                             borderRadius: "8px",
@@ -259,7 +253,7 @@ export function Product() {
                         <div
                           className={`product-card`}
                           style={{
-                            width: isDesktop ? "100%" : "340px",
+                            width: isDesktop ? "80%" : "340px",
                             height: isDesktop ? "600px" : '550px',
                             backgroundColor: "#f8f8f8",
                             borderRadius: "8px",
@@ -276,32 +270,6 @@ export function Product() {
                             padding: "20px",
                           }}
                         >
-                          {/* {e[activeLanguage].versi && e[activeLanguage].versi === "baru" && (
-                            <div
-                             className="waving-flag"
-                              style={{
-                                zIndex: 3,
-                                position: 'absolute',
-                                top: '10px',
-                                left: '10px',
-                                backgroundColor: 'green',
-                                color: 'white',
-                                padding: '5px',
-                                borderRadius: '5px',
-                                animation: 'wavingFlagAnimation 1s infinite'
-                              }}
-                            >
-                              New
-                            </div>
-                          )}
-                           {e[activeLanguage].versi && e[activeLanguage].versi === "favorite" && (
-                            <div class="favorite-container">
-                            <div class="favorite-flag">
-                              Favorite
-                            </div>
-                            <div class="stars"></div>
-                          </div>
-                          )} */}
                           <div
                             style={{
                               width: "100%",
@@ -328,9 +296,6 @@ export function Product() {
                           </div>
                           <img src={e[activeLanguage].image} style={{ height: "300px" }} />
                           <h2
-                            // title={
-                            //   e[activeLanguage].kategori === "bahan-baku" ? "" : e[activeLanguage].nama
-                            // }
                             style={{
                               marginTop: "30px",
                               marginBottom: "5px",
@@ -352,9 +317,24 @@ export function Product() {
                     </Grid>
                   ))}
               </Grid>
-            </Container>
+            </div>
 
-
+            <div style={{ 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center', // Menengahkan secara vertikal
+                marginBottom: isDesktop ? 200 : 500, 
+                // marginTop: isDesktop ? 0 : -200
+                }}>
+                <Button target="_blank" href="https://shope.ee/7AGycdYN4C"
+                    style={{ 
+                    backgroundColor: 'orange', 
+                    color: 'white',
+                    }}
+                >
+                    Produk Lainnya
+                </Button>
+                </div>
 
 
           <ReactWhatsapp id="icon-whatsapp" style={{ 
@@ -383,7 +363,7 @@ export function Product() {
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
                         <img src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
-                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>Phone :</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}>082131131108</span>
                         </div>
                     </div>
@@ -392,7 +372,7 @@ export function Product() {
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
                         <img src={Location} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
-                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>Address :</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("alamat.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>Jalan Veteran no 4A Medan Pusat Pasar, Medan, Sumatera Utara 20231</span>
                         </div>
                     </div>
@@ -401,7 +381,7 @@ export function Product() {
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
                         <img src={Email} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
-                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>Email :</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("email.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>pusatkerupukindonesia@gmail.com</span>
                         </div>
                     </div>
@@ -414,10 +394,7 @@ export function Product() {
                     <Grid item xs={4}>
                         <img src={LogoPusatKerupuk} width={100} height={100} />
                         <p id="deskripsi_kerupuk" style={{ width: '280px', color: 'white', marginTop: '40px' }}>
-                            Temukan beragam kerupuk renyah dalam koleksi kami. Dari kerupuk kentang hingga kerupuk udang, 
-                            setiap gigitan menjanjikan cita rasa autentik dan kualitas premium yang tak tertandingi. 
-                            Dibuat dengan bahan-bahan berkualitas terbaik dan proses produksi yang terjamin kebersihannya, 
-                            kami menawarkan pilihan camilan yang sempurna untuk setiap kesempatan. 
+                            {t("deskripsi-footer.text")}
                         </p>
                         <div style={{ display: 'flex', gap: '10px', marginTop: '40px' }}>
                             <div style={{ backgroundColor: '#38363e', padding: '5px', borderRadius: '20%' }}>
@@ -436,31 +413,31 @@ export function Product() {
                     </Grid>
                     <Grid item>
                     <div style={{ marginTop: isDesktop ? 0 : 60 }}>
-                            <label style={{ color: 'white', fontSize: '20px' }}> Service Hours </label>
+                            <label style={{ color: 'white', fontSize: '20px' }}>{t("jam-layanan.text")}</label>
                             <br />
                             <br />
                             <div style={{ width: isDesktop ?  '100%' : 270 }}>
-                            <label style={{ color: 'white' }}>Senin</label>
+                            <label style={{ color: 'white' }}>{t("senin1.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '105px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Selasa</label>
+                            <label style={{ color: 'white' }}>{t("Selasa.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '100px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Rabu</label>
+                            <label style={{ color: 'white' }}>{t("Rabu.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '107px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Kamis</label>
+                            <label style={{ color: 'white' }}>{t("Kamis.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Jumat</label>
+                            <label style={{ color: 'white' }}>{t("Jumat.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             <br />
-                            <label style={{ color: 'white' }}>Sabtu</label>
+                            <label style={{ color: 'white' }}>{t("sabtu1.text")}</label>
                             <label style={{ color: 'white', paddingLeft: '102px' }}>07.00 - 18.00</label>
                             <hr style={{ borderBottom: '1px solid white' }} />
                             </div>
@@ -469,7 +446,7 @@ export function Product() {
                 </Grid>
             </div>
             <div style={{ width: '100%', backgroundColor: '#1f1e21', height: isDesktop ? '90px' : '200px', marginTop:  isDesktop ? '-10px' : 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <span style={{ color: 'white' }}><label style={{ color:  "#ff9c00"}}>@2024</label> Pusat Kerupuk Indonesia</span>
+                <span style={{ color: 'white' }}><label style={{ color:  "#ff9c00"}}>@2024</label>{t("pusat-kerupuk-indonesia.text")}</span>
             </div>
         </>
     )

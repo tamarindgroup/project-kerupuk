@@ -1,5 +1,5 @@
 import Kerupuk1 from '../Image/kerupuk-udang.jpeg';
-import Kerupuk2 from '../Image/kerupuk-makaroni.jpeg';
+import Kerupuk2 from '../Image/mawar-putih.jpg';
 import Kerupuk3 from '../Image/kerupuk-jengkol.jpg';
 import Kerupuk4 from '../Image/kerupuk-tempe-bulat.jpg';
 import Kerupuk5 from '../Image/kerupuk-udang-salju.jpg';
@@ -51,10 +51,10 @@ const  dataProduk = [
     },
         {
            id: {
-                "nama": "Makaroni",
+                "nama": "Mawar Putih",
                 "deskripsi": `
-                \u00a0\u00a0\u00a0\u00a0 Kerupuk Makaroni yang dijual di Pusat Kerupuk Indonesia adalah pilihan camilan yang sempurna untuk dinikmati kapan pun Anda menginginkannya. Dibuat dari bahan-bahan pilihan dan diproses dengan teknik yang teliti, kerupuk ini memiliki tekstur yang renyah dan cita rasa yang menggugah selera. Setiap gigitan kerupuk makaroni memberikan pengalaman yang memuaskan dengan kombinasi rasa gurih dan sedikit manis yang membuatnya menjadi favorit bagi semua kalangan.
-                \u00a0\u00a0\u00a0\u00a0 Produk Kerupuk Makaroni dari Pusat Kerupuk Indonesia juga dikenal karena kualitasnya yang terjamin dan kebersihannya yang terjaga. Diproduksi dengan standar keamanan pangan yang ketat, Anda dapat menikmati kerupuk ini tanpa khawatir akan masalah kesehatan. Dikemas secara praktis untuk menjaga kesegaran dan kelezatannya, kerupuk makaroni ini cocok dijadikan sebagai camilan di rumah, saat bepergian, atau bahkan sebagai tambahan dalam acara-acara bersama keluarga dan teman. Jadi, jangan ragu untuk memilih Kerupuk Makaroni dari Pusat Kerupuk Indonesia untuk memuaskan hasrat camilan Anda dengan kualitas terbaik.
+                \u00a0\u00a0\u00a0\u00a0 Kerupuk Mawar Putih yang ditawarkan oleh Pusat Kerupuk Indonesia adalah pilihan camilan yang menggoda dengan cita rasa yang autentik dan kualitas yang terjamin. Dibuat dengan menggunakan bahan baku berkualitas tinggi dan diproses dengan teliti, kerupuk ini memiliki tekstur yang renyah dan khas, serta cita rasa yang gurih dan menggugah selera. Setiap gigitan kerupuk Mawar Putih akan membawa Anda pada petualangan rasa yang memuaskan, menjadikannya sebagai pilihan camilan yang sempurna untuk dinikmati kapan pun Anda inginkan.
+                \u00a0\u00a0\u00a0\u00a0 Selain itu, produk Kerupuk Mawar Putih dari Pusat Kerupuk Indonesia juga dijamin kebersihannya dan diproduksi dengan standar kualitas yang tinggi. Dengan mengutamakan keamanan pangan dan kualitas bahan baku, Pusat Kerupuk Indonesia memastikan bahwa setiap kerupuk yang dihasilkan aman untuk dikonsumsi dan memenuhi harapan pelanggan. Dikemas dengan cermat untuk menjaga kesegaran dan kualitasnya, Kerupuk Mawar Putih cocok dinikmati sebagai camilan lezat di rumah, di kantor, atau bahkan sebagai tambahan dalam hidangan spesial Anda. Rasakan sensasi unik dan nikmati kelezatan dari Kerupuk Mawar Putih yang dijamin segar dan berkualitas dari Pusat Kerupuk Indonesia.
                 `,
                 "image": Kerupuk2,
                 // "kategori": "daging",
@@ -64,8 +64,8 @@ const  dataProduk = [
             en: {
                 "nama": "Macaroni",
                 "deskripsi": `
-                \u00a0\u00a0\u00a0\u00a0 Macaroni Crackers sold at Pusat Kerupuk Indonesia are the perfect snack choice to enjoy whenever you want. Made from selected ingredients and processed using careful techniques, these crackers have a crunchy texture and appetizing taste. Every bite of macaroni crackers provides a satisfying experience with a combination of savory and slightly sweet flavors that make it a favorite for all groups.
-                \u00a0\u00a0\u00a0\u00a0 Macaroni Crackers products from the Indonesian Cracker Center are also known for their guaranteed quality and maintained cleanliness. Manufactured to strict food safety standards, you can enjoy these crackers without worrying about health problems. Packaged practically to maintain freshness and deliciousness, these macaroni crackers are suitable as a snack at home, when traveling, or even as an addition to events with family and friends. So, don't hesitate to choose Macaroni Crackers from the Indonesian Crackers Center to satisfy your snack cravings with the best quality.
+                \u00a0\u00a0\u00a0\u00a0 White Mawar Crackers offered by Pusat Kerupuk Indonesia are a tempting snack choice with authentic taste and guaranteed quality. Made using high quality raw materials and processed carefully, these crackers have a distinctive crunchy texture, as well as a savory and appetizing taste. Every bite of Mawar Putih crackers will take you on a satisfying taste adventure, making them the perfect snack choice to enjoy whenever you want.
+                \u00a0\u00a0\u00a0\u00a0 Apart from that, White Mawar Crackers products from the Indonesian Cracker Center are also guaranteed to be clean and produced to high quality standards. By prioritizing food safety and quality of raw materials, the Indonesian Crackers Center ensures that every cracker produced is safe for consumption and meets customer expectations. Carefully packaged to maintain freshness and quality, White Rose Crackers are suitable to be enjoyed as a delicious snack at home, at the office, or even as an addition to your special meal. Feel the unique sensation and enjoy the deliciousness of White Mawar Crackers which are guaranteed to be fresh and high quality from the Indonesian Cracker Center.
                 `,
                 "image": Kerupuk2,
                 // "kategori": "daging",
@@ -75,8 +75,8 @@ const  dataProduk = [
             ar: {
                 "nama": "معكرونة",
                 "deskripsi": `
-                \u00a0\u00a0\u00a0\u00a0 د مقرمشات المعكرونة التي تُباع في Pusat Kerupuk Indonesia خيارًا مثاليًا للوجبات الخفيفة للاستمتاع بها وقتما تشاء. مصنوعة من مكونات مختارة ويتم معالجتها باستخدام تقنيات دقيقة، وتتميز هذه المقرمشات بملمس مقرمش وطعم فاتح للشهية. توفر كل قضمة من مقرمشات المعكرونة تجربة مرضية مع مزيج من النكهات
-                \u00a0\u00a0\u00a0\u00a0 تشتهر منتجات Macaroni Crackers من مركز Cracker الإندونيسي أيضًا بجودتها المضمونة ونظافتها المستمرة. تم تصنيعها وفقًا لمعايير سلامة الأغذية الصارمة، ويمكنك الاستمتاع بهذه المفرقعات دون القلق بشأن المشاكل الصحية. معبأة بشكل عملي للحفاظ على النضارة واللذة، تعتبر مقرمشات المعكرونة هذه مناسبة كوجبة خفيفة في المنزل أو أثناء السفر أو حتى كإضافة للمناسبات مع العائلة والأصدقاء. لذلك، لا تتردد في اختيار مقرمشات المعكرونة من مركز المفرقعات الإندونيسية لإشباع شهيتك للوجبات الخفيفة بأفضل جودة.
+                \u00a0\u00a0\u00a0\u00a0 تعد مقرمشات الموار البيضاء المقدمة من Pusat Kerupuk Indonesia خيارًا مغريًا للوجبات الخفيفة ذات المذاق الأصيل والجودة المضمونة. تم تصنيع هذه المقرمشات باستخدام مواد خام عالية الجودة ومعالجتها بعناية، وتتميز بقوام مقرمش مميز، بالإضافة إلى مذاق لذيذ وشهي. ستأخذك كل قضمة من مقرمشات ماوار بوتيه في مغامرة تذوق مرضية، مما يجعلها خيارًا مثاليًا للوجبات الخفيفة للاستمتاع بها وقتما تشاء.
+                \u00a0\u00a0\u00a0\u00a0 وبصرف النظر عن ذلك، فإن منتجات White Mawar Crackers من مركز المفرقعات الإندونيسي مضمونة أيضًا أن تكون نظيفة ويتم إنتاجها وفقًا لمعايير الجودة العالية. من خلال إعطاء الأولوية لسلامة الأغذية وجودة المواد الخام، يضمن مركز المفرقعات الإندونيسي أن كل قطعة بسكويت يتم إنتاجها آمنة للاستهلاك وتلبي توقعات العملاء. تم تعبئتها بعناية للحفاظ على نضارتها وجودتها، وهي مناسبة للاستمتاع بها كوجبة خفيفة لذيذة في المنزل أو المكتب أو حتى كإضافة إلى وجبتك الخاصة. اشعر بالإحساس الفريد واستمتع بمذاق مقرمشات الموار البيضاء المضمونة لتكون طازجة وعالية الجودة من مركز المفرقعات الإندونيسي.
                 `,
                 "image": Kerupuk2,
                 // "kategori": "daging",
@@ -86,8 +86,8 @@ const  dataProduk = [
             zh: {
                 "nama": "通心粉",
                 "deskripsi": `
-                \u00a0\u00a0\u00a0\u00a0 Pusat Kerupuk Indonesia 出售的通心粉饼干是您随时享用的完美零食选择。 这些饼干采用精选原料制成，并采用精心加工技术，具有松脆的质地和开胃的味道。 每一口通心粉饼干都能带来令人满意的体验，咸味和微甜的味道相结合，使其成为所有群体的最爱。
-                \u00a0\u00a0\u00a0\u00a0 印度尼西亚饼干中心的通心粉饼干产品也以其质量保证和清洁而闻名。 按照严格的食品安全标准制造，您可以享用这些饼干而不必担心健康问题。 这些通心粉饼干采用实用的包装，可保持新鲜度和美味，适合作为家庭、旅行时的零食，甚至可以作为与家人和朋友一起参加活动的补充。 因此，请毫不犹豫地选择印度尼西亚饼干中心的通心粉饼干，以最好的品质满足您对零食的渴望。
+                \u00a0\u00a0\u00a0\u00a0 Pusat Kerupuk Indonesia 提供的 White Mawar 饼干是一种诱人的零食选择，味道正宗，质量有保证。 采用优质原料，精心加工而成，具有独特的松脆口感、鲜美开胃的口感。 每一口 Mawar Putih 饼干都会带您踏上一场令人满意的味觉冒险，使其成为您随时享用的完美零食选择。
+                \u00a0\u00a0\u00a0\u00a0 除此之外，来自印度尼西亚饼干中心的White Mawar饼干产品也保证是清洁的并按照高质量标准生产。 通过优先考虑食品安全和原材料质量，印度尼西亚饼干中心确保生产的每块饼干均可安全食用并满足客户的期望。 白玫瑰饼干经过精心包装，以保持新鲜度和品质，适合在家里、办公室作为美味小吃，甚至可以作为特别餐点的补充。 感受独特的感觉，享受来自印度尼西亚饼干中心的白玛瓦尔饼干的美味，保证新鲜和高品质。
                 `,
                 "image": Kerupuk2,
                 // "kategori": "daging",
