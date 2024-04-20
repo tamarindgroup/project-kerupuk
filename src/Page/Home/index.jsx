@@ -943,7 +943,7 @@ export function Home () {
                             <label style={{ color: 'white', fontSize: '20px' }}>{t("jam-layanan.text")}</label>
                             <br />
                             <br />
-                            <div style={{ width: isDesktop ? '100%' : 270 }}>
+                            <div style={{ width: isDesktop ? '100%' : '80%' }}>
                                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                                     <div style={{ flex: 1 }}>
                                         <label style={{ color: 'white' }}>{t("senin1.text")}</label>
