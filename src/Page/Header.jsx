@@ -251,7 +251,7 @@ const Header = () => {
                         />
                         <div style={{ display: 'block', marginTop: isDesktop ? 0 : '-1px' }}>
                             <Typography style={{ paddingLeft: '12px', fontSize: isDesktop ? 17 : 12, fontWeight: 700 }}>{t("Telpon-kami.text")}</Typography>
-                            <Typography style={{ paddingLeft: '12px', fontSize: isDesktop ? 17 : 10 }}><Textra effect="flash" data={['082131131108', '085935331734']} /></Typography>
+                            <Typography style={{ paddingLeft: '12px', fontSize: isDesktop ? 17 : 10 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></Typography>
                             {/* <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>082131131108</Typography> */}
                         </div>
                     </Grid>
