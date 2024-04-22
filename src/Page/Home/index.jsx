@@ -1045,7 +1045,7 @@ export function Home () {
                                         <label style={{ color: 'white' }}>{t("senin1.text")}</label>
                                     </div>
                                     <div>
-                                        <label style={{ color: 'white' }}>07.00 - 18.00</label>
+                                        <label style={{ color: 'white', paddingLeft: isDesktop ? '90px' : 0 }}>07.00 - 18.00</label>
                                     </div>
                                 </div>
                                 <hr style={{ borderBottom: '1px solid white' }} />
