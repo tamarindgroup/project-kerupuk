@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
 import { useTheme } from '@mui/material/styles';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import XIcon from '@mui/icons-material/X';
@@ -35,6 +36,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Textra from 'react-textra'
+import { Link } from "react-router-dom";
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 const Header = () => {
@@ -46,6 +48,15 @@ const Header = () => {
     const [labelText, setLabelText] = useState('Translate');
     const activeLanguage = i18n.language;
     const [whatsappClicked, setWhatsappClicked] = useState(false);
+    const navigate = useNavigate();
+    const [searchValue, setSearchValue] = useState('');
+
+    const handleSearch = () => {
+        if (searchValue === 'kerupuk') {
+            navigate('/produk');
+        }
+        // tambahkan logika lainnya jika diperlukan
+    };
 
     const handleChange = (event) => {
         setLanguage(event.target.value);
@@ -328,6 +339,13 @@ const Header = () => {
                             <StyledInputBase
                             placeholder="Search…"
                             inputProps={{ 'aria-label': 'search' }}
+                            onChange={(e) => setSearchValue(e.target.value)}
+                            value={searchValue}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    handleSearch();
+                                }
+                            }}
                             />
                         </Search>
                     </Grid>

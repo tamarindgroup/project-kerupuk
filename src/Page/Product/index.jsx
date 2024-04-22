@@ -182,7 +182,7 @@ export function Product() {
                         <div
                           className={`product-card flipped-card`}
                           style={{
-                            width: isDesktop ? "350px" : "100%",
+                            width: isDesktop ? "80%" : "90%",
                             height: isDesktop ? "600px" : '550px',
                             backgroundColor: "#f8f8f8",
                             borderRadius: "8px",
@@ -228,7 +228,7 @@ export function Product() {
                           <p
                             type="secondary"
                             style={{
-                              width: "100%",
+                              width: "80%",
                               textAlign: "justify",
                               paddingTop: "30px",
                               fontSize: !isDesktop ? "10px" : "10px",
@@ -339,6 +339,9 @@ export function Product() {
                     style={{ 
                     backgroundColor: 'orange', 
                     color: 'white',
+                    borderRadius: '20px',
+                    fontSize: '11px',
+                    width: '200px'
                     }}
                 >
                     Produk Lainnya
