@@ -12,6 +12,7 @@ import Layanan24 from '../../Image/2633.png_860.png';
 import Produksi from '../../Image/training-dan-sertifikasi-operator-forklift-pelatihan-operator-forklift-training-operator-forklift.jpg';
 import ImgKerupuk from '../../Image/istockphoto-874515358-612x612.jpg';
 import AOS from 'aos';
+import Textra from 'react-textra'
 import 'aos/dist/aos.css';
 import PublicIcon from '@mui/icons-material/Public';
 import Call from '../../Image/phone-call.png';
@@ -40,6 +41,7 @@ import { FaPeopleLine } from "react-icons/fa6";
 import Shopping from '../../Image/shopping.gif';
 import { useTranslation } from "react-i18next";
 import Header from "../Header";
+import { FaCircleArrowUp } from "react-icons/fa6";
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -53,6 +55,13 @@ export function Home () {
     const activeLanguage = i18n.language;
     const control = useAnimation();
     const [ ref, inView ] = useInView();
+
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      };
 
     const boxVariant = {
         visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.5 } },
@@ -77,7 +86,7 @@ export function Home () {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(true);
-        }, 5000);
+        }, 3000);
         return () => clearTimeout(timer);
     }, []);
 
@@ -456,7 +465,8 @@ export function Home () {
             </div>
           </div>
          
-
+      {isDesktop ? (
+        <>
         <motion.div
         className="box"
         ref={ref}
@@ -540,6 +550,79 @@ export function Home () {
             </div>
           </div>
           </motion.div>
+          </>
+        )
+          : (
+             <>
+                <div data-aos="fade-up" style={{
+                    // position: 'relative',
+                    // top: isDesktop ? '200px' : '240px', 
+                    marginLeft: isDesktop ? 400 : '50px',
+                    marginBottom: isDesktop ? 0 : '200px',
+                    marginTop: isDesktop ? 0 : '100px'
+                }}>
+                    <div style={{ width: '300px' }}>
+                        <img src={Layanan24} style={{
+                            width: '200px',
+                            height: '200px',
+                            justifyContent: 'center',
+                            margin: '0 auto',
+                            display: 'flex',
+                            paddingBottom: '40px'
+                        }} />
+                    <label id="deskripsi_service" style={{ fontSize: '20px', fontWeight: 'bold' }}>{t("pelayanan-kami.text")}</label>
+                    <p id="deskripsi_kerupuk" style={{ width: '300px'}}> 
+                    {t("deskripsi-pelayanan-kami.text")}
+                    </p>
+                    <a href="#top-title">
+                    <Button id="button-view" style={{
+                        backgroundColor: '#ff9c00',
+                        color: 'white',
+                        borderRadius: '20px',
+                        fontSize: '9px',
+                        width: '100px',
+                        height: '30px',
+                    }}>
+                    {t("lihat-detail.text")}
+                    </Button>
+                    </a>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" style={{
+                    // position: 'relative',
+                    marginTop: isDesktop ? '-10px' : '-100px',
+                    marginLeft: isDesktop ? 100 : '50px',
+                }}>
+                    <div style={{ width: '300px' }}>
+                        <img src={Produksi} style={{
+                            width: '300px',
+                            height: '200px',
+                            justifyContent: 'center',
+                            margin: '0 auto',
+                            display: 'flex', 
+                            paddingBottom: '30px'
+                        }} />
+                    <label id="deskripsi_service" style={{ fontSize: '20px', fontWeight: 'bold' }}>{t("standarisasi-produk.text")}</label>
+                    <p id="deskripsi_kerupuk" style={{ width: '300px'}}> 
+                    {t("deskripsi-standarisasi.text")}
+                    </p>
+                    <a href="#top-title">
+                    <Button id="button-view" style={{
+                        backgroundColor: '#ff9c00',
+                        color: 'white',
+                        borderRadius: '20px',
+                        fontSize: '9px',
+                        width: '100px',
+                        height: '30px',
+                    }}>
+                    {t("lihat-detail.text")}
+                    </Button>
+                    </a>
+                    </div>
+                </div>
+             </>
+             )}
           </div>
 
 
@@ -860,7 +943,20 @@ export function Home () {
             </div>
             
            
-
+         <FaCircleArrowUp 
+         style={{
+            cursor: 'pointer',
+            color: 'gray',
+            maxWidth: '100%', // Tambahkan ini
+            width: '55px',
+            height: '55px',
+            position: 'fixed', // Tetapkan posisi elemen
+            bottom: '25px',    // Atur jarak dari bawah
+            left: !isDesktop ? '20px' : '20px',     // Atur jarak dari kanan
+            // zIndex: '9999',   
+          }}
+          onClick={scrollToTop}
+         />
 
 
             <ReactWhatsapp id="icon-whatsapp" style={{ 
@@ -891,7 +987,7 @@ export function Home () {
                         <img src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
-                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}>082131131108</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></span>
                         </div>
                     </div>
                 </Grid>

@@ -6,6 +6,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Grid, Button, Typography } from "@mui/material";
 // import { Card, Typography } from "antd";
+import Textra from 'react-textra'
 import CallIcon from '../../Image/calling.png';
 import EmailIcon from '../../Image/mail.png';
 import SearchIcon from '@mui/icons-material/Search';
@@ -50,6 +51,7 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Link } from "react-router-dom";
 import Header from "../Header";
+import { FaCircleArrowUp } from "react-icons/fa6";
 
 
 export const Artikel =  () => {
@@ -61,6 +63,13 @@ export const Artikel =  () => {
     const [language, setLanguage] = useState('');
     const [labelText, setLabelText] = useState('Translate');
     const activeLanguage = i18n.language;
+
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      };
 
     const handleChange = (event) => {
         setLanguage(event.target.value);
@@ -186,6 +195,22 @@ export const Artikel =  () => {
               </Grid>
 
 
+              <FaCircleArrowUp 
+                style={{
+                    cursor: 'pointer',
+                    color: 'gray',
+                    maxWidth: '100%', // Tambahkan ini
+                    width: '55px',
+                    height: '55px',
+                    position: 'fixed', // Tetapkan posisi elemen
+                    bottom: '25px',    // Atur jarak dari bawah
+                    left: !isDesktop ? '20px' : '20px',     // Atur jarak dari kanan
+                    // zIndex: '9999',   
+                }}
+                onClick={scrollToTop}
+                />
+
+
           <ReactWhatsapp id="icon-whatsapp" style={{ 
                 width: 0,
                 height: 0,
@@ -213,7 +238,7 @@ export const Artikel =  () => {
                         <img src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
-                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}>082131131108</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></span>
                         </div>
                     </div>
                 </Grid>

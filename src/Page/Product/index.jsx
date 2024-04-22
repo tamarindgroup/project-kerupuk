@@ -6,6 +6,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Grid, Typography, Button } from "@mui/material";
 import Card from '@mui/material/Card';
+import Textra from 'react-textra'
 import InputBase from '@mui/material/InputBase';
 import { useTheme } from '@mui/material/styles';
 import { styled, alpha } from '@mui/material/styles';
@@ -20,7 +21,7 @@ import { SiGooglemybusiness } from "react-icons/si";
 import Location from '../../Image/location.png';
 import ReactWhatsapp from 'react-whatsapp';
 import IconWhatsapp from '../../Image/icon-whatsapp.png'
-
+import { FaCircleArrowUp } from "react-icons/fa6";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
@@ -57,6 +58,13 @@ export function Product() {
     const [isCardFlipped, setIsCardFlipped] = useState(
         Produk.map(() => false)
       );
+
+      const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      };
 
     const handleChange = (event) => {
         setLanguage(event.target.value);
@@ -194,14 +202,14 @@ export function Product() {
                             style={{
                               width: "100%",
                               height: "100px",
-                              backgroundColor: "#e6bf0d",
+                              background: 'rgba(205, 88, 57, 1.0)',
                               position: "relative",
                               borderRadius: "10px",
                               zIndex: "1",
                             }}
                           >
                             <Typography
-                              id="title-produk"
+                              id="list-menu"
                               style={{
                                 textAlign: "center",
                                 // fontFamily: "'Brush Script MT', cursive",
@@ -274,7 +282,7 @@ export function Product() {
                             style={{
                               width: "100%",
                               height: "100px",
-                              backgroundColor: "#e6bf0d",
+                              background: 'rgba(205, 88, 57, 1.0)',
                               position: "relative",
                               borderRadius: "10px",
                               top: "-20px",
@@ -282,7 +290,7 @@ export function Product() {
                             }}
                           >
                             <Typography
-                              id="title-produk"
+                              id="list-menu"
                               style={{
                                 textAlign: "center",
                                 // fontFamily: "'Brush Script MT', cursive",
@@ -296,10 +304,11 @@ export function Product() {
                           </div>
                           <img src={e[activeLanguage].image} style={{ height: "300px" }} />
                           <h2
+                          id="list-menu"
                             style={{
+                              color: 'gray',
                               marginTop: "30px",
                               marginBottom: "5px",
-                              fontFamily: "'PT Serif', serif",
                               textAlign: "center",
                             }}
                           > { e[activeLanguage].nama } </h2>
@@ -337,6 +346,23 @@ export function Product() {
                 </div>
 
 
+
+                <FaCircleArrowUp 
+                style={{
+                    cursor: 'pointer',
+                    color: 'gray',
+                    maxWidth: '100%', // Tambahkan ini
+                    width: '55px',
+                    height: '55px',
+                    position: 'fixed', // Tetapkan posisi elemen
+                    bottom: '25px',    // Atur jarak dari bawah
+                    left: !isDesktop ? '20px' : '20px',     // Atur jarak dari kanan
+                    // zIndex: '9999',   
+                }}
+                onClick={scrollToTop}
+                />
+
+
           <ReactWhatsapp id="icon-whatsapp" style={{ 
                 width: 0,
                 height: 0,
@@ -364,7 +390,7 @@ export function Product() {
                         <img src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
-                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}>082131131108</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></span>
                         </div>
                     </div>
                 </Grid>

@@ -4,6 +4,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GoogleIcon from '@mui/icons-material/Google';
+import Textra from 'react-textra'
 import { Grid, Typography, Button } from "@mui/material";
 import CallIcon from '../../Image/calling.png';
 import EmailIcon from '../../Image/mail.png';
@@ -43,7 +44,7 @@ import { FcAbout } from "react-icons/fc";
 import { LuContact } from "react-icons/lu";
 import { TbArrowBadgeRightFilled } from "react-icons/tb";
 import { LineWeight } from "@mui/icons-material";
-
+import { FaCircleArrowUp } from "react-icons/fa6";
 import { FcGlobe } from "react-icons/fc";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -59,6 +60,13 @@ export function About() {
     const [language, setLanguage] = useState('');
     const [labelText, setLabelText] = useState('Translate');
     const { t, i18n } = useTranslation("global");
+
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      };
 
     const handleChange = (event) => {
         setLanguage(event.target.value);
@@ -217,7 +225,7 @@ export function About() {
          <Header />
 
 
-          <div style={{ 
+          <div id="get" style={{ 
             width: isDesktop ? '100%' : '100%',
             marginTop: isDesktop ? '100px' : '200px',
             display: isDesktop ? 'flex' : 'block',
@@ -246,7 +254,7 @@ export function About() {
                  <div style={{ 
                     position: 'absolute', 
                     top: isDesktop ? '50%' : '48%', 
-                    left: isDesktop ? '60%' : '43%', 
+                    left: isDesktop ? '60%' : '47%', 
                     transform: 'translate(-50%, -50%)', 
                     textAlign: 'left', 
                     width: isDesktop ? '100%' : '80%',
@@ -259,7 +267,7 @@ export function About() {
                     <h1>082131131108</h1>
                     <label style={{ paddingLeft: isDesktop ? '80px' : '90px' }}>{t("atau.text")}</label>
                     <br />
-                    <Button id="button_contact" style={{ 
+                    <Button href="#button_contact" style={{ 
                         backgroundColor: '#ff9c00', 
                         color: 'white', 
                         margin: isDesktop ? '-11px' : '-3px',
@@ -434,11 +442,24 @@ export function About() {
                 <br />
                 {t("deskripsi-perencanaan-2.text")}
                 </p>
-                <Button style={{ backgroundColor: '#ff9c00', color: 'white', borderRadius: '20px', width: '170px', marginTop: '20px' }}>{t("memulai.text")}</Button>
+                <Button href="#get" style={{ backgroundColor: '#ff9c00', color: 'white', borderRadius: '20px', width: '170px', marginTop: '20px' }}>{t("memulai.text")}</Button>
             </div>
         </div>
 
-
+        <FaCircleArrowUp 
+         style={{
+            cursor: 'pointer',
+            color: 'gray',
+            maxWidth: '100%', // Tambahkan ini
+            width: '55px',
+            height: '55px',
+            position: 'fixed', // Tetapkan posisi elemen
+            bottom: '25px',    // Atur jarak dari bawah
+            left: !isDesktop ? '20px' : '20px',     // Atur jarak dari kanan
+            // zIndex: '9999',   
+          }}
+          onClick={scrollToTop}
+         />
 
           <ReactWhatsapp id="icon-whatsapp" style={{ 
                 width: 0,
@@ -460,14 +481,14 @@ export function About() {
             />
         </ReactWhatsapp>
 
-        <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 0 : '700px' }}>
+        <div id="button_contact" style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 0 : '700px' }}>
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
                         <img src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
-                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}>082131131108</span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></span>
                         </div>
                     </div>
                 </Grid>
@@ -515,7 +536,7 @@ export function About() {
                         </div>
                     </Grid>
                     <Grid item>
-                    <div style={{ marginTop: isDesktop ? 0 : 60 }}>
+                    <div style={{ marginTop: isDesktop ? 0 : 60, width: '100%' }}>
                             <label style={{ color: 'white', fontSize: '20px' }}>{t("jam-layanan.text")}</label>
                             <br />
                             <br />

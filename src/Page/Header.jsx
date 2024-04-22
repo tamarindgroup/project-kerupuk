@@ -34,6 +34,7 @@ import { FcGlobe } from "react-icons/fc";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
+import Textra from 'react-textra'
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 const Header = () => {
@@ -228,7 +229,7 @@ const Header = () => {
                 margin: !isDesktop ? 10 : 0
             }}>
                 <img src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
-                <label style={{ fontSize: isDesktop ? '22px' : '20px' }}>{t("pusat-kerupuk.text")}</label>
+                <label id="title-pusat-kerupuk" style={{ fontSize: isDesktop ? '22px' : '20px' }}>{t("pusat-kerupuk.text")}</label>
             </div>
             <div className="hub"
                 style={{ 
@@ -239,18 +240,19 @@ const Header = () => {
                     marginLeft: isDesktop ? 0 : '-20px'
                 }}
             >
-                <Grid container spacing={6} justifyContent="center"> {/* Mengatur grid container menjadi center */}
+                <Grid container spacing={ isDesktop ? 6 : 2} justifyContent="center"> {/* Mengatur grid container menjadi center */}
                     <Grid item display={'flex'}>
                         <img src={CallIcon} 
                         height={ isDesktop ? 40 : 30} 
                         width={ isDesktop ? 50 : 30} 
                         style={{
-                            paddingLeft: isDesktop ? '' : 40
+                            paddingLeft: isDesktop ? '' : 10
                         }}
                         />
-                        <div style={{ display: 'block', marginTop: isDesktop ? 0 : '1px' }}>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>{t("Telpon-kami.text")}</Typography>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>082131131108</Typography>
+                        <div style={{ display: 'block', marginTop: isDesktop ? 0 : '-1px' }}>
+                            <Typography style={{ paddingLeft: '12px', fontSize: isDesktop ? 17 : 12, fontWeight: 700 }}>{t("Telpon-kami.text")}</Typography>
+                            <Typography style={{ paddingLeft: '12px', fontSize: isDesktop ? 17 : 10 }}><Textra effect="flash" data={['082131131108', '085935331734']} /></Typography>
+                            {/* <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>082131131108</Typography> */}
                         </div>
                     </Grid>
                     <Grid item display={'flex'} style={{left: isDesktop ? '-120px' : '-160px' }}>
@@ -258,13 +260,14 @@ const Header = () => {
                         height={ isDesktop ? 40 : 30} 
                         width={ isDesktop ? 50 : 30} 
                             style={{
-                                left: isDesktop ? '200px' : '200px',
-                                top: isDesktop ? 0 : '-1px'
+                                left: isDesktop ? 10 : '20px',
+                                top: isDesktop ? 0 : '-1px',
+                                position: 'relative'
                             }}
                         />
-                        <div style={{ display: 'block', left: isDesktop ? '210px' : '200px', top: isDesktop ? '-2px' : '-1px' }}>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10, fontWeight: 700 }}>{t("kirim-email.text")}</Typography>
-                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 8 }}>pusatkerupukindonesia@gmail.com</Typography>
+                        <div style={{ display: 'block', left: isDesktop ? '10px' : '13px', top: isDesktop ? '-2px' : '-4px', position: 'relative',  }}>
+                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 12, fontWeight: 700 }}>{t("kirim-email.text")}</Typography>
+                            <Typography style={{ paddingLeft: '20px', fontSize: isDesktop ? 17 : 10 }}>pusatkerupukindonesia@gmail.com</Typography>
                         </div>
                     </Grid>
                     <Grid item> {/* Menggunakan Grid item untuk tombol Contact */}
@@ -273,7 +276,7 @@ const Header = () => {
                             height: '40px',
                             width: '100px',
                             color: 'white',
-                            marginTop: isDesktop ? '10px' : '-10px', // Atur margin atas sesuai kebutuhan
+                            marginTop: isDesktop ? '10px' : '19px', // Atur margin atas sesuai kebutuhan
                         }}>
                             {t("Kontak.text")}
                         </Button>
@@ -334,7 +337,7 @@ const Header = () => {
                <> 
                    <AppBar style={{ marginTop: '320px', backgroundColor: '#ff9c00' }} position="absolute">
                         <Toolbar>
-                            <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
+                            <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div" style={{ marginLeft: '11px' }}>
                                 {t("Menu.text")}
                             </Typography>
                             <IconButton
@@ -361,25 +364,25 @@ const Header = () => {
                         <List>
                             <ListItem>
                                 <VscHome style={{ paddingRight: '30px' }} />
-                                <a href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                <a id="list-menu" href="/" style={{ color: '#ff9c00', textDecoration: 'none' }}>
                                     {t("Halaman-utama.text")}
                                 </a>
                             </ListItem>
                             <ListItem>
                                 <HiOutlineClipboardList style={{ paddingRight: '30px' }} />
-                                <a href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                <a id="list-menu" href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
                                     {t("Produk.text")}
                                 </a>
                             </ListItem>
                             <ListItem>
                                 <FcAbout style={{ paddingRight: '30px' }} />
-                                <a href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                <a id="list-menu" href="/about" style={{ color: '#ff9c00', textDecoration: 'none' }}>
                                     {t("Tentang.text")}
                                 </a>
                             </ListItem>
                             <ListItem>
                                 <LuContact style={{ paddingRight: '30px' }} />
-                                <a href="/artikel" style={{ color: '#ff9c00', textDecoration: 'none' }}>
+                                <a id="list-menu" href="/artikel" style={{ color: '#ff9c00', textDecoration: 'none' }}>
                                     {t("Artikel.text")}
                                 </a>
                             </ListItem>
