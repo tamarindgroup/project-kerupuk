@@ -381,6 +381,28 @@ const Header = () => {
                             />
                         </Search>
                     </Grid>
+                    <Grid item>
+                    <FcGlobe style={{ height: '30px', width: '45px', paddingTop: 4 }} />
+                        <FormControl sx={{ m: 0, minWidth: 150}}>
+                            <InputLabel id="demo-simple-select-autowidth-label">
+                                Translate
+                            </InputLabel>
+                            <Select
+                                labelId="demo-simple-select-autowidth-label"
+                                id="demo-simple-select-autowidth"
+                                value={language}
+                                onChange={handleChange}
+                                autoWidth
+                                label={labelText}
+                                style={{ height: '40px' }}
+                            >
+                                <MenuItem onClick={() => changeLanguage('id')} value={10}>Indonesia</MenuItem>
+                                <MenuItem onClick={() => changeLanguage('en')} value={20}>English</MenuItem>
+                                <MenuItem onClick={() => changeLanguage('zh')} value={30}>Chinese</MenuItem>
+                                <MenuItem onClick={() => changeLanguage('ar')} value={40}>Arabic</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Grid>
                 </Grid>
             </div>
                :  
