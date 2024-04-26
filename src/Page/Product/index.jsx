@@ -113,32 +113,32 @@ export function Product() {
             />
             </div>
 
-            <Grid container xs={!isDesktop ? 10 : 12} style={{ display: 'flex', justifyContent: 'center', marginLeft: 18 }}>
-                    <Grid item xs={3} sm={3}>
+            <Grid container xs={!isDesktop ? 10 : 12} style={{ display: 'flex', justifyContent: 'center', marginLeft: !isDesktop ? 18 : 140 }}>
+                    <Grid item xs={3} sm={!isDesktop ? 3 : 1 }>
                     <Button
                         className={`category-button ${selectedBrand === 'kapal' ? 'selected' : ''}`}
                         onClick={() => handleCategoryClick('kapal')}
                         style={{ fontSize: '9px', width: isDesktop ? '150px' : '90px' }}
                     >
-                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "18px" }}> {t("button-kapal.text")} </label>
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px" }}> {t("button-kapal.text")} </label>
                     </Button>
                     </Grid>
-                    <Grid item xs={3} sm={3}>
+                    <Grid item xs={3} sm={!isDesktop ? 3 : 1 }>
                     <Button
                         className={`category-button ${selectedBrand === 'shinjuku' ? 'selected' : ''}`}
                         onClick={() => handleCategoryClick('shinjuku')}
                         style={{ fontSize: '9px', width: isDesktop ? '150px' : '90px' }}
                     >
-                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "18px" }}> {t("button-shinjuku.text")} </label>
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px" }}> {t("button-shinjuku.text")} </label>
                     </Button>
                     </Grid>
-                    <Grid item xs={3} sm={3}>
+                    <Grid item xs={3} sm={!isDesktop ? 3 : 1 }>
                     <Button
                         className={`category-button ${selectedBrand === 'napoleon' ? 'selected' : ''}`}
                         onClick={() => handleCategoryClick('napoleon')}
                         style={{ fontSize: '9px', width: isDesktop ? '150px' : '90px' }}
                     >
-                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "18px" }}> {t("button-napoleon.text")} </label>
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px" }}> {t("button-napoleon.text")} </label>
                     </Button>
                     </Grid>
                     <Grid item xs={3} sm={3}>
@@ -147,7 +147,7 @@ export function Product() {
                         onClick={() => handleCategoryClick('bunga-merah')}
                         style={{ fontSize: '2px', width: isDesktop ? '180px' : '130px' }}
                     >
-                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "18px" }}> {t("button-bunga-merah.text")} </label>
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px" }}> {t("button-bunga-merah.text")} </label>
                     </Button>
                     </Grid>
                </Grid>
@@ -157,8 +157,8 @@ export function Product() {
               {isSearchEmpty ? (
                   <Empty description={t("component-empty.text")} 
                   style={{ 
-                    marginTop: "60px", 
-                    marginBottom: isDesktop ? '400px' : '10px', 
+                    marginTop: !isDesktop ? "60px" : '90px', 
+                    marginBottom: isDesktop ? '300px' : '10px', 
                     display: 'block', 
                     justifyContent: 'center',
                     marginLeft: '85px' 
