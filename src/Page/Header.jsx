@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from '@mui/material/styles';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -36,8 +36,16 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Textra from 'react-textra'
+import Collapse from '@mui/material/Collapse';
 import { Link } from "react-router-dom";
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import { useBrandContext } from "../BrandContext";
+import dataProduk from '../data/produk';
 
 const Header = () => {
     const theme = useTheme();
@@ -50,6 +58,30 @@ const Header = () => {
     const [whatsappClicked, setWhatsappClicked] = useState(false);
     const navigate = useNavigate();
     const [searchValue, setSearchValue] = useState('');
+    const [buka, setBuka] = React.useState(false);
+    const { selectedBrand } = useBrandContext();
+
+
+
+    const filterProductsByBrand = (brand) => {
+        // Filter data produk berdasarkan merek yang dipilih
+        const filteredProducts = dataProduk.filter(product => product[activeLanguage].brand === brand);
+        // Lakukan sesuatu dengan data yang sudah difilter, misalnya tampilkan di halaman
+        console.log(filteredProducts);
+        // Redirect atau tampilkan sesuatu sesuai kebutuhan Anda
+    };
+
+    // Fungsi untuk menangani klik pada ListItemButton
+    const handleListItemButtonClick = () => {
+        // Panggil fungsi untuk melakukan filter berdasarkan brand yang diklik
+        filterProductsByBrand(selectedBrand);
+    };
+
+
+
+    const handleClick = () => {
+        setBuka(!buka);
+    };
 
     const handleSearch = () => {
         if (searchValue === 'kerupuk') {
@@ -387,9 +419,9 @@ const Header = () => {
                                 </a>
                             </ListItem>
                             <ListItem>
-                                <HiOutlineClipboardList style={{ paddingRight: '30px' }} />
+                                <FcAbout style={{ paddingRight: '30px' }} />
                                 <a id="list-menu" href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
-                                    {t("Produk.text")}
+                                     {t("Produk.text")}
                                 </a>
                             </ListItem>
                             <ListItem>
@@ -419,7 +451,7 @@ const Header = () => {
                                     <MenuItem onClick={() => changeLanguage('id')} value={10}>Indonesia</MenuItem>
                                     <MenuItem onClick={() => changeLanguage('en')} value={20}>English</MenuItem>
                                     <MenuItem onClick={() => changeLanguage('zh')} value={30}>Chinese</MenuItem>
-                                    <MenuItem onClick={() => changeLanguage('ar')} value={30}>Arabic</MenuItem>
+                                    <MenuItem onClick={() => changeLanguage('ar')} value={40}>Arabic</MenuItem>
                                 </Select>
                             </FormControl>
                             </ListItem>

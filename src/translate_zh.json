@@ -286,5 +286,20 @@
           },
           "deskripsi-seputar": {
             "text": "有关各种薯片，制作过程，口味变化以及享用薯片的技巧和窍门的最新信息。"
-          }
+          },
+          "button-kapal": {
+               "text": "船舶印章"
+              },
+              "button-shinjuku": {
+               "text": "新宿"
+              },
+              "button-napoleon": {
+               "text": "拿破仑"
+              },
+              "button-bunga-merah": {
+               "text": "红花"
+              },
+              "component-empty": {
+               "text": "没有任何"
+              }
 }           

@@ -286,6 +286,21 @@
       },
       "deskripsi-seputar": {
           "text": "latest information about various types of crackers, manufacturing processes, flavor variations, as well as tips and tricks to enjoy crackers more deliciously."
-      }
+      },
+      "button-kapal": {
+          "text": "Ship Stamp"
+         },
+         "button-shinjuku": {
+          "text": "Shinjuku"
+         },
+         "button-napoleon": {
+          "text": "Napoleon"
+         },
+         "button-bunga-merah": {
+          "text": "Red Flower"
+         },
+         "component-empty": {
+          "text": "There isn't any"
+         }
         
 }

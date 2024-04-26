@@ -163,7 +163,7 @@ export const Artikel =  () => {
 
     return (
         <>
-         <Header />
+         {/* <Header /> */}
 
           <Grid container display={ !isDesktop ? 'block' : 'flex'} spacing={1} justifyContent="center" style={{ marginTop: !isDesktop ? '200px' : '10px' }}>
                <Grid item xs={ !isDesktop ? 10 : 12}>

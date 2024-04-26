@@ -1,14 +1,10 @@
 import React, {useEffect, useState} from "react";
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import XIcon from '@mui/icons-material/X';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GoogleIcon from '@mui/icons-material/Google';
 import { Grid, Typography, Button } from "@mui/material";
 import Card from '@mui/material/Card';
 import Textra from 'react-textra'
 import InputBase from '@mui/material/InputBase';
 import { useTheme } from '@mui/material/styles';
+import { Input, Empty } from 'antd';
 import { styled, alpha } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import LogoPusatKerupuk from '../../Image/logo pusat kerupuk.png';
@@ -22,42 +18,37 @@ import Location from '../../Image/location.png';
 import ReactWhatsapp from 'react-whatsapp';
 import IconWhatsapp from '../../Image/icon-whatsapp.png'
 import { FaCircleArrowUp } from "react-icons/fa6";
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import CssBaseline from '@mui/material/CssBaseline';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import { VscHome } from "react-icons/vsc";
-import { HiOutlineClipboardList } from "react-icons/hi";
-import { FcAbout } from "react-icons/fc";
-import { LuContact } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
-import { FcGlobe } from "react-icons/fc";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
 import dataProduk from "../../data/produk";
-import Header from "../Header";
 
 export function Product() {
 
     const theme = useTheme();
-    const { Meta } = Card;
     const { t, i18n } = useTranslation("global");
     const [Produk, setProduk] = useState(dataProduk);
     const [language, setLanguage] = useState('');
-    const [labelText, setLabelText] = useState('Translate');
     const activeLanguage = i18n.language;
+    const [isSearchEmpty, setIsSearchEmpty] = useState(false);
+    const [showMore, setShowMore] = useState(6);
+    const [searchValue, setSearchValue] = useState("");
     const [isCardFlipped, setIsCardFlipped] = useState(
         Produk.map(() => false)
       );
+    const [selectedBrand, setSelectedBrand] = useState('Semua');
+
+    const handleCategoryClick = (category) => {
+        setSelectedBrand(category);
+        setSearchValue(""); // Reset search value when category changes
+      };
+
+    const filteredProducts = Produk
+    ?.filter(
+        (product) => 
+        (selectedBrand === 'Semua' || product[activeLanguage].brand === selectedBrand) &&
+        (product[activeLanguage].nama.toLowerCase().includes(searchValue.toLowerCase()))
+    )
+    .slice(0, showMore);
 
       const scrollToTop = () => {
         window.scrollTo({
@@ -66,91 +57,9 @@ export function Product() {
         });
       };
 
-    const handleChange = (event) => {
-        setLanguage(event.target.value);
-    };
-
-    const DrawerHeader = styled('div')(({ theme }) => ({
-        display: 'flex',
-        alignItems: 'center',
-        padding: theme.spacing(0, 1),
-        // necessary for content to be below app bar
-        ...theme.mixins.toolbar,
-        justifyContent: 'flex-start',
-      }));
-
-      const AppBar = styled(MuiAppBar, {
-        shouldForwardProp: (prop) => prop !== 'open',
-      })(({ theme, open }) => ({
-        transition: theme.transitions.create(['margin', 'width'], {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen,
-        }),
-        ...(open && {
-          width: `800px`,
-          transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-          }),
-          marginRight: '800px',
-        }),
-      }));
-
-      const [open, setOpen] = React.useState(false);
-
-        const handleDrawerOpen = () => {
-            setOpen(true);
-        };
-
-        const handleDrawerClose = () => {
-            setOpen(false);
-        };
-
     const isDesktop = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true,
       });
-
-      const StyledInputBase = styled(InputBase)(({ theme }) => ({
-        color: 'inherit',
-        width: '100%',
-        '& .MuiInputBase-input': {
-          padding: theme.spacing(1, 1, 1, 0),
-          // vertical padding + font size from searchIcon
-          paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-          transition: theme.transitions.create('width'),
-          [theme.breakpoints.up('sm')]: {
-            width: '12ch',
-            '&:focus': {
-              width: '20ch',
-            },
-          },
-        },
-      }));
-
-      const SearchIconWrapper = styled('div')(({ theme }) => ({
-        padding: theme.spacing(0, 2),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }));
-
-      const Search = styled('div')(({ theme }) => ({
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
-        '&:hover': {
-          backgroundColor: alpha(theme.palette.common.white, 0.25),
-        },
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-          marginLeft: theme.spacing(1),
-          width: 'auto',
-        },
-      }));
 
 
       const toggleCardFlip = (index) => {
@@ -159,24 +68,103 @@ export function Product() {
         setIsCardFlipped(updatedIsCardFlipped);
       };
 
+      const handleSearchIconMouseDown = (event) => {
+        event.stopPropagation();
+      };
+
       
 
     return (
         <>
-          <Header />
-
           
           <div
               style={{ 
                 marginTop: isDesktop ? 100 : 300, 
-                display: "flex", 
+                display: "block", 
                 marginLeft: isDesktop ? 10 : -2,
                 width: isDesktop ? "100%" : '100%', 
                 marginBottom: isDesktop ? 10 : 5
             }}
             >
-              <Grid container spacing={ isDesktop ? 12 : 10} justifyContent="center">
-                {Produk.map((e, index) => (
+
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Input.Search
+              placeholder={t("Search")}
+              onMouseDown={handleSearchIconMouseDown}
+              onSearch={(value) => {
+                const filteredProducts = Produk
+                  ?.filter(
+                    (data) =>
+                      (selectedBrand === 'Semua' || data[activeLanguage].brand === selectedBrand) &&
+                      (data[activeLanguage].nama.toLowerCase().includes(value.toLowerCase()))
+                  )
+                  .slice(0, showMore);
+      
+                setIsSearchEmpty(filteredProducts.length === 0);
+                setSearchValue(value);
+              }}
+              style={{
+                width: isDesktop ? '50%' : '90%',
+                marginBottom: '20px',
+                '& .ant-input-search-icon': {
+                  backgroundColor: 'orange',
+                },
+              }}
+            />
+            </div>
+
+            <Grid container xs={!isDesktop ? 10 : 12} style={{ display: 'flex', justifyContent: 'center', marginLeft: 18 }}>
+                    <Grid item xs={3} sm={3}>
+                    <Button
+                        className={`category-button ${selectedBrand === 'kapal' ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick('kapal')}
+                        style={{ fontSize: '9px', width: isDesktop ? '150px' : '90px' }}
+                    >
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "18px" }}> {t("button-kapal.text")} </label>
+                    </Button>
+                    </Grid>
+                    <Grid item xs={3} sm={3}>
+                    <Button
+                        className={`category-button ${selectedBrand === 'shinjuku' ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick('shinjuku')}
+                        style={{ fontSize: '9px', width: isDesktop ? '150px' : '90px' }}
+                    >
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "18px" }}> {t("button-shinjuku.text")} </label>
+                    </Button>
+                    </Grid>
+                    <Grid item xs={3} sm={3}>
+                    <Button
+                        className={`category-button ${selectedBrand === 'napoleon' ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick('napoleon')}
+                        style={{ fontSize: '9px', width: isDesktop ? '150px' : '90px' }}
+                    >
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "18px" }}> {t("button-napoleon.text")} </label>
+                    </Button>
+                    </Grid>
+                    <Grid item xs={3} sm={3}>
+                    <Button
+                        className={`category-button ${selectedBrand === 'bunga-merah' ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick('bunga-merah')}
+                        style={{ fontSize: '2px', width: isDesktop ? '180px' : '130px' }}
+                    >
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "18px" }}> {t("button-bunga-merah.text")} </label>
+                    </Button>
+                    </Grid>
+               </Grid>
+
+
+              <Grid container spacing={ isDesktop ? 12 : 10} justifyContent="center" mt={6}>
+              {isSearchEmpty ? (
+                  <Empty description={t("component-empty.text")} 
+                  style={{ 
+                    marginTop: "60px", 
+                    marginBottom: isDesktop ? '400px' : '10px', 
+                    display: 'block', 
+                    justifyContent: 'center',
+                    marginLeft: '85px' 
+                }} />
+                ) : (
+                filteredProducts.map((e, index) => (
                     <Grid item key={e._id} xs={12} sm={4} md={4} lg={4} mb={isDesktop ? 20 : 20}>
                       {isCardFlipped[index] ? (
                         <div
@@ -324,29 +312,9 @@ export function Product() {
                         </div>
                       )}
                     </Grid>
-                  ))}
+                  )))}
               </Grid>
             </div>
-
-            <div style={{ 
-                display: 'flex', 
-                justifyContent: 'center', 
-                alignItems: 'center', // Menengahkan secara vertikal
-                marginBottom: isDesktop ? 200 : 500, 
-                // marginTop: isDesktop ? 0 : -200
-                }}>
-                <Button target="_blank" href="https://shope.ee/7AGycdYN4C"
-                    style={{ 
-                    backgroundColor: 'orange', 
-                    color: 'white',
-                    borderRadius: '20px',
-                    fontSize: '11px',
-                    width: '200px'
-                    }}
-                >
-                    Produk Lainnya
-                </Button>
-                </div>
 
 
 
@@ -386,7 +354,7 @@ export function Product() {
             />
         </ReactWhatsapp>
 
-          <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 0 : '-300px' }}>
+          <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 0 : '200px' }}>
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>

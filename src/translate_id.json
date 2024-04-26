@@ -177,25 +177,25 @@
      "text": "Penyimpanan Kesegaran"
     },
     "produk-lainnya": {
-     "text": "Produk Lainnya"
+     "text": "Produk Kami"
     },
     "asam-jawa": {
-     "text": "Asam Jawa"
+     "text": "Jengkol Bulat Hitam"
     },
     "sohun": {
-     "text": "Sohun"
+     "text": "Mawar Putih"
     },
     "kembang-tahu": {
-     "text": "Kembang Tahu"
+     "text": "Kelabang Cream"
     },
     "deskripsi-asam": {
-     "text": "Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, tetapi juga menyediakan produk lain seperti Asam Jawa. Dengan fokus pada standar produksi yang terjaga, Asam Jawa dari Pusat Kerupuk Indonesia memberikan rasa autentik yang memikat, menjadikannya pilihan yang sempurna sebagai camilan yang lezat dan menyegarkan."
+     "text": "Dipersiapkan dengan cermat oleh Pusat Kerupuk Indonesia, Kerupuk Jengkol Bulat Hitam adalah pilihan yang luar biasa untuk para pecinta makanan yang menginginkan cita rasa yang unik dan menggugah selera. Dengan rasa yang khas dan tekstur yang renyah, setiap gigitan menyuguhkan pengalaman kuliner yang tak terlupakan. Dibuat dari bahan-bahan berkualitas tinggi dan diproses dengan teliti, setiap kerupuk menghadirkan kombinasi sempurna antara cita rasa autentik dan kelezatan yang memikat. Tersedia dalam kemasan yang praktis, Kerupuk Jengkol Bulat Hitam dari Pusat Kerupuk Indonesia merupakan tambahan yang sempurna untuk menemani momen bersantap Anda dengan keluarga dan teman-teman."
     },
     "deskripsi-sohun": {
-     "texxt": "Pusat Kerupuk Indonesia tidak hanya menawarkan kerupuk berkualitas tinggi, tetapi juga produk lain seperti Asam Jawa dan Sohun. Dengan fokus pada standar produksi yang terjaga, Sohun dari Pusat Kerupuk Indonesia memberikan pilihan camilan yang lezat dan menyegarkan, dengan cita rasa autentik yang memikat."
+     "texxt": "Diciptakan dengan keahlian yang tak tertandingi oleh Pusat Kerupuk Indonesia, Kerupuk Mawar Putih merupakan pilihan yang memikat bagi para penikmat makanan yang menghargai cita rasa yang lezat dan kualitas yang prima. Dengan keharuman yang menggoda dan kelembutan yang tak tertandingi, setiap gigitan dari kerupuk ini membawa Anda dalam petualangan rasa yang menggembirakan. Dibuat dengan menggunakan bahan-bahan berkualitas terbaik dan proses pembuatan yang teliti, setiap lembar kerupuk Mawar Putih menghadirkan cita rasa yang autentik dan kelezatan yang luar biasa. Tersedia dalam kemasan yang praktis, Kerupuk Mawar Putih adalah pilihan yang sempurna untuk melengkapi santapan Anda di setiap kesempatan."
     },
     "deskripsi-kembang": {
-     "text": "Pusat Kerupuk Indonesia tidak hanya menghadirkan berbagai jenis kerupuk berkualitas tinggi, tetapi juga menawarkan produk lain seperti Kulit Kembang Tahu. Dengan komitmen pada standar produksi yang ketat, Kulit Kembang Tahu dari Pusat Kerupuk Indonesia menghadirkan pilihan camilan yang gurih dan lezat, memenuhi keinginan para pecinta makanan ringan dengan rasa yang autentik dan kualitas yang terjamin."
+     "text": "Dibuat dengan keunggulan dan inovasi yang membedakan, Kerupuk Kelabang Cream dari Pusat Kerupuk Indonesia adalah pilihan istimewa bagi pencinta makanan yang menghargai kualitas dan cita rasa yang tak tertandingi. Dengan tekstur yang lembut dan cita rasa yang khas, setiap gigitan kerupuk ini menghadirkan sensasi yang memanjakan lidah dan menyenangkan indera penciuman Anda. Diproduksi dengan teliti menggunakan bahan-bahan berkualitas tinggi dan proses pembuatan yang terjamin kebersihannya, setiap lembar Kerupuk Kelabang Cream menghadirkan kesempurnaan dalam setiap detailnya. Tersedia dalam kemasan yang praktis dan menarik, Kerupuk Kelabang Cream adalah teman setia dalam setiap momen santap Anda."
     },
     "telepon": {
      "text": "Telepon"
@@ -286,5 +286,32 @@
     },
     "deskripsi-seputar": {
      "text": "informasi terbaru seputar berbagai jenis kerupuk, proses pembuatan, variasi rasa, serta tips dan trik untuk menikmati kerupuk dengan lebih nikmat."
+    },
+    "cap-kapal": {
+     "text": "Cap Kapal"
+    },
+    "shinjuku": {
+     "text": "Shinjuku"
+    },
+    "napoleon": {
+     "text": "Napoleon"
+    },
+    "bunga-merah": {
+     "text": "Bunga Merah"
+    },
+    "button-kapal": {
+     "text": "Cap Kapal"
+    },
+    "button-shinjuku": {
+     "text": "Shinjuku"
+    },
+    "button-napoleon": {
+     "text": "Napoleon"
+    },
+    "button-bunga-merah": {
+     "text": "Bunga Merah"
+    },
+    "component-empty": {
+     "text": "Tidak ada"
     }
 }

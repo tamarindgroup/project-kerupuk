@@ -25,9 +25,9 @@ import Inovasi from '../../Image/inovasi.png';
 import Pengemasan from '../../Image/pengemasan.png';
 import Penyimpanan from '../../Image/penyimpanan.png';
 import Barang from '../../Image/barang.jpg';
-import Asam from '../../Image/asam-daging-150-gram (1).jpg';
-import Sohun from '../../Image/Soh-hoon-6_11zon.jpg';
-import KembangTahu from '../../Image/WhatsApp Image 2023-10-26 at 16.28.58.jpeg';
+import Produk1 from '../../Image/kerupuk-kapal/kerupuk-jengkol-bulat-hitam.jpg';
+import Produk2 from '../../Image/kerupuk-shinjuku/mawar-putih.jpg';
+import Produk3 from '../../Image/kerupuk-napoleon/kelabang-cream.jpg';
 import LogoPusatKerupuk from '../../Image/logo pusat kerupuk.png';
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
@@ -110,7 +110,7 @@ export function Home () {
         )}
         {isLoading && (
             <>
-          <Header />
+          {/* <Header /> */}
           <div id="top-title">
             <img src={Kerupuk1} 
                 style={{
@@ -398,10 +398,222 @@ export function Home () {
 
 
          
+          <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100vh', /* Menggunakan tinggi 100% dari viewport untuk membuatnya berada di tengah vertikal */
+                marginTop: isDesktop ? '300px' : '400px'
+            }}> 
 
 
 
-          <div style={{ display: isDesktop ? 'flex' : 'block', width: !isDesktop ? '100%' : '100%', marginTop: '200px', marginLeft: isDesktop ? '100px' : 0}}>
+            {isDesktop ?
+                <div className="barang" style={{ 
+                    width: '80%',
+                    height: '450px',
+                    position: 'relative',
+                    backgroundImage: `url(${Barang})`, // Mengatur gambar sebagai background
+                    backgroundSize: 'cover', // Menyesuaikan ukuran gambar dengan div
+                    backgroundPosition: 'center', // Memposisikan gambar di tengah-tengah div
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center', // Mengatur elemen div dengan kelas "barang" ke tengah
+                    flexDirection: 'column' // Mengubah arah layout menjadi vertikal
+                }}>
+                    <h3 style={{ 
+                        margin: 0, 
+                        color: 'Gray', 
+                        zIndex: 1, 
+                        fontSize: '39px', 
+                        position: 'relative',
+                        top: !isDesktop ? '120px' : '250px' 
+                        }}>{t("produk-lainnya.text")}</h3> {/* Margin 0 untuk menghapus margin bawaan */}
+                       <Grid container spacing={2} zIndex={2} justifyContent={'center'} mt={80}>
+                        <Grid item>
+                            <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '10px', marginRight: '10px' }}>
+                                <img src={Produk1} style={{ width: '300px', height: '230px' }} />
+                                <div style={{ 
+                                    position: 'absolute', 
+                                    top: 0, 
+                                    right: 0, 
+                                    backgroundColor: '#FF5733', 
+                                    padding: '5px 10px', 
+                                    color: 'white', 
+                                    fontWeight: 'bold' 
+                                    }}>{t("asam-jawa.text")}</div>
+                                <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
+                                    {t("deskripsi-asam.text")}
+                                </p>
+                                <Button href="/produk" id="button-view" style={{
+                                    backgroundColor: '#ff9c00',
+                                    color: 'white',
+                                    borderRadius: '20px',
+                                    fontSize: '9px',
+                                    width: '100px',
+                                    height: '30px',
+                                }}>
+                                {t("lihat-detail.text")}
+                                </Button>
+                            </div>
+                        </Grid>
+                        <Grid item>
+                            <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '120px', marginRight: '120px' }}>
+                                <img src={Produk2} style={{ width: '300px', height: '230px' }} />
+                                <div style={{ 
+                                    position: 'absolute', 
+                                    top: 0, 
+                                    right: 0, 
+                                    backgroundColor: '#FF5733', 
+                                    padding: '5px 10px', 
+                                    color: 'white', 
+                                    fontWeight: 'bold' 
+                                    }}>{t("sohun.text")}</div>
+                                    <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
+                                       {t("deskripsi-sohun.texxt")}
+                                </p>
+                                <Button href="/produk" className="view" style={{
+                                    backgroundColor: '#ff9c00',
+                                    color: 'white',
+                                    borderRadius: '20px',
+                                    fontSize: '9px',
+                                    width: '100px',
+                                    height: '30px',
+                                }}>
+                                 {t("lihat-detail.text")}
+                                </Button>
+                            </div>
+                        </Grid>
+                        <Grid item>
+                            <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '10px', marginRight: '10px' }}>
+                                <img src={Produk3} style={{ width: '300px', height: '230px' }} />
+                                <div style={{ 
+                                    position: 'absolute', 
+                                    top: 0, 
+                                    right: 0, 
+                                    backgroundColor: '#FF5733', 
+                                    padding: '5px 10px', 
+                                    color: 'white', 
+                                    fontWeight: 'bold' 
+                                    }}>{t("kembang-tahu.text")}</div>
+                                    <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
+                                        {t("deskripsi-kembang.text")}
+                                </p>
+                                <Button href="/produk"  id="button-view" style={{
+                                    backgroundColor: '#ff9c00',
+                                    color: 'white',
+                                    borderRadius: '20px',
+                                    fontSize: '9px',
+                                    width: '100px',
+                                    height: '30px',
+                                }}>
+                                {t("lihat-detail.text")}
+                                </Button>
+                            </div>
+                        </Grid>
+                    </Grid>
+                </div>
+                    : 
+                    <div style={{ marginTop: '1000px', width: '435px' }}>
+                        <h3 style={{ 
+                            color: 'gray', 
+                            zIndex: 2, 
+                            fontSize: '29px', 
+                            // marginTop: '800px',
+                            paddingBottom: "30px",
+                            textAlign: 'center' 
+                            }}>{t("produk-lainnya.text")}</h3> {/* Margin 0 untuk menghapus margin bawaan */}
+                            <Grid container spacing={2} justifyContent="center"> {/* Mengatur grid container menjadi center */}
+                                <Grid item >
+                                    <div style={{ position: 'relative', marginBottom: '20px' }}>
+                                        <img src={Produk1} style={{ width: '300px', height: '230px' }} />
+                                        <div style={{ 
+                                            position: 'absolute', 
+                                            top: 0, 
+                                            right: 0, 
+                                            backgroundColor: '#FF5733', 
+                                            padding: '5px 10px', 
+                                            color: 'white', 
+                                            fontWeight: 'bold' 
+                                            }}>{t("asam-jawa.text")}</div>
+                                        <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
+                                            {t("deskripsi-asam.text")}
+                                        </p>
+                                        <Button href="/produk" id="button-view" style={{
+                                            backgroundColor: '#ff9c00',
+                                            color: 'white',
+                                            borderRadius: '20px',
+                                            fontSize: '9px',
+                                            width: '100px',
+                                            height: '30px',
+                                        }}>
+                                        {t("lihat-detail.text")}
+                                        </Button>
+                                    </div>
+                                </Grid>
+                                <Grid item mt={10}>
+                                    <div style={{ position: 'relative', marginBottom: '20px' }}>
+                                        <img src={Produk2} style={{ width: '300px', height: '230px' }} />
+                                        <div style={{ 
+                                            position: 'absolute', 
+                                            top: 0, 
+                                            right: 0, 
+                                            backgroundColor: '#FF5733', 
+                                            padding: '5px 10px', 
+                                            color: 'white', 
+                                            fontWeight: 'bold' 
+                                            }}>{t("sohun.text")}</div>
+                                            <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
+                                                {t("deskripsi-sohun.texxt")}
+                                        </p>
+                                        <Button href="/produk" className="view" style={{
+                                            backgroundColor: '#ff9c00',
+                                            color: 'white',
+                                            borderRadius: '20px',
+                                            fontSize: '9px',
+                                            width: '100px',
+                                            height: '30px',
+                                        }}>
+                                        {t("lihat-detail.text")}
+                                        </Button>
+                                    </div>
+                                </Grid>
+                                <Grid item mt={10}>
+                                    <div style={{ position: 'relative', marginBottom: '20px' }}>
+                                        <img src={Produk3} style={{ width: '300px', height: '230px' }} />
+                                        <div style={{ 
+                                            position: 'absolute', 
+                                            top: 0, 
+                                            right: 0, 
+                                            backgroundColor: '#FF5733', 
+                                            padding: '5px 10px', 
+                                            color: 'white', 
+                                            fontWeight: 'bold' 
+                                            }}>{t("kembang-tahu.text")}</div>
+                                            <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
+                                                {t("deskripsi-kembang.text")}
+                                        </p>
+                                        <Button href="/produk" id="button-view" style={{
+                                            backgroundColor: '#ff9c00',
+                                            color: 'white',
+                                            borderRadius: '20px',
+                                            fontSize: '9px',
+                                            width: '100px',
+                                            height: '30px',
+                                        }}>
+                                        {t("lihat-detail.text")}
+                                        </Button>
+                                    </div>
+                                </Grid>
+                            </Grid>
+                    </div>
+                    }
+                    
+            </div>
+
+
+
+          <div style={{ display: isDesktop ? 'flex' : 'block', width: !isDesktop ? '100%' : '100%', marginTop: isDesktop ? '500px' : '1400px', marginLeft: isDesktop ? '100px' : 0}}>
             
 
             <div id="selamat-datang" style={{ width: isDesktop ? 0 : '100%'}}>
@@ -729,218 +941,6 @@ export function Home () {
                 </div>
             </div>
 
-             
-          
-          
-        
-          <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100vh' /* Menggunakan tinggi 100% dari viewport untuk membuatnya berada di tengah vertikal */
-            }}> 
-
-            {isDesktop ?
-                <div className="barang" style={{
-                    width: '80%',
-                    height: '450px',
-                    position: 'relative',
-                    backgroundImage: `url(${Barang})`, // Mengatur gambar sebagai background
-                    backgroundSize: 'cover', // Menyesuaikan ukuran gambar dengan div
-                    backgroundPosition: 'center', // Memposisikan gambar di tengah-tengah div
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center', // Mengatur elemen div dengan kelas "barang" ke tengah
-                    flexDirection: 'column' // Mengubah arah layout menjadi vertikal
-                }}>
-                    <h3 style={{ 
-                        margin: 0, 
-                        color: 'Gray', 
-                        zIndex: 1, 
-                        fontSize: '39px', 
-                        position: 'relative',
-                        top: !isDesktop ? '120px' : '250px' 
-                        }}>{t("produk-lainnya.text")}</h3> {/* Margin 0 untuk menghapus margin bawaan */}
-                       <Grid container spacing={2} zIndex={2} justifyContent={'center'} mt={80}>
-                        <Grid item>
-                            <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '10px', marginRight: '10px' }}>
-                                <img src={Asam} style={{ width: '300px', height: '230px' }} />
-                                <div style={{ 
-                                    position: 'absolute', 
-                                    top: 0, 
-                                    right: 0, 
-                                    backgroundColor: '#FF5733', 
-                                    padding: '5px 10px', 
-                                    color: 'white', 
-                                    fontWeight: 'bold' 
-                                    }}>{t("asam-jawa.text")}</div>
-                                <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                    {t("deskripsi-asam.text")}
-                                </p>
-                                <Button href="https://asamjawagunung.com/" target="_blank" id="button-view" style={{
-                                    backgroundColor: '#ff9c00',
-                                    color: 'white',
-                                    borderRadius: '20px',
-                                    fontSize: '9px',
-                                    width: '100px',
-                                    height: '30px',
-                                }}>
-                                {t("lihat-detail.text")}
-                                </Button>
-                            </div>
-                        </Grid>
-                        <Grid item>
-                            <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '120px', marginRight: '120px' }}>
-                                <img src={Sohun} style={{ width: '300px', height: '230px' }} />
-                                <div style={{ 
-                                    position: 'absolute', 
-                                    top: 0, 
-                                    right: 0, 
-                                    backgroundColor: '#FF5733', 
-                                    padding: '5px 10px', 
-                                    color: 'white', 
-                                    fontWeight: 'bold' 
-                                    }}>{t("sohun.text")}</div>
-                                    <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                       {t("deskripsi-sohun.texxt")}
-                                </p>
-                                <Button href="http://tamarindindonesia.com" target="_blank" className="view" style={{
-                                    backgroundColor: '#ff9c00',
-                                    color: 'white',
-                                    borderRadius: '20px',
-                                    fontSize: '9px',
-                                    width: '100px',
-                                    height: '30px',
-                                }}>
-                                 {t("lihat-detail.text")}
-                                </Button>
-                            </div>
-                        </Grid>
-                        <Grid item>
-                            <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '10px', marginRight: '10px' }}>
-                                <img src={KembangTahu} style={{ width: '300px', height: '230px' }} />
-                                <div style={{ 
-                                    position: 'absolute', 
-                                    top: 0, 
-                                    right: 0, 
-                                    backgroundColor: '#FF5733', 
-                                    padding: '5px 10px', 
-                                    color: 'white', 
-                                    fontWeight: 'bold' 
-                                    }}>{t("kembang-tahu.text")}</div>
-                                    <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                        {t("deskripsi-kembang.text")}
-                                </p>
-                                <Button href="http://tamarindindonesia.com" target="_blank" id="button-view" style={{
-                                    backgroundColor: '#ff9c00',
-                                    color: 'white',
-                                    borderRadius: '20px',
-                                    fontSize: '9px',
-                                    width: '100px',
-                                    height: '30px',
-                                }}>
-                                {t("lihat-detail.text")}
-                                </Button>
-                            </div>
-                        </Grid>
-                    </Grid>
-                </div>
-                    : 
-                    <div style={{ marginTop: '1000px', width: '435px' }}>
-                        <h3 style={{ 
-                            color: 'gray', 
-                            zIndex: 2, 
-                            fontSize: '29px', 
-                            // marginTop: '800px',
-                            paddingBottom: "30px",
-                            textAlign: 'center' 
-                            }}>{t("produk-lainnya.text")}</h3> {/* Margin 0 untuk menghapus margin bawaan */}
-                            <Grid container spacing={2} justifyContent="center"> {/* Mengatur grid container menjadi center */}
-                                <Grid item>
-                                    <div style={{ position: 'relative', marginBottom: '20px' }}>
-                                        <img src={Asam} style={{ width: '300px', height: '230px' }} />
-                                        <div style={{ 
-                                            position: 'absolute', 
-                                            top: 0, 
-                                            right: 0, 
-                                            backgroundColor: '#FF5733', 
-                                            padding: '5px 10px', 
-                                            color: 'white', 
-                                            fontWeight: 'bold' 
-                                            }}>{t("asam-jawa.text")}</div>
-                                        <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                            {t("deskripsi-asam.text")}
-                                        </p>
-                                        <Button href="https://asamjawagunung.com/" target="_blank" id="button-view" style={{
-                                            backgroundColor: '#ff9c00',
-                                            color: 'white',
-                                            borderRadius: '20px',
-                                            fontSize: '9px',
-                                            width: '100px',
-                                            height: '30px',
-                                        }}>
-                                        {t("lihat-detail.text")}
-                                        </Button>
-                                    </div>
-                                </Grid>
-                                <Grid item>
-                                    <div style={{ position: 'relative', marginBottom: '20px' }}>
-                                        <img src={Sohun} style={{ width: '300px', height: '230px' }} />
-                                        <div style={{ 
-                                            position: 'absolute', 
-                                            top: 0, 
-                                            right: 0, 
-                                            backgroundColor: '#FF5733', 
-                                            padding: '5px 10px', 
-                                            color: 'white', 
-                                            fontWeight: 'bold' 
-                                            }}>{t("sohun.text")}</div>
-                                            <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                                {t("deskripsi-sohun.texxt")}
-                                        </p>
-                                        <Button href="http://tamarindindonesia.com" target="_blank" className="view" style={{
-                                            backgroundColor: '#ff9c00',
-                                            color: 'white',
-                                            borderRadius: '20px',
-                                            fontSize: '9px',
-                                            width: '100px',
-                                            height: '30px',
-                                        }}>
-                                        {t("lihat-detail.text")}
-                                        </Button>
-                                    </div>
-                                </Grid>
-                                <Grid item>
-                                    <div style={{ position: 'relative', marginBottom: '20px' }}>
-                                        <img src={KembangTahu} style={{ width: '300px', height: '230px' }} />
-                                        <div style={{ 
-                                            position: 'absolute', 
-                                            top: 0, 
-                                            right: 0, 
-                                            backgroundColor: '#FF5733', 
-                                            padding: '5px 10px', 
-                                            color: 'white', 
-                                            fontWeight: 'bold' 
-                                            }}>{t("kembang-tahu.text")}</div>
-                                            <p id="deskripsi_kerupuk" style={{ width: '300px' }}>
-                                                {t("deskripsi-kembang.text")}
-                                        </p>
-                                        <Button href="http://tamarindindonesia.com" target="_blank" id="button-view" style={{
-                                            backgroundColor: '#ff9c00',
-                                            color: 'white',
-                                            borderRadius: '20px',
-                                            fontSize: '9px',
-                                            width: '100px',
-                                            height: '30px',
-                                        }}>
-                                        {t("lihat-detail.text")}
-                                        </Button>
-                                    </div>
-                                </Grid>
-                            </Grid>
-                    </div>
-                    }
-            </div>
             
            
          <FaCircleArrowUp 

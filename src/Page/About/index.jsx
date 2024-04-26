@@ -195,22 +195,22 @@ export function About() {
             let currentCount = 0;
             const interval = setInterval(() => {
                 if (currentCount < 500) {
-                    currentCount += 1;
+                    currentCount += 10;
                     setCount(currentCount);
                 } else {
                     clearInterval(interval);
                 }
-            }, 10); // interval 10ms untuk memberikan efek animasi
+            }, 1); // interval 10ms untuk memberikan efek animasi
 
             let currentCount1000 = 0;
             const interval1000 = setInterval(() => {
                 if (currentCount1000 < 1000) {
-                    currentCount1000 += 1;
+                    currentCount1000 += 10;
                     setCount1000(currentCount1000);
                 } else {
                     clearInterval(interval1000);
                 }
-            }, 5); // interval 5ms untuk memberikan efek animasi
+            }, 0.5); // interval 5ms untuk memberikan efek animasi
 
             return () => {
                 clearInterval(interval);
@@ -222,7 +222,7 @@ export function About() {
 
     return (
         <>
-         <Header />
+         {/* <Header /> */}
 
 
           <div id="get" style={{ 
