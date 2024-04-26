@@ -419,7 +419,7 @@ const Header = () => {
                                 </a>
                             </ListItem>
                             <ListItem>
-                                <FcAbout style={{ paddingRight: '30px' }} />
+                                <HiOutlineClipboardList style={{ paddingRight: '30px' }} />
                                 <a id="list-menu" href="/produk" style={{ color: '#ff9c00', textDecoration: 'none' }}>
                                      {t("Produk.text")}
                                 </a>
