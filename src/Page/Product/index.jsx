@@ -21,6 +21,7 @@ import { FaCircleArrowUp } from "react-icons/fa6";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { useTranslation } from "react-i18next";
 import dataProduk from "../../data/produk";
+import { PulseLoader } from "react-spinners";
 
 export function Product() {
 
@@ -29,9 +30,13 @@ export function Product() {
     const [Produk, setProduk] = useState(dataProduk);
     const [language, setLanguage] = useState('');
     const activeLanguage = i18n.language;
+    const maxArtikel = 10;
     const [isSearchEmpty, setIsSearchEmpty] = useState(false);
     const [showMore, setShowMore] = useState(6);
+    const [loadingMore, setLoadingMore] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [searchValue, setSearchValue] = useState("");
+    const [isRinging, setIsRinging] = useState(false);
     const [isCardFlipped, setIsCardFlipped] = useState(
         Produk.map(() => false)
       );
@@ -41,6 +46,39 @@ export function Product() {
         setSelectedBrand(category);
         setSearchValue(""); // Reset search value when category changes
       };
+
+      const loadMore = () => {
+        setLoadingMore(true);
+        setTimeout(() => {
+          const newShowMore = showMore + 3;
+          setShowMore(Math.min(newShowMore, maxArtikel));
+          setLoadingMore(false);
+        }, 1000);
+      };
+
+      useEffect(() => {
+        // Simulate loading for 10 seconds
+        const loadingTimeout = setTimeout(() => {
+          setIsLoading(false);
+        }, 2000); // Set loading state to false after 10 seconds
+    
+        const handleScroll = () => {
+          const scrollY = window.scrollY;
+          if (scrollY > 100) {
+            setIsRinging(true);
+          } else {
+            setIsRinging(false);
+          }
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          clearTimeout(loadingTimeout); // Clear the loading timeout when the component unmounts
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+    
 
     const filteredProducts = Produk
     ?.filter(
@@ -317,6 +355,38 @@ export function Product() {
             </div>
 
 
+            {!isLoading && !['kapal', 'shinjuku', 'napoleon', 'bunga-merah'].includes(selectedBrand) && 
+                showMore < maxArtikel && filteredProducts.length >= showMore && (
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '100px' }}>
+                    <Button
+                    id="load-more"
+                    type="primary"
+                    onClick={loadMore}
+                    style={{
+                        marginTop: "-300px",
+                        marginBottom: "50px",
+                        alignSelf: "center",
+                        background: "rgba(205, 88, 57, 1.0)",
+                        border: "none",
+                        color: "white",
+                        fontWeight: "bold",
+                        textTransform: "none",
+                        boxShadow: "0px 10px 20px rgba(255, 165, 0, 0.4)",
+                        transition: "box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out",
+                        display: "block",
+                        position: "relative",
+                    }}
+                    >
+                    {loadingMore ? (
+                        <PulseLoader style={{ paddingLeft: '10px' }} color="#ffffff" size={10} />
+                    ) : (
+                        t("button-lainnya.text")
+                    )}
+                    </Button>
+                </div>
+                )}
+
+
 
                 <FaCircleArrowUp 
                 style={{
@@ -354,7 +424,7 @@ export function Product() {
             />
         </ReactWhatsapp>
 
-          <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 0 : '10px' }}>
+          <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 0 : '-40px' }}>
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>

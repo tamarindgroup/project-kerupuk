@@ -301,5 +301,8 @@
          },
          "component-empty": {
           "text": "لا يوجد أي"
+         },
+         "button-lainnya": {
+          "text": "آخر"
          }   
 }

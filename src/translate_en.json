@@ -301,6 +301,9 @@
          },
          "component-empty": {
           "text": "There isn't any"
+         },
+         "button-lainnya": {
+          "text": "Other"
          }
         
 }

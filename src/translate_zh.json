@@ -301,5 +301,8 @@
               },
               "component-empty": {
                "text": "没有任何"
-              }
+              },
+              "button-lainnya": {
+               "text": "其他"
+              } 
 }           

@@ -278,9 +278,9 @@ const Header = () => {
                 style={{ 
                     position: isDesktop ? 'relative' : 0,
                     float: isDesktop ? 'right' : 0, 
-                    left: isDesktop ? '-200px' : '-30px',
+                    left: isDesktop ? (window.innerWidth === 1280 && window.innerHeight === 800 ? '3000px' : '-100px') : '-30px',
                     marginTop: isDesktop ? '-60px' : '30px',
-                    marginLeft: isDesktop ? 0 : '-20px'
+                    marginLeft: isDesktop ? '200px' : '-20px'
                 }}
             >
                 <Grid container spacing={ isDesktop ? 6 : 2} justifyContent="center"> {/* Mengatur grid container menjadi center */}
@@ -384,9 +384,15 @@ const Header = () => {
                     <Grid item>
                     <FcGlobe style={{ height: '30px', width: '45px', paddingTop: 4 }} />
                         <FormControl sx={{ m: 0, minWidth: 150}}>
+                            {isDesktop ? (
                             <InputLabel id="demo-simple-select-autowidth-label">
                                 Translate
                             </InputLabel>
+                            ) : (
+                             <InputLabel sx={{ color: 'black' }}>
+                                Translate
+                            </InputLabel>
+                            )}
                             <Select
                                 labelId="demo-simple-select-autowidth-label"
                                 id="demo-simple-select-autowidth"

@@ -426,8 +426,8 @@ export function Home () {
                         color: 'Gray', 
                         zIndex: 1, 
                         fontSize: '39px', 
-                        position: 'relative',
-                        top: !isDesktop ? '120px' : '250px' 
+                        // position: 'relative',
+                        marginTop: !isDesktop ? '120px' : '250px' 
                         }}>{t("produk-lainnya.text")}</h3> {/* Margin 0 untuk menghapus margin bawaan */}
                        <Grid container spacing={2} zIndex={2} justifyContent={'center'} mt={80}>
                         <Grid item>
