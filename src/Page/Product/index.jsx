@@ -1,13 +1,10 @@
 import React, {useEffect, useState} from "react";
 import { Grid, Typography, Button } from "@mui/material";
-import Card from '@mui/material/Card';
 import Textra from 'react-textra'
-import InputBase from '@mui/material/InputBase';
 import { useTheme } from '@mui/material/styles';
 import { Input, Empty } from 'antd';
-import { styled, alpha } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import LogoPusatKerupuk from '../../Image/logo pusat kerupuk.png';
+import LogoPusatKerupuk from '../../Image/logo pusat kerupuk.webp';
 import Call from '../../Image/phone-call.png';
 import Email from '../../Image/message.png';
 import { FaFacebookF } from "react-icons/fa";
@@ -18,17 +15,16 @@ import Location from '../../Image/location.png';
 import ReactWhatsapp from 'react-whatsapp';
 import IconWhatsapp from '../../Image/icon-whatsapp.png'
 import { FaCircleArrowUp } from "react-icons/fa6";
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { useTranslation } from "react-i18next";
 import dataProduk from "../../data/produk";
 import { PulseLoader } from "react-spinners";
+import { Helmet } from "react-helmet";
 
 export function Product() {
 
     const theme = useTheme();
     const { t, i18n } = useTranslation("global");
     const [Produk, setProduk] = useState(dataProduk);
-    const [language, setLanguage] = useState('');
     const activeLanguage = i18n.language;
     const maxArtikel = 10;
     const [isSearchEmpty, setIsSearchEmpty] = useState(false);
@@ -114,6 +110,100 @@ export function Product() {
 
     return (
         <>
+
+         <Helmet>
+            <title>Pusat Kerupuk Indonesia - Produk Kerupuk Lengkap dari Kami</title>
+            <meta name="robots" content="index, follow" />
+            <meta name="description" content="Di Produk Kerupuk Lengkap dari Kami, kami bangga menyajikan berbagai macam kerupuk mulai dari yang klasik hingga yang modern, memenuhi selera dan preferensi setiap pelanggan. Kami menawarkan kerupuk tradisional yang autentik, serta inovasi-inovasi baru dalam dunia kerupuk yang siap menggoyang lidah Anda." />
+            <meta name="keywords" content="
+            kerupuk, 
+            aneka kerupuk, 
+            kerupuk napoleon, 
+            kerupuk bunga merah, 
+            kerupuk shinjuku, 
+            kerupuk cap kapal,
+            kerupuk jengkol,
+            kerupuk kasandra kuning,
+            kerupuk kecipir warna,
+            kerupuk kelabang kuning,
+            kerupuk mawar kuning,
+            kerupuk sisir warna,
+            kerupuk tersanjung warna,
+            kerupuk udang mas,
+            kerupuk kelabang cream,
+            kerupuk makaroni ayam,
+            kerupuk makaroni kuning,
+            kerupuk mawar cream,
+            kerupuk tempe bulat,
+            kerupuk tiga roda,
+            kerupuk udang mede,
+            kerupuk ceriping pedas,
+            kerupuk ikan putih,
+            kerupuk udang kuning,
+            kerupuk udang salju,
+            keruuk mangkok udang,
+            kerupuk mawar kuning,
+            kerupuk mawar pink,
+            kerupuk t-extra,
+            kerupuk kasandra warna,
+            kerupuk kepang mas,
+            kerupuk kepang warna,
+            kerupuk mawar pink,
+            kerupuk mawar putih,
+            kerupuk mawar warna,
+            kerupuk penting,
+            kerupuk manggar,
+            kerupuk rantai jumbo orange,
+            kerupuk rantai jumbo pink,
+            kerupuk rantai jumbo putih,
+            kerupuk rantai jumbo warna warni,
+            kerupuk rantai lemon warna,
+            kerupuk rantai putih sedang rasa,
+            kerupuk rantai sedang putih,
+            " />
+            <script type="application/ld+json">
+                 {`
+                     {
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "Pusat Kerupuk Indonesia",
+                        "url": "https://www.pusatkerupukindonesia.id",
+                        "logo": "https://www.pusatkerupukindonesia.id/logo_pusat_kerupuk.webp",
+                        "contactPoint": {
+                            "@type": "ContactPoint",
+                            "telephone": "+6282131131108",
+                            "contactType": "customer service"
+                        }
+                      }
+                    `}
+              </script>
+              <script type="application/ld+json">
+                    {`
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://www.pusatkerupukindonesia.id"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Produk",
+                                "item": "https://www.pusatkerupukindonesia.id/produk"
+                            }
+                        ]
+                    }
+                    `}
+                </script>
+         </Helmet>
+
+         {/* <div style={{ display: 'flex', top: !isDesktop ? '250px' : '100px', position: 'relative', marginBottom: isDesktop ? '200px' : '300px' }}>
+            <img src={Waisak} style={{ width: isDesktop ? '30%' : '80%', margin: !isDesktop ? 'auto' : 'auto', borderRadius: '20px' }}  /> 
+         </div>  */}
           
           <div
               style={{ 
@@ -196,7 +286,7 @@ export function Product() {
                   <Empty description={t("component-empty.text")} 
                   style={{ 
                     marginTop: !isDesktop ? "60px" : '90px', 
-                    marginBottom: isDesktop ? '300px' : '10px', 
+                    marginBottom: isDesktop ? '300px' : '100px', 
                     display: 'block', 
                     justifyContent: 'center',
                     marginLeft: '85px' 
@@ -328,7 +418,7 @@ export function Product() {
                               {t("title-kerupuk.text")}
                             </Typography>
                           </div>
-                          <img src={e[activeLanguage].image} style={{ height: "300px" }} />
+                          <img loading="lazy" src={e[activeLanguage].image} style={{ height: "300px" }} />
                           <h2
                           id="list-menu"
                             style={{
@@ -411,7 +501,7 @@ export function Product() {
             }} 
             number="082131131108" 
             message={"Hallo"}>
-           <img src={IconWhatsapp} 
+           <img loading="lazy" src={IconWhatsapp} 
               style={{
                 maxWidth: '100%', // Tambahkan ini
                 width: '70px',
@@ -428,7 +518,7 @@ export function Product() {
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
-                        <img src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
+                        <img loading="lazy" src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></span>
@@ -437,7 +527,7 @@ export function Product() {
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
-                        <img src={Location} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
+                        <img loading="lazy" src={Location} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("alamat.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>Jalan Veteran no 4A Medan Pusat Pasar, Medan, Sumatera Utara 20231</span>
@@ -446,7 +536,7 @@ export function Product() {
                 </Grid>
                 <Grid item xs={12} sm={2}>
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
-                        <img src={Email} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
+                        <img  loading="lazy" src={Email} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("email.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>pusatkerupukindonesia@gmail.com</span>
@@ -459,7 +549,7 @@ export function Product() {
             <div style={{ width: '100%', backgroundColor: '#2b292c', height: isDesktop ? '520px' : '1000px', marginTop:  isDesktop ? '-30px' : '-30px' }}>
                 <Grid container spacing={2} display={isDesktop ? 0 : 'block'} justifyContent={'center'} alignItems={'center'} pt={8} pl={isDesktop ? 0 : 4}>
                     <Grid item xs={4}>
-                        <img src={LogoPusatKerupuk} width={100} height={100} />
+                        <img loading="lazy" src={LogoPusatKerupuk} width={100} height={100} />
                         <p id="deskripsi_kerupuk" style={{ width: '280px', color: 'white', marginTop: '40px' }}>
                             {t("deskripsi-footer.text")}
                         </p>

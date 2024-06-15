@@ -14,7 +14,7 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import LogoPusatKerupuk from '../Image/logo pusat kerupuk.png';
+import LogoPusatKerupuk from '../Image/logo pusat kerupuk.webp';
 import { FaFacebookF } from "react-icons/fa";
 import { SiGooglemybusiness } from "react-icons/si";
 import Drawer from '@mui/material/Drawer';
@@ -271,7 +271,7 @@ const Header = () => {
                 justifyContent: 'center', 
                 margin: !isDesktop ? 10 : 0
             }}>
-                <img src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
+                <img loading="lazy" src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
                 <label id="title-pusat-kerupuk" style={{ fontSize: isDesktop ? '22px' : '20px' }}>{t("pusat-kerupuk.text")}</label>
             </div>
             <div className="hub"
@@ -285,7 +285,7 @@ const Header = () => {
             >
                 <Grid container spacing={ isDesktop ? 6 : 2} justifyContent="center"> {/* Mengatur grid container menjadi center */}
                     <Grid item display={'flex'}>
-                        <img src={CallIcon} 
+                        <img loading="lazy" src={CallIcon} 
                         height={ isDesktop ? 40 : 30} 
                         width={ isDesktop ? 50 : 30} 
                         style={{
@@ -299,7 +299,7 @@ const Header = () => {
                         </div>
                     </Grid>
                     <Grid item display={'flex'} style={{left: isDesktop ? '-120px' : '-160px' }}>
-                        <img src={EmailIcon} 
+                        <img loading="lazy" src={EmailIcon} 
                         height={ isDesktop ? 40 : 30} 
                         width={ isDesktop ? 50 : 30} 
                             style={{
@@ -385,12 +385,12 @@ const Header = () => {
                     <FcGlobe style={{ height: '30px', width: '45px', paddingTop: 4 }} />
                         <FormControl sx={{ m: 0, minWidth: 150}}>
                             {isDesktop ? (
-                            <InputLabel id="demo-simple-select-autowidth-label">
+                            <InputLabel id="demo-simple-select-autowidth-label" sx={{ color: 'white', margin: -1 }}>
                                 Translate
                             </InputLabel>
                             ) : (
-                             <InputLabel sx={{ color: 'black' }}>
-                                Translate
+                             <InputLabel id="demo-simple-select-autowidth-label">
+                               Translate
                             </InputLabel>
                             )}
                             <Select
@@ -400,7 +400,7 @@ const Header = () => {
                                 onChange={handleChange}
                                 autoWidth
                                 label={labelText}
-                                style={{ height: '40px' }}
+                                style={{ height: '40px', color: 'white'}}
                             >
                                 <MenuItem onClick={() => changeLanguage('id')} value={10}>Indonesia</MenuItem>
                                 <MenuItem onClick={() => changeLanguage('en')} value={20}>English</MenuItem>

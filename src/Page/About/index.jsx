@@ -1,20 +1,11 @@
 import React, {useEffect, useState, useRef} from "react";
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import XIcon from '@mui/icons-material/X';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GoogleIcon from '@mui/icons-material/Google';
 import Textra from 'react-textra'
-import { Grid, Typography, Button } from "@mui/material";
-import CallIcon from '../../Image/calling.png';
-import EmailIcon from '../../Image/mail.png';
-import SearchIcon from '@mui/icons-material/Search';
-import MenuIcon from '@mui/icons-material/Menu';
+import { Grid, Button } from "@mui/material";
 import InputBase from '@mui/material/InputBase';
 import { useTheme } from '@mui/material/styles';
 import { styled, alpha } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import LogoPusatKerupuk from '../../Image/logo pusat kerupuk.png';
+import LogoPusatKerupuk from '../../Image/logo pusat kerupuk.webp';
 import Call from '../../Image/phone-call.png';
 import Email from '../../Image/message.png';
 import { FaFacebookF } from "react-icons/fa";
@@ -24,41 +15,20 @@ import { SiGooglemybusiness } from "react-icons/si";
 import Location from '../../Image/location.png';
 import ReactWhatsapp from 'react-whatsapp';
 import IconWhatsapp from '../../Image/icon-whatsapp.png'
-import Kerupuk1 from '../../Image/kerupuk_1.png';
+import Kerupuk1 from '../../Image/kerupuk_1.webp';
 import Card from '@mui/material/Card';
-
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import CssBaseline from '@mui/material/CssBaseline';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import { VscHome } from "react-icons/vsc";
-import { HiOutlineClipboardList } from "react-icons/hi";
-import { FcAbout } from "react-icons/fc";
-import { LuContact } from "react-icons/lu";
 import { TbArrowBadgeRightFilled } from "react-icons/tb";
 import { LineWeight } from "@mui/icons-material";
 import { FaCircleArrowUp } from "react-icons/fa6";
-import { FcGlobe } from "react-icons/fc";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useTranslation } from 'react-i18next';
-import Header from "../Header";
+import { Helmet } from "react-helmet";
 
 
 export function About() {
 
     const theme = useTheme();
     const [language, setLanguage] = useState('');
-    const [labelText, setLabelText] = useState('Translate');
     const { t, i18n } = useTranslation("global");
 
     const scrollToTop = () => {
@@ -68,96 +38,11 @@ export function About() {
         });
       };
 
-    const handleChange = (event) => {
-        setLanguage(event.target.value);
-    };
-
-    const changeLanguage = (lang) => {
-        i18n.changeLanguage(lang)
-        // setLanguageDropdownOpen(false)
-      }
-
-    const DrawerHeader = styled('div')(({ theme }) => ({
-        display: 'flex',
-        alignItems: 'center',
-        padding: theme.spacing(0, 1),
-        // necessary for content to be below app bar
-        ...theme.mixins.toolbar,
-        justifyContent: 'flex-start',
-      }));
-
-      const AppBar = styled(MuiAppBar, {
-        shouldForwardProp: (prop) => prop !== 'open',
-      })(({ theme, open }) => ({
-        transition: theme.transitions.create(['margin', 'width'], {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen,
-        }),
-        ...(open && {
-          width: `800px`,
-          transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-          }),
-          marginRight: '800px',
-        }),
-      }));
-
-      const [open, setOpen] = React.useState(false);
-
-        const handleDrawerOpen = () => {
-            setOpen(true);
-        };
-
-        const handleDrawerClose = () => {
-            setOpen(false);
-        };
+    const [open, setOpen] = React.useState(false);
 
     const isDesktop = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true,
       });
-
-      const StyledInputBase = styled(InputBase)(({ theme }) => ({
-        color: 'inherit',
-        width: '100%',
-        '& .MuiInputBase-input': {
-          padding: theme.spacing(1, 1, 1, 0),
-          // vertical padding + font size from searchIcon
-          paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-          transition: theme.transitions.create('width'),
-          [theme.breakpoints.up('sm')]: {
-            width: '12ch',
-            '&:focus': {
-              width: '20ch',
-            },
-          },
-        },
-      }));
-
-      const SearchIconWrapper = styled('div')(({ theme }) => ({
-        padding: theme.spacing(0, 2),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }));
-
-      const Search = styled('div')(({ theme }) => ({
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
-        '&:hover': {
-          backgroundColor: alpha(theme.palette.common.white, 0.25),
-        },
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-          marginLeft: theme.spacing(1),
-          width: 'auto',
-        },
-      }));
 
 
     const [isVisible, setIsVisible] = useState(false);
@@ -224,6 +109,9 @@ export function About() {
         <>
          {/* <Header /> */}
 
+         {/* <div style={{ display: 'flex', top: !isDesktop ? '250px' : '200px', position: 'relative', marginBottom: isDesktop ? '500px' : '300px' }}>
+            <img src={Waisak} style={{ width: isDesktop ? '30%' : '80%', margin: !isDesktop ? 'auto' : 'auto', borderRadius: '20px' }}  /> 
+           </div>  */}
 
           <div id="get" style={{ 
             width: isDesktop ? '100%' : '100%',
@@ -231,6 +119,96 @@ export function About() {
             display: isDesktop ? 'flex' : 'block',
             justifyContent: 'center'
             }}>
+
+          <Helmet>
+            <title>Pusat Kerupuk Indonesia - Tentang Kami</title>
+            <meta name="robots" content="index, follow" />
+            <meta name="description" content="Pelajari lebih lanjut tentang Pusat Kerupuk, produk kami, dan komitmen kami terhadap kualitas." />
+            <meta name="keywords" content="
+            kerupuk, 
+            aneka kerupuk, 
+            kerupuk napoleon, 
+            kerupuk bunga merah, 
+            kerupuk shinjuku, 
+            kerupuk cap kapal,
+            kerupuk jengkol,
+            kerupuk kasandra kuning,
+            kerupuk kecipir warna,
+            kerupuk kelabang kuning,
+            kerupuk mawar kuning,
+            kerupuk sisir warna,
+            kerupuk tersanjung warna,
+            kerupuk udang mas,
+            kerupuk kelabang cream,
+            kerupuk makaroni ayam,
+            kerupuk makaroni kuning,
+            kerupuk mawar cream,
+            kerupuk tempe bulat,
+            kerupuk tiga roda,
+            kerupuk udang mede,
+            kerupuk ceriping pedas,
+            kerupuk ikan putih,
+            kerupuk udang kuning,
+            kerupuk udang salju,
+            keruuk mangkok udang,
+            kerupuk mawar kuning,
+            kerupuk mawar pink,
+            kerupuk t-extra,
+            kerupuk kasandra warna,
+            kerupuk kepang mas,
+            kerupuk kepang warna,
+            kerupuk mawar pink,
+            kerupuk mawar putih,
+            kerupuk mawar warna,
+            kerupuk penting,
+            kerupuk manggar,
+            kerupuk rantai jumbo orange,
+            kerupuk rantai jumbo pink,
+            kerupuk rantai jumbo putih,
+            kerupuk rantai jumbo warna warni,
+            kerupuk rantai lemon warna,
+            kerupuk rantai putih sedang rasa,
+            kerupuk rantai sedang putih,
+            " />
+            <script type="application/ld+json">
+                    {`
+                     {
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "Pusat Kerupuk Indonesia",
+                        "url": "https://www.pusatkerupukindonesia.id",
+                        "logo": "https://www.pusatkerupukindonesia.id/logo_pusat_kerupuk.webp",
+                        "contactPoint": {
+                            "@type": "ContactPoint",
+                            "telephone": "+6282131131108",
+                            "contactType": "customer service"
+                        }
+                    }
+                    `}
+                </script>
+                <script type="application/ld+json">
+                    {`
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://www.pusatkerupukindonesia.id"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Tentang Kami",
+                                "item": "https://www.pusatkerupukindonesia.id/about"
+                            }
+                        ]
+                    }
+                    `}
+                </script>
+           </Helmet>
              
              <div style={{ position: isDesktop ? 'relative' : 'relative', width: isDesktop ? '40%' : '100%', height: isDesktop ? '440px' : '400px' }}>
                 <div
@@ -243,7 +221,7 @@ export function About() {
                     backgroundColor: 'rgba(227, 34, 34, 0.5)', // Warna #e32222 dengan tingkat transparansi 0.5
                     }}
                 ></div>
-                <img
+                <img loading="lazy"
                     src={Kerupuk1}
                     style={{
                     width: '100%',
@@ -407,7 +385,7 @@ export function About() {
                 }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '40px', marginTop: '40px' }}>
-                            <img style={{ width: '100px' }} decoding="async" src="https://gracethemesdemo.com/shifters/wp-content/themes/shifters-pro/images/counter-icon-1.png" />
+                            <img loading="lazy" style={{ width: '100px' }} decoding="async" src="https://gracethemesdemo.com/shifters/wp-content/themes/shifters-pro/images/counter-icon-1.png" />
                             <div style={{ marginLeft: '40px' }} ref={counterRef}>
                                 <label style={{ fontSize: '58px', fontWeight: 800, LineWeight: '100%' }}>{count}+</label>
                                 <br />
@@ -415,7 +393,7 @@ export function About() {
                             </div>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}>
-                             <img style={{ width: '100px', marginBottom: '10px' }} decoding="async" src="https://gracethemesdemo.com/shifters/wp-content/themes/shifters-pro/images/counter-icon-2.png" />
+                             <img loading="lazy" style={{ width: '100px', marginBottom: '10px' }} decoding="async" src="https://gracethemesdemo.com/shifters/wp-content/themes/shifters-pro/images/counter-icon-2.png" />
                              <div style={{ marginLeft: '40px' }}>
                              <label style={{ fontSize: '58px', fontWeight: 800, LineWeight: '100%' }}>{count1000}+</label>
                                 <br />
@@ -423,7 +401,7 @@ export function About() {
                             </div>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                             <img style={{ width: '100px' }} decoding="async" src="https://gracethemesdemo.com/shifters/wp-content/themes/shifters-pro/images/counter-icon-3.png" />
+                             <img loading="lazy" style={{ width: '100px' }} decoding="async" src="https://gracethemesdemo.com/shifters/wp-content/themes/shifters-pro/images/counter-icon-3.png" />
                              <div style={{ marginLeft: '40px' }}>
                                 <label style={{ fontSize: '58px', fontWeight: 800, LineWeight: '100%' }}>35+</label>
                                 <br />
@@ -468,7 +446,7 @@ export function About() {
             }} 
             number="082131131108" 
             message={"Hallo"}>
-           <img src={IconWhatsapp} 
+           <img loading="lazy" src={IconWhatsapp} 
               style={{
                 maxWidth: '100%', // Tambahkan ini
                 width: '70px',
@@ -485,7 +463,7 @@ export function About() {
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
-                        <img src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
+                        <img loading="lazy" src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></span>
@@ -494,7 +472,7 @@ export function About() {
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
-                        <img src={Location} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
+                        <img loading="lazy" src={Location} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("alamat.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>Jalan Veteran no 4A Medan Pusat Pasar, Medan, Sumatera Utara 20231</span>
@@ -503,7 +481,7 @@ export function About() {
                 </Grid>
                 <Grid item xs={12} sm={2}>
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
-                        <img src={Email} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
+                        <img loading="lazy" src={Email} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("email.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>pusatkerupukindonesia@gmail.com</span>
@@ -516,7 +494,7 @@ export function About() {
             <div style={{ width: '100%', backgroundColor: '#2b292c', height: isDesktop ? '520px' : '1000px', marginTop:  isDesktop ? '-30px' : '-30px' }}>
                 <Grid container spacing={2} display={isDesktop ? 0 : 'block'} justifyContent={'center'} alignItems={'center'} pt={8} pl={isDesktop ? 0 : 4}>
                     <Grid item xs={4}>
-                        <img src={LogoPusatKerupuk} width={100} height={100} />
+                        <img loading="lazy" src={LogoPusatKerupuk} width={100} height={100} />
                         <p id="deskripsi_kerupuk" style={{ width: '280px', color: 'white', marginTop: '40px' }}>
                             {t("deskripsi-footer.text")}
                         </p>

@@ -2,12 +2,12 @@ import Kerupuk6 from '../Image/kerupuk-kapal/jengkol-sisir-hitam.jpeg';
 import Kerupuk7 from '../Image/kerupuk-kapal/kasandra-kuning.jpg';
 import Kerupuk8 from '../Image/kerupuk-kapal/kecipir-warna.jpg';
 import Kerupuk9 from '../Image/kerupuk-kapal/kelabang-kuning.jpg';
-import Kerupuk3 from '../Image/kerupuk-kapal/kerupuk-jengkol-bulat-hitam.jpg';
+import Kerupuk3 from '../Image/kerupuk-kapal/kerupuk-jengkol-bulat-hitam.webp';
 import Kerupuk4 from '../Image/kerupuk-napoleon/tempe-bulat.jpg';
 import Kerupuk10 from '../Image/kerupuk-kapal/kerupuk-udang-mede.jpg';
 import Kerupuk11 from '../Image/kerupuk-kapal/kerupuk-udang-salju.jpg';
 import Kerupuk12 from '../Image/kerupuk-kapal/mawar-kuning.jpg';
-import Kerupuk13 from '../Image/kerupuk-kapal/mawar-putih.jpg';
+import Kerupuk13 from '../Image/kerupuk-kapal/mawar-putih.webp';
 import Kerupuk14 from '../Image/kerupuk-kapal/sisir-warna.jpg';
 import Kerupuk15 from '../Image/kerupuk-kapal/tersanjung-warna.jpg';
 import Kerupuk16 from '../Image/kerupuk-kapal/udang-mas.jpg';
@@ -19,7 +19,7 @@ import Kerupuk19 from '../Image/kerupuk-shinjuku/kasandra-warna.jpg';
 import Kerupuk20 from '../Image/kerupuk-shinjuku/kepang-mas.jpg';
 import Kerupuk21 from '../Image/kerupuk-shinjuku/kepang-warna.jpg';
 import Kerupuk22 from '../Image/kerupuk-shinjuku/mawar-pink.jpg';
-import Kerupuk2 from '../Image/kerupuk-shinjuku/mawar-putih.jpg';
+import Kerupuk2 from '../Image/kerupuk-shinjuku/mawar-putih.webp';
 import Kerupuk23 from '../Image/kerupuk-shinjuku/mawar-warna.jpg';
 import Kerupuk24 from '../Image/kerupuk-shinjuku/pentil(manggar).jpg';
 import Kerupuk25 from '../Image/kerupuk-shinjuku/rantai-jumbo-orange.jpg';
@@ -28,7 +28,7 @@ import Kerupuk27 from '../Image/kerupuk-shinjuku/rantai-jumbo-putih.jpg';
 import Kerupuk28 from '../Image/kerupuk-shinjuku/rantai-lemon-warna.jpg';
 import Kerupuk29 from '../Image/kerupuk-shinjuku/rantai-sedang-putih.jpg';
 
-import kerupuk30 from '../Image/kerupuk-napoleon/kelabang-cream.jpg';
+import kerupuk30 from '../Image/kerupuk-napoleon/kelabang-cream.webp';
 import kerupuk31 from '../Image/kerupuk-napoleon/makaroni-ayam.jpg';
 import kerupuk32 from '../Image/kerupuk-napoleon/makaroni-bantet.jpg';
 import kerupuk33 from '../Image/kerupuk-napoleon/tempe-bulat.jpg';
@@ -45,6 +45,8 @@ import Kerupuk40 from '../Image/kerupuk-kambing-lima/mawar-pink.jpg';
 import Kerupuk41 from '../Image/kerupuk-kambing-lima/merah.png';
 import Kerupuk42 from '../Image/kerupuk-kambing-lima/merah-putih.png';
 import Kerupuk43 from '../Image/kerupuk-kambing-lima/T-Extra.jpg';
+
+import Kerupuk46 from '../Image/depositphotos_63433499-stock-photo-white-wall-or-empty-paper.png';
 
 
 const  dataProduk = [
@@ -1688,6 +1690,60 @@ const  dataProduk = [
                 \u00a0\u00a0\u00a0\u00a0 Tiga Roda 奶油饼干不仅满足您的味蕾，还在每个制造过程中优先考虑质量和清洁度。 每包 Tiga Roda 奶油饼干均经过专家精心加工和监督，保持其独特的新鲜度和柔软度，因此可以随时随地享用。 Tiga Roda 奶油饼干品质上乘，口味独特，是您与家人或朋友度过完美休闲时光的最佳选择。
                 `,
                 "image": kerupuk34,
+                "brand": "napoleon"
+                // "kategori": "daging",
+                // "ukuran": 150,
+                // "brand": "gunung",
+                // "versi": "baru"
+            },
+        },
+        {
+            id: {
+                "nama": "Opak",
+                "deskripsi": `
+                \u00a0\u00a0\u00a0\u00a0 Kerupuk Opak Cap Napoleon adalah produk unggulan dari Pusat Kerupuk Indonesia yang dikenal karena kualitas dan rasa autentiknya. Dibuat dari tepung tapioka berkualitas tinggi dan bumbu-bumbu alami, kerupuk ini menawarkan cita rasa gurih yang khas dan tekstur renyah yang memikat. 
+                \u00a0\u00a0\u00a0\u00a0 Selain kualitas rasanya, Kerupuk Opak Cap Napoleon juga menonjolkan komitmen Pusat Kerupuk Indonesia terhadap keberlanjutan. Mereka memilih bahan-bahan yang bersumber secara bertanggung jawab dan menerapkan praktik produksi yang ramah lingkungan. 
+                `,
+                "image": Kerupuk46,
+                "brand": "napoleon"
+                // "kategori": "daging",
+                // "ukuran": 150,
+                // "brand": "gunung",
+                // "versi": "baru"
+            },
+            en: {
+                "nama": "Three Cream Wheels",
+                "deskripsi": `
+                \u00a0\u00a0\u00a0\u00a0 Opak Cap Napoleon Crackers are a superior product from the Indonesian Cracker Center which is known for its quality and authentic taste. Made from high quality tapioca flour and natural spices, these crackers offer a distinctive savory taste and an attractive crunchy texture.
+                \u00a0\u00a0\u00a0\u00a0 Apart from its taste quality, Opak Cap Napoleon Crackers also highlight the Indonesian Cracker Center's commitment to sustainability. They choose responsibly sourced ingredients and employ environmentally friendly production practices.
+                `,
+                "image": Kerupuk46,
+                "brand": "napoleon"
+                // "kategori": "daging",
+                // "ukuran": 150,
+                // "brand": "gunung",
+                // "versi": "baru"
+            },
+            ar: {
+                "nama": "ثلاث عجلات كريم",
+                "deskripsi": `
+                \u00a0\u00a0\u00a0\u00a0 تعد مقرمشات Opak Cap Napoleon منتجًا متميزًا من مركز المفرقعات الإندونيسي المعروف بجودته وطعمه الأصيل. مصنوعة من دقيق التابيوكا عالي الجودة والتوابل الطبيعية، توفر هذه المقرمشات طعمًا لذيذًا مميزًا وملمسًا مقرمشًا جذابًا.
+                \u00a0\u00a0\u00a0\u00a0 وبصرف النظر عن جودة مذاقها، فإن Opak Cap Napoleon Crackers يسلط الضوء أيضًا على التزام مركز المفرقعات الإندونيسي بالاستدامة. إنهم يختارون المكونات من مصادر مسؤولة ويستخدمون ممارسات إنتاج صديقة للبيئة.
+                `,
+                "image": Kerupuk46,
+                "brand": "napoleon"
+                // "kategori": "daging",
+                // "ukuran": 150,
+                // "brand": "gunung",
+                // "versi": "baru"
+            },
+            zh: {
+                "nama": "三个奶油轮",
+                "deskripsi": `
+                \u00a0\u00a0\u00a0\u00a0 Opak Cap Napoleon 饼干是印度尼西亚饼干中心的优质产品，以其品质和正宗口味而闻名。这些饼干由优质木薯粉和天然香料制成，具有独特的咸味和诱人的松脆质地。
+                \u00a0\u00a0\u00a0\u00a0 除了口味品质之外，Opak Cap Napoleon 饼干还凸显了印度尼西亚饼干中心对可持续发展的承诺。他们选择来源可靠的原料并采用环保的生产实践。
+                `,
+                "image": Kerupuk46,
                 "brand": "napoleon"
                 // "kategori": "daging",
                 // "ukuran": 150,

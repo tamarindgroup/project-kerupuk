@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Grid, Typography, Button } from "@mui/material";
-import Kerupuk1 from '../../Image/kerupuk_1.png';
+import Kerupuk1 from '../../Image/kerupuk_1.webp';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import GppGoodIcon from '@mui/icons-material/GppGood';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
@@ -25,10 +25,10 @@ import Inovasi from '../../Image/inovasi.png';
 import Pengemasan from '../../Image/pengemasan.png';
 import Penyimpanan from '../../Image/penyimpanan.png';
 import Barang from '../../Image/barang.jpg';
-import Produk1 from '../../Image/kerupuk-kapal/kerupuk-jengkol-bulat-hitam.jpg';
-import Produk2 from '../../Image/kerupuk-shinjuku/mawar-putih.jpg';
-import Produk3 from '../../Image/kerupuk-napoleon/kelabang-cream.jpg';
-import LogoPusatKerupuk from '../../Image/logo pusat kerupuk.png';
+import Produk1 from '../../Image/kerupuk-kapal/kerupuk-jengkol-bulat-hitam.webp';
+import Produk2 from '../../Image/kerupuk-shinjuku/mawar-putih.webp';
+import Produk3 from '../../Image/kerupuk-napoleon/kelabang-cream.webp';
+import LogoPusatKerupuk from '../../Image/logo pusat kerupuk.webp';
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
@@ -44,15 +44,13 @@ import Header from "../Header";
 import { FaCircleArrowUp } from "react-icons/fa6";
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Helmet } from "react-helmet";
 
 export function Home () {
     const theme = useTheme();
     const { t, i18n } = useTranslation("global");
     const [isLoading, setIsLoading] = useState(false);
-    const [age, setAge] = React.useState('');
     const [language, setLanguage] = useState('');
-    const [labelText, setLabelText] = useState('Translate');
-    const activeLanguage = i18n.language;
     const control = useAnimation();
     const [ ref, inView ] = useInView();
 
@@ -86,11 +84,10 @@ export function Home () {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(true);
-        }, 3000);
+        }, 1000);
         return () => clearTimeout(timer);
     }, []);
 
-      const [open, setOpen] = React.useState(false);
 
     useEffect(() => {
         AOS.init({ duration: 3000 })
@@ -103,16 +100,105 @@ export function Home () {
 
     return (
         <>
+          
+          <Helmet>
+            <title>Pusat Kerupuk Indonesia - Informasi Pusat Kerupuk</title>
+            <meta name="robots" content="index, follow" />
+            <meta name="description" content="Di Informasi Pusat Kerupuk, kami menyajikan beragam konten informatif mulai dari sejarah panjang kerupuk hingga ragam teknik pembuatan yang digunakan di berbagai daerah. Kami juga menyoroti inovasi-inovasi terbaru dalam industri kerupuk, serta tren dan eksperimen kuliner yang melibatkan kerupuk." />
+            <meta name="keywords" content="
+            kerupuk, 
+            aneka kerupuk, 
+            kerupuk napoleon, 
+            kerupuk bunga merah, 
+            kerupuk shinjuku, 
+            kerupuk cap kapal,
+            kerupuk jengkol,
+            kerupuk kasandra kuning,
+            kerupuk kecipir warna,
+            kerupuk kelabang kuning,
+            kerupuk mawar kuning,
+            kerupuk sisir warna,
+            kerupuk tersanjung warna,
+            kerupuk udang mas,
+            kerupuk kelabang cream,
+            kerupuk makaroni ayam,
+            kerupuk makaroni kuning,
+            kerupuk mawar cream,
+            kerupuk tempe bulat,
+            kerupuk tiga roda,
+            kerupuk udang mede,
+            kerupuk ceriping pedas,
+            kerupuk ikan putih,
+            kerupuk udang kuning,
+            kerupuk udang salju,
+            keruuk mangkok udang,
+            kerupuk mawar kuning,
+            kerupuk mawar pink,
+            kerupuk t-extra,
+            kerupuk kasandra warna,
+            kerupuk kepang mas,
+            kerupuk kepang warna,
+            kerupuk mawar pink,
+            kerupuk mawar putih,
+            kerupuk mawar warna,
+            kerupuk penting,
+            kerupuk manggar,
+            kerupuk rantai jumbo orange,
+            kerupuk rantai jumbo pink,
+            kerupuk rantai jumbo putih,
+            kerupuk rantai jumbo warna warni,
+            kerupuk rantai lemon warna,
+            kerupuk rantai putih sedang rasa,
+            kerupuk rantai sedang putih,
+            " />
+            <script type="application/ld+json">
+                  {`
+                     {
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "Pusat Kerupuk Indonesia",
+                        "url": "https://www.pusatkerupukindonesia.id",
+                        "logo": "https://www.pusatkerupukindonesia.id/logo_pusat_kerupuk.webp",
+                        "contactPoint": {
+                            "@type": "ContactPoint",
+                            "telephone": "+6282131131108",
+                            "contactType": "customer service"
+                        }
+                       }
+                    `}
+            </script>
+            <script type="application/ld+json">
+                    {`
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://www.pusatkerupukindonesia.id"
+                            },
+                        ]
+                    }
+                    `}
+                </script>
+         </Helmet>
+
         {!isLoading && (
             <div className="centered">
-                <img src={Shopping} alt="Shopping" />
+                <picture>
+                <img src={Shopping} alt="Shopping" loading="lazy" />
+                </picture>
             </div>
         )}
         {isLoading && (
             <>
           {/* <Header /> */}
           <div id="top-title">
-            <img src={Kerupuk1} 
+            <img loading="lazy" 
+              src={Kerupuk1} 
+              alt="gambar-logo-top"
                 style={{
                     height: isDesktop ? '1400px' : '200px',
                     width: isDesktop ? '100%' : '100%',
@@ -391,11 +477,14 @@ export function Home () {
                         paddingBottom: '20px'
                         }}>
                         {t("deskripsi-dukungan.text")}
-                    </Typography>
+                    </Typography>5
                 </div>
                 </> }
           </div>
 
+          {/* <div style={{ display: 'flex', top: !isDesktop ? '150px' : '200px', position: 'relative', marginBottom: isDesktop ? '500px' : '500px' }}>
+            <img src={Waisak} style={{ width: isDesktop ? '30%' : '80%', margin: !isDesktop ? 'auto' : 'auto', borderRadius: '20px' }}  /> 
+          </div>  */}
 
          
           <div style={{
@@ -432,7 +521,7 @@ export function Home () {
                        <Grid container spacing={2} zIndex={2} justifyContent={'center'} mt={80}>
                         <Grid item>
                             <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '10px', marginRight: '10px' }}>
-                                <img src={Produk1} style={{ width: '300px', height: '230px' }} />
+                                <img loading="lazy" src={Produk1} style={{ width: '300px', height: '230px' }} />
                                 <div style={{ 
                                     position: 'absolute', 
                                     top: 0, 
@@ -459,7 +548,7 @@ export function Home () {
                         </Grid>
                         <Grid item>
                             <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '120px', marginRight: '120px' }}>
-                                <img src={Produk2} style={{ width: '300px', height: '230px' }} />
+                                <img loading="lazy" src={Produk2} style={{ width: '300px', height: '230px' }} />
                                 <div style={{ 
                                     position: 'absolute', 
                                     top: 0, 
@@ -486,7 +575,7 @@ export function Home () {
                         </Grid>
                         <Grid item>
                             <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '10px', marginRight: '10px' }}>
-                                <img src={Produk3} style={{ width: '300px', height: '230px' }} />
+                                <img loading="lazy" src={Produk3} style={{ width: '300px', height: '230px' }} />
                                 <div style={{ 
                                     position: 'absolute', 
                                     top: 0, 
@@ -526,7 +615,7 @@ export function Home () {
                             <Grid container spacing={2} justifyContent="center"> {/* Mengatur grid container menjadi center */}
                                 <Grid item >
                                     <div style={{ position: 'relative', marginBottom: '20px' }}>
-                                        <img src={Produk1} style={{ width: '300px', height: '230px' }} />
+                                        <img loading="lazy" src={Produk1} style={{ width: '300px', height: '230px' }} />
                                         <div style={{ 
                                             position: 'absolute', 
                                             top: 0, 
@@ -553,7 +642,7 @@ export function Home () {
                                 </Grid>
                                 <Grid item mt={10}>
                                     <div style={{ position: 'relative', marginBottom: '20px' }}>
-                                        <img src={Produk2} style={{ width: '300px', height: '230px' }} />
+                                        <img loading="lazy" src={Produk2} style={{ width: '300px', height: '230px' }} />
                                         <div style={{ 
                                             position: 'absolute', 
                                             top: 0, 
@@ -580,7 +669,7 @@ export function Home () {
                                 </Grid>
                                 <Grid item mt={10}>
                                     <div style={{ position: 'relative', marginBottom: '20px' }}>
-                                        <img src={Produk3} style={{ width: '300px', height: '230px' }} />
+                                        <img loading="lazy" src={Produk3} style={{ width: '300px', height: '230px' }} />
                                         <div style={{ 
                                             position: 'absolute', 
                                             top: 0, 
@@ -694,7 +783,7 @@ export function Home () {
             marginTop: isDesktop ? 0 : '100px'
           }}>
             <div style={{ width: '300px' }}>
-                <img src={Layanan24} style={{
+                <img loading="lazy" src={Layanan24} style={{
                     width: '200px',
                     height: '200px',
                     justifyContent: 'center',
@@ -735,7 +824,7 @@ export function Home () {
             marginLeft: isDesktop ? 100 : '50px',
           }}>
             <div style={{ width: '300px' }}>
-                <img src={Produksi} style={{
+                <img loading="lazy" src={Produksi} style={{
                     width: '300px',
                     height: '200px',
                     justifyContent: 'center',
@@ -774,7 +863,7 @@ export function Home () {
                     marginTop: isDesktop ? 0 : '100px'
                 }}>
                     <div style={{ width: '300px' }}>
-                        <img src={Layanan24} style={{
+                        <img loading="lazy" src={Layanan24} style={{
                             width: '200px',
                             height: '200px',
                             justifyContent: 'center',
@@ -807,7 +896,7 @@ export function Home () {
                     marginLeft: isDesktop ? 100 : '50px',
                 }}>
                     <div style={{ width: '300px' }}>
-                        <img src={Produksi} style={{
+                        <img loading="lazy" src={Produksi} style={{
                             width: '300px',
                             height: '200px',
                             justifyContent: 'center',
@@ -842,7 +931,7 @@ export function Home () {
             marginTop: '100px',
             display: isDesktop ? 'flex' : 'block'
           }}>
-                <img id="img-kerupuk2" src={ImgKerupuk} style={{
+                <img loading="lazy" id="img-kerupuk2" src={ImgKerupuk} style={{
                     width: isDesktop ? '40%' : '90%',
                     height: isDesktop ? '500px' : '200px',
                     marginLeft: isDesktop ? 0 : '20px'
@@ -900,7 +989,7 @@ export function Home () {
 
 
           <div style={{ marginTop: '100px', position: 'relative', marginLeft: '1px'}}>
-                <img src={Process} style={{ width: '100%', height: isDesktop ? '800px' : '1500px', zIndex: -2 }} />
+                <img loading="lazy" src={Process} style={{ width: '100%', height: isDesktop ? '800px' : '1500px', zIndex: -2 }} />
                 <div style={{ width: '100%', height: !isDesktop ? '1500px' : '800px', backgroundColor: 'rgba(59, 77, 54, 0.5)', display: isDesktop ? 'flex' : 'block' , justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '0', left: '0' }}>
                     <div style={{ margin: 0, padding: 0, display: 'block', justifyContent: 'center', position: 'relative', color: 'white' }}>
                         <h3 style={{ textAlign: 'center', fontSize: '39px' }}>{t("proses-kami.text")}</h3>
@@ -910,29 +999,29 @@ export function Home () {
                         <Grid container spacing={8} justifyContent="center" mt={10}>
                             <Grid item>
                                 <div className="lingkaran-container">
-                                    <img src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
-                                    <img src={Optimasi} width={90} height={90} className="optimasi" />
+                                    <img loading="lazy" src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
+                                    <img loading="lazy" src={Optimasi} width={90} height={90} className="optimasi" />
                                 </div>
                                 <Typography variant="subtitle1" align="center">{t("proses-1.text")}</Typography>
                             </Grid>
                             <Grid item>
                                 <div className="lingkaran-container">
-                                    <img src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
-                                    <img src={Inovasi} width={140} height={90} className="optimasi" />
+                                    <img loading="lazy" src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
+                                    <img loading="lazy" src={Inovasi} width={140} height={90} className="optimasi" />
                                 </div>
                                 <Typography variant="subtitle1" align="center">{t("proses-2.text")}</Typography>
                             </Grid>
                             <Grid item>
                                 <div className="lingkaran-container">
-                                    <img src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
-                                    <img src={Pengemasan} width={120} height={120} className="optimasi" />
+                                    <img loading="lazy" src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
+                                    <img loading="lazy" src={Pengemasan} width={120} height={120} className="optimasi" />
                                 </div>
                                 <Typography variant="subtitle1" align="center">{t("proses-3.text")}</Typography>
                             </Grid>
                             <Grid item>
                                 <div className="lingkaran-container">
-                                    <img src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
-                                    <img src={Penyimpanan} width={90} height={90} className="optimasi" />
+                                    <img loading="lazy" src={Lingkaran} width={isDesktop ? 220 : 180} height={isDesktop ? 220 : 180} className="lingkaran" />
+                                    <img loading="lazy" src={Penyimpanan} width={90} height={90} className="optimasi" />
                                 </div>
                                 <Typography variant="subtitle1" align="center">{t("proses-4.text")}</Typography>
                             </Grid>
@@ -966,7 +1055,7 @@ export function Home () {
             }} 
             number="082131131108" 
             message={"Hallo"}>
-           <img src={IconWhatsapp} 
+           <img loading="lazy" src={IconWhatsapp} 
               style={{
                 maxWidth: '100%', // Tambahkan ini
                 width: '70px',
@@ -984,7 +1073,7 @@ export function Home () {
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
-                        <img src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
+                        <img loading="lazy" src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></span>
@@ -993,7 +1082,7 @@ export function Home () {
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
-                        <img src={Location} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
+                        <img loading="lazy" src={Location} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("alamat.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>Jalan Veteran no 4A Medan Pusat Pasar, Medan, Sumatera Utara 20231</span>
@@ -1002,7 +1091,7 @@ export function Home () {
                 </Grid>
                 <Grid item xs={12} sm={2}>
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginTop: isDesktop ? 0 : '20px' }}>
-                        <img src={Email} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
+                        <img loading="lazy" src={Email} width={isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("email.text")} :</span>
                             <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0, width: '300px' }}>pusatkerupukindonesia@gmail.com</span>
@@ -1015,7 +1104,7 @@ export function Home () {
             <div style={{ width: '100%', backgroundColor: '#2b292c', height: isDesktop ? '520px' : '1000px', marginTop:  isDesktop ? '-30px' : '-30px' }}>
                 <Grid container spacing={2} display={isDesktop ? 0 : 'block'} justifyContent={'center'} alignItems={'center'} pt={8} pl={isDesktop ? 0 : 4}>
                     <Grid item xs={4}>
-                        <img src={LogoPusatKerupuk} width={100} height={100} />
+                        <img loading="lazy" src={LogoPusatKerupuk} width={100} height={100} />
                         <p id="deskripsi_kerupuk" style={{ width: '280px', color: 'white', marginTop: '40px' }}>
                             {t("deskripsi-footer.text")}
                         </p>
