@@ -74,21 +74,67 @@
         font-family: Arial, sans-serif;
       }
     </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Pusat Kerupuk Indonesia",
+        "url": "https://pusatkerupukindonesia.com",
+        "logo": "%PUBLIC_URL%/logo_pusat_kerupuk.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+62-812-3456-7890",
+          "contactType": "customer service"
+        },
+        "sameAs": [
+          "https://maps.app.goo.gl/ztBKgq5nx64yTgjM9",
+          "https://maps.app.goo.gl/8MRFr5VNWBq77QBr7"
+        ],
+        "location": [
+          {
+            "@type": "Place",
+            "name": "Distributor | Agen Kerupuk Mentah Sumatera | Medan | Aceh",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Jalan Kerupuk No. 1",
+              "addressLocality": "Medan",
+              "addressRegion": "Sumatera Utara",
+              "postalCode": "20111",
+              "addressCountry": "ID"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -3.588,
+              "longitude": 98.673
+            },
+            "url": "https://maps.app.goo.gl/ztBKgq5nx64yTgjM9"
+          },
+          {
+            "@type": "Place",
+            "name": "Grosir Agen Kerupuk Mentah Jakarta",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Jalan Kerupuk No. 2",
+              "addressLocality": "Jakarta",
+              "addressRegion": "DKI Jakarta",
+              "postalCode": "10110",
+              "addressCountry": "ID"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -6.2088,
+              "longitude": 106.8456
+            },
+            "url": "https://maps.app.goo.gl/8MRFr5VNWBq77QBr7"
+          }
+        ]
+      }
+    </script>
     <title>Pusat Kerupuk Indonesia</title>
   </head>
   <body>
     <noscript>Aneka Kerupuk Indonesia</noscript>
     <div id="root"></div>
-    <div>
-      <h1 id="title-pusat-kerupuk">Pusat Kerupuk Indonesia</h1>
-      <p>
-        Temukan kami di Google Maps:
-        <ul>
-          <li><a href="https://maps.app.goo.gl/ztBKgq5nx64yTgjM9" target="_blank">Distributor | Agen Kerupuk Mentah Sumatera | Medan | Aceh</a></li>
-          <li><a href="https://maps.app.goo.gl/8MRFr5VNWBq77QBr7" target="_blank">Grosir Agen Kerupuk Mentah Jakarta</a></li>
-        </ul>
-      </p>
-    </div>
     <script defer>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
