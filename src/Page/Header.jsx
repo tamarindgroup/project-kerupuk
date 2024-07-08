@@ -36,15 +36,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Textra from 'react-textra'
-import Collapse from '@mui/material/Collapse';
-import { Link } from "react-router-dom";
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import { useBrandContext } from "../BrandContext";
 import dataProduk from '../data/produk';
 
 const Header = () => {
@@ -59,7 +51,6 @@ const Header = () => {
     const navigate = useNavigate();
     const [searchValue, setSearchValue] = useState('');
     const [buka, setBuka] = React.useState(false);
-    const { selectedBrand } = useBrandContext();
 
 
 
@@ -71,11 +62,6 @@ const Header = () => {
         // Redirect atau tampilkan sesuatu sesuai kebutuhan Anda
     };
 
-    // Fungsi untuk menangani klik pada ListItemButton
-    const handleListItemButtonClick = () => {
-        // Panggil fungsi untuk melakukan filter berdasarkan brand yang diklik
-        filterProductsByBrand(selectedBrand);
-    };
 
 
 

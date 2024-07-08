@@ -62,10 +62,6 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo_pusat_kerupuk.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="preload" href="%PUBLIC_URL%/App.css" as="style">
     <link rel="stylesheet" href="%PUBLIC_URL%/App.css">
@@ -78,55 +74,27 @@
         font-family: Arial, sans-serif;
       }
     </style>
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
     <title>Pusat Kerupuk Indonesia</title>
   </head>
   <body>
     <noscript>Aneka Kerupuk Indonesia</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div>
+      <h1 id="title-pusat-kerupuk">Pusat Kerupuk Indonesia</h1>
+      <p>
+        Temukan kami di Google Maps:
+        <ul>
+          <li><a href="https://maps.app.goo.gl/ztBKgq5nx64yTgjM9" target="_blank">Distributor | Agen Kerupuk Mentah Sumatera | Medan | Aceh</a></li>
+          <li><a href="https://maps.app.goo.gl/8MRFr5VNWBq77QBr7" target="_blank">Grosir Agen Kerupuk Mentah Jakarta</a></li>
+        </ul>
+      </p>
+    </div>
+    <script defer>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      gtag('config', 'G-C6731HVMLH');
+    </script>
   </body>
-  <!-- Google tag (gtag.js) -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6731HVMLH"></script> -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-C6731HVMLH');
-  </script>
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5999180990383610"
-  crossorigin="anonymous"></script> -->
-  <!-- <script>
-    import i18n from '../src/i18n.js';
-    window.onload = function () {
-      i18n.changeLanguage(navigator.language);
-      i18n.on('languageChanged', function (lng) {
-        document.documentElement.lang = lng;
-      });
-      i18n.init(function (err, t) {
-        // Initialize i18next and load translations
-        // You can also load translations dynamically here
-        // For this example, translations are loaded via JSON files
-        document.getElementById('root').classList.add('loaded');
-      });
-    };
-  </script> -->
 </html>

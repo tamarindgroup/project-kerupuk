@@ -15,7 +15,7 @@ import { SiGooglemybusiness } from "react-icons/si";
 import Location from '../../Image/location.png';
 import ReactWhatsapp from 'react-whatsapp';
 import IconWhatsapp from '../../Image/icon-whatsapp.png'
-import Kerupuk1 from '../../Image/kerupuk_1.webp';
+import Kerupuk1 from '../../Image/kerupuk_1.png';
 import Card from '@mui/material/Card';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { TbArrowBadgeRightFilled } from "react-icons/tb";

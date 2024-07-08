@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Grid, Typography, Button } from "@mui/material";
-import Kerupuk1 from '../../Image/kerupuk_1.webp';
+import Kerupuk1 from '../../Image/kerupuk_1.png';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import GppGoodIcon from '@mui/icons-material/GppGood';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
@@ -25,9 +25,9 @@ import Inovasi from '../../Image/inovasi.png';
 import Pengemasan from '../../Image/pengemasan.png';
 import Penyimpanan from '../../Image/penyimpanan.png';
 import Barang from '../../Image/barang.jpg';
-import Produk1 from '../../Image/kerupuk-kapal/kerupuk-jengkol-bulat-hitam.webp';
-import Produk2 from '../../Image/kerupuk-shinjuku/mawar-putih.webp';
-import Produk3 from '../../Image/kerupuk-napoleon/kelabang-cream.webp';
+import Produk1 from '../../Image/kerupuk-kapal/kerupuk-jengkol-bulat-hitam.jpg';
+import Produk2 from '../../Image/kerupuk-shinjuku/mawar-putih.jpg';
+import Produk3 from '../../Image/kerupuk-napoleon/kelabang-cream.jpg';
 import LogoPusatKerupuk from '../../Image/logo pusat kerupuk.webp';
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
@@ -188,7 +188,7 @@ export function Home () {
         {!isLoading && (
             <div className="centered">
                 <picture>
-                <img src={Shopping} alt="Shopping" loading="lazy" />
+                  <img srcSet={Shopping} alt="Shopping" loading="lazy" />
                 </picture>
             </div>
         )}
@@ -197,31 +197,22 @@ export function Home () {
           {/* <Header /> */}
           <div id="top-title">
             <img loading="lazy" 
-              src={Kerupuk1} 
+              src={Kerupuk1}  
               alt="gambar-logo-top"
                 style={{
-                    height: isDesktop ? '1400px' : '200px',
+                    height: isDesktop ? '800px' : '300px',
                     width: isDesktop ? '100%' : '100%',
                     position: 'relative',
-                    top: isDesktop ? '-598px' : '198px',
+                    marginTop: isDesktop ? '-80px' : '195px',
                     zIndex: -2
                 }}
             />
             <div style={{ 
                 position: 'absolute', 
-                top: isDesktop ? '520px' : '490px', 
+                top: isDesktop ? '750px' : '490px', 
                 left: '10%', 
                 transform: 'translateY(-50%)',
                 }}>
-                <Typography variant="h4" style={{ color: 'white', fontSize: isDesktop ? 27 : 12  }}>{t("aneka-kerupuk.text")}</Typography>
-                <Typography variant="subtitle1" style={{ color: 'white', fontSize: isDesktop ? 17 : 10 }}>{t("produk-original.text")}</Typography>
-                <span style={{
-                    display: 'block',
-                    width: isDesktop ? '100px' : '50px',
-                    height: '3px',
-                    backgroundColor: 'orange',
-                    margin: '5px 0'
-                }}></span>
                 {isDesktop ? 
                 <>
                 <a href="#selamat-datang">
@@ -250,7 +241,7 @@ export function Home () {
         >
             {!isDesktop ?
             <>
-            <div data-aos="flip-up">
+            <div data-aos="flip-up" style={{ marginTop: "-200px" }}>
             <div className="fast-delivery" 
             style={{ 
                 margin: isDesktop ? '0 auto' : '0 auto', 
@@ -376,7 +367,7 @@ export function Home () {
                     width: isDesktop ? '350px' : '340px',
                     display: !isDesktop ? 'block' : 0,
                     height: '280px',
-                    paddingTop: !isDesktop ? '20px' : '10px' 
+                    marginTop: !isDesktop ? '20px' : '750px' 
                     }}> {/* Menambahkan margin */}
                     <RocketLaunchIcon style={{
                         height: isDesktop ? '100px' : '60px',
@@ -403,7 +394,7 @@ export function Home () {
                     width: isDesktop ? '350px' : '340px',
                     display: !isDesktop ? 'block' : 0,
                     height: '280px',
-                    paddingTop: !isDesktop ? '20px' : '10px' 
+                    marginTop: !isDesktop ? '20px' : '750px' 
                 }}> {/* Menambahkan margin */}
                     <GppGoodIcon style={{
                         height: isDesktop ? '100px' : '60px',
@@ -430,7 +421,7 @@ export function Home () {
                     width: isDesktop ? '350px' : '340px',
                     display: !isDesktop ? 'block' : 0,
                     height: '280px',
-                    paddingTop: !isDesktop ? '20px' : '10px'
+                    marginTop: !isDesktop ? '20px' : '750px'
                 }}> {/* Menambahkan margin */}
                     <LocalAtmIcon style={{
                         height: isDesktop ? '100px' : '60px',
@@ -457,7 +448,7 @@ export function Home () {
                     width: isDesktop ? '350px' : '340px',
                     display: !isDesktop ? 'block' : 0,
                     height: '280px',
-                    paddingTop: !isDesktop ? '20px' : '10px' 
+                    marginTop: !isDesktop ? '20px' : '750px'
                 }}> {/* Menambahkan margin */}
                     <SupportAgentIcon style={{
                         height: isDesktop ? '100px' : '60px',
@@ -492,7 +483,7 @@ export function Home () {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh', /* Menggunakan tinggi 100% dari viewport untuk membuatnya berada di tengah vertikal */
-                marginTop: isDesktop ? '300px' : '400px'
+                marginTop: isDesktop ? '400px' : '400px'
             }}> 
 
 
@@ -516,9 +507,9 @@ export function Home () {
                         zIndex: 1, 
                         fontSize: '39px', 
                         // position: 'relative',
-                        marginTop: !isDesktop ? '120px' : '250px' 
+                        marginTop: !isDesktop ? '120px' : '350px',
                         }}>{t("produk-lainnya.text")}</h3> {/* Margin 0 untuk menghapus margin bawaan */}
-                       <Grid container spacing={2} zIndex={2} justifyContent={'center'} mt={80}>
+                       <Grid container spacing={2} zIndex={2} justifyContent={'center'} mt={30}>
                         <Grid item>
                             <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '10px', marginRight: '10px' }}>
                                 <img loading="lazy" src={Produk1} style={{ width: '300px', height: '230px' }} />
