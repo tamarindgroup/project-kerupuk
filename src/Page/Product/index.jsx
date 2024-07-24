@@ -500,7 +500,7 @@ export function Product() {
                 cursor: 'pointer'
             }} 
             number="082131131108" 
-            message={"Hallo"}>
+            message={"Selamat datang di pusat kerupuk indonesia, mau tanya seputar kerupuk ????"}>
            <img loading="lazy" src={IconWhatsapp} 
               style={{
                 maxWidth: '100%', // Tambahkan ini
