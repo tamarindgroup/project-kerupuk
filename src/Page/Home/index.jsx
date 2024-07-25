@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { Grid, Typography, Button } from "@mui/material";
+import { Grid, Typography, Button, Container } from "@mui/material";
 import Kerupuk1 from '../../Image/kerupuk_1.png';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import GppGoodIcon from '@mui/icons-material/GppGood';
@@ -45,6 +45,8 @@ import { FaCircleArrowUp } from "react-icons/fa6";
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Helmet } from "react-helmet";
+import { ScrollContext } from "../../Context";
+import { useScrollContext } from "../../Context";
 
 export function Home () {
     const theme = useTheme();
@@ -53,6 +55,19 @@ export function Home () {
     const [language, setLanguage] = useState('');
     const control = useAnimation();
     const [ ref, inView ] = useInView();
+    // const { scrollToWhatsApp, setScrollToWhatsApp } = useContext(ScrollContext);
+    const [animate, setAnimate] = useState(false);
+    const { isShaking } = useScrollContext();
+
+    // useEffect(() => {
+    //     if (scrollToWhatsApp) {
+    //         setAnimate(true);
+    //         setTimeout(() => {
+    //             setAnimate(false);
+    //             setScrollToWhatsApp(false); // Reset state setelah animasi selesai
+    //         }, 1000); // Durasi animasi
+    //     }
+    // }, [scrollToWhatsApp, setScrollToWhatsApp]);
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -65,7 +80,7 @@ export function Home () {
         visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.5 } },
         hidden: { opacity: 0, scale: 0, x: 200 }
     }
- 
+
 
     useEffect(() => {
         if (inView) {
@@ -1021,6 +1036,46 @@ export function Home () {
                 </div>
             </div>
 
+            <Grid>
+            <Container
+                sx={{
+                position: 'relative',
+                top: '200px',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                }}
+            >
+                <Typography
+                sx={{
+                    textAlign: 'center',
+                    fontSize: !isDesktop ? '19px' : '22px',
+                    marginBottom: '20px', // Menambahkan margin bawah untuk memberikan jarak antara teks dan iframe
+                }}
+                >
+                Lokasi Kami
+                </Typography>
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.9825765925907!2d98.68250797567575!3d3.591470350272966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131b9cbcae2c5%3A0xea27fd9f0b1c613d!2sJl.%20Veteran%20No.4A%2C%20Pusat%20Ps.%2C%20Kec.%20Medan%20Kota%2C%20Kota%20Medan%2C%20Sumatera%20Utara%2020231!5e0!3m2!1sid!2sid!4v1721881229293!5m2!1sid!2sid"
+                style={{
+                    border: '5px solid',
+                    borderRadius: '10px',
+                    borderColor: 'orange',
+                    width: !isDesktop ? '300px' : '900px',
+                    height: !isDesktop ? '350px' : '700px',
+                    animation: 'blinkingBorder 2s infinite',
+                }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </Container>
+            </Grid>
+
+
+
             
            
          <FaCircleArrowUp 
@@ -1046,7 +1101,7 @@ export function Home () {
             }} 
             number="082131131108" 
             message={"Selamat datang di pusat kerupuk indonesia, mau tanya seputar kerupuk ????"}>
-           <img loading="lazy" src={IconWhatsapp} 
+           <img className={isShaking ? 'shake' : ''} loading="lazy" src={IconWhatsapp} 
               style={{
                 maxWidth: '100%', // Tambahkan ini
                 width: '70px',
@@ -1054,13 +1109,15 @@ export function Home () {
                 position: 'fixed', // Tetapkan posisi elemen
                 bottom: '20px',    // Atur jarak dari bawah
                 right: !isDesktop ? '20px' : '20px',     // Atur jarak dari kanan
-                // zIndex: '9999',   
+                // zIndex: '9999',  
+                // transition: 'transform 0.5s ease-in-out',
+                // transform: animate ? 'translateY(-100px)' : 'translateY(0)'  
               }}
             />
         </ReactWhatsapp>
 
 
-        <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? -20 : '-22px' }}>
+        <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 400 : '400px' }}>
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>
                 <Grid item xs={12} sm={2} > 
                     <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>

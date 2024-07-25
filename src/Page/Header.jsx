@@ -10,7 +10,7 @@ import CallIcon from '../Image/calling.png';
 import EmailIcon from '../Image/mail.png';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
+import  InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -38,6 +38,7 @@ import FormControl from '@mui/material/FormControl';
 import Textra from 'react-textra'
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import dataProduk from '../data/produk';
+import { useScrollContext } from "../Context";
 
 const Header = () => {
     const theme = useTheme();
@@ -51,6 +52,13 @@ const Header = () => {
     const navigate = useNavigate();
     const [searchValue, setSearchValue] = useState('');
     const [buka, setBuka] = React.useState(false);
+
+
+    const { startShaking } = useScrollContext();
+
+    // const handleContactClick = () => {
+    //     setScrollToWhatsApp(true);
+    // };
 
 
 
@@ -300,7 +308,7 @@ const Header = () => {
                         </div>
                     </Grid>
                     <Grid item> {/* Menggunakan Grid item untuk tombol Contact */}
-                        <Button style={{ 
+                        <Button  onClick={startShaking} style={{ 
                             backgroundColor: '#ff9c00',
                             height: '40px',
                             width: '100px',

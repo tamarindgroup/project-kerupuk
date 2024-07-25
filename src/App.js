@@ -4,10 +4,12 @@ import { About } from './Page/About';
 import Artikel from './Page/Artikel';
 import Header from './Page/Header';
 import { Product } from './Page/Product';
+import { ScrollProvider } from './Context';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
+    <ScrollProvider>
     <BrowserRouter>
       <Header />
       <Routes>
@@ -16,7 +18,8 @@ function App() {
         <Route path='/artikel' element={<Artikel />} />
         <Route path='/produk' element={<Product />} />
       </Routes>
-  </BrowserRouter>
+    </BrowserRouter>
+  </ScrollProvider>
   );
 }
 
