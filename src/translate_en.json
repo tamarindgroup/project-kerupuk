@@ -114,10 +114,10 @@
           "text": "Various Crackers Provider"
       },
       "pelayanan-kami": {
-          "text": "Our 24/7 Service"
+          "text": "Various Crackers"
       },
       "deskripsi-pelayanan-kami": {
-          "text": "Enjoy 24/7 cracker product sales services from the Indonesian Crackers Center! We are ready to serve you anytime, anywhere, with a variety of authentic and high-quality Indonesian crackers. Quickly find your favorite cracker delights without time constraints, only at the Indonesian Crackers Center."
+          "text": "The Indonesian Crackers Center is the main destination for cracker lovers which presents a wide selection of typical Indonesian crackers. Starting from prawn crackers, skin crackers, to fish crackers, all are made with traditional recipes that maintain the authentic taste of each region. With the best quality ingredients and a hygienic production process, the Indonesian Cracker Center not only offers deliciousness but also the experience of enjoying Indonesia's culinary diversity. Suitable for friends or snacks, these crackers are ready to pamper your taste buds with every bite!"
       },
       "standarisasi-produk": {
           "text": "Our Product Standardization"
@@ -304,6 +304,12 @@
          },
          "button-lainnya": {
           "text": "Other"
-         }
+         },
+         "ulasan": {
+           "text": "Our Customer Reviews"
+        },
+        "lokasi": {
+        "text": "Our Location"
+    }
         
 }

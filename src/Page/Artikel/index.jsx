@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { Grid } from "@mui/material";
 import Textra from 'react-textra'
-import InputBase from '@mui/material/InputBase';
 import { useTheme } from '@mui/material/styles';
-import { styled, alpha } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import LogoPusatKerupuk from '../../Image/logo pusat kerupuk.webp';
 import Call from '../../Image/phone-call.png';
@@ -15,11 +13,13 @@ import { SiGooglemybusiness } from "react-icons/si";
 import Location from '../../Image/location.png';
 import ReactWhatsapp from 'react-whatsapp';
 import IconWhatsapp from '../../Image/icon-whatsapp.png'
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { useTranslation } from "react-i18next";
 import dataArtikel from "../../data/artikel";
-import { FaCircleArrowUp } from "react-icons/fa6";
-import { Helmet } from "react-helmet";
+import ArrowUp from '../../Image/arrow-up.gif';
+import { useScrollContext } from "../../Context";
+import ShoppingCart from '../../Image/shopping-cart.gif';
+import Shopee from '../../Image/shopee.png';
+import Tokped from '../../Image/tokped.png';
 
 
 export const Artikel =  () => {
@@ -29,6 +29,13 @@ export const Artikel =  () => {
     const [Artikel, setArtikel] = useState(dataArtikel);
     const [language, setLanguage] = useState('');
     const activeLanguage = i18n.language;
+    const { isShaking } = useScrollContext();
+
+    const [isOptionsVisible, setIsOptionsVisible] = useState(false);
+
+    const handleClick = () => {
+        setIsOptionsVisible(!isOptionsVisible);
+      };
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -36,6 +43,12 @@ export const Artikel =  () => {
           behavior: 'smooth'
         });
       };
+
+      const [showIcons, setShowIcons] = useState(false);
+
+    const handleCartClick = () => {
+      setShowIcons(!showIcons);
+    };
 
 
     const isDesktop = useMediaQuery(theme.breakpoints.up('md'), {
@@ -45,96 +58,6 @@ export const Artikel =  () => {
 
     return (
         <>
-         <Helmet>
-            <title>Pusat Kerupuk Indonesia - Seputar Artikel Kerupuk</title>
-            <meta name="robots" content="index, follow" />
-            <meta name="description" content="Kami menghadirkan artikel-artikel yang informatif dan menarik, menggali keberagaman jenis kerupuk dari berbagai daerah di Indonesia dan di seluruh dunia. Selain itu, kami juga membahas tren terkini dalam dunia kuliner, inovasi dalam pembuatan kerupuk, serta resep-resep kreatif untuk menciptakan variasi rasa dan tekstur kerupuk yang tak terbatas." />
-            <meta name="keywords" content="
-            kerupuk, 
-            aneka kerupuk, 
-            kerupuk napoleon, 
-            kerupuk bunga merah, 
-            kerupuk shinjuku, 
-            kerupuk cap kapal,
-            kerupuk jengkol,
-            kerupuk kasandra kuning,
-            kerupuk kecipir warna,
-            kerupuk kelabang kuning,
-            kerupuk mawar kuning,
-            kerupuk sisir warna,
-            kerupuk tersanjung warna,
-            kerupuk udang mas,
-            kerupuk kelabang cream,
-            kerupuk makaroni ayam,
-            kerupuk makaroni kuning,
-            kerupuk mawar cream,
-            kerupuk tempe bulat,
-            kerupuk tiga roda,
-            kerupuk udang mede,
-            kerupuk ceriping pedas,
-            kerupuk ikan putih,
-            kerupuk udang kuning,
-            kerupuk udang salju,
-            keruuk mangkok udang,
-            kerupuk mawar kuning,
-            kerupuk mawar pink,
-            kerupuk t-extra,
-            kerupuk kasandra warna,
-            kerupuk kepang mas,
-            kerupuk kepang warna,
-            kerupuk mawar pink,
-            kerupuk mawar putih,
-            kerupuk mawar warna,
-            kerupuk penting,
-            kerupuk manggar,
-            kerupuk rantai jumbo orange,
-            kerupuk rantai jumbo pink,
-            kerupuk rantai jumbo putih,
-            kerupuk rantai jumbo warna warni,
-            kerupuk rantai lemon warna,
-            kerupuk rantai putih sedang rasa,
-            kerupuk rantai sedang putih,
-            " />
-            <script type="application/ld+json">
-                  {`
-                     {
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        "name": "Pusat Kerupuk Indonesia",
-                        "url": "https://www.pusatkerupukindonesia.id",
-                        "logo": "https://www.pusatkerupukindonesia.id/logo_pusat_kerupuk.webp",
-                        "contactPoint": {
-                            "@type": "ContactPoint",
-                            "telephone": "+6282131131108",
-                            "contactType": "customer service"
-                        }
-                       }
-                    `}
-                </script>
-                <script type="application/ld+json">
-                    {`
-                    {
-                        "@context": "https://schema.org",
-                        "@type": "BreadcrumbList",
-                        "itemListElement": [
-                            {
-                                "@type": "ListItem",
-                                "position": 1,
-                                "name": "Home",
-                                "item": "https://www.pusatkerupukindonesia.id"
-                            },
-                            {
-                                "@type": "ListItem",
-                                "position": 2,
-                                "name": "Artikel",
-                                "item": "https://www.pusatkerupukindonesia.id/artikel"
-                            }
-                        ]
-                    }
-                    `}
-                </script>
-         </Helmet>
-         {/* <Header /> */}
 
          {/* <div style={{ display: 'flex', top: !isDesktop ? '250px' : '200px', position: 'relative', marginBottom: isDesktop ? '500px' : '300px' }}>
             <img src={Waisak} style={{ width: isDesktop ? '30%' : '80%', margin: !isDesktop ? 'auto' : 'auto', borderRadius: '20px' }}  /> 
@@ -169,8 +92,65 @@ export const Artikel =  () => {
                   ))}
               </Grid>
 
+              <img 
+        src={ShoppingCart}
+        style={{
+          cursor: 'pointer',
+          color: 'gray',
+          maxWidth: '100%',
+          width: '85px',
+          height: '85px',
+          position: 'fixed',
+          bottom: isDesktop ? '100px' : '100px',
+          left: !isDesktop ? '8px' : '10px',
+          zIndex: 3,
+        }}
+        onClick={handleCartClick}
+      />
 
-              <FaCircleArrowUp 
+      <div style={{
+        position: 'fixed',
+        bottom: isDesktop ? '200px' : '200px', // Adjusted based on ShoppingCart height and desired space
+        left: !isDesktop ? '25px' : '30px',
+        zIndex: 2,
+        transition: 'opacity 0.5s ease-in-out',
+        opacity: showIcons ? 1 : 0,
+        // transform: `translateY(${showIcons ? '0px' : '20px'})`,
+      }}>
+        <a href="https://id.shp.ee/qFRcxzb" target="_blank">
+        <img 
+        id="shopee"
+          src={Shopee}
+          style={{
+            cursor: 'pointer',
+            color: 'gray',
+            maxWidth: '100%',
+            width: '45px',
+            height: '45px',
+            position: 'relative',
+            display: 'block',
+            marginBottom: '10px', // Space between Shopee and Tokped
+          }}
+        />
+        </a>
+        <a href="https://tokopedia.link/LvsFHThQNLb" target="_blank">
+        <img 
+        id="tokped"
+          src={Tokped}
+          style={{
+            cursor: 'pointer',
+            color: 'gray',
+            maxWidth: '100%',
+            width: '45px',
+            height: '45px',
+            position: 'relative',
+          }}
+        />
+        </a>
+      </div>
+
+
+              <img src={ArrowUp} 
                 style={{
                     cursor: 'pointer',
                     color: 'gray',
@@ -185,26 +165,100 @@ export const Artikel =  () => {
                 onClick={scrollToTop}
                 />
 
+<div>
+      {/* Ikon WhatsApp */}
+      <img 
+        id="whatsapp" 
+        loading="lazy" 
+        src={IconWhatsapp} 
+        onClick={handleClick} // Toggle visibility saat diklik
+        style={{
+          maxWidth: '100%',
+          width: '70px',
+          height: '70px',
+          position: 'fixed',
+          bottom: '20px',
+          right: isDesktop ? '20px' : '20px',
+          zIndex: 3,
+          cursor: 'pointer'
+        }}
+      />
 
-          <ReactWhatsapp id="icon-whatsapp" style={{ 
-                width: 0,
-                height: 0,
-                cursor: 'pointer'
-            }} 
-            number="082131131108" 
-            message={"Selamat datang di pusat kerupuk indonesia, mau tanya seputar kerupuk ????"}>
-           <img loading="lazy" src={IconWhatsapp} 
-              style={{
-                maxWidth: '100%', // Tambahkan ini
-                width: '70px',
-                height: '70px',
-                position: 'fixed', // Tetapkan posisi elemen
-                bottom: '20px',    // Atur jarak dari bawah
-                right: !isDesktop ? '20px' : '20px',     // Atur jarak dari kanan
-                // zIndex: '9999',   
-              }}
-            />
+      {/* Opsi dengan posisi vertikal dan jarak */}
+      <div 
+        className={`options ${isOptionsVisible ? 'visible' : ''}`} 
+        style={{ position: 'fixed', bottom: '100px', right: '30px', zIndex: 4 }}
+      >
+        {/* Tombol Agen */}
+        {isOptionsVisible && (
+          <ReactWhatsapp
+          number="082160904267" 
+          message={"Halo Pusat Kerupuk Indonesia, boleh tau kerupuk apa saja yang ada ?"}
+          style={{ textDecoration: 'none', padding: 0, border: 'none', background: 'none' }}
+        >
+          <h4 id="agen" className="option-item agen">Agen</h4>
         </ReactWhatsapp>
+      )}
+
+      {/* Tombol Sales */}
+      {isOptionsVisible && (
+        <ReactWhatsapp 
+          number="+6282189018400" 
+          message={"Halo Pusat Kerupuk Indonesia, boleh tau kerupuk apa saja yang ada ?"}
+          style={{ textDecoration: 'none', padding: 0, border: 'none', background: 'none' }}
+        >
+          <h4 id="sales" className="option-item sales">Sales</h4>
+        </ReactWhatsapp>
+        )}
+      </div>
+
+      {/* CSS */}
+      <style jsx>{`
+    .options {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      pointer-events: none;
+    }
+
+    .options.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .option-item {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 3px 0; /* Jarak antara tombol Agen dan Sales */
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .option-item:hover {
+      transform: scale(1.1);
+    }
+
+    /* Posisi Agen dan Sales untuk jarak vertikal */
+    .agen {
+      transform: translateY(-20px); /* Geser Agen lebih ke atas */
+    }
+
+    /* Efek saat di hover pada Agen */
+    .agen:hover {
+      transform: translateY(-30px); /* Geser lebih ke atas saat dihover */
+    }
+
+    .sales {
+      transform: translateY(-10px); /* Geser Sales sedikit lebih ke atas dari posisi sebelumnya */
+    }
+  `}</style>
+    </div>
 
         <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 150 : '100px' }}>
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>

@@ -1,4 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&family=Bree+Serif&family=Darker+Grotesque:wght@300..900&family=Dhurjati&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Fugaz+One&family=Inter:wght@100..900&family=Modak&family=Monoton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Reem+Kufi+Fun:wght@400..700&family=Seymour+One&family=Signika+Negative:wght@300..700&family=Sofadi+One&family=Stylish&family=Teko:wght@300..700&family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Chewy&family=Fjalla+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bungee+Spice&family=Chango&family=Chewy&family=Contrail+One&family=Doto:wght@100..900&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Fjalla+One&family=Jaro:opsz@6..72&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bungee+Spice&family=Chewy&family=Doto:wght@100..900&family=Fjalla+One&family=Jaro:opsz@6..72&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&display=swap');
+
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+#marquee {
+  font-family: "Contrail One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #61dafb;
+}
+
+
+.judul-kerupuk {
+  font-family: "Chewy", system-ui;
+  font-weight: 600;
+  font-style: normal;
+  background: linear-gradient(to right, rgb(214, 182, 0), rgb(214, 218, 13));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu-kerupuk {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(231, 255, 13);
+}
+
+
+.menu {
+  transition: top 0.5s ease-in-out;
+}
+
+
+
+.icon {
+  cursor: pointer;
+  max-width: 100%;
+  position: fixed;
+  bottom: 100px;
+  left: 10px;
+  z-index: 3;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.shopping-cart {
+  width: 85px;
+  height: 85px;
+}
+.hidden {
+  opacity: 0;
+}
+.show {
+  opacity: 1;
+}
 
 
 @keyframes blinkingBorder {
@@ -21,6 +85,12 @@
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+.particles {
+  background-color: #2a2e31;
+  height: 100%;
+  width: 10%;
+}
+
 .shake {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
@@ -30,9 +100,15 @@
   margin: 10px;
   height: 50px;
   text-align: left;
-  color: white;
   font-weight: bold;
   text-transform: none;
+  position: relative; /* Untuk pseudo-element */
+  border: none;
+  background: none;
+  text-transform: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 
@@ -45,6 +121,22 @@
   overflow: hidden;
 }
 
+.category-button::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; /* Posisi garis bawah */
+  left: 50%; /* Mulai dari tengah */
+  width: 0; /* Awalnya garis tidak terlihat */
+  height: 2px;
+  background-color: orange; /* Warna garis */
+  transform: translateX(-50%);
+  transition: width 0.4s ease-in-out; /* Animasi memanjang */
+}
+
+.category-button:hover::after {
+  width: 60%; /* Garis penuh saat hover */
+}
+
 #title-pusat-kerupuk {
   font-family: "Black Han Sans", sans-serif;
   font-weight: 400;
@@ -52,11 +144,15 @@
   color: gray;
 }
 
-#list-menu{
+.list-menu{
   font-family: "Rajdhani", sans-serif;
   font-weight: 400;
   font-style: normal;
+  position: relative;
+  top: -13px;
+  width: 100%;
 }
+
 
 .welcome {
   font-family: "Montserrat", sans-serif;

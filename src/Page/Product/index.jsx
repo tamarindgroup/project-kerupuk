@@ -14,11 +14,16 @@ import { SiGooglemybusiness } from "react-icons/si";
 import Location from '../../Image/location.png';
 import ReactWhatsapp from 'react-whatsapp';
 import IconWhatsapp from '../../Image/icon-whatsapp.png'
-import { FaCircleArrowUp } from "react-icons/fa6";
+import ArrowUp from '../../Image/arrow-up.gif';
 import { useTranslation } from "react-i18next";
 import dataProduk from "../../data/produk";
 import { PulseLoader } from "react-spinners";
 import { Helmet } from "react-helmet";
+import { useScrollContext } from "../../Context";
+import ShoppingCart from '../../Image/shopping-cart.gif';
+import Shopee from '../../Image/shopee.png';
+import Tokped from '../../Image/tokped.png';
+import BestSeller from '../../Image/best-seller.png';
 
 export function Product() {
 
@@ -26,9 +31,9 @@ export function Product() {
     const { t, i18n } = useTranslation("global");
     const [Produk, setProduk] = useState(dataProduk);
     const activeLanguage = i18n.language;
-    const maxArtikel = 10;
+    const maxArtikel = 30;
     const [isSearchEmpty, setIsSearchEmpty] = useState(false);
-    const [showMore, setShowMore] = useState(6);
+    const [showMore, setShowMore] = useState(30);
     const [loadingMore, setLoadingMore] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [searchValue, setSearchValue] = useState("");
@@ -37,10 +42,24 @@ export function Product() {
         Produk.map(() => false)
       );
     const [selectedBrand, setSelectedBrand] = useState('Semua');
+    const { isShaking } = useScrollContext();
 
-    const handleCategoryClick = (category) => {
-        setSelectedBrand(category);
-        setSearchValue(""); // Reset search value when category changes
+    const [isOptionsVisible, setIsOptionsVisible] = useState(false);
+
+    const [showMenu, setShowMenu] = React.useState(false);
+
+    const handleClick = () => {
+        setIsOptionsVisible(!isOptionsVisible);
+      };
+
+      const handleCategoryClick = (category) => {
+        if (category === "lainnya") {
+          setShowMenu((prev) => !prev); // Toggle visibilitas menu
+        } else {
+          setSelectedBrand(category); // Atur kategori yang dipilih
+          setShowMenu(false); // Tutup menu jika kategori lain dipilih
+          setSearchValue(""); // Reset search value ketika kategori berubah
+        }
       };
 
       const loadMore = () => {
@@ -51,6 +70,12 @@ export function Product() {
           setLoadingMore(false);
         }, 1000);
       };
+
+      const [showIcons, setShowIcons] = useState(false);
+
+    const handleCartClick = () => {
+      setShowIcons(!showIcons);
+    };
 
       useEffect(() => {
         // Simulate loading for 10 seconds
@@ -111,7 +136,7 @@ export function Product() {
     return (
         <>
 
-         <Helmet>
+         {/* <Helmet>
             <title>Pusat Kerupuk Indonesia - Produk Kerupuk Lengkap dari Kami</title>
             <meta name="robots" content="index, follow" />
             <meta name="description" content="Di Produk Kerupuk Lengkap dari Kami, kami bangga menyajikan berbagai macam kerupuk mulai dari yang klasik hingga yang modern, memenuhi selera dan preferensi setiap pelanggan. Kami menawarkan kerupuk tradisional yang autentik, serta inovasi-inovasi baru dalam dunia kerupuk yang siap menggoyang lidah Anda." />
@@ -199,7 +224,7 @@ export function Product() {
                     }
                     `}
                 </script>
-         </Helmet>
+         </Helmet> */}
 
          {/* <div style={{ display: 'flex', top: !isDesktop ? '250px' : '100px', position: 'relative', marginBottom: isDesktop ? '200px' : '300px' }}>
             <img src={Waisak} style={{ width: isDesktop ? '30%' : '80%', margin: !isDesktop ? 'auto' : 'auto', borderRadius: '20px' }}  /> 
@@ -269,7 +294,7 @@ export function Product() {
                         <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px" }}> {t("button-napoleon.text")} </label>
                     </Button>
                     </Grid>
-                    <Grid item xs={3} sm={3}>
+                    <Grid item xs={3} sm={1}>
                     <Button
                         className={`category-button ${selectedBrand === 'bunga-merah' ? 'selected' : ''}`}
                         onClick={() => handleCategoryClick('bunga-merah')}
@@ -278,10 +303,93 @@ export function Product() {
                         <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px" }}> {t("button-bunga-merah.text")} </label>
                     </Button>
                     </Grid>
+                    <Grid item xs={3} sm={1}>
+                    <Button
+                        className={`category-button ${selectedBrand === 'layar' ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick('layar')}
+                        style={{ fontSize: '2px', width: isDesktop ? '180px' : '130px' }}
+                    >
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px" }}> Layar </label>
+                    </Button>
+                    </Grid>
+                    <Grid item xs={3} sm={1}>
+                    <Button
+                        className={`category-button ${selectedBrand === 'kambing-lima' ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick('kambing-lima')}
+                        style={{ fontSize: '2px', width: isDesktop ? '180px' : '130px' }}
+                    >
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px" }}> Kambing Lima </label>
+                    </Button>
+                    </Grid>
+                    <Grid item xs={3} sm={!isDesktop ? 3 : 0}>
+                    <Button
+                      className={`category-button ${selectedBrand === "lainnya" ? "selected" : ""}`}
+                      onClick={() => handleCategoryClick("lainnya")}
+                      style={{ fontSize: "9px", width: isDesktop ? "150px" : "130px", position: 'relative', left: !isDesktop ? '20px' : 0 }}
+                    >
+                      <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px" }}>
+                        {t("button-lain.text")}
+                      </label>
+                    </Button>
+                  </Grid>
+                  {showMenu && (
+                  <Grid
+                    item
+                    xs={isDesktop ? 1 : 7}
+                    style={{
+                      position: "relative", // Agar tampil di luar grid utama
+                      top: isDesktop ? "5px" : '60px', // Atur sesuai posisi tombol lainnya
+                      left: isDesktop ? "-290px" : '13px', // Menyesuaikan posisi horizontal
+                      background: "orange",
+                      borderRadius: '10px',
+                      padding: "10px",
+                      zIndex: 10, // Pastikan menu ada di atas elemen lainnya
+                    }}
+                  >
+                    <ul style={{ listStyleType: "none", margin: 0, padding: 0, textAlign: 'center', fontFamily: 'sans-serif', fontStyle: 'italic', color: 'white' }}>
+                    <Button
+                        className={`category-button ${selectedBrand === 'kemasan' ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick('kemasan')}
+                        style={{ fontSize: '2px', width: isDesktop ? '100%' : '130px', paddingTop: '30px' }}
+                    >
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px", textAlign: 'center', color: 'white', fontStyle: 'italic' }}> Asam Jawa Kemasan </label>
+                    </Button>
+                    <Button
+                        className={`category-button ${selectedBrand === 'karung' ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick('karung')}
+                        style={{ fontSize: '2px', width: isDesktop ? '100%' : '130px', paddingTop: '30px' }}
+                    >
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px", textAlign: 'center', color: 'white', fontStyle: 'italic' }}> Asam Jawa 50kg  </label>
+                    </Button>
+                      <Button
+                        className={`category-button ${selectedBrand === 'kulit-tahu' ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick('kulit-tahu')}
+                        style={{ fontSize: '2px', width: isDesktop ? '100%' : '130px', paddingTop: '30px' }}
+                    >
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px", textAlign: 'center', color: 'white', fontStyle: 'italic' }}> Kulit Kembang Tahu </label>
+                    </Button>
+                    <Button
+                        className={`category-button ${selectedBrand === 'tepung-putri' ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick('tepung-putri')}
+                        style={{ fontSize: '2px', width: isDesktop ? '100%' : '130px' }}
+                    >
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px", textAlign: 'center', color: 'white', fontStyle: 'italic' }}> Tepung Putri </label>
+                    </Button>
+                    <Button
+                        className={`category-button ${selectedBrand === 'lain' ? 'selected' : ''}`}
+                        onClick={() => handleCategoryClick('lain')}
+                        style={{ fontSize: '2px', width: isDesktop ? '100%' : '130px' }}
+                    >
+                        <label id="kategori-artikel" style={{ fontSize: !isDesktop ? "10px" : "12px", textAlign: 'center', color: 'white', fontStyle: 'italic' }}> Lainnya </label>
+                    </Button>
+                    </ul>
+                  </Grid>
+                )}
+
                </Grid>
 
 
-              <Grid container spacing={ isDesktop ? 12 : 10} justifyContent="center" mt={6}>
+              <Grid container spacing={ isDesktop ? 5 : 10} justifyContent="center" marginLeft={isDesktop ? 4 : '-80px'} mt={6}>
               {isSearchEmpty ? (
                   <Empty description={t("component-empty.text")} 
                   style={{ 
@@ -298,7 +406,7 @@ export function Product() {
                         <div
                           className={`product-card flipped-card`}
                           style={{
-                            width: isDesktop ? "80%" : "90%",
+                            width: isDesktop ? "60%" : "90%",
                             height: isDesktop ? "600px" : '550px',
                             backgroundColor: "#f8f8f8",
                             borderRadius: "8px",
@@ -324,24 +432,65 @@ export function Product() {
                               zIndex: "1",
                             }}
                           >
+                            {e[activeLanguage].type === 'best' && (
+                              <img
+                                src={BestSeller}
+                                alt="Best Seller"
+                                style={{
+                                  position: "absolute",
+                                  top: -30,
+                                  left: isDesktop ? -70 : -10,
+                                  width: "100px", // Ukuran gambar
+                                  height: "auto",
+                                  zIndex: 2, // Pastikan gambar ada di atas elemen lain
+                                  transform: isCardFlipped[index]
+                                ? "rotateY(180deg)"
+                                : "none",
+                                }}
+                              />
+                            )}
                             <Typography
-                              id="list-menu"
-                              style={{
-                                textAlign: "center",
-                                // fontFamily: "'Brush Script MT', cursive",
-                                margin: 22,
-                                color: "white",
-                                fontSize: 35,
-                                transform: isCardFlipped[index]
-                                  ? "rotateY(180deg)"
-                                  : "none",
-                                transformStyle: "preserve-3d",
-                              }}
-                            >
-                              {t("title-kerupuk.text")}
-                            </Typography>
+                            id="list-menu"
+                            style={{
+                              textAlign: "center",
+                              // fontFamily: "'Brush Script MT', cursive",
+                              margin: 22,
+                              color: "white",
+                              fontSize: 35,
+                              transform: isCardFlipped[index] ? "rotateY(180deg)" : "none",
+                              transformStyle: "preserve-3d",
+                            }}
+                          >
+                            {e[activeLanguage].brand === "kulit-tahu"
+                              ? "Kulit Tahu"
+                              : e[activeLanguage].brand === "tepung-putri"
+                              ? "Tepung Putri"
+                              : e[activeLanguage].brand === "karung" || e[activeLanguage].brand === "kemasan" ? (
+                                "Asam Jawa"
+                              ) : [
+                                "kapal",
+                                "shinjuku",
+                                "napoleon",
+                                "bunga-merah",
+                                "layar",
+                                "kambing-lima",
+                                "tepung-putri",
+                              ].includes(e[activeLanguage].brand)
+                              ? t("title-kerupuk.text")
+                              : "Produk Lainnya"
+                            }
+                          </Typography>
+                            
                           </div>
-                          <p
+                          <img src={LogoPusatKerupuk} width={300} height={300} 
+                           style={{ 
+                            paddingTop: '70px',
+                            transform: isCardFlipped[index]
+                                ? "rotateY(180deg)"
+                                : "none",
+                              transformStyle: "preserve-3d", 
+                            }} />
+                          {/* <p
                             type="secondary"
                             style={{
                               width: "80%",
@@ -358,7 +507,7 @@ export function Product() {
                             {e[activeLanguage].deskripsi.split('\n').map((paragraph, index) => (
                               <p key={index}>{paragraph}</p>
                             ))}
-                          </p>
+                          </p> */}
                           <br />
                           <Button
                             id="kembali"
@@ -377,7 +526,7 @@ export function Product() {
                         <div
                           className={`product-card`}
                           style={{
-                            width: isDesktop ? "80%" : "340px",
+                            width: isDesktop ? "60%" : "340px",
                             height: isDesktop ? "600px" : '550px',
                             backgroundColor: "#f8f8f8",
                             borderRadius: "8px",
@@ -405,18 +554,53 @@ export function Product() {
                               zIndex: "1",
                             }}
                           >
+                            {e[activeLanguage].type === 'best' && (
+                              <img
+                                src={BestSeller}
+                                alt="Best Seller"
+                                style={{
+                                  position: "absolute",
+                                  top: -30,
+                                  left: isDesktop ? 330 : 250,
+                                  width: "100px", // Ukuran gambar
+                                  height: "auto",
+                                  zIndex: 2, // Pastikan gambar ada di atas elemen lain
+                                }}
+                              />
+                            )}
                             <Typography
-                              id="list-menu"
-                              style={{
-                                textAlign: "center",
-                                // fontFamily: "'Brush Script MT', cursive",
-                                margin: 22,
-                                color: "white",
-                                fontSize: 35,
-                              }}
-                            >
-                              {t("title-kerupuk.text")}
-                            </Typography>
+                            id="list-menu"
+                            style={{
+                              textAlign: "center",
+                              // fontFamily: "'Brush Script MT', cursive",
+                              margin: 22,
+                              color: "white",
+                              fontSize: 35,
+                              transform: isCardFlipped[index] ? "rotateY(180deg)" : "none",
+                              transformStyle: "preserve-3d",
+                            }}
+                          >
+                            {e[activeLanguage].brand === "kulit-tahu"
+                              ? "Kulit Tahu"
+                              : e[activeLanguage].brand === "tepung-putri"
+                              ? "Tepung Putri"
+                              : e[activeLanguage].brand === "karung" || e[activeLanguage].brand === "kemasan" ? (
+                                "Asam Jawa"
+                              ) : [
+                                "kapal",
+                                "shinjuku",
+                                "napoleon",
+                                "bunga-merah",
+                                "layar",
+                                "kambing-lima",
+                                "tepung-putri",
+                              ].includes(e[activeLanguage].brand)
+                              ? t("title-kerupuk.text")
+                              : "Produk Lainnya"
+                            }
+                          </Typography>
+
+
                           </div>
                           <img loading="lazy" src={e[activeLanguage].image} style={{ height: "300px" }} />
                           <h2
@@ -445,7 +629,7 @@ export function Product() {
             </div>
 
 
-            {!isLoading && !['kapal', 'shinjuku', 'napoleon', 'bunga-merah'].includes(selectedBrand) && 
+            {!isLoading && !['kapal', 'shinjuku', 'napoleon', 'bunga-merah', 'kulit-tahu', "layar", "kambing-lima", "tepung-putri", "kemasan", "karung", "lainnya"].includes(selectedBrand) && 
                 showMore < maxArtikel && filteredProducts.length >= showMore && (
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '100px' }}>
                     <Button
@@ -477,8 +661,66 @@ export function Product() {
                 )}
 
 
+<img 
+        src={ShoppingCart}
+        style={{
+          cursor: 'pointer',
+          color: 'gray',
+          maxWidth: '100%',
+          width: '85px',
+          height: '85px',
+          position: 'fixed',
+          bottom: isDesktop ? '100px' : '100px',
+          left: !isDesktop ? '8px' : '10px',
+          zIndex: 3,
+        }}
+        onClick={handleCartClick}
+      />
 
-                <FaCircleArrowUp 
+      <div style={{
+        position: 'fixed',
+        bottom: isDesktop ? '200px' : '200px', // Adjusted based on ShoppingCart height and desired space
+        left: !isDesktop ? '25px' : '30px',
+        zIndex: 2,
+        transition: 'opacity 0.5s ease-in-out',
+        opacity: showIcons ? 1 : 0,
+        // transform: `translateY(${showIcons ? '0px' : '20px'})`,
+      }}>
+        <a href="https://id.shp.ee/qFRcxzb" target="_blank">
+        <img 
+        id="shopee"
+          src={Shopee}
+          style={{
+            cursor: 'pointer',
+            color: 'gray',
+            maxWidth: '100%',
+            width: '45px',
+            height: '45px',
+            position: 'relative',
+            display: 'block',
+            marginBottom: '10px', // Space between Shopee and Tokped
+          }}
+        />
+        </a>
+        <a href="https://tokopedia.link/LvsFHThQNLb" target="_blank">
+        <img 
+        id="tokped"
+          src={Tokped}
+          style={{
+            cursor: 'pointer',
+            color: 'gray',
+            maxWidth: '100%',
+            width: '45px',
+            height: '45px',
+            position: 'relative',
+          }}
+        />
+        </a>
+      </div>
+
+
+
+                <img src={ArrowUp} 
                 style={{
                     cursor: 'pointer',
                     color: 'gray',
@@ -494,25 +736,100 @@ export function Product() {
                 />
 
 
-          <ReactWhatsapp id="icon-whatsapp" style={{ 
-                width: 0,
-                height: 0,
-                cursor: 'pointer'
-            }} 
-            number="082131131108" 
-            message={"Selamat datang di pusat kerupuk indonesia, mau tanya seputar kerupuk ????"}>
-           <img loading="lazy" src={IconWhatsapp} 
-              style={{
-                maxWidth: '100%', // Tambahkan ini
-                width: '70px',
-                height: '70px',
-                position: 'fixed', // Tetapkan posisi elemen
-                bottom: '20px',    // Atur jarak dari bawah
-                right: !isDesktop ? '20px' : '20px',     // Atur jarak dari kanan
-                // zIndex: '9999',   
-              }}
-            />
+<div>
+      {/* Ikon WhatsApp */}
+      <img 
+        id="whatsapp" 
+        loading="lazy" 
+        src={IconWhatsapp} 
+        onClick={handleClick} // Toggle visibility saat diklik
+        style={{
+          maxWidth: '100%',
+          width: '70px',
+          height: '70px',
+          position: 'fixed',
+          bottom: '20px',
+          right: isDesktop ? '20px' : '20px',
+          zIndex: 3,
+          cursor: 'pointer'
+        }}
+      />
+
+      {/* Opsi dengan posisi vertikal dan jarak */}
+      <div 
+        className={`options ${isOptionsVisible ? 'visible' : ''}`} 
+        style={{ position: 'fixed', bottom: '100px', right: '30px', zIndex: 4 }}
+      >
+        {/* Tombol Agen */}
+        {isOptionsVisible && (
+          <ReactWhatsapp
+          number="082160904267" 
+          message={"Halo Pusat Kerupuk Indonesia, boleh tau kerupuk apa saja yang ada ?"}
+          style={{ textDecoration: 'none', padding: 0, border: 'none', background: 'none' }}
+        >
+          <h4 id="agen" className="option-item agen">Agen</h4>
         </ReactWhatsapp>
+      )}
+
+      {/* Tombol Sales */}
+      {isOptionsVisible && (
+        <ReactWhatsapp 
+          number="+6282189018400" 
+          message={"Halo Pusat Kerupuk Indonesia, boleh tau kerupuk apa saja yang ada ?"}
+          style={{ textDecoration: 'none', padding: 0, border: 'none', background: 'none' }}
+        >
+          <h4 id="sales" className="option-item sales">Sales</h4>
+        </ReactWhatsapp>
+        )}
+      </div>
+
+      {/* CSS */}
+      <style jsx>{`
+    .options {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      pointer-events: none;
+    }
+
+    .options.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .option-item {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 3px 0; /* Jarak antara tombol Agen dan Sales */
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .option-item:hover {
+      transform: scale(1.1);
+    }
+
+    /* Posisi Agen dan Sales untuk jarak vertikal */
+    .agen {
+      transform: translateY(-20px); /* Geser Agen lebih ke atas */
+    }
+
+    /* Efek saat di hover pada Agen */
+    .agen:hover {
+      transform: translateY(-30px); /* Geser lebih ke atas saat dihover */
+    }
+
+    .sales {
+      transform: translateY(-10px); /* Geser Sales sedikit lebih ke atas dari posisi sebelumnya */
+    }
+  `}</style>
+    </div>
 
           <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 0 : '-40px' }}>
                 <Grid container style={{display: 'flex', justifyContent: 'center', paddingTop: isDesktop ? '60px' : '40px', paddingLeft: isDesktop ? 0 : 12 }}>

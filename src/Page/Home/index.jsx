@@ -40,13 +40,23 @@ import { AiOutlineAudit } from "react-icons/ai";
 import { FaPeopleLine } from "react-icons/fa6";
 import Shopping from '../../Image/shopping.gif';
 import { useTranslation } from "react-i18next";
-import Header from "../Header";
-import { FaCircleArrowUp } from "react-icons/fa6";
+import ArrowUp from '../../Image/arrow-up.gif';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Helmet } from "react-helmet";
-import { ScrollContext } from "../../Context";
 import { useScrollContext } from "../../Context";
+import AwesomeSlider from 'react-awesome-slider';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import 'react-awesome-slider/dist/styles.css';
+import Gambar1 from '../../Image/gambar1.jpeg';
+import Gambar2 from '../../Image/gambar2.jpeg';
+import Gambar3 from '../../Image/gambar3.jpeg';
+import Gambar4 from '../../Image/gambar4.jpeg';
+import Gambar5 from '../../Image/gambar5.jpeg';
+import Gambar6 from '../../Image/gambar6.jpeg';
+import ShoppingCart from '../../Image/shopping-cart.gif';
+import Shopee from '../../Image/shopee.png';
+import Tokped from '../../Image/tokped.png';
+import Toko from '../../Image/toko.jpeg';
 
 export function Home () {
     const theme = useTheme();
@@ -55,19 +65,21 @@ export function Home () {
     const [language, setLanguage] = useState('');
     const control = useAnimation();
     const [ ref, inView ] = useInView();
-    // const { scrollToWhatsApp, setScrollToWhatsApp } = useContext(ScrollContext);
-    const [animate, setAnimate] = useState(false);
     const { isShaking } = useScrollContext();
 
-    // useEffect(() => {
-    //     if (scrollToWhatsApp) {
-    //         setAnimate(true);
-    //         setTimeout(() => {
-    //             setAnimate(false);
-    //             setScrollToWhatsApp(false); // Reset state setelah animasi selesai
-    //         }, 1000); // Durasi animasi
-    //     }
-    // }, [scrollToWhatsApp, setScrollToWhatsApp]);
+    const [isOptionsVisible, setIsOptionsVisible] = useState(false);
+
+    const handleClick = () => {
+        setIsOptionsVisible(!isOptionsVisible);
+      };
+    
+    const AutoplaySlider = withAutoplay(AwesomeSlider);
+
+    const [showIcons, setShowIcons] = useState(false);
+
+    const handleCartClick = () => {
+      setShowIcons(!showIcons);
+    };
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -80,6 +92,8 @@ export function Home () {
         visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.5 } },
         hidden: { opacity: 0, scale: 0, x: 200 }
     }
+
+
 
 
     useEffect(() => {
@@ -115,90 +129,6 @@ export function Home () {
 
     return (
         <>
-          
-          <Helmet>
-            <title>Pusat Kerupuk Indonesia - Informasi Pusat Kerupuk</title>
-            <meta name="robots" content="index, follow" />
-            <meta name="description" content="Di Informasi Pusat Kerupuk, kami menyajikan beragam konten informatif mulai dari sejarah panjang kerupuk hingga ragam teknik pembuatan yang digunakan di berbagai daerah. Kami juga menyoroti inovasi-inovasi terbaru dalam industri kerupuk, serta tren dan eksperimen kuliner yang melibatkan kerupuk." />
-            <meta name="keywords" content="
-            kerupuk, 
-            aneka kerupuk, 
-            kerupuk napoleon, 
-            kerupuk bunga merah, 
-            kerupuk shinjuku, 
-            kerupuk cap kapal,
-            kerupuk jengkol,
-            kerupuk kasandra kuning,
-            kerupuk kecipir warna,
-            kerupuk kelabang kuning,
-            kerupuk mawar kuning,
-            kerupuk sisir warna,
-            kerupuk tersanjung warna,
-            kerupuk udang mas,
-            kerupuk kelabang cream,
-            kerupuk makaroni ayam,
-            kerupuk makaroni kuning,
-            kerupuk mawar cream,
-            kerupuk tempe bulat,
-            kerupuk tiga roda,
-            kerupuk udang mede,
-            kerupuk ceriping pedas,
-            kerupuk ikan putih,
-            kerupuk udang kuning,
-            kerupuk udang salju,
-            keruuk mangkok udang,
-            kerupuk mawar kuning,
-            kerupuk mawar pink,
-            kerupuk t-extra,
-            kerupuk kasandra warna,
-            kerupuk kepang mas,
-            kerupuk kepang warna,
-            kerupuk mawar pink,
-            kerupuk mawar putih,
-            kerupuk mawar warna,
-            kerupuk penting,
-            kerupuk manggar,
-            kerupuk rantai jumbo orange,
-            kerupuk rantai jumbo pink,
-            kerupuk rantai jumbo putih,
-            kerupuk rantai jumbo warna warni,
-            kerupuk rantai lemon warna,
-            kerupuk rantai putih sedang rasa,
-            kerupuk rantai sedang putih,
-            " />
-            <script type="application/ld+json">
-                  {`
-                     {
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        "name": "Pusat Kerupuk Indonesia",
-                        "url": "https://www.pusatkerupukindonesia.id",
-                        "logo": "https://www.pusatkerupukindonesia.id/logo_pusat_kerupuk.webp",
-                        "contactPoint": {
-                            "@type": "ContactPoint",
-                            "telephone": "+6282131131108",
-                            "contactType": "customer service"
-                        }
-                       }
-                    `}
-            </script>
-            <script type="application/ld+json">
-                    {`
-                    {
-                        "@context": "https://schema.org",
-                        "@type": "BreadcrumbList",
-                        "itemListElement": [
-                            {
-                                "@type": "ListItem",
-                                "position": 1,
-                                "name": "Home",
-                                "item": "https://www.pusatkerupukindonesia.id"
-                            },
-                        ]
-                    }
-                    `}
-                </script>
-         </Helmet>
 
         {!isLoading && (
             <div className="centered">
@@ -211,7 +141,7 @@ export function Home () {
             <>
           {/* <Header /> */}
           <div id="top-title">
-            <img loading="lazy" 
+            {/* <img loading="lazy" 
               src={Kerupuk1}  
               alt="gambar-logo-top"
                 style={{
@@ -221,7 +151,7 @@ export function Home () {
                     marginTop: isDesktop ? '-80px' : '195px',
                     zIndex: -2
                 }}
-            />
+            /> */}
             <div style={{ 
                 position: 'absolute', 
                 top: isDesktop ? '750px' : '490px', 
@@ -230,7 +160,7 @@ export function Home () {
                 }}>
                 {isDesktop ? 
                 <>
-                <a href="#selamat-datang">
+                {/* <a href="#selamat-datang">
                   <Button  className="button-header" style={{
                     backgroundColor: 'orange',
                     color: 'white',
@@ -240,7 +170,7 @@ export function Home () {
                     height: '40px',
                     fontSize: "11px"
                   }}>{t("baca.text")}</Button>
-                  </a>
+                  </a> */}
                 </> : null}
             </div>
         </div>
@@ -251,7 +181,7 @@ export function Home () {
                 display: isDesktop ? 'flex' : 'block',
                 // textAlign: 'center'
                 margin: '0 auto',
-                marginTop: isDesktop ? '-720px' : '220px'
+                marginTop: isDesktop ? '-620px' : '820px'
             }}
         >
             {!isDesktop ?
@@ -483,7 +413,7 @@ export function Home () {
                         paddingBottom: '20px'
                         }}>
                         {t("deskripsi-dukungan.text")}
-                    </Typography>5
+                    </Typography>
                 </div>
                 </> }
           </div>
@@ -498,7 +428,7 @@ export function Home () {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh', /* Menggunakan tinggi 100% dari viewport untuk membuatnya berada di tengah vertikal */
-                marginTop: isDesktop ? '400px' : '400px'
+                marginTop: isDesktop ? '100px' : '400px'
             }}> 
 
 
@@ -789,9 +719,9 @@ export function Home () {
             marginTop: isDesktop ? 0 : '100px'
           }}>
             <div style={{ width: '300px' }}>
-                <img loading="lazy" src={Layanan24} style={{
-                    width: '200px',
-                    height: '200px',
+                <img loading="lazy" src={Toko} style={{
+                    width: '300px',
+                    height: '250px',
                     justifyContent: 'center',
                     margin: '0 auto',
                     display: 'flex',
@@ -869,9 +799,9 @@ export function Home () {
                     marginTop: isDesktop ? 0 : '100px'
                 }}>
                     <div style={{ width: '300px' }}>
-                        <img loading="lazy" src={Layanan24} style={{
-                            width: '200px',
-                            height: '200px',
+                        <img loading="lazy" src={Toko} style={{
+                            width: '300px',
+                            height: '250px',
                             justifyContent: 'center',
                             margin: '0 auto',
                             display: 'flex',
@@ -1036,6 +966,7 @@ export function Home () {
                 </div>
             </div>
 
+            
             <Grid>
             <Container
                 sx={{
@@ -1055,7 +986,53 @@ export function Home () {
                     marginBottom: '20px', // Menambahkan margin bawah untuk memberikan jarak antara teks dan iframe
                 }}
                 >
-                Lokasi Kami
+                 {t("ulasan.text")}
+                </Typography>
+                           {/* <Carousel
+                            slides={slides}
+                            goToSlide={goToSlide}
+                            offsetRadius={offsetRadius}
+                            showNavigation={showNavigation}
+                            animationConfig={config}
+                        /> */}
+                        <AutoplaySlider
+                                play={true}
+                                cancelOnInteraction={false} // should stop playing on user interaction
+                                interval={6000}
+                                
+                            >
+                            <div data-src={Gambar1}  />
+                            <div data-src={Gambar2}  />
+                            <div data-src={Gambar3}  />
+                            <div data-src={Gambar4}  />
+                            <div data-src={Gambar5}  />
+                            <div data-src={Gambar6}  />
+                        </AutoplaySlider>
+            </Container>
+            </Grid>
+
+
+
+            <Grid>
+            <Container
+                sx={{
+                position: 'relative',
+                top: !isDesktop ? '300px' : '300px',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                }}
+            >
+                <Typography
+                sx={{
+                    textAlign: 'center',
+                    fontSize: !isDesktop ? '19px' : '22px',
+                    marginBottom: '20px', // Menambahkan margin bawah untuk memberikan jarak antara teks dan iframe
+                }}
+                >
+                 {t("lokasi.text")}
                 </Typography>
                 <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.9825765925907!2d98.68250797567575!3d3.591470350272966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131b9cbcae2c5%3A0xea27fd9f0b1c613d!2sJl.%20Veteran%20No.4A%2C%20Pusat%20Ps.%2C%20Kec.%20Medan%20Kota%2C%20Kota%20Medan%2C%20Sumatera%20Utara%2020231!5e0!3m2!1sid!2sid!4v1721881229293!5m2!1sid!2sid"
@@ -1076,9 +1053,66 @@ export function Home () {
 
 
 
+
+            <img 
+        src={ShoppingCart}
+        style={{
+          cursor: 'pointer',
+          color: 'gray',
+          maxWidth: '100%',
+          width: '85px',
+          height: '85px',
+          position: 'fixed',
+          bottom: isDesktop ? '100px' : '100px',
+          left: !isDesktop ? '8px' : '10px',
+          zIndex: 3,
+        }}
+        onClick={handleCartClick}
+      />
+
+      <div style={{
+        position: 'fixed',
+        bottom: isDesktop ? '200px' : '200px', // Adjusted based on ShoppingCart height and desired space
+        left: !isDesktop ? '25px' : '30px',
+        zIndex: 2,
+        transition: 'opacity 0.5s ease-in-out',
+        opacity: showIcons ? 1 : 0,
+        // transform: `translateY(${showIcons ? '0px' : '20px'})`,
+      }}>
+        <a href="https://id.shp.ee/qFRcxzb" target="_blank">
+        <img 
+        id="shopee"
+          src={Shopee}
+          style={{
+            cursor: 'pointer',
+            color: 'gray',
+            maxWidth: '100%',
+            width: '45px',
+            height: '45px',
+            position: 'relative',
+            display: 'block',
+            marginBottom: '10px', // Space between Shopee and Tokped
+          }}
+        />
+        </a>
+        <a href="https://tokopedia.link/LvsFHThQNLb" target="_blank">
+        <img 
+        id="tokped"
+          src={Tokped}
+          style={{
+            cursor: 'pointer',
+            color: 'gray',
+            maxWidth: '100%',
+            width: '45px',
+            height: '45px',
+            position: 'relative',
+          }}
+        />
+        </a>
+      </div>
             
            
-         <FaCircleArrowUp 
+         <img src={ArrowUp} 
          style={{
             cursor: 'pointer',
             color: 'gray',
@@ -1088,33 +1122,106 @@ export function Home () {
             position: 'fixed', // Tetapkan posisi elemen
             bottom: '25px',    // Atur jarak dari bawah
             left: !isDesktop ? '20px' : '20px',     // Atur jarak dari kanan
-            // zIndex: '9999',   
+            zIndex: 3,   
           }}
           onClick={scrollToTop}
          />
 
+<div>
+      {/* Ikon WhatsApp */}
+      <img 
+        id="whatsapp" 
+        loading="lazy" 
+        src={IconWhatsapp} 
+        onClick={handleClick} // Toggle visibility saat diklik
+        style={{
+          maxWidth: '100%',
+          width: '70px',
+          height: '70px',
+          position: 'fixed',
+          bottom: '20px',
+          right: isDesktop ? '20px' : '20px',
+          zIndex: 3,
+          cursor: 'pointer'
+        }}
+      />
 
-            <ReactWhatsapp id="icon-whatsapp" style={{ 
-                width: 0,
-                height: 0,
-                cursor: 'pointer'
-            }} 
-            number="082131131108" 
-            message={"Selamat datang di pusat kerupuk indonesia, mau tanya seputar kerupuk ????"}>
-           <img className={isShaking ? 'shake' : ''} loading="lazy" src={IconWhatsapp} 
-              style={{
-                maxWidth: '100%', // Tambahkan ini
-                width: '70px',
-                height: '70px',
-                position: 'fixed', // Tetapkan posisi elemen
-                bottom: '20px',    // Atur jarak dari bawah
-                right: !isDesktop ? '20px' : '20px',     // Atur jarak dari kanan
-                // zIndex: '9999',  
-                // transition: 'transform 0.5s ease-in-out',
-                // transform: animate ? 'translateY(-100px)' : 'translateY(0)'  
-              }}
-            />
-        </ReactWhatsapp>
+      {/* Opsi dengan posisi vertikal dan jarak */}
+      <div 
+        className={`options ${isOptionsVisible ? 'visible' : ''}`} 
+        style={{ position: 'fixed', bottom: '100px', right: '30px', zIndex: 4 }}
+      >
+        {/* Tombol Agen */}
+        {isOptionsVisible && (
+          <ReactWhatsapp
+            number="082160904267" 
+            message={"Halo Pusat Kerupuk Indonesia, boleh tau kerupuk apa saja yang ada ?"}
+            style={{ textDecoration: 'none', padding: 0, border: 'none', background: 'none' }}
+          >
+            <h4 id="agen" className="option-item agen">Agen</h4>
+          </ReactWhatsapp>
+        )}
+
+        {/* Tombol Sales */}
+        {isOptionsVisible && (
+          <ReactWhatsapp 
+            number="+6282189018400" 
+            message={"Halo Pusat Kerupuk Indonesia, boleh tau kerupuk apa saja yang ada ?"}
+            style={{ textDecoration: 'none', padding: 0, border: 'none', background: 'none' }}
+          >
+            <h4 id="sales" className="option-item sales">Sales</h4>
+          </ReactWhatsapp>
+        )}
+      </div>
+
+      {/* CSS */}
+      <style jsx>{`
+    .options {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      pointer-events: none;
+    }
+
+    .options.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .option-item {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 3px 0; /* Jarak antara tombol Agen dan Sales */
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .option-item:hover {
+      transform: scale(1.1);
+    }
+
+    /* Posisi Agen dan Sales untuk jarak vertikal */
+    .agen {
+      transform: translateY(-20px); /* Geser Agen lebih ke atas */
+    }
+
+    /* Efek saat di hover pada Agen */
+    .agen:hover {
+      transform: translateY(-30px); /* Geser lebih ke atas saat dihover */
+    }
+
+    .sales {
+      transform: translateY(-10px); /* Geser Sales sedikit lebih ke atas dari posisi sebelumnya */
+    }
+  `}</style>
+    </div>
+
 
 
         <div style={{ width: '100%', backgroundColor: '#424045', height: isDesktop ? '220px' : '300px', marginTop:  isDesktop ? 400 : '400px' }}>
@@ -1150,6 +1257,7 @@ export function Home () {
             </div>`
 
             <div style={{ width: '100%', backgroundColor: '#2b292c', height: isDesktop ? '520px' : '1000px', marginTop:  isDesktop ? '-30px' : '-30px' }}>
+             {/* <ParticlesComponent /> */}
                 <Grid container spacing={2} display={isDesktop ? 0 : 'block'} justifyContent={'center'} alignItems={'center'} pt={8} pl={isDesktop ? 0 : 4}>
                     <Grid item xs={4}>
                         <img loading="lazy" src={LogoPusatKerupuk} width={100} height={100} />
@@ -1244,6 +1352,7 @@ export function Home () {
             <div style={{ width: '100%', backgroundColor: '#1f1e21', height: isDesktop ? '90px' : '200px', marginTop:  isDesktop ? '-10px' : 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <span style={{ color: 'white' }}><label style={{ color:  "#ff9c00"}}>@2024</label>{t("pusat-kerupuk-indonesia.text")}</span>
             </div>
+
             </>
             )}
         </>

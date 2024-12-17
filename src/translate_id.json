@@ -114,10 +114,10 @@
      "text": "Penyedia Aneka Kerupuk"
     },
     "pelayanan-kami": {
-     "text": "24/7 Pelayanan Kami"
+     "text": "Beragam Kerupuk"
     },
     "deskripsi-pelayanan-kami": {
-     "text": "Nikmati layanan penjualan produk kerupuk 24/7 dari Pusat Kerupuk Indonesia! Kami siap melayani Anda kapan saja, di mana saja, dengan beragam pilihan kerupuk Nusantara yang autentik dan berkualitas. Segera temukan kelezatan kerupuk favorit Anda tanpa batasan waktu, hanya di Pusat Kerupuk Indonesia."
+     "text": "Pusat Kerupuk Indonesia adalah destinasi utama bagi pecinta kerupuk yang menghadirkan beragam pilihan kerupuk khas Nusantara. Mulai dari kerupuk udang, kerupuk kulit, hingga kerupuk ikan, semuanya dibuat dengan resep tradisional yang mempertahankan cita rasa autentik setiap daerah. Dengan kualitas bahan terbaik dan proses produksi higienis, Pusat Kerupuk Indonesia tidak hanya menawarkan kelezatan tetapi juga pengalaman menikmati keanekaragaman kuliner Indonesia. Cocok untuk teman makan atau camilan, kerupuk-kerupuk ini siap memanjakan lidah Anda dalam setiap gigitan!"
     },
     "standarisasi-produk": {
      "text": "Standarisasi Produk Kami"
@@ -288,7 +288,7 @@
      "text": "informasi terbaru seputar berbagai jenis kerupuk, proses pembuatan, variasi rasa, serta tips dan trik untuk menikmati kerupuk dengan lebih nikmat."
     },
     "cap-kapal": {
-     "text": "Cap Kapal"
+     "text": "Kapal Layar"
     },
     "shinjuku": {
      "text": "Shinjuku"
@@ -299,8 +299,11 @@
     "bunga-merah": {
      "text": "Bunga Merah"
     },
+    "lainnya": {
+     "text": "Produk Lainnya"
+    },
     "button-kapal": {
-     "text": "Cap Kapal"
+     "text": "Kapal Layar"
     },
     "button-shinjuku": {
      "text": "Shinjuku"
@@ -311,10 +314,19 @@
     "button-bunga-merah": {
      "text": "Bunga Merah"
     },
+    "button-lain": {
+     "text": "Produk Lainnya"
+    },
     "component-empty": {
      "text": "Tidak ada"
     },
     "button-lainnya": {
      "text": "Lainnya"
+    },
+    "ulasan": {
+        "text": "Ulasan Pelanggan Kami"
+    },
+    "lokasi": {
+        "text": "Lokasi Kami"
     }
 }

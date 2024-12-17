@@ -5,6 +5,7 @@ import Artikel from './Page/Artikel';
 import Header from './Page/Header';
 import { Product } from './Page/Product';
 import { ScrollProvider } from './Context';
+import { AnimatePresence } from "framer-motion";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <Route path='/produk' element={<Product />} />
       </Routes>
     </BrowserRouter>
-  </ScrollProvider>
+    </ScrollProvider>
   );
 }
 
