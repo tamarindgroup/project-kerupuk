@@ -57,6 +57,7 @@ import ShoppingCart from '../../Image/shopping-cart.gif';
 import Shopee from '../../Image/shopee.png';
 import Tokped from '../../Image/tokped.png';
 import Toko from '../../Image/toko.jpeg';
+import Natal from '../../Image/desain41.png';
 
 export function Home () {
     const theme = useTheme();
@@ -174,6 +175,20 @@ export function Home () {
                 </> : null}
             </div>
         </div>
+        <Grid 
+        item 
+        xs={12} md={6} // Pastikan lebar penuh pada mobile, 6 kolom pada desktop
+        style={{ 
+            display: 'flex', 
+            flexDirection: 'column',
+            alignItems: 'center',  // Menempatkan konten di tengah secara horizontal
+            justifyContent: 'center', // Menempatkan konten di tengah secara vertikal
+            marginBottom: isDesktop ? '0' : '0', // Jarak antar kolom pada tampilan mobile
+            marginTop: isDesktop ? "100px" : "650px"
+        }}
+        >
+        <img src={Natal} alt="Natal" style={{ maxWidth: '100%', height: 'auto' }} />
+        </Grid>
         <div className="block-fitur" 
             style={{
                 width: isDesktop ? '100%' : '100%',
@@ -181,7 +196,7 @@ export function Home () {
                 display: isDesktop ? 'flex' : 'block',
                 // textAlign: 'center'
                 margin: '0 auto',
-                marginTop: isDesktop ? '-620px' : '820px'
+                marginTop: isDesktop ? '-620px' : '220px'
             }}
         >
             {!isDesktop ?
@@ -1154,7 +1169,7 @@ export function Home () {
         {/* Tombol Agen */}
         {isOptionsVisible && (
           <ReactWhatsapp
-            number="082160904267" 
+            number="+6282160904267" 
             message={"Halo Pusat Kerupuk Indonesia, boleh tau kerupuk apa saja yang ada ?"}
             style={{ textDecoration: 'none', padding: 0, border: 'none', background: 'none' }}
           >

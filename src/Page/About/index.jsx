@@ -448,7 +448,7 @@ export function About() {
         {/* Tombol Agen */}
         {isOptionsVisible && (
           <ReactWhatsapp
-          number="082160904267" 
+          number="+6282160904267" 
           message={"Halo Pusat Kerupuk Indonesia, boleh tau kerupuk apa saja yang ada ?"}
           style={{ textDecoration: 'none', padding: 0, border: 'none', background: 'none' }}
         >
