@@ -128,12 +128,12 @@ export function About() {
 
           <div id="get" style={{ 
             width: isDesktop ? '100%' : '100%',
-            marginTop: isDesktop ? '100px' : '200px',
+            marginTop: isDesktop ? '100px' : '220px',
             display: isDesktop ? 'flex' : 'block',
             justifyContent: 'center'
             }}>
              
-             <div style={{ position: isDesktop ? 'relative' : 'relative', width: isDesktop ? '40%' : '100%', height: isDesktop ? '440px' : '400px' }}>
+             <div style={{ position: isDesktop ? 'relative' : 'relative', width: isDesktop ? '40%' : '100%', height: isDesktop ? '440px' : '500px' }}>
                 <div
                     style={{
                     position: 'absolute',
@@ -161,11 +161,12 @@ export function About() {
                     width: isDesktop ? '100%' : '80%',
                     color: 'white', 
                     }}>
-                    <h4 style={{ margin: 0 }}>{t("gerakan-hebat.text")}</h4>
-                    <h1 style={{ margin: 0 }}>{t("produk.text")}</h1>
-                    <p style={{ paddingTop: isDesktop ? '5px' : 0, width: isDesktop ? '300px' : '250px' }}>{t("deskripsi-gerakan.text")}</p>
-                    <h2>{t("hubungi-kami.text")}</h2>
-                    <h1>082131131108</h1>
+                    <label id="deskripsi_kerupuk" style={{ margin: 0, fontSize: '40px' }}>{t("gerakan-hebat.text")}</label>
+                    <br/>
+                    <label id="deskripsi_kerupuk" style={{ margin: 0, fontSize: '30px' }}>{t("produk.text")}</label>
+                    <p id="deskripsi_kerupuk" style={{ paddingTop: isDesktop ? '5px' : 0, width: isDesktop ? '300px' : '250px', fontSize: '20px' }}>{t("deskripsi-gerakan.text")}</p>
+                    <label id="deskripsi_kerupuk" style={{ fontSize: '40px' }}>{t("hubungi-kami.text")}</label>
+                    <h4>082160904267</h4>
                     <label style={{ paddingLeft: isDesktop ? '80px' : '90px' }}>{t("atau.text")}</label>
                     <br />
                     <Button href="#button_contact" style={{ 
@@ -175,7 +176,7 @@ export function About() {
                         width: '220px',
                         height: '50px',
                         borderRadius: '20px',
-                        marginTop: isDesktop ? '30px' : '20px' 
+                        marginTop: isDesktop ? '10px' : '20px' 
                         }}>{t("kontak-kami.text")}</Button>
                 </div>
                 </div>
@@ -214,7 +215,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>{t("point-1.text")}</label>
+                                <label id="deskripsi_kerupuk">{t("point-1.text")}</label>
                             </div>
                         </div>
                         <div>
@@ -223,7 +224,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>{t("point-2.text")}</label>
+                                <label id="deskripsi_kerupuk">{t("point-2.text")}</label>
                             </div>
                         </div>
                         <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
@@ -231,7 +232,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>{t("point-3.text")}</label>
+                                <label id="deskripsi_kerupuk">{t("point-3.text")}</label>
                             </div>
                         </div>
                         <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
@@ -239,7 +240,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>{t("point-4.text")}</label>
+                                <label id="deskripsi_kerupuk">{t("point-4.text")}</label>
                             </div>
                         </div>
                         </div>
@@ -251,7 +252,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>{t("point-5.text")}</label>
+                                <label id="deskripsi_kerupuk">{t("point-5.text")}</label>
                             </div>
                         </div>
                         <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
@@ -259,7 +260,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>{t("point-6.text")}</label>
+                                <label id="deskripsi_kerupuk">{t("point-6.text")}</label>
                             </div>
                         </div>
                         <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
@@ -267,7 +268,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>{t("point-7.text")}</label>
+                                <label id="deskripsi_kerupuk">{t("point-7.text")}</label>
                             </div>
                         </div>
                         <div style={{ paddingTop: '10px', display: 'flex', alignItems: 'center' }}>
@@ -275,7 +276,7 @@ export function About() {
                                 <TbArrowBadgeRightFilled height={100} width={100} />
                             </div>
                             <div>
-                                <label>{t("point-8.text")}</label>
+                                <label id="deskripsi_kerupuk">{t("point-8.text")}</label>
                             </div>
                         </div>
                     </div>
@@ -523,7 +524,7 @@ export function About() {
                         <img loading="lazy" src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
-                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082160904267', '085935331734']} /></span>
                         </div>
                     </div>
                 </Grid>

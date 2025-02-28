@@ -232,7 +232,7 @@ export function Product() {
           
           <div
               style={{ 
-                marginTop: isDesktop ? 100 : 300, 
+                marginTop: isDesktop ? 100 : 650, 
                 display: "block", 
                 marginLeft: isDesktop ? 10 : -2,
                 width: isDesktop ? "100%" : '100%', 
@@ -838,7 +838,7 @@ export function Product() {
                         <img loading="lazy" src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
-                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082160904267', '085935331734']} /></span>
                         </div>
                     </div>
                 </Grid>

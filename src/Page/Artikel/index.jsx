@@ -63,7 +63,7 @@ export const Artikel =  () => {
             <img src={Waisak} style={{ width: isDesktop ? '30%' : '80%', margin: !isDesktop ? 'auto' : 'auto', borderRadius: '20px' }}  /> 
            </div>  */}
 
-          <Grid container display={ !isDesktop ? 'block' : 'flex'} spacing={1} justifyContent="center" style={{ marginTop: !isDesktop ? '200px' : '10px' }}>
+          <Grid container display={ !isDesktop ? 'block' : 'flex'} spacing={1} justifyContent="center" style={{ marginTop: !isDesktop ? '600px' : '10px' }}>
                <Grid item xs={ !isDesktop ? 10 : 12}>
                 <div style={{ paddingLeft: !isDesktop ? '25px' : '22px' }}>
                 <h1 id="title-top-artikel" style={{ textAlign: 'left', color: 'gray' }}>{t("seputar.text")}</h1>
@@ -267,7 +267,7 @@ export const Artikel =  () => {
                         <img loading="lazy" src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
-                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082160904267', '085935331734']} /></span>
                         </div>
                     </div>
                 </Grid>

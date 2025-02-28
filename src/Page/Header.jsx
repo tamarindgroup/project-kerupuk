@@ -50,6 +50,7 @@ import Kerupuk2 from '../Image/kerupuk2.jpg';
 import Kerupuk3 from '../Image/kerupuk3.jpg';
 import TextKerupuk from '../Image/distributor.png'
 import TextKerupuk2 from '../Image/TextKerupuk2.png'
+import LogoKerupuk from '../Image/logo_kerupuk.png';
 
 const Header = () => {
     const theme = useTheme();
@@ -257,7 +258,7 @@ const Header = () => {
            <div 
            style={{
                backgroundColor: 'rgba(255, 255, 255, 0.1)', // Slight white transparency
-               height: '100px',
+               height: '150px',
                backdropFilter: 'blur(10px)', // Adds the glass-like blur effect
                borderRadius: '10px', // Optional: Add rounded corners
                border: '1px solid rgba(255, 255, 255, 0.2)', // Optional: Slight border for better visibility
@@ -275,11 +276,11 @@ const Header = () => {
                        style={{ display: "flex", textAlign: "center", marginBottom: '200px' }}
                        >
                        {/* Logo dan Teks */}
-                       <Grid item style={{ display: "flex", alignItems: "center", marginTop: '-10px' }}>
-                           <img src={LogoPusatKerupuk} width={80} height={80} alt="Logo" />
-                           <h2 className="judul-kerupuk" style={{ marginLeft: 16, fontSize: '40px' }}>
+                       <Grid item style={{ display: "flex", alignItems: "center", marginTop: '30px' }}>
+                           <img src={LogoKerupuk} width={400} height={100} alt="Logo" />
+                           {/* <h2 className="judul-kerupuk" style={{ marginLeft: 16, fontSize: '40px' }}>
                            {t("pusat-kerupuk.text")}
-                           </h2>
+                           </h2> */}
                        </Grid>
    
                        {/* Menu Bar */}
@@ -287,16 +288,16 @@ const Header = () => {
                            <nav style={{ display: "flex", marginLeft: 182, fontSize: '25px' }}>
                            <ul style={{ display: "flex", listStyleType: "none", margin: 0, padding: 0 }}>
                                <li style={{ margin: "0 20px" }}>
-                               <a className="menu-kerupuk" href="/" style={{ textDecoration: "none" }}>{t("Halaman-utama.text")}</a>
+                               <a  href="/" style={{ textDecoration: "none", color: 'gray', fontSize: '30px', fontWeight: 800 }}>{t("Halaman-utama.text")}</a>
                                </li>
                                <li style={{ margin: "0 20px" }}>
-                               <a className="menu-kerupuk" href="/produk" style={{ textDecoration: "none"}}>{t("Produk.text")}</a>
+                               <a  href="/produk" style={{ textDecoration: "none", color: 'gray', fontSize: '30px', fontWeight: 800}}>{t("Produk.text")}</a>
                                </li>
                                <li style={{ margin: "0 20px" }}>
-                               <a className="menu-kerupuk" href="/about" style={{ textDecoration: "none"}}>{t("Tentang.text")}</a>
+                               <a  href="/about" style={{ textDecoration: "none", color: 'gray', fontSize: '30px', fontWeight: 800}}>{t("Tentang.text")}</a>
                                </li>
                                <li style={{ margin: "0 20px" }}>
-                               <a className="menu-kerupuk" href="/artikel" style={{ textDecoration: "none" }}>{t("Artikel.text")}</a>
+                               <a  href="/artikel" style={{ textDecoration: "none", color: 'gray', fontSize: '30px', fontWeight: 800 }}>{t("Artikel.text")}</a>
                                </li>
                            </ul>
                            </nav>
@@ -345,7 +346,7 @@ const Header = () => {
                        zIndex: 999, // Tetap terlihat di atas elemen lain
                    }}
                >
-                   <span
+                   {/* <span
                    id="marquee"
                        style={{
                            display: 'inline-block',
@@ -355,7 +356,7 @@ const Header = () => {
                        }}
                    >
                        Kerupuk Indonesia - Lezat, Renyah, dan Berkualitas Tinggi! | Aneka Kerupuk Lengkap | Distributor Kerupuk | Kerupuk Shinjuku | Kerupuk Kapal Layar | Kerupuk Kambing Lima | Kerupuk Bunga Merah | Kerupuk Layar
-                   </span>
+                   </span> */}
                </div>
    
                {/* Tambahkan animasi CSS di file utama atau gunakan style inline */}
@@ -372,25 +373,36 @@ const Header = () => {
                `}
                </style>
    
-               <div
-               style={{
-                   width: "100%",
-                   height: "800px",
-                   backgroundImage: `url(${images[currentImageIndex]})`, // Mengatur gambar latar
-                   backgroundSize: "cover",
-                   backgroundRepeat: "no-repeat",
-                   backgroundPosition: "center",
-                   marginTop: "140px",
-                   transition: "background-image 1s ease-in-out", // Efek transisi
-                   display: "flex", // Gunakan Flexbox
-                   flexDirection: "column", // Atur arah Flexbox ke kolom
-                   justifyContent: "center", // Pusatkan secara vertikal
-                   alignItems: "center", // Pusatkan secara horizontal
-               }}
-           >
-               <img src={TextKerupuk} height={200} width={1000} alt="Text Kerupuk" style={{ marginBottom: "20px" }} />
-               <img src={TextKerupuk2} height={200} width={900} alt="Text Kerupuk 2" />
-           </div>
+               {/* <div
+                style={{
+                    display: "flex", // Flexbox pada elemen induk
+                    justifyContent: "center", // Pusatkan secara horizontal
+                    alignItems: "center", // Pusatkan secara vertikal
+                    height: "100vh", // Pastikan elemen memenuhi tinggi viewport
+                    width: "100%", // Pastikan elemen memenuhi lebar viewport
+                    marginTop: '130px'
+                }}
+            > */}
+                {/* <div
+                    style={{
+                        width: "70%",
+                        height: "800px",
+                        backgroundImage: `url(${images[currentImageIndex]})`, // Mengatur gambar latar
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        transition: "background-image 1s ease-in-out", // Efek transisi
+                        display: "flex", // Gunakan Flexbox
+                        flexDirection: "column", // Atur arah Flexbox ke kolom
+                        justifyContent: "center", // Pusatkan secara vertikal
+                        alignItems: "center", // Pusatkan secara horizontal
+                        borderRadius: '20px'
+                    }}
+                >
+                    <img src={TextKerupuk} height={200} width={1000} alt="Text Kerupuk" style={{ marginBottom: "20px" }} />
+                    <img src={TextKerupuk2} height={200} width={900} alt="Text Kerupuk 2" />
+                </div> */}
+            {/* </div> */}
            </>
         ) : (
             <div className="header" style={{
@@ -466,8 +478,8 @@ const Header = () => {
                     justifyContent: 'center', 
                     margin: !isDesktop ? 10 : 0
                 }}>
-                    <img loading="lazy" src={LogoPusatKerupuk} height={isDesktop ? 90 : 50} width={isDesktop ? 100 : 50} style={{ marginRight: '10px' }} />
-                    <label id="title-pusat-kerupuk" style={{ fontSize: isDesktop ? '22px' : '20px' }}>{t("pusat-kerupuk.text")}</label>
+                    <img loading="lazy" src={LogoKerupuk} height={isDesktop ? 90 : 80} width={isDesktop ? 100 : 320} style={{ marginRight: '0' }} />
+                    {/* <label id="title-pusat-kerupuk" style={{ fontSize: isDesktop ? '22px' : '20px' }}>{t("pusat-kerupuk.text")}</label> */}
                 </div>
                 <div className="hub"
                     style={{ 
@@ -489,7 +501,7 @@ const Header = () => {
                             />
                             <div style={{ display: 'block', marginTop: isDesktop ? 0 : '-1px' }}>
                                 <Typography style={{ paddingLeft: '12px', fontSize: isDesktop ? 17 : 12, fontWeight: 700 }}>{t("Telpon-kami.text")}</Typography>
-                                <Typography style={{ paddingLeft: '12px', fontSize: isDesktop ? 17 : 10 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></Typography>
+                                <Typography style={{ paddingLeft: '12px', fontSize: isDesktop ? 17 : 10 }}><Textra effect="rightLeft" data={['082160904267', '085935331734']} /></Typography>
                                
                             </div>
                         </Grid>
@@ -730,7 +742,7 @@ const Header = () => {
                             </motion.div>
                             </motion.nav>
 
-                            <div
+                            {/* <div
                             style={{
                                 width: "100%",
                                 height: "400px",
@@ -748,7 +760,7 @@ const Header = () => {
                         >
                             <img src={TextKerupuk} height={100} width={400} alt="Text Kerupuk" style={{ marginBottom: "20px" }} />
                             <img src={TextKerupuk2} height={100} width={400} alt="Text Kerupuk 2" />
-                        </div>
+                        </div> */}
                      
                    </>  
                 }

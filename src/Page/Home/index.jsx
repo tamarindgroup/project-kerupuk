@@ -2,7 +2,7 @@ import React, {useEffect, useState, useContext} from "react";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Grid, Typography, Button, Container } from "@mui/material";
-import Kerupuk1 from '../../Image/kerupuk_1.png';
+import puasa from '../../Image/puasa2.png';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import GppGoodIcon from '@mui/icons-material/GppGood';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
@@ -57,7 +57,8 @@ import ShoppingCart from '../../Image/shopping-cart.gif';
 import Shopee from '../../Image/shopee.png';
 import Tokped from '../../Image/tokped.png';
 import Toko from '../../Image/toko.jpeg';
-import Natal from '../../Image/desain41.png';
+import Proses from '../../Image/bg-proses.jpg'
+
 
 export function Home () {
     const theme = useTheme();
@@ -140,19 +141,7 @@ export function Home () {
         )}
         {isLoading && (
             <>
-          {/* <Header /> */}
           <div id="top-title">
-            {/* <img loading="lazy" 
-              src={Kerupuk1}  
-              alt="gambar-logo-top"
-                style={{
-                    height: isDesktop ? '800px' : '300px',
-                    width: isDesktop ? '100%' : '100%',
-                    position: 'relative',
-                    marginTop: isDesktop ? '-80px' : '195px',
-                    zIndex: -2
-                }}
-            /> */}
             <div style={{ 
                 position: 'absolute', 
                 top: isDesktop ? '750px' : '490px', 
@@ -161,40 +150,27 @@ export function Home () {
                 }}>
                 {isDesktop ? 
                 <>
-                {/* <a href="#selamat-datang">
-                  <Button  className="button-header" style={{
-                    backgroundColor: 'orange',
-                    color: 'white',
-                    marginTop: '20px',
-                    borderRadius: '19px',
-                    width: '150px',
-                    height: '40px',
-                    fontSize: "11px"
-                  }}>{t("baca.text")}</Button>
-                  </a> */}
                 </> : null}
             </div>
         </div>
         <Grid 
         item 
-        xs={12} md={6} // Pastikan lebar penuh pada mobile, 6 kolom pada desktop
+        xs={12} md={6} 
         style={{ 
             display: 'flex', 
             flexDirection: 'column',
-            alignItems: 'center',  // Menempatkan konten di tengah secara horizontal
-            justifyContent: 'center', // Menempatkan konten di tengah secara vertikal
-            marginBottom: isDesktop ? '0' : '0', // Jarak antar kolom pada tampilan mobile
+            alignItems: 'center',  
+            justifyContent: 'center', 
+            marginBottom: isDesktop ? '0' : '0', 
             marginTop: isDesktop ? "100px" : "650px"
         }}
         >
-        <img src={Natal} alt="Natal" style={{ maxWidth: '100%', height: 'auto' }} />
         </Grid>
-        <div className="block-fitur" 
+        {/* <div className="block-fitur" 
             style={{
                 width: isDesktop ? '100%' : '100%',
                 position: 'relative',
                 display: isDesktop ? 'flex' : 'block',
-                // textAlign: 'center'
                 margin: '0 auto',
                 marginTop: isDesktop ? '-620px' : '220px'
             }}
@@ -209,7 +185,7 @@ export function Home () {
                 display: !isDesktop ? 'block' : 0,
                 height: '280px',
                 paddingTop: !isDesktop ? '20px' : '10px' 
-                }}> {/* Menambahkan margin */}
+                }}> 
                 <RocketLaunchIcon style={{
                     height: isDesktop ? '100px' : '60px',
                     width: isDesktop ? '300px' : '200px',
@@ -238,7 +214,7 @@ export function Home () {
                 display: !isDesktop ? 'block' : 0,
                 height: '280px',
                 paddingTop: !isDesktop ? '20px' : '10px' 
-             }}> {/* Menambahkan margin */}
+             }}> 
                 <GppGoodIcon style={{
                     height: isDesktop ? '100px' : '60px',
                     width: isDesktop ? '300px' : '200px',
@@ -267,7 +243,7 @@ export function Home () {
                 display: !isDesktop ? 'block' : 0,
                 height: '280px',
                 paddingTop: !isDesktop ? '20px' : '10px'
-             }}> {/* Menambahkan margin */}
+             }}> 
                 <LocalAtmIcon style={{
                     height: isDesktop ? '100px' : '60px',
                     width: isDesktop ? '300px' : '200px',
@@ -296,7 +272,7 @@ export function Home () {
                 display: !isDesktop ? 'block' : 0,
                 height: '280px',
                 paddingTop: !isDesktop ? '20px' : '10px' 
-             }}> {/* Menambahkan margin */}
+             }}> 
                 <SupportAgentIcon style={{
                     height: isDesktop ? '100px' : '60px',
                     width: isDesktop ? '300px' : '200px',
@@ -328,7 +304,7 @@ export function Home () {
                     display: !isDesktop ? 'block' : 0,
                     height: '280px',
                     marginTop: !isDesktop ? '20px' : '750px' 
-                    }}> {/* Menambahkan margin */}
+                    }}> 
                     <RocketLaunchIcon style={{
                         height: isDesktop ? '100px' : '60px',
                         width: isDesktop ? '300px' : '200px',
@@ -355,7 +331,7 @@ export function Home () {
                     display: !isDesktop ? 'block' : 0,
                     height: '280px',
                     marginTop: !isDesktop ? '20px' : '750px' 
-                }}> {/* Menambahkan margin */}
+                }}>
                     <GppGoodIcon style={{
                         height: isDesktop ? '100px' : '60px',
                         width: isDesktop ? '300px' : '200px',
@@ -382,7 +358,7 @@ export function Home () {
                     display: !isDesktop ? 'block' : 0,
                     height: '280px',
                     marginTop: !isDesktop ? '20px' : '750px'
-                }}> {/* Menambahkan margin */}
+                }}> 
                     <LocalAtmIcon style={{
                         height: isDesktop ? '100px' : '60px',
                         width: isDesktop ? '300px' : '200px',
@@ -409,7 +385,7 @@ export function Home () {
                     display: !isDesktop ? 'block' : 0,
                     height: '280px',
                     marginTop: !isDesktop ? '20px' : '750px'
-                }}> {/* Menambahkan margin */}
+                }}> 
                     <SupportAgentIcon style={{
                         height: isDesktop ? '100px' : '60px',
                         width: isDesktop ? '300px' : '200px',
@@ -431,11 +407,27 @@ export function Home () {
                     </Typography>
                 </div>
                 </> }
-          </div>
+          </div> */}
 
           {/* <div style={{ display: 'flex', top: !isDesktop ? '150px' : '200px', position: 'relative', marginBottom: isDesktop ? '500px' : '500px' }}>
             <img src={Waisak} style={{ width: isDesktop ? '30%' : '80%', margin: !isDesktop ? 'auto' : 'auto', borderRadius: '20px' }}  /> 
           </div>  */}
+
+            <Grid 
+            container 
+            justifyContent="center" 
+            alignItems="center" 
+            style={{ height: isDesktop ? '100vh' : 0 }} // Agar selalu di tengah layar
+            >
+            <img 
+                src={puasa} 
+                style={{ 
+                height: isDesktop ? 500 : 400, 
+                width: isDesktop ? 400 : 300, 
+                marginTop: isDesktop ? 100 : -400 
+                }} 
+            />
+            </Grid>
 
          
           <div style={{
@@ -443,7 +435,7 @@ export function Home () {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh', /* Menggunakan tinggi 100% dari viewport untuk membuatnya berada di tengah vertikal */
-                marginTop: isDesktop ? '100px' : '400px'
+                marginTop: isDesktop ? '10px' : '360px',
             }}> 
 
 
@@ -461,14 +453,15 @@ export function Home () {
                     alignItems: 'center', // Mengatur elemen div dengan kelas "barang" ke tengah
                     flexDirection: 'column' // Mengubah arah layout menjadi vertikal
                 }}>
-                    <h3 style={{ 
+                    <label style={{ 
                         margin: 0, 
-                        color: 'Gray', 
+                        color: '#353535',
                         zIndex: 1, 
                         fontSize: '39px', 
+                        fontWeight: 800,
                         // position: 'relative',
                         marginTop: !isDesktop ? '120px' : '350px',
-                        }}>{t("produk-lainnya.text")}</h3> {/* Margin 0 untuk menghapus margin bawaan */}
+                        }}>{t("produk-lainnya.text")}</label> 
                        <Grid container spacing={2} zIndex={2} justifyContent={'center'} mt={30}>
                         <Grid item>
                             <div style={{ position: 'relative', marginBottom: '20px', marginLeft: '10px', marginRight: '10px' }}>
@@ -556,10 +549,11 @@ export function Home () {
                     : 
                     <div style={{ marginTop: '1000px', width: '435px' }}>
                         <h3 style={{ 
-                            color: 'gray', 
+                            color: '#353535', 
                             zIndex: 2, 
                             fontSize: '29px', 
                             // marginTop: '800px',
+                            fontWeight: 800,
                             paddingBottom: "30px",
                             textAlign: 'center' 
                             }}>{t("produk-lainnya.text")}</h3> {/* Margin 0 untuk menghapus margin bawaan */}
@@ -940,7 +934,7 @@ export function Home () {
 
 
           <div style={{ marginTop: '100px', position: 'relative', marginLeft: '1px'}}>
-                <img loading="lazy" src={Process} style={{ width: '100%', height: isDesktop ? '800px' : '1500px', zIndex: -2 }} />
+                <img loading="lazy" src={ isDesktop ? Process : Proses} style={{ width: '100%', height: isDesktop ? '800px' : '1500px', zIndex: -2 }} />
                 <div style={{ width: '100%', height: !isDesktop ? '1500px' : '800px', backgroundColor: 'rgba(59, 77, 54, 0.5)', display: isDesktop ? 'flex' : 'block' , justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '0', left: '0' }}>
                     <div style={{ margin: 0, padding: 0, display: 'block', justifyContent: 'center', position: 'relative', color: 'white' }}>
                         <h3 style={{ textAlign: 'center', fontSize: '39px' }}>{t("proses-kami.text")}</h3>
@@ -1246,7 +1240,7 @@ export function Home () {
                         <img loading="lazy" src={Call} width={ isDesktop ? 70 : 55} height={isDesktop ? 70 : 55} />
                         <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '10px' }}>
                             <span style={{ fontSize: isDesktop ? '16px' : '18px', fontWeight: 'bold' }}>{t("telepon.text")} :</span>
-                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082131131108', '085935331734']} /></span>
+                            <span style={{ fontSize: isDesktop ? '16px' : '12px', margin: 0, padding: 0 }}><Textra effect="rightLeft" data={['082160904267', '085935331734']} /></span>
                         </div>
                     </div>
                 </Grid>
