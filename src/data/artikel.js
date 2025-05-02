@@ -6,7 +6,7 @@ import Artikel5 from '../Image/artikel5.webp';
 import Artikel6 from '../Image/artikel6.jpg';
 import Artikel7 from '../Image/artikel7.jpg';
 import Artikel8 from '../Image/artikel8.png';
-import Artikel9 from '../Image/2025-05-02.jpg';
+import Artikel9 from '../Image/2025-05-02.jpeg';
 
 const dataArtikel = [
     {
