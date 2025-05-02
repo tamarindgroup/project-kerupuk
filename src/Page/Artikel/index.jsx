@@ -63,7 +63,7 @@ export const Artikel =  () => {
             <img src={Waisak} style={{ width: isDesktop ? '30%' : '80%', margin: !isDesktop ? 'auto' : 'auto', borderRadius: '20px' }}  /> 
            </div>  */}
 
-          <Grid container display={ !isDesktop ? 'block' : 'flex'} spacing={1} justifyContent="center" style={{ marginTop: !isDesktop ? '600px' : '10px' }}>
+          <Grid container display={ !isDesktop ? 'block' : 'flex'} spacing={1} justifyContent="center" style={{ marginTop: !isDesktop ? '250px' : '300px' }}>
                <Grid item xs={ !isDesktop ? 10 : 12}>
                 <div style={{ paddingLeft: !isDesktop ? '25px' : '22px' }}>
                 <h1 id="title-top-artikel" style={{ textAlign: 'left', color: 'gray' }}>{t("seputar.text")}</h1>

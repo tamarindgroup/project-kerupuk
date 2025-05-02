@@ -162,7 +162,7 @@ export function Home () {
             alignItems: 'center',  
             justifyContent: 'center', 
             marginBottom: isDesktop ? '0' : '0', 
-            marginTop: isDesktop ? "100px" : "650px"
+            marginTop: isDesktop ? "100px" : "200px"
         }}
         >
         </Grid>
@@ -413,7 +413,7 @@ export function Home () {
             <img src={Waisak} style={{ width: isDesktop ? '30%' : '80%', margin: !isDesktop ? 'auto' : 'auto', borderRadius: '20px' }}  /> 
           </div>  */}
 
-            <Grid 
+            {/* <Grid 
             container 
             justifyContent="center" 
             alignItems="center" 
@@ -427,7 +427,7 @@ export function Home () {
                 marginTop: isDesktop ? 100 : -400 
                 }} 
             />
-            </Grid>
+            </Grid> */}
 
          
           <div style={{

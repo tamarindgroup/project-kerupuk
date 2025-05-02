@@ -3,9 +3,89 @@ import Artikel2 from '../Image/artikel2.jpg';
 import Artikel3 from '../Image/artikel3.jpg';
 import Artikel4 from '../Image/artikel4.webp';
 import Artikel5 from '../Image/artikel5.webp';
-import Artikel6 from '../Image/artikel6.jpg'
+import Artikel6 from '../Image/artikel6.jpg';
+import Artikel7 from '../Image/artikel7.jpg';
+import Artikel8 from '../Image/artikel8.png';
+import Artikel9 from '../Image/2025-05-02.jpg';
 
 const dataArtikel = [
+    {
+        id: {
+            "image": Artikel9,
+            "nama": "Soh Hoon: Belajar Kearifan Lokal di Hari Pendidikan Nasional",
+            "sub_nama": "Pusat Kerupuk Indonesia / 2 Mei 2025",
+            "link": "https://www.bigdaymart.com/2025/05/02/soh-hoon-belajar-kearifan-lokal-di-hari-pendidikan-nasional/"
+        },
+        en: {
+            "image": Artikel9,
+            "nama": "Soh Hoon: Learning Local Wisdom on National Education Day",
+            "sub_nama": "Indonesian Cracker Center / 2 May 2025",
+            "link": "https://www.bigdaymart.com/2025/05/02/soh-hoon-belajar-kearifan-lokal-di-hari-pendidikan-nasional/"
+        },
+        ar: {
+            "image": Artikel9,
+            "nama": "سوه هون: تعلم الحكمة المحلية في يوم التعليم الوطني",
+            "sub_nama": "مركز التكسير الإندونيسي / 2 مايو 2025",
+            "link": "https://www.bigdaymart.com/2025/05/02/soh-hoon-belajar-kearifan-lokal-di-hari-pendidikan-nasional/"
+        },
+        zh: {
+            "image": Artikel9,
+            "nama": "Soh Hoon：在国家教育日学习本地智慧",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 2 日",
+            "link": "https://www.bigdaymart.com/2025/05/02/soh-hoon-belajar-kearifan-lokal-di-hari-pendidikan-nasional/"
+        }
+    }, {
+        id: {
+            "image": Artikel8,
+            "nama": "Hari Buruh Nasional: Kerja Keras dan Rasa lewat Asam Daging",
+            "sub_nama": "Pusat Kerupuk Indonesia / 1 Mei 2025",
+            "link": "https://www.bigdaymart.com/2025/05/01/hari-buruh-nasional-kerja-keras-dan-rasa-lewat-asam-daging/"
+        },
+        en: {
+            "image": Artikel8,
+            "nama": "National Labor Day: Hard Work and Taste through Sour Beef",
+            "sub_nama": "Indonesian Cracker Center / 1 May 2025",
+            "link": "https://www.bigdaymart.com/2025/05/01/hari-buruh-nasional-kerja-keras-dan-rasa-lewat-asam-daging/"
+        },
+        ar: {
+            "image": Artikel8,
+            "nama": "يوم العمال الوطني: العمل الجاد والطعم عبر لحم بقري حامض",
+            "sub_nama": "مركز التكسير الإندونيسي / 1 مايو 2025",
+            "link": "https://www.bigdaymart.com/2025/05/01/hari-buruh-nasional-kerja-keras-dan-rasa-lewat-asam-daging/"
+        },
+        zh: {
+            "image": Artikel8,
+            "nama": "国家劳动节：通过酸牛肉传达努力与滋味",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 1 日",
+            "link": "https://www.bigdaymart.com/2025/05/01/hari-buruh-nasional-kerja-keras-dan-rasa-lewat-asam-daging/"
+        }
+    },
+    {
+        id: {
+            "image": Artikel7,
+            "nama": "Asam Biji untuk Hari Kejujuran Nasional",
+            "sub_nama": "Pusat Kerupuk Indonesia / 30 April 2025",
+            "link": "https://www.bigdaymart.com/2025/04/30/asam-biji-untuk-hari-kejujuran-nasional/"
+        },
+        en: {
+            "image": Artikel7,
+            "nama": "Tamarind Seeds for National Honesty Day",
+            "sub_nama": "Indonesian Cracker Center / 30 April 2025",
+            "link": "https://www.bigdaymart.com/2025/04/30/asam-biji-untuk-hari-kejujuran-nasional/"
+        },
+        ar: {
+            "image": Artikel7,
+            "nama": "بذور التمر الهندي ليوم الصدق الوطني",
+            "sub_nama": "مركز التكسير الإندونيسي / 30 أبريل 2025",
+            "link": "https://www.bigdaymart.com/2025/04/30/asam-biji-untuk-hari-kejujuran-nasional/"
+        },
+        zh: {
+            "image": Artikel7,
+            "nama": "为国家诚实日准备的酸角种子",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 4 月 30 日",
+            "link": "https://www.bigdaymart.com/2025/04/30/asam-biji-untuk-hari-kejujuran-nasional/"
+        }
+    },
     {
         id: {
         "image": Artikel1,

@@ -128,7 +128,7 @@ export function About() {
 
           <div id="get" style={{ 
             width: isDesktop ? '100%' : '100%',
-            marginTop: isDesktop ? '100px' : '220px',
+            marginTop: isDesktop ? '300px' : '220px',
             display: isDesktop ? 'flex' : 'block',
             justifyContent: 'center'
             }}>

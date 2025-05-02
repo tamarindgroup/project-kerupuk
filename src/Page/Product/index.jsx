@@ -232,7 +232,7 @@ export function Product() {
           
           <div
               style={{ 
-                marginTop: isDesktop ? 100 : 650, 
+                marginTop: isDesktop ? 300 : 300, 
                 display: "block", 
                 marginLeft: isDesktop ? 10 : -2,
                 width: isDesktop ? "100%" : '100%', 
