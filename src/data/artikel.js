@@ -7,9 +7,35 @@ import Artikel6 from '../Image/artikel6.jpg';
 import Artikel7 from '../Image/artikel7.jpg';
 import Artikel8 from '../Image/artikel8.png';
 import Artikel9 from '../Image/2025-05-02.jpeg';
+import Artikel10 from '../Image/2025-05-02.jpeg';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel10,
+            "nama": "Kulit Tahu Soyami: Bintang Baru di JIExpo 2025",
+            "sub_nama": "Pusat Kerupuk Indonesia / 3 Mei 2025",
+            "link": "https://www.bigdaymart.com/2025/05/03/kulit-tahu-soyami-bintang-baru-di-jiexpo-2025/"
+        },
+        en: {
+            "image": Artikel10,
+            "nama": "Soyami Tofu Skin: The New Star at JIExpo 2025",
+            "sub_nama": "Indonesian Cracker Center / 3 May 2025",
+            "link": "https://www.bigdaymart.com/2025/05/03/kulit-tahu-soyami-bintang-baru-di-jiexpo-2025/"
+        },
+        ar: {
+            "image": Artikel10,
+            "nama": "جلد التوفو سويمي: النجم الجديد في جي إكسبو 2025",
+            "sub_nama": "مركز التكسير الإندونيسي / 3 مايو 2025",
+            "link": "https://www.bigdaymart.com/2025/05/03/kulit-tahu-soyami-bintang-baru-di-jiexpo-2025/"
+        },
+        zh: {
+            "image": Artikel10,
+            "nama": "Soyami 豆腐皮：2025 年 JIExpo 的新星",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 3 日",
+            "link": "https://www.bigdaymart.com/2025/05/03/kulit-tahu-soyami-bintang-baru-di-jiexpo-2025/"
+        }
+    }, {
         id: {
             "image": Artikel9,
             "nama": "Soh Hoon: Belajar Kearifan Lokal di Hari Pendidikan Nasional",
