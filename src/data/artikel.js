@@ -7,10 +7,63 @@ import Artikel6 from '../Image/artikel6.jpg';
 import Artikel7 from '../Image/artikel7.jpg';
 import Artikel8 from '../Image/artikel8.png';
 import Artikel9 from '../Image/2025-05-02.jpeg';
-import Artikel10 from '../Image/2025-05-02.jpeg';
+import Artikel10 from '../Image/2025-05-03.jpeg';
+import Artikel11 from '../Image/2025-05-05.png';
+import Artikel12 from '../Image/2025-05-06.jpg';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel12,
+            "nama": "Asam Jawa Cap Gunung: Pilihan Alami untuk Ringankan Asma",
+            "sub_nama": "Pusat Kerupuk Indonesia / 6 Mei 2025",
+            "link": "https://www.bigdaymart.com/2025/05/06/asam-jawa-cap-gunung-pilihan-alami-untuk-ringankan-asma/"
+        },
+        en: {
+            "image": Artikel12,
+            "nama": "Tamarind Cap Gunung: A Natural Choice to Ease Asthma",
+            "sub_nama": "Indonesian Cracker Center / 6 May 2025",
+            "link": "https://www.bigdaymart.com/2025/05/06/asam-jawa-cap-gunung-pilihan-alami-untuk-ringankan-asma/"
+        },
+        ar: {
+            "image": Artikel12,
+            "nama": "تمر هندي كاب غونونغ: خيار طبيعي لتخفيف الربو",
+            "sub_nama": "مركز التكسير الإندونيسي / 6 مايو 2025",
+            "link": "https://www.bigdaymart.com/2025/05/06/asam-jawa-cap-gunung-pilihan-alami-untuk-ringankan-asma/"
+        },
+        zh: {
+            "image": Artikel12,
+            "nama": "山牌罗望子：缓解哮喘的天然选择",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 6 日",
+            "link": "https://www.bigdaymart.com/2025/05/06/asam-jawa-cap-gunung-pilihan-alami-untuk-ringankan-asma/"
+        }
+    }
+    , {
+        id: {
+            "image": Artikel11,
+            "nama": "Kulit Tahu Bunga Merah: Inovasi UMKM Lembaga Sosial Desa",
+            "sub_nama": "Pusat Kerupuk Indonesia / 5 Mei 2025",
+            "link": "https://www.bigdaymart.com/2025/05/05/kulit-tahu-bunga-merah-inovasi-umkm-lembaga-sosial-desa/"
+        },
+        en: {
+            "image": Artikel11,
+            "nama": "Red Flower Tofu Skin: Village Social Institution MSME Innovation",
+            "sub_nama": "Indonesian Cracker Center / 5 May 2025",
+            "link": "https://www.bigdaymart.com/2025/05/05/kulit-tahu-bunga-merah-inovasi-umkm-lembaga-sosial-desa/"
+        },
+        ar: {
+            "image": Artikel11,
+            "nama": "جلد التوفو زهرة حمراء: ابتكار المشاريع الصغيرة لمؤسسة القرية الاجتماعية",
+            "sub_nama": "مركز التكسير الإندونيسي / 5 مايو 2025",
+            "link": "https://www.bigdaymart.com/2025/05/05/kulit-tahu-bunga-merah-inovasi-umkm-lembaga-sosial-desa/"
+        },
+        zh: {
+            "image": Artikel11,
+            "nama": "红花豆腐皮：村庄社会机构的中小企业创新",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 5 日",
+            "link": "https://www.bigdaymart.com/2025/05/05/kulit-tahu-bunga-merah-inovasi-umkm-lembaga-sosial-desa/"
+        }
+    }, {
         id: {
             "image": Artikel10,
             "nama": "Kulit Tahu Soyami: Bintang Baru di JIExpo 2025",
