@@ -10,9 +10,35 @@ import Artikel9 from '../Image/2025-05-02.jpeg';
 import Artikel10 from '../Image/2025-05-03.jpeg';
 import Artikel11 from '../Image/2025-05-05.png';
 import Artikel12 from '../Image/2025-05-06.jpg';
+import Artikel13 from '../Image/2025-05-13.jpeg';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel13,
+            "nama": "Asam Jawa Daging: Cita Rasa Khas Mengangkat Kuliner Garut",
+            "sub_nama": "Pusat Kerupuk Indonesia / 13 Mei 2025",
+            "link": "https://www.bigdaymart.com/2025/05/13/asam-jawa-daging-cita-rasa-khas-mengangkat-kuliner-garut/"
+        },
+        en: {
+            "image": Artikel13,
+            "nama": "Tamarind Beef: A Distinctive Flavor Elevating Garut Cuisine",
+            "sub_nama": "Indonesian Cracker Center / 13 May 2025",
+            "link": "https://www.bigdaymart.com/2025/05/13/asam-jawa-daging-cita-rasa-khas-mengangkat-kuliner-garut/"
+        },
+        ar: {
+            "image": Artikel13,
+            "nama": "لحم بالتمر الهندي: نكهة مميزة ترتقي بالمطبخ الغاروتي",
+            "sub_nama": "مركز التكسير الإندونيسي / 13 مايو 2025",
+            "link": "https://www.bigdaymart.com/2025/05/13/asam-jawa-daging-cita-rasa-khas-mengangkat-kuliner-garut/"
+        },
+        zh: {
+            "image": Artikel13,
+            "nama": "罗望子牛肉：提升加鲁特美食的独特风味",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 13 日",
+            "link": "https://www.bigdaymart.com/2025/05/13/asam-jawa-daging-cita-rasa-khas-mengangkat-kuliner-garut/"
+        }
+    }, {
         id: {
             "image": Artikel12,
             "nama": "Asam Jawa Cap Gunung: Pilihan Alami untuk Ringankan Asma",
