@@ -11,9 +11,35 @@ import Artikel10 from '../Image/2025-05-03.jpeg';
 import Artikel11 from '../Image/2025-05-05.png';
 import Artikel12 from '../Image/2025-05-06.jpg';
 import Artikel13 from '../Image/2025-05-13.jpeg';
+import Artikel14 from '../Image/2025-05-14.jpg';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel14,
+            "nama": "Supply Asam Daging: Bumbu Cinta dari Dapur Digital",
+            "sub_nama": "Pusat Kerupuk Indonesia / 14 Mei 2025",
+            "link": "https://www.bigdaymart.com/2025/05/14/supply-asam-daging-bumbu-cinta-dari-dapur-digital/"
+        },
+        en: {
+            "image": Artikel14,
+            "nama": "Sour Beef Supply: Love Seasoning from the Digital Kitchen",
+            "sub_nama": "Indonesian Cracker Center / 14 May 2025",
+            "link": "https://www.bigdaymart.com/2025/05/14/supply-asam-daging-bumbu-cinta-dari-dapur-digital/"
+        },
+        ar: {
+            "image": Artikel14,
+            "nama": "إمداد اللحم الحامض: توابل الحب من المطبخ الرقمي",
+            "sub_nama": "مركز التكسير الإندونيسي / 14 مايو 2025",
+            "link": "https://www.bigdaymart.com/2025/05/14/supply-asam-daging-bumbu-cinta-dari-dapur-digital/"
+        },
+        zh: {
+            "image": Artikel14,
+            "nama": "酸牛肉供应：来自数字厨房的爱之调味",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 14 日",
+            "link": "https://www.bigdaymart.com/2025/05/14/supply-asam-daging-bumbu-cinta-dari-dapur-digital/"
+        }
+    }, {
         id: {
             "image": Artikel13,
             "nama": "Asam Jawa Daging: Cita Rasa Khas Mengangkat Kuliner Garut",
