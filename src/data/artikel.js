@@ -12,9 +12,35 @@ import Artikel11 from '../Image/2025-05-05.png';
 import Artikel12 from '../Image/2025-05-06.jpg';
 import Artikel13 from '../Image/2025-05-13.jpeg';
 import Artikel14 from '../Image/2025-05-14.jpg';
+import Artikel15 from '../Image/2025-05-15.jpg';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel15,
+            "nama": "Asam Biji Bunga Merah: Cita Rasa Lokal Bersama Garuda ID",
+            "sub_nama": "Pusat Kerupuk Indonesia / 15 Mei 2025",
+            "link": "https://www.bigdaymart.com/2025/05/15/asam-biji-bunga-merah-cita-rasa-lokal-bersama-garuda-id/"
+        },
+        en: {
+            "image": Artikel15,
+            "nama": "Red Flower Tamarind Seed: Local Flavor with Garuda ID",
+            "sub_nama": "Indonesian Cracker Center / 15 May 2025",
+            "link": "https://www.bigdaymart.com/2025/05/15/asam-biji-bunga-merah-cita-rasa-lokal-bersama-garuda-id/"
+        },
+        ar: {
+            "image": Artikel15,
+            "nama": "بذور التمر الهندي زهرة حمراء: نكهة محلية مع غارودا ID",
+            "sub_nama": "مركز التكسير الإندونيسي / 15 مايو 2025",
+            "link": "https://www.bigdaymart.com/2025/05/15/asam-biji-bunga-merah-cita-rasa-lokal-bersama-garuda-id/"
+        },
+        zh: {
+            "image": Artikel15,
+            "nama": "红花酸豆种子：与 Garuda ID 一起的本地风味",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 15 日",
+            "link": "https://www.bigdaymart.com/2025/05/15/asam-biji-bunga-merah-cita-rasa-lokal-bersama-garuda-id/"
+        }
+    }, {
         id: {
             "image": Artikel14,
             "nama": "Supply Asam Daging: Bumbu Cinta dari Dapur Digital",
