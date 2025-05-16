@@ -13,9 +13,35 @@ import Artikel12 from '../Image/2025-05-06.jpg';
 import Artikel13 from '../Image/2025-05-13.jpeg';
 import Artikel14 from '../Image/2025-05-14.jpg';
 import Artikel15 from '../Image/2025-05-15.jpg';
+import Artikel16 from '../Image/2025-05-16.jpg';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel16,
+            "nama": "Asam Jawa 150: Komoditas Terangi Cahaya Internasional",
+            "sub_nama": "Pusat Kerupuk Indonesia / 16 Mei 2025",
+            "link": "https://www.bigdaymart.com/2025/05/16/asam-jawa-150-komoditas-terangi-cahaya-internasional/"
+        },
+        en: {
+            "image": Artikel16,
+            "nama": "Tamarind 150: Commodity Illuminates International Light",
+            "sub_nama": "Indonesian Cracker Center / 16 May 2025",
+            "link": "https://www.bigdaymart.com/2025/05/16/asam-jawa-150-komoditas-terangi-cahaya-internasional/"
+        },
+        ar: {
+            "image": Artikel16,
+            "nama": "تمر هندي 150: سلعة تضيء النور الدولي",
+            "sub_nama": "مركز التكسير الإندونيسي / 16 مايو 2025",
+            "link": "https://www.bigdaymart.com/2025/05/16/asam-jawa-150-komoditas-terangi-cahaya-internasional/"
+        },
+        zh: {
+            "image": Artikel16,
+            "nama": "罗望子150：照亮国际之光的商品",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 16 日",
+            "link": "https://www.bigdaymart.com/2025/05/16/asam-jawa-150-komoditas-terangi-cahaya-internasional/"
+        }
+    }, {
         id: {
             "image": Artikel15,
             "nama": "Asam Biji Bunga Merah: Cita Rasa Lokal Bersama Garuda ID",
