@@ -14,9 +14,35 @@ import Artikel13 from '../Image/2025-05-13.jpeg';
 import Artikel14 from '../Image/2025-05-14.jpg';
 import Artikel15 from '../Image/2025-05-15.jpg';
 import Artikel16 from '../Image/2025-05-16.jpg';
+import Artikel17 from '../Image/2025-05-23.jpg';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel17,
+            "nama": "Asam Jawa 75: Menyelamatkan Penyu, Warisan Laut",
+            "sub_nama": "Pusat Kerupuk Indonesia / 23 Mei 2025",
+            "link": "https://www.bigdaymart.com/2025/05/23/asam-jawa-75-menyelamatkan-penyu-warisan-laut/"
+        },
+        en: {
+            "image": Artikel17,
+            "nama": "Tamarind 75: Saving Turtles, Maritime Heritage",
+            "sub_nama": "Indonesian Cracker Center / 23 May 2025",
+            "link": "https://www.bigdaymart.com/2025/05/23/asam-jawa-75-menyelamatkan-penyu-warisan-laut/"
+        },
+        ar: {
+            "image": Artikel17,
+            "nama": "تمر هندي 75: إنقاذ السلاحف، تراث بحري",
+            "sub_nama": "مركز التكسير الإندونيسي / 23 مايو 2025",
+            "link": "https://www.bigdaymart.com/2025/05/23/asam-jawa-75-menyelamatkan-penyu-warisan-laut/"
+        },
+        zh: {
+            "image": Artikel17,
+            "nama": "罗望子75：拯救海龟，海洋遗产",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 23 日",
+            "link": "https://www.bigdaymart.com/2025/05/23/asam-jawa-75-menyelamatkan-penyu-warisan-laut/"
+        }
+    }, {
         id: {
             "image": Artikel16,
             "nama": "Asam Jawa 150: Komoditas Terangi Cahaya Internasional",
