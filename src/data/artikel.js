@@ -15,9 +15,61 @@ import Artikel14 from '../Image/2025-05-14.jpg';
 import Artikel15 from '../Image/2025-05-15.jpg';
 import Artikel16 from '../Image/2025-05-16.jpg';
 import Artikel17 from '../Image/2025-05-23.jpg';
+import Artikel18 from '../Image/2025-05-29.jpeg';
+import Artikel19 from '../Image/2025-05-30.png';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel19,
+            "nama": "Asam Jawa 10 Kg: Warisan Indonesia Mendunia dalam Kemasan 10 Kg",
+            "sub_nama": "Pusat Kerupuk Indonesia / 30 Mei 2025",
+            "link": "https://asamjawagunung.com/2025/05/30/asam-jawa-10-kg-warisan-indonesia-mendunia-kemasan-10-kg/"
+        },
+        en: {
+            "image": Artikel19,
+            "nama": "10 Kg Tamarind: Indonesian Heritage Goes Global in 10 Kg Packaging",
+            "sub_nama": "Indonesian Cracker Center / 30 May 2025",
+            "link": "https://asamjawagunung.com/2025/05/30/asam-jawa-10-kg-warisan-indonesia-mendunia-kemasan-10-kg/"
+        },
+        ar: {
+            "image": Artikel19,
+            "nama": "تمر هندي 10 كجم: تراث إندونيسي ينتشر عالميًا في عبوة 10 كجم",
+            "sub_nama": "مركز التكسير الإندونيسي / 30 مايو 2025",
+            "link": "https://asamjawagunung.com/2025/05/30/asam-jawa-10-kg-warisan-indonesia-mendunia-kemasan-10-kg/"
+        },
+        zh: {
+            "image": Artikel19,
+            "nama": "10公斤罗望子：印尼遗产以10公斤包装走向世界",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 30 日",
+            "link": "https://asamjawagunung.com/2025/05/30/asam-jawa-10-kg-warisan-indonesia-mendunia-kemasan-10-kg/"
+        }
+    }, {
+        id: {
+            "image": Artikel18,
+            "nama": "Hari Kenaikan Yesus Kristus: Momen Suci, Inspirasi Kehidupan",
+            "sub_nama": "Pusat Kerupuk Indonesia / 29 Mei 2025",
+            "link": "https://www.bigdaymart.com/2025/05/29/hari-kenaikan-yesus-kristus-momen-suci-inspirasi-kehidupan/"
+        },
+        en: {
+            "image": Artikel18,
+            "nama": "Ascension Day of Jesus Christ: A Sacred Moment, Life Inspiration",
+            "sub_nama": "Indonesian Cracker Center / 29 May 2025",
+            "link": "https://www.bigdaymart.com/2025/05/29/hari-kenaikan-yesus-kristus-momen-suci-inspirasi-kehidupan/"
+        },
+        ar: {
+            "image": Artikel18,
+            "nama": "عيد صعود يسوع المسيح: لحظة مقدسة، إلهام للحياة",
+            "sub_nama": "مركز التكسير الإندونيسي / 29 مايو 2025",
+            "link": "https://www.bigdaymart.com/2025/05/29/hari-kenaikan-yesus-kristus-momen-suci-inspirasi-kehidupan/"
+        },
+        zh: {
+            "image": Artikel18,
+            "nama": "耶稣基督升天日：神圣时刻，生命的启示",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 29 日",
+            "link": "https://www.bigdaymart.com/2025/05/29/hari-kenaikan-yesus-kristus-momen-suci-inspirasi-kehidupan/"
+        }
+    }, {
         id: {
             "image": Artikel17,
             "nama": "Asam Jawa 75: Menyelamatkan Penyu, Warisan Laut",
