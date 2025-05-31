@@ -17,9 +17,61 @@ import Artikel16 from '../Image/2025-05-16.jpg';
 import Artikel17 from '../Image/2025-05-23.jpg';
 import Artikel18 from '../Image/2025-05-29.jpeg';
 import Artikel19 from '../Image/2025-05-30.png';
+import Artikel20 from '../Image/2025-05-31.jpeg';
+import Artikel21 from '../Image/2025-06-01.png';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel21,
+            "nama": "Semangat Hari Lahir Pancasila: Warisan Bangsa Lewat Asam Jawa 30 gr",
+            "sub_nama": "Pusat Kerupuk Indonesia / 1 Juni 2025",
+            "link": "https://www.tamarindindonesia.com/blog/semangat-hari-lahir-pancasila:-warisan-bangsa-lewat-asam-jawa-30-gr"
+        },
+        en: {
+            "image": Artikel21,
+            "nama": "Spirit of Pancasila Day: National Heritage Through 30g Tamarind",
+            "sub_nama": "Indonesian Cracker Center / 1 June 2025",
+            "link": "https://www.tamarindindonesia.com/blog/semangat-hari-lahir-pancasila:-warisan-bangsa-lewat-asam-jawa-30-gr"
+        },
+        ar: {
+            "image": Artikel21,
+            "nama": "روح يوم ولادة بانشاسيلا: التراث الوطني من خلال تمر هندي 30 غرام",
+            "sub_nama": "مركز التكسير الإندونيسي / 1 يونيو 2025",
+            "link": "https://www.tamarindindonesia.com/blog/semangat-hari-lahir-pancasila:-warisan-bangsa-lewat-asam-jawa-30-gr"
+        },
+        zh: {
+            "image": Artikel21,
+            "nama": "潘查希拉日的精神：通过30克罗望子传承国家遗产",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 6 月 1 日",
+            "link": "https://www.tamarindindonesia.com/blog/semangat-hari-lahir-pancasila:-warisan-bangsa-lewat-asam-jawa-30-gr"
+        }
+    }, {
+        id: {
+            "image": Artikel20,
+            "nama": "Asam Jawa Indonesia: Surabaya di Hari Jadinya",
+            "sub_nama": "Pusat Kerupuk Indonesia / 31 Mei 2025",
+            "link": "https://asamjawagunung.com/2025/05/31/asam-jawa-indonesia-surabaya-di-hari-jadinya/"
+        },
+        en: {
+            "image": Artikel20,
+            "nama": "Indonesian Tamarind: Surabaya on Its Anniversary",
+            "sub_nama": "Indonesian Cracker Center / 31 May 2025",
+            "link": "https://asamjawagunung.com/2025/05/31/asam-jawa-indonesia-surabaya-di-hari-jadinya/"
+        },
+        ar: {
+            "image": Artikel20,
+            "nama": "تمر هندي إندونيسي: سورابايا في عيدها",
+            "sub_nama": "مركز التكسير الإندونيسي / 31 مايو 2025",
+            "link": "https://asamjawagunung.com/2025/05/31/asam-jawa-indonesia-surabaya-di-hari-jadinya/"
+        },
+        zh: {
+            "image": Artikel20,
+            "nama": "印尼罗望子：泗水在其周年纪念日",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 5 月 31 日",
+            "link": "https://asamjawagunung.com/2025/05/31/asam-jawa-indonesia-surabaya-di-hari-jadinya/"
+        }
+    }, {
         id: {
             "image": Artikel19,
             "nama": "Asam Jawa 10 Kg: Warisan Indonesia Mendunia dalam Kemasan 10 Kg",
