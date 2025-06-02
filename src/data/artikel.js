@@ -19,9 +19,35 @@ import Artikel18 from '../Image/2025-05-29.jpeg';
 import Artikel19 from '../Image/2025-05-30.png';
 import Artikel20 from '../Image/2025-05-31.jpeg';
 import Artikel21 from '../Image/2025-06-01.png';
+import Artikel22 from '../Image/2025-06-02.png';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel22,
+            "nama": "Asam Jawa 1 Kg: Pilihan Tepat untuk Masakan Lezat",
+            "sub_nama": "Pusat Kerupuk Indonesia / 2 Juni 2025",
+            "link": "https://asamjawagunung.com/2025/06/02/asam-jawa-1-kg-pilihan-tepat-untuk-masakan-lezat/"
+        },
+        en: {
+            "image": Artikel22,
+            "nama": "1 Kg Tamarind: The Right Choice for Delicious Dishes",
+            "sub_nama": "Indonesian Cracker Center / 2 June 2025",
+            "link": "https://asamjawagunung.com/2025/06/02/asam-jawa-1-kg-pilihan-tepat-untuk-masakan-lezat/"
+        },
+        ar: {
+            "image": Artikel22,
+            "nama": "تمر هندي 1 كجم: الخيار الأمثل للأطباق اللذيذة",
+            "sub_nama": "مركز التكسير الإندونيسي / 2 يونيو 2025",
+            "link": "https://asamjawagunung.com/2025/06/02/asam-jawa-1-kg-pilihan-tepat-untuk-masakan-lezat/"
+        },
+        zh: {
+            "image": Artikel22,
+            "nama": "1公斤罗望子：美味佳肴的最佳选择",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 6 月 2 日",
+            "link": "https://asamjawagunung.com/2025/06/02/asam-jawa-1-kg-pilihan-tepat-untuk-masakan-lezat/"
+        }
+    }, {
         id: {
             "image": Artikel21,
             "nama": "Semangat Hari Lahir Pancasila: Warisan Bangsa Lewat Asam Jawa 30 gr",
