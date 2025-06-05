@@ -20,9 +20,61 @@ import Artikel19 from '../Image/2025-05-30.png';
 import Artikel20 from '../Image/2025-05-31.jpeg';
 import Artikel21 from '../Image/2025-06-01.png';
 import Artikel22 from '../Image/2025-06-02.png';
+import Artikel23 from '../Image/2025-06-04.png';
+import Artikel24 from '../Image/2025-06-05.png';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel24,
+            "nama": "Merayakan Hari Lingkungan Hidup Sedunia Sama Asam Jawa Asli",
+            "sub_nama": "Pusat Kerupuk Indonesia / 5 Juni 2025",
+            "link": "https://soyamisoyabean.com/2025/06/05/merayakan-hari-lingkungan-hidup-sedunia-sama-asam-jawa-asli/"
+        },
+        en: {
+            "image": Artikel24,
+            "nama": "Celebrating World Environment Day with Authentic Tamarind",
+            "sub_nama": "Indonesian Cracker Center / 5 June 2025",
+            "link": "https://soyamisoyabean.com/2025/06/05/merayakan-hari-lingkungan-hidup-sedunia-sama-asam-jawa-asli/"
+        },
+        ar: {
+            "image": Artikel24,
+            "nama": "الاحتفال بيوم البيئة العالمي مع تمر هندي أصلي",
+            "sub_nama": "مركز التكسير الإندونيسي / 5 يونيو 2025",
+            "link": "https://soyamisoyabean.com/2025/06/05/merayakan-hari-lingkungan-hidup-sedunia-sama-asam-jawa-asli/"
+        },
+        zh: {
+            "image": Artikel24,
+            "nama": "与正宗罗望子一起庆祝世界环境日",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 6 月 5 日",
+            "link": "https://soyamisoyabean.com/2025/06/05/merayakan-hari-lingkungan-hidup-sedunia-sama-asam-jawa-asli/"
+        }
+    }, {
+        id: {
+            "image": Artikel23,
+            "nama": "Asam Jawa 150 gr: Untuk Daya Tahan Tubuh",
+            "sub_nama": "Pusat Kerupuk Indonesia / 4 Juni 2025",
+            "link": "https://asamjawagunung.com/2025/06/04/asam-jawa-150-gr-untuk-daya-tahan-tubuh/"
+        },
+        en: {
+            "image": Artikel23,
+            "nama": "150g Tamarind: For Immune System Support",
+            "sub_nama": "Indonesian Cracker Center / 4 June 2025",
+            "link": "https://asamjawagunung.com/2025/06/04/asam-jawa-150-gr-untuk-daya-tahan-tubuh/"
+        },
+        ar: {
+            "image": Artikel23,
+            "nama": "تمر هندي 150 غرام: لدعم جهاز المناعة",
+            "sub_nama": "مركز التكسير الإندونيسي / 4 يونيو 2025",
+            "link": "https://asamjawagunung.com/2025/06/04/asam-jawa-150-gr-untuk-daya-tahan-tubuh/"
+        },
+        zh: {
+            "image": Artikel23,
+            "nama": "150克罗望子：增强免疫系统",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 6 月 4 日",
+            "link": "https://asamjawagunung.com/2025/06/04/asam-jawa-150-gr-untuk-daya-tahan-tubuh/"
+        }
+    }, {
         id: {
             "image": Artikel22,
             "nama": "Asam Jawa 1 Kg: Pilihan Tepat untuk Masakan Lezat",
