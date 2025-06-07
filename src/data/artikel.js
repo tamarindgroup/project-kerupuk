@@ -22,9 +22,61 @@ import Artikel21 from '../Image/2025-06-01.png';
 import Artikel22 from '../Image/2025-06-02.png';
 import Artikel23 from '../Image/2025-06-04.png';
 import Artikel24 from '../Image/2025-06-05.png';
+import Artikel25 from '../Image/2025-06-06.png';
+import Artikel26 from '../Image/2025-06-07.png';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel26,
+            "nama": "Pilih Produk Alami Aman Seperti Asam Jawa Asli",
+            "sub_nama": "Pusat Kerupuk Indonesia / 7 Juni 2025",
+            "link": "https://www.bigdaymart.com/2025/06/07/pilih-produk-alami-aman-seperti-asam-jawa-asli/"
+        },
+        en: {
+            "image": Artikel26,
+            "nama": "Choose Safe Natural Products Like Authentic Tamarind",
+            "sub_nama": "Indonesian Cracker Center / 7 June 2025",
+            "link": "https://www.bigdaymart.com/2025/06/07/pilih-produk-alami-aman-seperti-asam-jawa-asli/"
+        },
+        ar: {
+            "image": Artikel26,
+            "nama": "اختر المنتجات الطبيعية الآمنة مثل التمر الهندي الأصلي",
+            "sub_nama": "مركز التكسير الإندونيسي / 7 يونيو 2025",
+            "link": "https://www.bigdaymart.com/2025/06/07/pilih-produk-alami-aman-seperti-asam-jawa-asli/"
+        },
+        zh: {
+            "image": Artikel26,
+            "nama": "选择安全的天然产品，如正宗罗望子",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 6 月 7 日",
+            "link": "https://www.bigdaymart.com/2025/06/07/pilih-produk-alami-aman-seperti-asam-jawa-asli/"
+        }
+    }, {
+        id: {
+            "image": Artikel25,
+            "nama": "Sambut Idul Adha dengan Hidangan Sehat Asam Jawa Murni",
+            "sub_nama": "Pusat Kerupuk Indonesia / 6 Juni 2025",
+            "link": "https://www.bigdaymart.com/2025/06/06/sambut-idul-adha-dengan-hidangan-sehat-asam-jawa-murni/"
+        },
+        en: {
+            "image": Artikel25,
+            "nama": "Celebrate Eid al-Adha with Healthy Pure Tamarind Dishes",
+            "sub_nama": "Indonesian Cracker Center / 6 June 2025",
+            "link": "https://www.bigdaymart.com/2025/06/06/sambut-idul-adha-dengan-hidangan-sehat-asam-jawa-murni/"
+        },
+        ar: {
+            "image": Artikel25,
+            "nama": "احتفل بعيد الأضحى بأطباق صحية من التمر الهندي النقي",
+            "sub_nama": "مركز التكسير الإندونيسي / 6 يونيو 2025",
+            "link": "https://www.bigdaymart.com/2025/06/06/sambut-idul-adha-dengan-hidangan-sehat-asam-jawa-murni/"
+        },
+        zh: {
+            "image": Artikel25,
+            "nama": "以健康纯罗望子菜肴庆祝宰牲节",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 6 月 6 日",
+            "link": "https://www.bigdaymart.com/2025/06/06/sambut-idul-adha-dengan-hidangan-sehat-asam-jawa-murni/"
+        }
+    }, {
         id: {
             "image": Artikel24,
             "nama": "Merayakan Hari Lingkungan Hidup Sedunia Sama Asam Jawa Asli",
