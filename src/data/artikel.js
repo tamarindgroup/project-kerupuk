@@ -24,9 +24,35 @@ import Artikel23 from '../Image/2025-06-04.png';
 import Artikel24 from '../Image/2025-06-05.png';
 import Artikel25 from '../Image/2025-06-06.png';
 import Artikel26 from '../Image/2025-06-07.png';
+import Artikel27 from '../Image/2025-06-09.png';
 
 const dataArtikel = [
     {
+        id: {
+            "image": Artikel27,
+            "nama": "Asam Jawa Alami dalam Gaya Hidup Ramah Lingkungan",
+            "sub_nama": "Pusat Kerupuk Indonesia / 9 Juni 2025",
+            "link": "https://asamjawagunung.com/2025/06/09/asam-jawa-alami-dalam-gaya-hidup-ramah-lingkungan/"
+        },
+        en: {
+            "image": Artikel27,
+            "nama": "Natural Tamarind in an Eco-Friendly Lifestyle",
+            "sub_nama": "Indonesian Cracker Center / 9 June 2025",
+            "link": "https://asamjawagunung.com/2025/06/09/asam-jawa-alami-dalam-gaya-hidup-ramah-lingkungan/"
+        },
+        ar: {
+            "image": Artikel27,
+            "nama": "تمر هندي طبيعي في أسلوب حياة صديق للبيئة",
+            "sub_nama": "مركز التكسير الإندونيسي / 9 يونيو 2025",
+            "link": "https://asamjawagunung.com/2025/06/09/asam-jawa-alami-dalam-gaya-hidup-ramah-lingkungan/"
+        },
+        zh: {
+            "image": Artikel27,
+            "nama": "生态生活方式中的天然罗望子",
+            "sub_nama": "印度尼西亚饼干中心 / 2025 年 6 月 9 日",
+            "link": "https://asamjawagunung.com/2025/06/09/asam-jawa-alami-dalam-gaya-hidup-ramah-lingkungan/"
+        }
+    }, {
         id: {
             "image": Artikel26,
             "nama": "Pilih Produk Alami Aman Seperti Asam Jawa Asli",
